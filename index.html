@@ -6,6 +6,16 @@
     <title>MIT GTL Bahrain</title>
     <!-- Bootswatch Litera Theme -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Make all paragraph text sans-serif */
+        p {
+            font-family: 'Arial', sans-serif;
+        }
+        /* Make the navbar red */
+        .navbar {
+            background-color: red !important;
+        }
+    </style>
     <script src="js/load_header.js"></script>
 </head>
 <body>
@@ -22,18 +32,18 @@
             <!-- Left Column (Sidebar) -->
             <aside class="col-md-4">
                 
-                <!-- Course Info Section -->
+                <!-- Actuated Experiences Section -->
                 <section class="card mb-4">
                     <div class="card-body">
-                        <h2 class="card-title">Course Requirements</h2>
-                        <p class="card-text">This course is aimed at students interested in learning introductory design and fabrication techniques through rapid prototyping. No prior experience is needed, but full commitment to the schedule and requirements is essential. The course minimizes lectures (30 minutes) and emphasizes hands-on learning, where students follow guided, step-by-step instructions via an online portal. Instructors provide in-person check-offs for each task.</p>
+                        <h4 class="card-title">Actuated Experiences: Design and Fabrication for Interactivity</h4>
+                        <p class="card-text">This course introduces undergraduate students to creative design and fabrication techniques that transform traditionally static objects into interactive ones, using mechanical, electrical, or physical/chemical methods. Each week, students will explore foundational technologies and fabrication techniques, including 3D modeling, rapid prototyping (3D printing and laser cutting), sensing and electronics, and graphical user interface development. The course includes five individual mini-projects and a group final project, with weekly milestones, instructor check-ins, and in-class reviews.</p>
                     </div>
                 </section>
 
                 <!-- Time Commitments Section -->
                 <section class="card mb-4">
                     <div class="card-body">
-                        <h2 class="card-title">Time Commitments</h2>
+                        <h4 class="card-title">Time Commitments</h4>
                         <ul class="list-unstyled">
                             <li><strong>Class:</strong> Mon/Wed/Fri/Sat 5PM -- 8PM</li>
                             <li><em>PLACEHOLDER *ADD TIME COMMITMENTS*</em></li>
@@ -44,7 +54,7 @@
                 <!-- Teaching Team Section -->
                 <section class="card mb-4">
                     <div class="card-body">
-                        <h2 class="card-title">Teaching Team</h2>
+                        <h4 class="card-title">Teaching Team</h4>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Marwa AlAlawi (instructor)</li>
                             <li class="list-group-item">Yunyi Zhu (instructor)</li>
@@ -55,32 +65,47 @@
 
             <!-- Right Column (Main Content) -->
             <main class="col-md-8">
-                
-                <!-- Course Overview Section -->
+
+                <!-- Announcements Section -->
                 <section class="card mb-4">
                     <div class="card-body">
-                        <h2 class="card-title">Actuated Experiences: Design and Fabrication for Interactivity</h2>
-                        <p class="card-text">This course introduces undergraduate students to creative design and fabrication techniques that transform traditionally static objects into interactive ones, using mechanical, electrical, or physical/chemical methods. Each week, students will explore foundational technologies and fabrication techniques, including 3D modeling, rapid prototyping (3D printing and laser cutting), sensing and electronics, and graphical user interface development. The course includes five individual mini-projects and a group final project, with weekly milestones, instructor check-ins, and in-class reviews.</p>
+                        <h2 class="card-title">Announcements</h2>
+                        <p class="card-text">announcements from the instructors.</p>
                     </div>
                 </section>
-
+                
                 <!-- Lab and Homework Section -->
                 <section class="card mb-4">
                     <div class="card-body">
-                        <h2 class="card-title">Lab and Homework</h2>
-                        <p>Access the lab instructions and homework below:</p>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="labs/beginner/lab1.html">Lab 1: Laser Cutting</a></li>
-                            <li class="list-group-item"><a href="labs/beginner/lab2.html">Lab 2: 3D Printing</a></li>
-                        </ul>
+                        <h2 class="card-title">Labs</h2>
+                        <p>All lab sections take place in room 32-211. You are expected to complete all check-offs.</p>
+                        <div class="row">
+                            <!-- Left Column (Beginner Labs) -->
+                            <div class="col-md-6">
+                                <h5>Beginner Section</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="labs/beginner/lab1.html">Lab 1: Laser Cutting a Calendar!</a></li>
+                                    <li class="list-group-item"><a href="labs/beginner/lab2.html">Lab 2: 3D Printing</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Right Column (Advanced Labs) -->
+                            <div class="col-md-6">
+                                <h5>Advanced Section</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="labs/advanced/lab1.html">Lab 1: Laser Cutting</a></li>
+                                    <li class="list-group-item"><a href="labs/advanced/lab2.html">Lab 2: 3D Printing</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <!-- Google Calendar Section -->
                 <section class="card mb-4">
                     <div class="card-body">
-                        <h2 class="card-title">Google Calendar</h2>
-                        <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID_HERE" 
+                        <h2 class="card-title">Course Calendar</h2>
+                        <iframe src="https://calendar.google.com/calendar/embed?src=OWI1ZTdmYjA3MGNmM2U0M2RjNmM3NzZiZjMxZTg5YjM0N2VmNWQ5MWE5YWVlMDNlYmVlZTY2ODFlOWZiNDZjM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" 
                                 style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </section>
