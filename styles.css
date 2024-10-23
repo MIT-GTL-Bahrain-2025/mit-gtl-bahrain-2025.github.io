@@ -1,0 +1,7 @@
+p {
+    font-family: 'Arial', sans-serif;
+}
+    
+.alert alert-info {
+    background-color: #E23737 !important;
+}
