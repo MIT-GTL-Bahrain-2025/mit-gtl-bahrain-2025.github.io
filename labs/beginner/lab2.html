@@ -25,7 +25,6 @@
                     <li><a href="#introduction">Introduction & Safety</a></li>
                     <li><a href="#software">Fabrication Quest</a></li>
                     <li><a href="#ppe">Software & Hardware for the Lab</a></li>
-                    <li><a href="#hardware">Part (0): Fusion360 Workspace</a></li>
                     <li><a href="#machines">Part (1): Sketching Objects and Dimensioning </a></li>
                     <li><a href="#assembly">  Part (2): Mirroring Sketch Geometries </a></li>
                     <li><a href="#testing"> Part(3): Filletting</a></li>
@@ -46,55 +45,43 @@
                 <section class="mb-4">
                     <h1 class="mb-5">Lab 2: Let’s 3D Print a Rotating Keychain!</h1>
                     <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
-                    <h2> 🦺 Introduction & Safety</h2>(1 minute read)
-                    <p>Laser cutting is a digital fabrication method that uses a laser to cut or 
-                        “subtract” materials. In this lab, you'll create a dynamic laser-cut calendar
-                        while learning how to::</p>
+                    <h2> 🦺 Introduction & Safety</h2>(1 minute read) <br> <br>
+                    <p>
+3D printing is an additive (add material) manufacturing process where computer-aided G-code (instruction code for the machine) is translated to build up
+                        material layer by layer. It has various techniques, including <a href="https://www.hubs.com/knowledge-base/what-is-fdm-3d-printing/"> FDM </a>, which extrudes hot <a href="https://pslc.ws/macrog/plastic.htm" > thermoplastics </a> 
+                        (plastics that melt at elevated temperatures), 
+                        <a href="https://formlabs.com/blog/ultimate-guide-to-stereolithography-sla-3d-printing/">SLA</a>, which uses photoresin polymers that cure via light, and
+                        <a href="https://www.stratasys.com/en/guide-to-3d-printing/technologies-and-materials/polyjet-technology/">Polyjet 3D printing</a>, among others.</p>
+                    In this lab, you will <b> learn</b> how to: 
+                    <br> <br> 
                     <ul>
-                        <li>Use Fusion360 for 2D CAD sketches</li>
-                        <li>Learn how to make a lasercut sliding mechanism</li>
-                        <li>Safely operate a laser cutter</li>
-                        <li> Post-process and assemble cut parts </li>
+                        <li> ✅ Create 3D-models from 2D-sketches (extrusion and revolving operations) </li>
+                        <li> ✅ CAD a simple rotating element around a shaft</li>
+                        <li> ✅ CAD a screw/threaded object</li>
+                        <li> ✅ Export files and prepare them for 3D printing 
+</li>
                     </ul>
-                    <p><strong>Before we start</strong>, please make sure you understand the following safety precautions:</p>
-        <ul>
-            <li><strong>Material Compatibility:</strong> Ensure that the material is laser-cuttable, has a thickness under 0.25" (6.35mm), and is cut with the correct power/speed settings.</li>
-            <li><strong>Fumes:</strong> Keep ventilation on and wait before opening the lid after cutting.</li>
-            <li><strong>Eye Protection:</strong> Monitor the process without staring directly at the laser.</li>
-            <li><strong>Emergencies:</strong> In case of fire, do not open the laser cutter lid, simply stop the machine and alert the shop manager immediately.</li>
-            <li><strong>Consultation:</strong> Always consult the D-Lab shop manager before cutting!</li>
-        </ul>
+
                 </section>
                 <hr>
 
 
-                    <img src=media/fab-quest-picture.png class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
                 <br>
                     <h2>🔨 Fabrication Quest of the Day</h2>
                 <ul>
-                    <li><strong>Today, you will CAD 2 parts:</strong>
+                    <li><strong>Today, you will CAD 4-5 parts:</strong>
                         <ul>
-                            <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
-                            <li> (B) The day of the month slider (<strong>x1</strong>)</li>
+                            <li>(A) Threaded Shaft (<strong>x1</strong>)-- allows Remixing</li>
+                            <li> (B) Rotating Blocks  (<strong>x3-4</strong>)-- allows Remixing</li>
                         </ul>
                     </li>
-            <li><strong>And fabricate 1+ parts:</strong>
-                <ul>
-                    <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
-                    <li>(C) Your own <dfn title="add your own flair">“Remix”</dfn> to the assignment</li>
-                </ul>
-                    </li>
-                </ul>
+            <li><strong>Fabricated results will be for next lab, but  you will put your files on the 3D printer today; </strong>
 
-                <b>Remixing</b>
-                <p>Remixing refers to you adding your own touch to a template so that it has your own creative touch to it. This will be a common theme throughout the labs.</p>
-
+<br> <br> 
                 <b>Your instructors will provide you with the following:</b>
                 <ul>
-                <li>(B) The day of the month slider (<strong>x1</strong>)</li>
-                <li>(D) Day of the week slider (<strong>x1</strong>)</li>
-                <li>(E) & (F) Slider stoppers (<strong>x2</strong>)</li>
-                <li>(G) The triangular leg joints (<strong>x2</strong>)</li>
+                <li>(C) The screw cap (<strong>x1</strong>)</li>
                 </ul>
 
 
@@ -103,35 +90,20 @@
 
                 <!-- Materials Section -->
                 <section class="mb-4">
-                    <h2>Software & Hardware</h2>
+                    <h2>🏗️ Software & Hardware</h2>
 
 
                     <h5>Software:</h5>
                         <ul>
-                            <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> (must download before workshop)</li>
-                            </ul>
+                            <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> </li>
+                            <li> <a href= "https://ultimaker.com/software/ultimaker-cura/"> Ultimaker Cura </a> (Ultimaker 3D Printer Slicing Program) </li>
+                    
+                    </ul>
 
-                        <h5>PPE:</h5>
-                        <ul>
-                        <li>Safety goggles</li>
-                        <li>Face mask</li>
-                        <li>Nitrile gloves</li>
-                        </ul>
-
-                        <h5>Hardware:</h5>
-                        <ul>
-                            <li>Prefabricated pieces (<strong>x6</strong>)</li>
-                            <li>Wood boards (calendar)</li>
-                            <li>Wood glue</li>
-                            <li>Sandpaper</li>
-                            <li>Masking tape</li>
-                            <li>Spray paint</li>
-                            <li>Q-tips</li>
-                            </ul>
 
                         <h5>Machines:</h5>
                         <ul>
-                    <li>Laser cutter</li>
+                    <li>FDM 3D Printer</li>
                         </ul>
 
                 </section>
@@ -139,34 +111,12 @@
                 <hr>
 
                 <!-- Procedure Section -->
-                <section class="mb-4">
-                    <!-- Part 0: Understanding Fusion360 Workspace -->
-                    <h4>Part 0: Understanding Fusion360 Workspace (2 mins)</h4>
-                    <p>Watch the introductory video on the Fusion360 workspace and its basic tools.</p>
-                    
-                
 
-                    
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lau71uJUpFo?si=NMwULfvQgD7PLSRF" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-                    
-                    <br> 
-                    
-                <h5>Video Summary</h5>
-
-        <ul>
-        <li><strong>Top Panel:</strong> Save/open files and see current file names.</li>
-        <li><strong>Command Tools Panel:</strong> Solid, surface, and sketch tools are here.</li>
-        <li><strong>Side Panel:</strong> Shows document settings, created bodies, and sketches. You can rename objects, toggle visibility, and track the design hierarchy.</li>
-        <li><strong>Workspace:</strong> Where your sketches or bodies appear; control view angles.</li>
-        <li><strong>History Timeline:</strong> Tracks all design steps. You can adjust or delete steps by right-clicking. To enable, right-click "Document Settings" and select "Capture Design History."</li>
-        </ul>
-        
-                    <hr>
                     
                     <!-- Part 1: Designing the Calendar -->
-                    <h4>Part 1: Sketching Objects and Dimensioning (20 mins)</h4>
+                    <h4>Part (1): Creating Variables & Equations for Dynamic Dimensioning! (10 minutes)
+
+</h4>
 
 
                                 
@@ -174,97 +124,121 @@
         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jjxOnX3LFSA?si=exsTBOIyfLFpX1Sg" title="YouTube video player" allowfullscreen></iframe>
         </div>
                     <br> 
-                <strong>[Parts 1-4 ONLY Covered in video] </strong> 
-        <ol>
-            
-            
-            <li>Create a New Design:
-
-
-                <ul>
-                    <li>Open Fusion360 and create a new design by going to File → New Design → Save. Name it "myDynamicCalendar".</li>
-                    
-                </ul>
-                <br>
-            </li>
-            <li>Choose a Plane for the Sketch:
-            
-
-
-            <ul>
-                    <li> To begin sketching, we need to pick a plane or surface. In this case, we’ll use a plane.</li>
-                    <li>Orient yourself to the top view and click on the xy plane. Make sure the "origin" folder is toggled on so you can see the plane.</li>
-                    <li>Click the Sketch tool icon in the top panel. You’re now in sketch mode. <br> </li> 
-                </ul>
-                        <br>
-            </li>
-            <li>Create the Main Rectangle:
-
-
-                <ul>
-                    <li>Select the Rectangle tool and click on the workspace to begin drawing. Place the first corner at the origin (the white dot).</li>
-                    <li>Drag the rectangle outward and click again to place the other corner. This point can be anywhere for now.</li>
-                    <li>Hit escape or done to stop drawing more rectangles.</li>
-                </ul>
-                <br>
-            </li>
-            <li>Dimension the Rectangle:
-
-
-                <ul>
-                    <li>Select the Dimension tool under Create → Sketch Dimension, or use the shortcut "D".</li>
-                    <li>Click on the width of the rectangle, drag downward, and click on the workspace. Assign it a value of 115 mm (ie, 11.5 cm).</li>
-                    <li>Repeat the process for the length, assigning it 170 mm (ie, 17 cm).</li>
-                </ul>
-                <br>
-                    <hr> 
-            </li>
-            
-
-            <li>Draw the Slider Holes:
+                <strong> Video Summary </strong> 
+       
+                <ol>
+        <li>Dimensioning models through variables allows for model dimension modification with ease</li>
+        <li> To create dimension variables go to: <b>  Modify -> Change Parameters -> Add User Parameter (top "+" sign) </b> </li>
+                    <li>Create a variable for “shaft_inner_d” representing the inner diameter of the Threaded Shaft, and set it to XXmm.</li>
+        <li>Follow table below to add all the following variables, and one equation to your Fusion File Parameters. Don't forget to save as you go! </li>
+    </ol>
+                <br> 
                 
-            
-                        <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Y3tvmqTnfUA?si=Q1St_J6LqrtVpEE9" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-
                 
-                        <strong>[Part 5 ONLY Covered in video] </strong> 
+                <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+        <th scope="col">Part Name (do not add to Fusion)</th>
+      <th scope="col">Variable Name (add in Fusion)</th>
+      <th scope="col">Expression</th>
+      <th scope="col">Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Threaded Shaft Inner Diameter</td>
+      <td>shaft_inner_d</td>
+      <td>XX</td>
+        <td>mm</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Threaded Shaft Outer Diamter</td>
+      <td>shaft_outer_d</td>
+      <td>XX</td>
+      <td>mm</td>
 
 
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Shaft Length for 3 Rotating Blocks</td>
+      <td>shaft_length_3b</td>
+      <td>XX</td>
+      <td>mm</td>
+    </tr>
+ 
+      
+ 
+    <tr>
+      <th scope="row">4</th>
+      <td>Shaft Length for 4 Rotating Blocks</td>
+      <td>shaft_length_4b</td>
+      <td>XX</td>
+      <td>mm</td>
+    </tr>
+      
+          <tr>
+      <th scope="row">5</th>
+      <td>Shaft Thread Length</td>
+      <td>thread_length</td>
+      <td>XX</td>
+      <td>mm</td>
+              
+      <tr>
+      <th scope="row">6</th>
+      <td>Shaft Thread Size</td>
+      <td>thread_size</td>
+      <td>XX</td>
+      <td>mm</td>
+    </tr>
+      
+            <tr>
+      <th scope="row">7</th>
+      <td>Keychain Hole Diameter</td>
+      <td>keychain_hole_d</td>
+      <td>XX</td>
+      <td>mm</td>
+    </tr>
+               <tr>
+      <th scope="row">9</th>
+      <td>Rotating Block Size</td>
+      <td>rot_b_size</td>
+      <td>XX</td>
+      <td>mm</td>
+    </tr>   
+ 
+               <tr>
+      <th scope="row">10</th>
+      <td>Rotating Block thickness</td>
+      <td>rot_b_thick</td>
+      <td>XX</td>
+      <td>mm</td>
+    </tr>
+      
+               <tr>
+      <th scope="row">11</th>
+      <td>Rotating Block Hole Tolerance</td>
+      <td>tolerance</td>
+      <td>XX</td>
+      <td>mm</td>
+    </tr>  
 
-                <ul>
-                    <li>Using the same steps as above, draw another rectangle inside the first one. This will be the hole for the slider.</li>
-                    <li>Dimension the new rectangle to 114 mm (length) and 8 mm (width).</li>
-                    <li>Now, dimension the vertical distance from the new rectangle to the main rectangle's top length to 20 mm.
-                        <li> Dimension again the horizontal distance from the width of the slider hole to the width of the main rectangle to be 8mm (right-side).</li>
-                    <li>Repeat these steps, ensuring the vertical and horizontal distances are (vertical: 67 mm from bottom), (horizontal: 8mm from right) respectively.</li>
-                </ul>
-                <br>
-            </li>
-            <li>Add the Hole for the Triangular Base Finger Joint:
-                                                            <img src=media/Part1-hole-dims.png class="rounded mx-auto d-block img-fluid" height="350" > 
-
-
-                <ul>
-                    <li>To add the next hole, draw another rectangle like before and dimension it to 12mm (length) by "thickness of wood-0.095mm" (width).</li>
-                    <li>Set the distance from the top of the hole rectangle to the main rectangle as 4 mm and from the left side to be 4 mm too.</li>
-                </ul>
-                <br>
-            </li>
-            <li>Quickly Duplicating Rectangles:
-
-
-                <ul>
-                    <li>We need three more rectangular holes, but instead of drawing them again, we’ll show a trick in the next section to quickly create multiple rectangles. This method saves time, especially if you have many shapes to duplicate.</li>
-                </ul>
-                <br>
-            </li>
-        
-        </ol>
-
-
+                <tr>
+      <th scope="row">12</th>
+      <td>Rotating Block Hole Diameter</td>
+      <td>shaft_outer_d + tolerance</td>
+      <td>XX</td>
+      <td>mm</td>
+    </tr>  
+           
+      
+  </tbody>
+</table>
+                
+                
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4>
                         Ask your instructor for a check-off on completing Part (1)
@@ -272,188 +246,91 @@
         <br> 
                     <hr> 
                     
-                    <h4>Part (2): Mirroring Sketch Geometries (10 minutes)</h4>
+                    <h4>Part 2: Sketch and Dimension Parametrically  (Threaded Shaft) (5 minutes)</h4>
 
-        <p> To save time, let’s mirror the rectangle instead of creating it again. Mirroring works by reflecting shapes about a line or plane, similar to how you <a href= "https://www.mathsisfun.com/geometry/reflection.html">learned in school</a> with x,y and z axes.
-            </p>
-                    <ol>
-                <li>Create a Mirror Line:
-
-                        <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pRuzVzj0WeU?si=5M0H3JGPHdoHU4PS" title="YouTube video player" allowfullscreen></iframe>
+                 <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jjxOnX3LFSA?si=exsTBOIyfLFpX1Sg" title="YouTube video player" allowfullscreen></iframe>
         </div>
 
-
-
-                <ul>
-                    <li>Select the Line tool, but don’t click done or anywhere on the workspace yet.</li>
-                    <li>On the side panel, choose Construction Line. This type of line is not part of the model itself, it’s used purely for construction purposes.</li>
-                </ul>
-            </li>
-            <li>Position the Line:
-
-
-                <ul>
-                    <li>Hover over the length of the rectangle until you see a small triangle appear—this marks the midpoint of the rectangle’s length.</li>
-                    <li>Click on the midpoint and drag your mouse to the opposite side of the rectangle. Ensure you also see the triangle (indicating midpoint) and a symbol indicating the line is perpendicular to the rectangle width.</li>
-                    <li>Now you've created a construction line that we can mirror the rectangle across!</li>
-                </ul>
-            </li>
-        </ol>
+                <br>
+                
+                <strong> Video Summary </strong> 
+       
+             
+                <br> 
+                
+        <ol>
+        <li>Draw a circle at the center (0,0).</li>
+        <li>Dimension the first circle with “shaft_outer_d.”</li>
+        <li>Draw a second circle.</li>
+        <li>Dimension the second circle with “shaft_inner_d.”</li>
+        <li>Select both circles.</li>
+        <li>Apply a “concentric” sketch relation to ensure both circles share the same center.</li>
+        <li> Exit Sketch, and rename the Sketch to "shaft-circles"</li>
+                </ol>
+                <br> 
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 2</h4>
-                        Show your instructor that you have constructed a mirroring line
+                        Show your instructor that you have constructed the concentric circles and dimensioned theme paramterically
                     </div>
                     
                     
                     
                     
-            <p>Now, let's create a horizontal construction line across the rectangle’s width:</p>
-                    <ol>
-            <li>Create a Horizontal Line:                                                       
-                        <img src=media/Part1-horizontal-construction.png class="rounded mx-auto d-block img-fluid" height="500"> 
-
-
-
-
-                <ul>
-                    <li>Repeat the previous steps to draw a line, but this time horizontally.</li>
-                    <li>Start and end the line at the midpoints of the rectangle’s width. Remember, it’s a construction line!</li>
-                </ul>
-                <br>
-            </li>
-            <li>Mirror the Rectangular Hole:
-
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mgZkK3gfzWQ?si=SRhefPmbBLAhNABt" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-                <ul>
-                    <li>Go to the mirror tool (under Create → Mirror).</li>
-                    <li>In the pop-up, select the rectangular hole you made as the object to mirror.</li>
-                    <li>Choose the vertical construction line as the mirror line.</li>
-                    <li>Congratulations, you’ve mirrored the part and have two holes!</li>
-                </ul>
-                <br>
-            </li>
-            <li>Mirror Again:
-                        <img src=media/Part2-mirroring-horizontal.png class="rounded mx-auto d-block img-fluid" height="600"> 
-
-
-
-                <ul>
-                    <li>Repeat the mirroring process, but this time use the horizontal construction line to mirror both holes.</li>
-                    <li>All your four holes are now complete!</li>
-                </ul>
-            </li>
-        </ol>
-                    
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
-                        <h4>Checkoff 3</h4>
-                        Show your instructor that you have constructed all four rectangular holes
-                    </div>
-                    
-
-        <hr> 
+         <hr>
                     <!-- Part 4: Assembly and Post-Processing -->
-            <h4>Part 3: Filletting (5 minutes)</h4>
+            <h4>Part 3: Extruding the Sketch (give height to the shaft!) (5 minutes)</h4>
                     
                     
                     
                                 <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W_fzMl9RQEg?si=CREtiFmW-6NQiuxQ" title="YouTube video player" allowfullscreen></iframe>
         </div>
-                        <p>Filleting is the process of rounding off sharp edges on your design. For laser cutting, filleting is important because sharp corners can create stress points in the material, which may lead to cracks or breakage. Filleting smooths out those corners, improving durability and aesthetics.</p>
+            <br> 
+                
+                                <strong> Video Summary </strong> 
+<br> 
 
-
-        <p>Now your design is filleted and ready for a cleaner, more durable laser cut!</p>
-
-
-
+                <ol>
+        <li>Click on <strong>Create</strong>.</li>
+        <li>Select the <strong>Extrude Tool</strong>.</li>
+        <li>Under <strong>Profile</strong>, select the area formed by the union of both circles (ie the large circle).</li>
+        <li>Set the <strong>Direction</strong> to <strong>One Side</strong>.</li>
+        <li>Type the <strong>Distance</strong> as “shaft_length.”</li>
+        <li>Choose the operation as <strong>New Component</strong>.</li>
+        <li>Click <strong>Ok</strong> to create the solid cylinder.</li>
+    </ol>
+                
+                <br> 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 4</h4>
-                    Show the filetted corners to your instructor
+                        <h4>Checkoff 3</h4>
+                    Show the extruded solid cylinder (shaft) to your instructor
                     
                     </div>
         <hr>
             
-                    <h4>Part 4: Linear Patterning (10 minutes)</h4>
+                    <h4>Part 4: Extrude-Cut (Make a hole in the shaft!) (5 minutes)</h4>
 
-                        <p>Next, let's design the small day-of-the-month slider:</p>
-
-
-                    <ol>
-            <li><strong>Draw the Outer Rectangle</strong>:
-                                <img src=media/part4-drawrect.png class="rounded mx-auto d-block img-fluid" height="600"> 
-
-
-                <ul>
-                    <li>Similar to Part(1), draw a rectangle. Dimension it to <strong>74mm by 65mm</strong>, and make sure it’s not overlapping the previous design's main.</li>
-                </ul>
-            </li>
-            <li><strong>Create a Smaller Rectangle Inside</strong>:
-                <ul>
-                    <li>Inside this rectangle, draw a smaller one representing the holes for days of the month. Dimension it to <strong>7mm by 8mm</strong>.</li>
-                    <li>Place this smaller rectangle <strong>10 mm</strong> from the top and <strong>2 mm</strong> from the side (left).</li>
-                </ul>
-                
-            <img src=media/part4-filett.png class="rounded mx-auto d-block img-fluid" height="600"> 
-
-
-            </li>
-            <li><strong>Fillet the Rectangles</strong>:
-                <ul>
-                    <li>Input the fillet radius as <strong>2 mm</strong>.</li>
-                </ul>
-                <br>
-                        <p>  Now that we have filleted our rectangles, let’s create the remaining rectangles.</p>     
-
-
-            </li>
-            <li><strong>Adding Multiple Rectangles</strong>:
-                <ul>
-                    <li>Instead of creating X more rectangles manually, let’s use <strong>linear patterning</strong>.</li>
-                </ul>
-                
-            </li>
-            <li><strong>What is Linear Patterning?</strong>
-                <ul>
-                    
-                    <li>Linear patterning replicates an object along a straight line, horizontally, vertically, or both. It’s a shortcut to avoid repetitive work.</li>
-                </ul>
-                                        <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zUqkUZr-fq0?si=tAs3AjpJF9ugEhpL" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-            </li>
-            <li><strong>Use the Linear Pattern Tool</strong>:
-                <ul>
-                    <li>Select the part you just made.</li>
-                    <li>For the horizontal patterning, set spacing to <strong>9 mm</strong> and the number of copies to <strong>7</strong>.</li>
-                    <li>For the vertical patterning, set spacing to <strong>13 mm</strong> and the number to <strong>5</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>Reflect</strong>:
-                <ul>
-                    <li>Why don’t we use mirroring here?</li>
-                </ul>
-            </li>
-        </ol>
+                <br> 
+<b> Video Summary: </b>   
             
+                <ol>
+        <li> Toggle "Shaft-circles" sketch back on</li>
+        <li>Click on <strong>Create</strong>.</li>
+        <li>Select the <strong>Extrude Tool</strong>.</li>
+        <li>Under <strong>Profile</strong>, select the area formed by the smaller circle.</li>
+        <li>Set the <strong>Direction</strong> to <strong>One Side</strong>.</li>
+        <li>Set the <strong>Distance</strong> to “shaft_length.” (you might need to set to "-shaft_length" if you see it pointing away from your shaft cylindrical body</li>
+        <li>Choose the operation as <strong>Cut</strong>.</li>
+        <li>Click <strong>Ok</strong> to create the solid cylinder.</li>
+    </ol>
                     
-                    
-                    
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 5</h4>
-                        Show your lineared patterned result and answer the reflection question
-                    </div>
-                </section>
 
                 <hr>
 
-        <h4>Part (5): Importing DXF File (5 minutes)</h4>
+        <h4>Part (5): Let's Revolve-- Create Supporting Construction Geometries (10 minutes)</h4>
 
         <p>We need to add text to our calendar, so let’s import a DXF file.</p>
 
