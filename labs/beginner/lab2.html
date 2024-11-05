@@ -58,6 +58,8 @@
                         <li> ✅ Create 3D-models from 2D-sketches (extrusion and revolving operations) </li>
                         <li> ✅ CAD a simple rotating element around a shaft</li>
                         <li> ✅ CAD a screw/threaded object</li>
+                         <li> ✅ Make a Mechanical Assembly </li>
+                        <li> ✅ Render a 3D Model in Fusion360</li>
                         <li> ✅ Export files and prepare them for 3D printing 
 </li>
                     </ul>
@@ -114,7 +116,7 @@
 
                     
                     <!-- Part 1: Designing the Calendar -->
-                    <h4>Part (1): Creating Variables & Equations for Dynamic Dimensioning! (10 minutes)
+                    <h4>Part 1: Creating Variables & Equations for Dynamic Dimensioning! (10 minutes)
 
 </h4>
 
@@ -330,44 +332,57 @@
 
                 <hr>
 
-        <h4>Part (5): Let's Revolve-- Create Supporting Construction Geometries (10 minutes)</h4>
+        <h4>Part 5: Create Supporting Construction Geometries (10 minutes)</h4>
 
-        <p>We need to add text to our calendar, so let’s import a DXF file.</p>
-
-                Download DXF file from <a href= "media/text-calendar.dxf"> here</a>
-        <p><strong>What is a DXF?</strong></p>
-        <p>A DXF (Drawing Exchange Format) is a vector file format used for 2D designs, allowing you to import elements like text from software like Illustrator into Fusion360.</p>
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nB-scyy2t7M?si=27qVVnxvxmoU3u2N" title="YouTube video player" allowfullscreen></iframe>
-        </div>
+            <ol>
+        <li>
+            <strong>Create an Axis Through the Cylinder:</strong>
+            <ul>
+                <li>Go to the <strong>Construct</strong> command in the top menu.</li>
+                <li>Select <strong>Axis Through Cylinder</strong>.</li>
+                <li>Click on the cylinder to establish the axis of rotation.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Create a Plane at an Angle to the Axis:</strong>
+            <ul>
+                <li>Again, in the <strong>Construct</strong> menu, select <strong>Plane at Angle</strong>.</li>
+                <li>Click on the axis you created.</li>
+                <li>Enter the angle as "0" for the plane, then confirm.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Use the Plane to Sketch the profile for the Top Holder on [REMIX OPPORTUNITY]:</strong>
+            <ul>
+                <li>On the new plane, right click on it and select <strong>Create New Sketch</strong> (there are other ways 
+                    of doing this, but we opt for right clicking on plane for now).</li>
+                <li> To ensure we remain within bounds, go to <strong> Create</strong>, then <strong> Project</strong>, <strong> Select Entity (Selection Filter)</strong> and click on the perimeter of the top circle of the cylinder for <strong> Geometry</strong>. Kepp Projection Link on.
+                <li>Draw the profile you would be revolving for the top holder on this plane. Recall that this should be symmetric and should not extrude out too much. Make sure that the profile is <strong> closed!</strong></li>
+                <li>Once done, click <strong>Finish Sketch</strong></li>
+            </ul>
+        </li>
+    </ol>
                 
-        <ol>
-            <li>Click Insert → Insert DXF in Fusion360.</li>
-            <li>Select a Plane: You'll need to choose a plane to import the DXF onto. Select the XY plane.</li>
-            <li>Move the text to the desired position in the workspace by dragging it (here, move to X:-20mm, Y:208mm).</li>
-            <li>Now, you’ve imported the text! You can always design in external software (like Illustrator) and bring it into Fusion360 as a DXF file to further manipulate-- this will be helpful later on if you want to add logos for 3D printing, for example.</li>
-        </ol>
-
+                <br> 
                 
-            
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                In the next step, we will revolve this profile to create a symmetric top keychain holder.
+                    <br> 
+                
+                <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 6</h4>
-        Show the correctly imported and placed dxf to your instructor            </div>
+        Show your sketched profile to your instructor           </div>
         <hr> 
                 
                 
                 
-                <h4>Part (6): Remixing (30 minutes)</h4>
+                <h4>Part 6: Revolving (10 minutes)</h4>
 
                 
                     <img src=media/Remixing-examples.png class="rounded mx-auto d-block img-fluid"> 
 
 
-        <p> Now it's time to “remix” this assignment by adding your own flair! Be creative and 
-            think about how you can personalize your design.
-            If there's anything specific you want to create but aren't sure how, 
-            let us know so we can guide you!</p>      
+        
             
                 
         <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
