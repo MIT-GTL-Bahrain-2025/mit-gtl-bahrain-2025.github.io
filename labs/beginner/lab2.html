@@ -116,7 +116,7 @@
 
                     
                     <!-- Part 1: Designing the Calendar -->
-                    <h4>Part 1: Creating Variables & Equations for Dynamic Dimensioning! (10 minutes)
+                    <h4>Part (1): Creating Variables & Equations for Dynamic Dimensioning! (10 minutes)
 
 </h4>
   <div class="embed-responsive embed-responsive-16by9">
@@ -237,7 +237,7 @@
         <br> 
                     <hr> 
                     
-                    <h4>Part 2: Sketch and Dimension Parametrically  (Sketching Keychain Shaft) (5 minutes)</h4>
+                    <h4>Part (2): Sketch and Dimension Parametrically  (Sketching Keychain Shaft) (5 minutes)</h4>
 
                     <img src=media/3dprinting-pt2.png class="rounded mx-auto d-block img-fluid"> 
 
@@ -256,13 +256,13 @@
                 </ol>
                 <br>
                 
-                **If you need a refresher on how to sketch or dimesnion, please visit <a href="lab1.html"> Lab 1</a>
+                📍 If you need a refresher on how to sketch or dimension, please visit <a href="lab1.html"> Lab 1</a> !
                 <br> 
    
                     
          <hr>
                     <!-- Part 4: Assembly and Post-Processing -->
-            <h4>Part 3: Extruding the Sketch (give height to the shaft!) (5 minutes)</h4>
+            <h4>Part (3): Extruding the Sketch (give height to the shaft!) (5 minutes)</h4>
                     
                     
                     
@@ -275,47 +275,60 @@
                 <ol>
         <li>Click on <strong>Create</strong>.</li>
         <li>Select the <strong>Extrude Tool</strong>.</li>
-        <li>Under <strong>Profile</strong>, select the area formed by the union of both circles (ie the large circle).</li>
+        <li>Under <strong>Profile</strong>, select the area formed by the circle from your "shaft-circle" sketch.</li>
         <li>Set the <strong>Direction</strong> to <strong>One Side</strong>.</li>
-        <li>Type the <strong>Distance</strong> as “shaft_length.”</li>
+        <li>Type the <strong>Distance</strong> as “shaft_length_3b” or "shaft_length_4b"-- here you must decide whether you
+                    will make a 3 block or 4 block shaft; you can always change your mind if you run out of time later and want to do 3 blocks! 🤗</li>
         <li>Choose the operation as <strong>New Component</strong>.</li>
         <li>Click <strong>Ok</strong> to create the solid cylinder.</li>
+                    <li> Write click on the component and <strong> Rename it</strong> to "Shaft"</li>
     </ol>
                 
                 <br> 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 3</h4>
+                        <h4>Checkoff 2</h4>
                     Show the extruded solid cylinder (shaft) to your instructor
                     
                     </div>
         <hr>
             
-                    <h4>Part 4: Making a Threaded Hole (5 minutes)</h4>
+                    <h4>Part (4): Making a Threaded Hole (5 minutes)</h4>
 
                 <br> 
 <b> Video Summary: </b>   
             
                 <ol>
-        <li> Toggle "Shaft-circles" sketch back on (maybe?)</li>
-        <li>Go on <strong>Create</strong>.</li>
-        <li>Select the <strong>Extrude Tool</strong>.</li>
-        <li>Under <strong>Profile</strong>, select the area formed by the smaller circle.</li>
-        <li>Set the <strong>Direction</strong> to <strong>One Side</strong>.</li>
-        <li>Set the <strong>Distance</strong> to “shaft_length.” (you might need to set to "-shaft_length" if you see it pointing away from your shaft cylindrical body</li>
-        <li>Choose the operation as <strong>Cut</strong>.</li>
-        <li>Click <strong>Ok</strong> to create the solid cylinder.</li>
+        <li> Toggle "Shaft-circle" sketch back on</li>
+        <li>Go to <strong>Create</strong>.</li>
+        <li>Select the <strong>"Hole" Tool</strong>.</li>
+        <li>Under <strong>Face</strong>, select the tope face of the cylinder.</li>
+        <li>Set the <strong>Reference</strong> to <strong>the center of the circle sketch</strong> (i.e. the "point" at the circle's center from the sketch).</li>
+        <li>Set the <strong>Hole Type</strong> to <b> “Simple” </b></li>
+        <li>Set the <strong>Hole Tap Type</strong> to <b> “Tapped” </b></li>
+        <li>Set the <strong>Thread Offset</strong> to <b> “Full” </b></li>
+        <li>Set the <strong>Drill Point</strong> to <b> “Angle” </b></li>
+        <li>Set the <strong>Depth</strong> to <b> "thread_depth" </b></li>
+        <li>Set the <strong>Size</strong> to <b> 7mm </b></li>
+         <li>Set the <strong>Designation</strong> to <b> M7mmx1mm </b></li>
+         <li>Have <strong>Modeled</strong> checked <b> ON </b></li>
+        <li>Click <strong>Ok</strong> to create your threaded hole.</li>
     </ol>
+                <br> 
+             
+              <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 3</h4>
+                    Show the threaded hole to your instructor, and explain to them what M7mmx1mm means (you are encouraged to look up the answer online 👀)!
                     
+                    </div>  
+                
 
                 <hr>
 
-                
-                
-                <h4> Part 5: Create Threading </h4>
-                
+                                
                 <hr> 
-        <h4>Part 6: Create Supporting Construction Geometries (10 minutes)</h4>
+        <h4>Part (5): Create Supporting Construction Geometries (10 minutes)</h4>
 
             <ol>
         <li>
