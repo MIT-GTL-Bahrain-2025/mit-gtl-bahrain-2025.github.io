@@ -440,13 +440,12 @@
                 
                 <strong>Design Constraints Summary: </strong>
                 <br> <br> 
-                <ol> <li> Block Size:   </li>
-                <li>  Block Thickness:   </li>
-                 <li>  Hole Size:   </li>
-                 <li>  General 3D Printing Guidelines:  
+                <ol> <li> Block Size: 12mm (variable: rot_b_size)  </li>
+                 <li>  Hole Size:  9.6mm (variable: rot_b_hole_d)  </li>
+                 <li>  General 3D Printing Guidelines:  <a href= "https://www.hydraresearch3d.com/design-rules"> Link1</a>, <a href="https://wikifactory.com/+wikifactory/stories/ultimate-guide-how-to-design-for-3d-printing"> Link2</a>
                     <ul> 
-                     <li> Minimum Feature size: </li>
-                        <li> Angles (for minumum support material): </li>
+                     <li> Minimum Feature size:  2x Nozzle diameter (e.g. 0.8mm for 0.4mm Nozzle) </li>
+                        <li> Angles (for minumum support material):  < 50 Degrees </li>
                      </ul></li></ol>
                 <br> 
               
@@ -459,13 +458,55 @@
                 
         <h4>Part (11): Assigning Materials & Colors (15 minutes)</h4>
 
-                                                                          <img src=media/block-examples.png class="rounded mx-auto d-block img-fluid"> 
+         <img src=media/block-examples.png class="rounded mx-auto d-block img-fluid"> 
+                
+                <ol>
+        <li>
+            <strong>Assign Material:</strong>
+            <ul>
+                <li>Right-click the <strong>body/component</strong> in the <strong>Browser</strong> and select <strong>"Appearance"</strong>.</li>
+                <li>Drag a material from the <strong>Appearance</strong> panel to the body (whole body or specific faces).</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Custom Color:</strong>
+            <ul>
+                <li>Right-click the applied material and choose <strong>"Edit"</strong>.</li>
+                <li>Click the <strong>color box</strong> to select a <strong>custom color</strong>.</li>
+            </ul>
+        </li>
+    </ol>
 
 <hr> 
                 
    <h4>Part (12): Assemblies in CAD (10 minutes)</h4>
 
-                
+             <ol>
+        <li>
+            <strong>Ensure Blocks Are Components:</strong>
+            <ul>
+                <li>Convert blocks to <strong>components</strong> by right-clicking and selecting <strong>"Convert to Component"</strong>.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Create Assembly:</strong>
+            <ul>
+                <li>Click <strong>"Assemble"</strong> > <strong>"Joint"</strong>.</li>
+                <li>Choose the <strong>Shaft</strong> as <strong>Component 1</strong> and the first <strong>Block</strong> as <strong>Component 2</strong>.</li>
+                <li>Define the joint type as <strong>"Simple"</strong>.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Add Remaining Blocks:</strong>
+            <ul>
+                <li>For <strong>bodies</strong>, use <strong>"Align Relationships"</strong>.</li>
+                <li>For <strong>components</strong>, apply <strong>"Joint"</strong> again.</li>
+            </ul>
+        </li>
+    </ol>   
 
             <hr> 
                 
@@ -473,31 +514,118 @@
                 
   <img src=media/block-examples-rendered.png class="rounded mx-auto d-block img-fluid"> 
 
+                <ol>
+        <li>
+            <strong>Switch to Render Workspace:</strong>
+            <ul>
+                <li>Click on the <strong>Design</strong> tab and switch to the <strong>Render</strong> workspace.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Adjust Scene Settings:</strong>
+            <ul>
+                <li>Click on <strong>Scene Settings</strong> to adjust the lighting and background to your liking.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Render and Save Image:</strong>
+            <ul>
+                <li>Click on <strong>In-Canvas Render</strong> to generate the render.</li>
+                <li>Once done, save the image to your computer.</li>
+            </ul>
+        </li>
+    </ol>
+
                 
             <hr> 
 
                 
  <h4>Part (14): Export for 3D Printing (5 minutes)</h4>
 
+                    <ol>
+        <li>
+            <strong>Export the 3D Model:</strong>
+            <ul>
+                <li>Click <strong>File</strong> in the top-left corner, then select <strong>3D Print</strong>.</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Use the 3D Print Utility:</strong>
+            <ul>
+                <li>Click on <strong>3D Print from Utility</strong>.</li>
+                <li>Choose <strong>Application Custom</strong>, and then <strong>load CURA</strong> from your applications list.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Open in Cura:</strong>
+            <ul>
+                <li>After selecting your model, click <strong>OK</strong>.</li>
+                <li><strong>CURA</strong> will open automatically with the selected model.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Export Each Component:</strong>
+            <ul>
+                <li>Repeat the process for each component to export them one by one.</li>
+            </ul>
+        </li>
+    </ol>
+                
+                
   <hr> 
                 
                 
   <h4>Part (15): Setting Up File for 3D Printing (10 minutes)</h4>
 
+<ol>
+        <li>
+            <strong>Adjust Model Orientation:</strong>
+            <ul>
+                <li>Ensure your models are in the correct orientation.</li>
+                <li>Use <strong>Rotate</strong> and <strong>Move</strong> tools to adjust the position if needed.</li>
+                <li>Make sure models do not overlap.</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Adjust 3D Printing Settings:</strong>
+            <ul>
+                <li>Set <strong>Layer Thickness</strong> to <strong>0.1mm</strong> (fine quality, for threading).</li>
+                <li>Set <strong>Speed</strong> to <strong>100mm/s</strong>.</li>
+                <li>Set <strong>Fill Density</strong> to <strong>15%</strong>.</li>
+                <li>Enable <strong>Support</strong> (set to "only touching the print bed").</li>
+                <li>Disable <strong>Build Plate Adhesion</strong> (usually recommend to use brim, but here we just don't want to 
+                    affect your design).</li>
+            </ul>
+        </li>
 
+        <li>
+            <strong>Slicing and Preview:</strong>
+            <ul>
+                <li>Click <strong>Slice</strong> to generate the G-code.</li>
+                <li>Click <strong>Preview</strong> to check your print setup before exporting.</li>
+            </ul>
+        </li>
+    </ol>
+                <hr> 
                 
                 <!-- Submission Section -->
                 <section class="mb-4">
                     <h2>Discussion & Reflections</h2>
         <ol>
-            <li><strong>Discuss the advantages and limitations of using laser cutting for digital fabrication.</strong>
+            <li><strong>Discuss the advantages and limitations of using 3D Printing for digital fabrication.</strong>
                 <ul>
                     <li>What can we make? What is difficult to make?</li>
                 </ul>
             </li>
             <li><strong>Reflect on the design process</strong> 
                 <ul>
-                    <li>Consider any modifications that could improve future projects.</li>
+                    <li>Consider any modifications that could have improved/elevated youre remix design.</li>
                 </ul>
             </li>
             
