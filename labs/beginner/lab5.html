@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5: Let's Assemble a Phone Stand!</title>
+    <!-- Bootswatch Litera CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
+       <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
+
+    <link rel="stylesheet" href="../../styles.css"></link>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Container -->
+    <div class="container" >
+    <div class="row">
+        <!-- Page Heading of the Lab-->        
+        <div class="col-md-4">
+            <div class="sticky-top" style="padding-top:100px;" >
+                <p>Total Time: 30 minutes</p>
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#introduction">Introduction & Safety</a></li>
+                    <li><a href="#parts">Know your Tools!</a></li>
+                    <li><a href="#drill">Drill a Hole</a></li>
+                    <li><a href="#screw">Screw the Screw</a></li>
+                    <li><a href="#nuts">Tighten the Nuts</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="col-md-8" style="padding-top:100px;">
+                <section class="mb-4">
+                    <h1 class="mb-5"> <a id="introduction">Lab 5: Let's Assemble a Phone Stand!</a></h1>
+                   
+                    <img src=media/lab5/fig1.png class="rounded mx-auto d-block img-fluid"> 
+                    <br />
+                    <h2>🦺 Introduction & Safety</h2>(1 minute read)
+                    <br> <br>
+                    <p>After your parts are laser cut, we now need to assemble them into functional objects</p>
+                    
+                    In this lab, you'll assemble parts a phone stand that looks like a little TV! You can also adjust the direction of the antennas. Through this experience, you will learn how to:                        
+                    <br> 
+                    <ul>
+                        <li> ✅ Use a center punch to locate a hole</li>
+                        <li> ✅ Use a drill to drill a hole</li>
+                        <li>✅ Use a long screw to secure four layers together</li>
+                        <li> ✅ Use a rod (?) to assemble laser-cut hinges  </li>
+                    </ul>
+                </section>
+                <hr>
+                    <img src=media/fab-quest-picture.png class="rounded mx-auto d-block img-fluid"> 
+                <br>
+            <h2> 🔨 Fabrication Quest of the Day </h2>
+                <ul>
+                    <li><strong>Today, you will CAD 2 parts:</strong>
+                        <ul>
+                            <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
+                            <li> (B) The day of the month slider (<strong>x1</strong>)</li>
+                        </ul>
+                    </li>
+            <li><strong>And fabricate 1+ parts:</strong>
+                <ul>
+                    <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
+                    <li>(C) Your own <dfn title="add your own flair">“Remix”</dfn> to the assignment</li>
+                </ul>
+                    </li>
+                </ul>
+
+                <b>Remixing</b>
+                <p>Remixing refers to you adding your own touch to a template so that it has your own creative touch to it. This will be a common theme throughout the labs.</p>
+
+                <b>Your instructors will provide you with the following:</b>
+            <a id="software"> </a>
+                <ul>
+                <li>(B) The day of the month slider (<strong>x1</strong>)</li>
+                <li>(D) Day of the week slider (<strong>x1</strong>)</li>
+                <li>(E) & (F) Slider stoppers (<strong>x2</strong>)</li>
+                <li>(G) The triangular leg joints (<strong>x2</strong>)  </li>
+                </ul>
+
+ 
+                <hr>
+                
+
+                <!-- Materials Section -->
+           
+                <section class="mb-4">
+                    <h2>🏗️ Software & Hardware</h2>
+
+
+                    <h5>Software:</h5>
+                        <ul>
+                            <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> (must download before workshop)</li>
+                            <li> <a href="">Adobe Illustrator</a> <i> *Can download through Creative Cloud*</i> </li>
+                    
+                    </ul>
+
+                        <h5>PPE:</h5>
+                        <ul>
+                        <li>Safety goggles</li>
+                        <li>Face mask</li>
+                        <li>Nitrile gloves</li>
+                        </ul>
+
+                        <h5>Hardware:</h5>
+                        <ul>
+                            <li>Prefabricated pieces (<strong>x6</strong>)</li>
+                            <li>Wood boards (calendar)</li>
+                            <li>Wood glue <a id="part0"> </a></li> 
+                            <li>Sandpaper</li>
+                            </ul>
+
+                        <h5>Machines:</h5> 
+                        <ul>
+                    <li>Laser cutter</li>
+                        </ul>
+
+                </section>
+
+                <hr>
+
+                <!-- Procedure Section -->
+                <section class="mb-4">
+                    <!-- Part 0: Understanding Fusion360 Workspace -->
+                    <h4>Part (0): Understanding Fusion360 Workspace (2 mins)</h4>
+                    <p>Watch the introductory video on the Fusion360 workspace and its basic tools.</p>
+                    
+                
+
+                    
+                    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lau71uJUpFo?si=NMwULfvQgD7PLSRF" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                    
+                    <br> 
+                    
+                <h5>Video Summary</h5>
+
+        <ul>
+        <li><strong>Top Panel:</strong> Save/open files and see current file names.</li>
+        <li><strong>Command Tools Panel:</strong> Solid, surface, and sketch tools are here.</li>
+        <li><strong>Side Panel:</strong> Shows document settings, created bodies, and sketches. You can rename objects, toggle visibility, and track the design hierarchy.</li>
+        <li><strong>Workspace:</strong> Where your sketches or bodies appear; control view angles. <a id="part1"> </a></li>
+        <li><strong>History Timeline:</strong> Tracks all design steps. You can adjust or delete steps by right-clicking. To enable, right-click "Document Settings" and select "Capture Design History."</li>
+        </ul>
+        
+                    <hr>
+                    
+                    <!-- Part 1: Designing the Calendar -->
+                    <h4>Part (1): Sketching Objects and Dimensioning (20 mins)</h4>
+
+
+                                
+                    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jjxOnX3LFSA?si=exsTBOIyfLFpX1Sg" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                    <br> 
+                <strong>[Parts 1-4 ONLY Covered in video] </strong> 
+        <ol>
+            
+            
+            <li>Create a New Design:
+
+
+                <ul>
+                    <li>Open Fusion360 and create a new design by going to File → New Design → Save. Name it "myDynamicCalendar".</li>
+                    
+                </ul>
+                <br>
+            </li>
+            <li>Choose a Plane for the Sketch:
+            
+
+
+            <ul>
+                    <li> To begin sketching, we need to pick a plane or surface. In this case, we’ll use a plane.</li>
+                    <li>Orient yourself to the top view and click on the xy plane. Make sure the "origin" folder is toggled on so you can see the plane.</li>
+                    <li>Click the Sketch tool icon in the top panel. You’re now in sketch mode. <br> </li> 
+                </ul>
+                        <br>
+            </li>
+            <li>Create the Main Rectangle:
+
+
+                <ul>
+                    <li>Select the Rectangle tool and click on the workspace to begin drawing. Place the first corner at the origin (the white dot).</li>
+                    <li>Drag the rectangle outward and click again to place the other corner. This point can be anywhere for now.</li>
+                    <li>Hit escape or done to stop drawing more rectangles.</li>
+                </ul>
+                <br>
+            </li>
+            <li>Dimension the Rectangle:
+
+
+                <ul>
+                    <li>Select the Dimension tool under Create → Sketch Dimension, or use the shortcut "D".</li>
+                    <li>Click on the width of the rectangle, drag downward, and click on the workspace. Assign it a value of 115 mm (ie, 11.5 cm).</li>
+                    <li>Repeat the process for the length, assigning it 170 mm (ie, 17 cm).</li>
+                </ul>
+                <br>
+                    <hr> 
+            </li>
+            
+
+            <li>Draw the Slider Holes:
+                
+            
+                        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Y3tvmqTnfUA?si=Q1St_J6LqrtVpEE9" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+
+
+                
+                        <strong>[Part 5 ONLY Covered in video] </strong> 
+
+
+
+                <ul>
+                    <li>Using the same steps as above, draw another rectangle inside the first one. This will be the hole for the slider.</li>
+                    <li>Dimension the new rectangle to 114 mm (length) and 8 mm (width).</li>
+                    <li>Now, dimension the vertical distance from the new rectangle to the main rectangle's top length to 20 mm.
+                        <li> Dimension again the horizontal distance from the width of the slider hole to the width of the main rectangle to be 8mm (right-side).</li>
+                    <li>Repeat these steps, ensuring the vertical and horizontal distances are (vertical: 67 mm from bottom), (horizontal: 8mm from right) respectively.</li>
+                </ul>
+                <br>
+            </li>
+            <li>Add the Hole for the Triangular Base Finger Joint:
+                                                            <img src=media/Part1-hole-dims.png class="rounded mx-auto d-block img-fluid" height="350" > 
+
+
+                <ul>
+                    <li>To add the next hole, draw another rectangle like before and dimension it to 12mm (length) by "thickness of wood-0.095mm" (width).</li>
+                    <li>Set the distance from the top of the hole rectangle to the main rectangle as 4 mm and from the left side to be 4 mm too.</li>
+                </ul>
+                <br>
+            </li>
+            <li>Quickly Duplicating Rectangles: 
+
+
+                <ul>
+                    <li>We need three more rectangular holes, but instead of drawing them again, we’ll show a trick in the next section to quickly create multiple rectangles. This method saves time, especially if you have many shapes to duplicate.</li>
+                </ul>
+                <br>
+            </li>
+        
+        </ol>
+
+
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 1</h4> <a id="part2"> </a>
+                        Ask your instructor for a check-off on completing Part (1)
+                    </div>
+        <br> 
+                    <hr> 
+                    
+                    <h4>Part (2): Mirroring Sketch Geometries (10 minutes)</h4>
+
+        <p> To save time, let’s mirror the rectangle instead of creating it again. Mirroring works by reflecting shapes about a line or plane, similar to how you <a href= "https://www.mathsisfun.com/geometry/reflection.html">learned in school</a> with x,y and z axes.
+            </p>
+                    <ol>
+                <li>Create a Mirror Line:
+
+                        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pRuzVzj0WeU?si=5M0H3JGPHdoHU4PS" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+
+
+
+                <ul>
+                    <li>Select the Line tool, but don’t click done or anywhere on the workspace yet.</li>
+                    <li>On the side panel, choose Construction Line. This type of line is not part of the model itself, it’s used purely for construction purposes.</li>
+                </ul>
+            </li>
+            <li>Position the Line:
+
+
+                <ul>
+                    <li>Hover over the length of the rectangle until you see a small triangle appear—this marks the midpoint of the rectangle’s length.</li>
+                    <li>Click on the midpoint and drag your mouse to the opposite side of the rectangle. Ensure you also see the triangle (indicating midpoint) and a symbol indicating the line is perpendicular to the rectangle width.</li>
+                    <li>Now you've created a construction line that we can mirror the rectangle across!</li>
+                </ul>
+            </li>
+        </ol>
+
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 2</h4>
+                        Show your instructor that you have constructed a mirroring line
+                    </div>
+                    
+                    
+                    
+                    
+            <p>Now, let's create a horizontal construction line across the rectangle’s width:</p>
+                    <ol>
+            <li>Create a Horizontal Line:                                                       
+                        <img src=media/Part1-horizontal-construction.png class="rounded mx-auto d-block img-fluid" height="500"> 
+
+
+
+
+                <ul>
+                    <li>Repeat the previous steps to draw a line, but this time horizontally.</li>
+                    <li>Start and end the line at the midpoints of the rectangle’s width. Remember, it’s a construction line!</li>
+                </ul>
+                <br>
+            </li>
+            <li>Mirror the Rectangular Hole:
+
+                    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mgZkK3gfzWQ?si=SRhefPmbBLAhNABt" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+
+                <ul>
+                    <li>Go to the mirror tool (under Create → Mirror).</li>
+                    <li>In the pop-up, select the rectangular hole you made as the object to mirror.</li>
+                    <li>Choose the vertical construction line as the mirror line.</li>
+                    <li>Congratulations, you’ve mirrored the part and have two holes!</li>
+                </ul>
+                <br>
+            </li>
+            <li>Mirror Again: 
+                        <img src=media/Part2-mirroring-horizontal.png class="rounded mx-auto d-block img-fluid" height="600"> 
+
+
+
+                <ul>
+                    <li>Repeat the mirroring process, but this time use the horizontal construction line to mirror both holes.</li>
+                    <li>All your four holes are now complete!</li>
+                </ul>
+            </li>
+        </ol>
+                    
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 3</h4> <a id="part3"> </a>
+                        Show your instructor that you have constructed all four rectangular holes
+                    </div>
+                    
+
+        <hr> 
+                    <!-- Part 4: Assembly and Post-Processing -->
+            <h4>Part (3): Filletting (5 minutes)</h4>
+                    
+                    
+                    
+                                <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W_fzMl9RQEg?si=CREtiFmW-6NQiuxQ" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                        <p>Filleting is the process of rounding off sharp edges on your design.  For laser cutting, filleting is important because sharp corners can create stress points in the material, which may lead to cracks or breakage. Filleting smooths out those corners, improving durability and aesthetics.</p>
+
+
+        <p>Now your design is filleted and ready for a cleaner, more durable laser cut!</p>
+
+
+
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 4</h4> <a id="part4"> </a>
+                    Show the filetted corners to your instructor
+                    
+                    </div>
+        <hr>
+            
+                    <h4>Part (4): Linear Patterning (10 minutes)</h4>
+
+                        <p>Next, let's design the small day-of-the-month slider:</p>
+
+
+                    <ol>
+            <li><strong>Draw the Outer Rectangle</strong>:
+                                <img src=media/part4-drawrect.png class="rounded mx-auto d-block img-fluid" height="600"> 
+
+
+                <ul>
+                    <li>Similar to Part(1), draw a rectangle. Dimension it to <strong>74mm by 65mm</strong>, and make sure it’s not overlapping the previous design's main.</li>
+                </ul>
+            </li>
+            <li><strong>Create a Smaller Rectangle Inside</strong>:
+                <ul>
+                    <li>Inside this rectangle, draw a smaller one representing the holes for days of the month. Dimension it to <strong>7mm by 8mm</strong>.</li>
+                    <li>Place this smaller rectangle <strong>10 mm</strong> from the top and <strong>2 mm</strong> from the side (left).</li>
+                </ul>
+                
+            <img src=media/part4-filett.png class="rounded mx-auto d-block img-fluid" height="600"> 
+
+
+            </li>
+            <li><strong>Fillet the Rectangles</strong>:
+                <ul>
+                    <li>Input the fillet radius as <strong>2 mm</strong>.</li>
+                </ul>
+                <br>
+                        <p>  Now that we have filleted our rectangles, let’s create the remaining rectangles.</p>     
+
+
+            </li>
+            <li><strong>Adding Multiple Rectangles</strong>:
+                <ul>
+                    <li>Instead of creating X more rectangles manually, let’s use <strong>linear patterning</strong>.</li>
+                </ul>
+                
+            </li>
+            <li><strong>What is Linear Patterning?</strong>
+                <ul>
+                    
+                    <li>Linear patterning replicates an object along a straight line, horizontally, vertically, or both. It’s a shortcut to avoid repetitive work.</li>
+                </ul>
+                                        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zUqkUZr-fq0?si=tAs3AjpJF9ugEhpL" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+            </li>
+            <li><strong>Use the Linear Pattern Tool</strong>:
+                <ul>
+                    <li>Select the part you just made. </li>
+                    <li>For the horizontal patterning, set spacing to <strong>9 mm</strong> and the number of copies to <strong>7</strong>.</li>
+                    <li>For the vertical patterning, set spacing to <strong>13 mm</strong> and the number to <strong>5</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Reflect</strong>:
+                <ul>
+                    <li>Why don’t we use mirroring here?</li>
+                </ul>
+            </li>
+        </ol>
+            
+                    
+                    
+                    
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 5</h4><a id="part5"> </a>
+                        Show your lineared patterned result and answer the reflection question
+                    </div>
+                </section>
+
+                <hr>
+
+        <h4>Part (5): Importing DXF File (5 minutes)</h4>
+
+        <p>We need to add text to our calendar, so let’s import a DXF file.</p>
+
+                Download DXF file from <a href= "media/text-calendar.dxf"> here</a>
+        <p><strong>What is a DXF?</strong></p>
+        <p>A DXF (Drawing Exchange Format) is a vector file format used for 2D designs, allowing you to import elements like text from software like Illustrator into Fusion360.</p>
+                    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nB-scyy2t7M?si=27qVVnxvxmoU3u2N" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                
+        <ol>
+            <li>Click Insert → Insert DXF in Fusion360.</li>
+            <li>Select a Plane: You'll need to choose a plane to import the DXF onto. Select the XY plane.</li>
+            <li>Move the text to the desired position in the workspace by dragging it (here, move to X:-20mm, Y:208mm)-- you may adjust this a bit in Illustrator later if it feels too close to the slider edge aesthetically </li>
+            <li>Now, you’ve imported the text! You can always design in external software (like Illustrator) and bring it into Fusion360 as a DXF file to further manipulate-- this will be helpful later on if you want to add logos for 3D printing, for example.</li>
+        </ol>
+
+                
+            
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 6</h4> <a id="part6"> </a>
+        Show the correctly imported and placed dxf to your instructor            </div>
+        <hr> 
+                
+                
+                
+                <h4>Part (6): 🚨Remixing🚨 (30 minutes)</h4>
+
+                
+                    <img src=media/Remixing-examples.png class="rounded mx-auto d-block img-fluid"> 
+
+
+        <p> Now it's time to “remix” this assignment by adding your own flair! Be creative and 
+            think about how you can personalize your design.
+            If there's anything specific you want to create but aren't sure how, 
+            let us know so we can guide you!</p>      
+            
+                <a id="part7"> </a>
+        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 7</h4>
+        Show your remix to your instructor            </div>
+        <hr> 
+                
+                <hr> 
+                
+                
+                
+                <h4>Part (7): Exporting DXF file (5 minutes)</h4>
+                    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lyzCHFN4ET4?si=BcMsPMzGjG_zk4Fo" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+
+        <ol>
+            <li><strong>Export the Sketch</strong>:
+                <ul>
+                    <li>Right-click on your sketch.</li>
+                    <li>Select <em>Export as DXF</em>.</li>
+                </ul>
+            </li>
+            <li><strong>Open the DXF File</strong>:
+                <ul>
+                    <li>Open the exported DXF file in Adobe Illustrator (set the import to <b> 1 unit = 1mm </b>-- <i> make sure units are in mm</i>).</li>
+                </ul>
+            </li>
+            <li><strong>Remove Construction Lines</strong>:
+                <ul>
+                    <li>Delete the lines that correspond to the construction lines included in the export.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p><em>Note</em>: In future labs, we’ll demonstrate a method to export without including construction lines, which will streamline your workflow!</p>
+
+                <a id="part8"> </a>
+                            
+        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 8</h4>
+        Show the exported file to your instructor to start lasercutting        </div>      
+                <hr> 
+
+            <h4>Part (8): Lasercutting (30 minutes)</h4>
+            
+            <p> For this part, please follow your instructors to D-Lab in order to lasercut; We will 
+            use <a href="https://creativecloud.adobe.com/apps/download/creative-cloud?trackingid=KCJMVLR9&mv=in-product"> Adobe 
+                Illustrator</a> as our choice of <a href="https://www.adobe.com/creativecloud/design/discover/vector-file.html"> Vector</a> editing 
+            file that we can open our DXF in it, and interface with the lasercutter. </p>
+            
+            <p> Your instructors will demonstrate to you what vector vs. raster files are, and how to set-up files for 
+            lasercutting. You may skip reading this scetion and just <strong> head to D-Lab. 😎</strong></p>   
+            For your future reference, we will provide some insructions below on how to create an image for "vector cutting" vs. 
+            "rastering/engraving": 
+            <br> 
+            
+                    <img src=media/cut-engrave-raster.png class="rounded mx-auto d-block img-fluid"> 
+            
+            
+            <ol> 
+            <li> <b>Vector Cutting:</b> The laser follows a path to cut through material (subtracts material).</li>
+                
+            <li> <b>Engraving: </b> The laser etches or marks the surface without cutting through (usually like an outline).</li>
+                
+            
+             <li> <b>Rastering: </b> The laser scans and etches (no cutting) in a grid pattern to create detailed images or shading on the surface (great for photos and textures).</li>
+
+            
+            </ol>
+
+            Below is a summary of what makes something cut as vector and something as raster-- we also provide some examples in the graphic below: 
+            
+                                <img src=media/vector:raster.png class="rounded mx-auto d-block img-fluid"> 
+
+                            
+                <br> 
+            
+                   <ol> 
+            <li> <b>Vector Cutting: </b> 
+                
+                <ul> 
+                <li> 🔴 RGB red color (255, 0, 0) <a id="part9"> </a> </li>
+                    <li> ⭕ Vector Shape (only outline, no infill) </li>
+                <li> ✏️ outline line width (0.01pt)</li>
+                </ul>
+                
+
+                <br> 
+            
+             <li> <b>Raster Engraving:</b> Anything that does not meet vector requirements</li>
+
+            
+
+            </ol>
+
+            
+                   <hr> 
+                
+        <h4>Part (9): Assemble the Calendar and Sand the Edges (30 minutes)</h4>
+
+                            <img src=media/sanding.png class="rounded mx-auto d-block img-fluid"> 
+                
+                
+
+
+
+
+        <ol>
+            
+            
+            
+            
+            <li><strong>Sanding Surface</strong>:
+                <ul>
+                
+                    <li>something about sanding goes here</li>
+                </ul>
+                
+                
+                                            <img src=media/sanding-edges.png class="rounded mx-auto d-block img-fluid"> 
+            <li><strong>Sanding Edges</strong>:
+                <ul>
+                
+                    <li>something about sanding goes here</li>
+                </ul>
+
+                
+                <img src=media/assembly-1.png class="rounded mx-auto d-block img-fluid"> 
+
+
+                <li><strong>Insert the Sliding Mechanism</strong>:
+                <ul>
+                    <li>Begin by inserting the stopper component for the day of the month into its designated slots as shown in figure (a) immediately above .</li>
+                </ul>
+            </li>
+
+            <li><strong>Glue the Stoppers</strong>:
+                <ul>
+                    <li>Start by gluing the stopper and place the slider on top of it (c-d). Make sure to hold in position until the glue sets (15 minutes dry time).</li>
+                </ul>
+            </li>
+
+                <li><strong>Repeat</strong>:
+                <ul>
+                    <li>Repeat previous steps for the month slider.</li>
+                </ul>
+                    
+                            <img src=media/assembly-2-pressfit.png class="rounded mx-auto d-block img-fluid"> 
+
+
+            </li>
+            
+            
+            <li><strong>Assemble the Legs</strong> <a id="discussion"> </a>:
+                <ul>
+                    <li>Once the glue has dried, press-fit the legs into their corresponding holes to secure them in place.</li>
+                </ul>
+            </li>
+            <li><strong>Final Assembly</strong>:
+                <ul>
+                    <li>If you created any remix pieces, assemble those as well.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p>Congratulations, your dynamic calendar is ready! 🎉</p>
+
+                
+            
+                <!-- Submission Section -->
+                <section class="mb-4">
+                    <h2>Discussion & Reflections</h2>
+        <ol>
+            <li><strong>Discuss the advantages and limitations of using laser cutting for digital fabrication.</strong>
+                <ul>
+                    <li>What can we make? What is difficult to make?</li>
+                </ul>
+            </li>
+            <li><strong>Reflect on the design process</strong> 
+                <ul>
+                    <li>Consider any modifications that you would like to implement to improve/elevate your designed remix.</li>
+                </ul>
+            </li>
+            
+            <li><strong>Further Readings</strong> 
+                <ul>
+                    <li> <a href="https://dl.acm.org/doi/abs/10.1145/3290605.3300796"> Kyub: A 3D Editor for Modeling Sturdy Laser-Cut Objects
+ </a></li>
+                    
+          <li> <a href="https://dl.acm.org/doi/abs/10.1145/3639473.3665787">PopCore: Personal Fabrication of 3D Foamcore Models for Professional High-Quality Applications in Design and Architecture
+ </a></li>
+           
+        <li> <a href="https://dl.acm.org/doi/10.1145/2470654.2481358"> LaserOrigami: laser-cutting 3D objects
+
+ </a></li>
+                   
+                    
+                </ul>
+            </li>
+            
+        </ol>
+         </section>
+    </div>
+</div>
+        
+        
+
+    </div> <!-- End Container -->
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2025 Actuated Experiences · MIT</p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script to Load Header -->
+    <script src="../../js/load_header_labs.js"></script>
+</body>
+</html>
