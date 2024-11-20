@@ -87,7 +87,7 @@
                 <hr>
 
 
-                    <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid  max-width: 10%"> 
+                    <img src=media/Placeholder%20box.png class="rounded mx-auto d-block img-fluid  max-width: 10%"> 
                 <br>
                     <h2>🔨 Fabrication Quest of the Day</h2>
                 <ul>
@@ -95,7 +95,8 @@
                         guidelines are:</strong>
                         <br>
                         <ol>
-    <li>Automata design must fit in a wood panel of XXcm by XXcm</li>
+    <li>Automata housed in semi-closed box with dimensions XX cm by XX cm by XX cm</li>
+     <li>Automata design must fit in a wood panel of XXcm by XXcm</li>
     <li> Your design must have a crank for manual actuation</li>
     <li>Use at least two motions via two different mechanisms (e.g., CAM and gear).</li>
     <li> Design a story and pick two motions you want by referring to the mechanism glossry tables
@@ -143,112 +144,81 @@
                     <h4>Part (0): Mechanism Glossary Tables (Refer to this As you Design)
 
 </h4>
-  <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6S8xpPzyGAQ?si=et1cR-XHRD9FAPry" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-     <br> 
-                
-                <!--note that thread size is 7mmx1mm by making a hole--> 
-                <strong> Video Summary </strong> 
-       
-                <ol>
-        <li>Dimensioning models through variables allows for model dimension modification with ease</li>
-        <li> To create dimension variables go to: <b>  Modify -> Change Parameters -> Add User Parameter (top "+" sign) </b> </li>
-                    <li>Create a variable for “shaft_outer_d” representing the inner diameter of the Threaded Shaft, and set it to 9mm.</li>
-        <li>Follow table below to add all the following variables, and one equation to your Fusion File Parameters. Don't forget to save as you go! </li>
-    </ol>
+  
                 <br> 
                 
-                
+                <h5> CAMs </h5>
                 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
-        <th scope="col">Part Name (do not add to Fusion)</th>
-      <th scope="col">Variable Name (add in Fusion)</th>
-      <th scope="col">Expression</th>
-      <th scope="col">Unit</th>
+              <th scope="col">Picture</th>
+
+
+        <th scope="col">Mechanism Name</th>
+      <th scope="col">Input Motion</th>
+      <th scope="col">Output Motion</th>
+      <th scope="col">Example of use in Automata</th>
+     <th scope="col">Animated Video Link</th>
+
+
     </tr>
   </thead>
   <tbody>
 
       
     <tr>
-      <th scope="row">2</th>
-      <td> Shaft Outer Diamter</td>
-      <td>shaft_outer_d</td>
-      <td>9</td>
-      <td>mm</td>
+      <th scope="row">1</th>
+              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+
+ </th>
 
 
+      <td> On Center Circular CAM</td>
+      <td>Rotational</td>
+      <td>Rotational (only if the CAM touches the follower away from follower center)</td>
+      <td><img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+          Dancing Ballerina </td>
+        <td> <a href=""> </a></td>
+
     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Shaft Length for 3 Rotating Blocks</td>
-      <td>shaft_length_3b</td>
-      <td>36.2 </td>
-      <td>mm</td>
-    </tr>
- 
-      
- 
-    <tr>
-      <th scope="row">4</th>
-      <td>Shaft Length for 4 Rotating Blocks</td>
-      <td>shaft_length_4b</td>
-      <td>48.2 </td>
-      <td>mm</td>
-    </tr>
-      
+    
+       
+
           <tr>
-      <th scope="row">5</th>
-      <td>Shaft Threaded Hole Depth</td>
-      <td>thread_depth</td>
-      <td>10</td>
-      <td>mm</td>
-              
+      <th scope="row">1</th>
+              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
 
-      
-            <tr>
-      <th scope="row">7</th>
-      <td>Keychain Hole Diameter</td>
-      <td>keychain_hole_d</td>
-      <td>4</td>
-      <td>mm</td>
-    </tr>
-               <tr>
-      <th scope="row">9</th>
-      <td>Rotating Block Size</td>
-      <td>rot_b_size</td>
-      <td>12</td>
-      <td>mm</td>
-    </tr>   
- 
-               <tr>
-      <th scope="row">10</th>
-      <td>Rotating Block thickness</td>
-      <td>rot_b_thick</td>
-      <td>12</td>
-      <td>mm</td>
-    </tr>
-      
-               <tr>
-      <th scope="row">11</th>
-      <td>Rotating Block Hole Tolerance</td>
-      <td>tolerance</td>
-      <td>0.6</td>
-      <td>mm</td>
-    </tr>  
+ </th>
 
-                <tr>
-      <th scope="row">12</th>
-      <td>Rotating Block Hole Diameter</td>
-      <td>rot_b_hole_d</td>
-      <td>shaft_outer_d + tolerance</td>
-      <td>mm</td>
-    </tr>  
-           
+
+      <td> Off-Center Circular CAM</td>
+      <td>Rotational</td>
+      <td>Purely Linear; Up & down (only if the CAM touches the follower at the follower's center) </td>
+      <td><img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+          Some text goes here</td>
+        <td> <a href=""> </a></td>
+
+    </tr>
+    
+  
+          <tr>
+      <th scope="row">1</th>
+              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+
+ </th>
+
+
+      <td> On Center Circular CAM</td>
+      <td>Rotational</td>
+      <td>Rotational</td>
+      <td><img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+          Dancing Ballerina (rotates, the CAM must souch the follower away from its center)</td>
+        <td> <a href=""> </a></td>
+
+    </tr>
+    
+    
       
   </tbody>
 </table>
