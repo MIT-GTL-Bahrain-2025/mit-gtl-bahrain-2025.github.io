@@ -553,7 +553,7 @@
 
 
         <th scope="col">Mechanism Name</th>
-    <th scope="col"> Shaft Location</th>
+    <th scope="col"> Purpose</th>
 
 
       <th scope="col">Input Motion</th>
@@ -569,7 +569,7 @@
       
     <tr>
       <th scope="row">1</th>
-              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> Circular CAM
+              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 4 bar-linkage
 
  </th>
         <td> At CAM center</td>
@@ -587,7 +587,7 @@
 
           <tr>
       <th scope="row">2</th>
-              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> Circular Eccentric CAM
+              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> Pentogram
 
  </th>
 
@@ -600,79 +600,7 @@
 
     </tr>
     
-              
-          <tr>
-      <th scope="row">3</th>
-              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> Elliptical/Egg-shelled CAM
-
- </th>
-              <td> Shaft location based on desired change in height between event "periods"</td>
-      <td>Rotational</td>
-      <td>Motion is purely linear if the cam contacts the follower's center; off-center contact adds rotational motion. </td>
-      <td><img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
-          Flipping motion (rotate to one side, then rotate to other side)</td>
-        <td> <ol> 
             
-            <li> <a href="https://youtu.be/FL5urosB1QI?si=2K5eS5CdIVfO8xXX"> Skeleton Band</a></li>
-            <li>      <a href="https://youtu.be/2PR66UfMG1k?si=rQ9XB-utrOaXapz7"> Head Turning "Man"</a></li>
-            <li> <a href="https://youtu.be/78pBOJCnHtk?si=oM6jACjF5HiZYznm"> The King of England</a></li>
-            <li> <a href="https://youtu.be/dxVuLFKUkjg?si=1cURUOe9_-Lqcgaa"> Two-faced Cat</a></li>
-            <li> <a href="https://youtu.be/IiiUkSo9Dr0?si=KNcgyZ6mlm3OEnOL"> Cooker</a></li>
-            </ol>
-              </td>
-
-    </tr>
-    
-  
-      
-          <tr>
-      <th scope="row">3</th>
-              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> Snail CAM
-
- </th>
-      <td> Mostly at center of CAM but Shaft location based on desired change in height between event "periods"</td>
-
-
-      <td>Rotational (only one direction of rotation is valid, other one will jam mechanism)</td>
-      <td> Sudden Change in Motion (e.g. slow rise followed by sudden drop) </td>
-      <td><img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
-          Eating/Chpopping/Stepping</td>
-        <td> <ol> 
-            <li>    <a href="https://technologystudent.com/cams/snail1.htm"> Eating Breakfast</a></li>
-                        <li>    <a href="https://youtu.be/QuGzSJ8Dymg?si=T0i5cb8IYOZSN_Av"> Woodcutter Chopping Wood</a></li>
-
-
-            
-            </ol> </td>
-
-    </tr>
- 
-      
-      
- <tr>
-      <th scope="row">3</th>
-              <th scope="row"> <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid">Irregular/Regular Shape CAM (heart, hexagonal, star etc) 
-
- </th>
-
-      <td> Varies beased on design</td>
-
-
-      <td>Rotational (might have one direction of rotation valid and other one will jam mechanism)</td>
-      <td> Sudden Change in Motion (e.g. slow rise followed by sudden drop) </td>
-      <td><img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
-          Eating/Chpopping/Stepping</td>
-        <td> <ol> 
-            <li>    <a href="https://technologystudent.com/cams/snail1.htm"> Eating Breakfast</a></li>
-                        <li>    <a href="https://youtu.be/QuGzSJ8Dymg?si=T0i5cb8IYOZSN_Av"> Woodcutter Chopping Wood</a></li>
-
-
-            
-            </ol> </td>
-
-    </tr>
-    
-      
   </tbody>
 </table>
                 
@@ -688,7 +616,7 @@
         <br> 
                     <hr> 
                     
-                    <h4>Part (2): Sketch and Dimension Parametrically  (Sketching Keychain Shaft) (5 minutes)</h4>
+                    <h4>Part (1): Designing CAMs by mechanical principles (5 minutes)</h4>
 
                     <img src=media/3dprinting-pt2.png class="rounded mx-auto d-block img-fluid"> 
 
@@ -713,61 +641,14 @@
                     
          <hr>
                     <!-- Part 4: Assembly and Post-Processing -->
-            <h4>Part (3): Extruding the Sketch (give height to the shaft!) (5 minutes)</h4>
+            <h4>Part (2): Designing CAMs in Fusion360 (5 minutes)</h4>
                     
                     
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X_iETFAja6o?si=us0xS1adUD31SdRx" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-                            
-            <br> 
-                
-                                <strong> Video Summary </strong> 
-<br> 
-
-                <ol>
-        <li>Click on <strong>Create</strong>.</li>
-        <li>Select the <strong>Extrude Tool</strong>.</li>
-        <li>Under <strong>Profile</strong>, select the area formed by the circle from your "shaft-circle" sketch.</li>
-        <li>Set the <strong>Direction</strong> to <strong>One Side</strong>.</li>
-        <li>Type the <strong>Distance</strong> as “shaft_length_3b” or "shaft_length_4b"-- here you must decide whether you
-                    will make a 3 block or 4 block keychain; No worries if you change your mind later on! 🤗</li>
-        <li>Choose the operation as <strong>New Component</strong>.</li>
-        <li>Click <strong>Ok</strong> to create the solid cylinder.</li>
-                    <li> Write click on the component and <strong> Rename it</strong> to "Shaft"</li>
-    </ol>
-                
-                <br> 
-                   
         <hr>
             
-                    <h4>Part (4): Making a Threaded Hole (7 minutes)</h4>
+                    <h4>Part (3): Designing Gears (Mechanical Principles) (7 minutes)</h4>
 
-                
-                
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wXWqRJZoUgk?si=gpR0gE7b-c3LxezM" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-                <br> 
-<b> Video Summary (need to change): </b>   
-            
-                <ol>
-        <li> Toggle "Shaft-circle" sketch back on</li>
-        <li>Go to <strong>Create</strong>.</li>
-        <li>Select the <strong>"Hole" Tool</strong>.</li>
-        <li>Under <strong>Face</strong>, select the top face of the cylinder.</li>
-        <li>Set the <strong>Reference</strong> to <strong>the center of the circle sketch</strong> (i.e. the "point" at the circle's center from the sketch).</li>
-        <li>Set the <strong>Hole Type</strong> to <b> “Simple” </b></li>
-        <li>Set the <strong>Hole Tap Type</strong> to <b> “Tapped” </b></li>
-        <li>Set the <strong>Thread Offset</strong> to <b> “Full” </b></li>
-        <li>Set the <strong>Drill Point</strong> to <b> “Angle” </b></li>
-        <li>Set the <strong>Depth</strong> to <b> "thread_depth" </b></li>
-        <li>Set the <strong>Size</strong> to <b> 7mm </b></li>
-         <li>Set the <strong>Designation</strong> to <b> M7mmx1mm </b></li>
-         <li>Have <strong>Modeled</strong> checked <b> ON </b></li>
-        <li>Click <strong>Ok</strong> to create your threaded hole.</li>
-    </ol>
+              
                 <br> 
              
               <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
@@ -782,53 +663,7 @@
 
                                 
                 <hr> 
-        <h4>Part (5): Creating Profile of Keychain Holder Head  (🚨REMIX🚨) (10 minutes)</h4>
-
-                
-                 <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/m07_IYGyhos?si=PRVqOGwR-EquRE_3" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-                
-                
-            <ol>
-        <li>
-            <strong>Create an Axis Through the Cylinder:</strong>
-            <ul>
-                <li>Go to the <strong>Construct</strong> command in the top menu.</li>
-                <li>Select <strong>Axis Through Cylinder</strong>.</li>
-                <li>Click on the cylinder to establish the axis of rotation.</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Create a Plane at an Angle to the Axis:</strong>
-            <ul>
-                <li>Again, in the <strong>Construct</strong> menu, select <strong>Plane at Angle</strong>.</li>
-                <li>Click on the axis you created.</li>
-                <li>Enter the angle as "0" for the plane, then confirm.</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Use the Plane to Sketch the profile for the Top Holder on [🚨 REMIX OPPORTUNITY🚨]:</strong>
-            
-                                <img src=media/revolve-profiles.png class="rounded mx-auto d-block img-fluid"> 
-
-            
-            <ul>
-                <li>On the new plane, right click on it and select <strong>Create New Sketch</strong> (there are other ways 
-                    of doing this, but we opt for right clicking on plane for now).</li>
-                <li> To ensure we remain within bounds, go to <strong> Create</strong>, then <strong> Project</strong>, <strong> Select Entity (Selection Filter)</strong> and click on the perimeter of the top circle of the cylinder for <strong> Geometry</strong>. Kepp Projection Link on.
-                
-                <li> Your Design Constraints for your REMIX are as follows: </li>
-                <li>Draw the profile you would be revolving for the top holder on this plane. Recall that this should be symmetric and should not extrude out too much. Make sure that the profile is <strong> closed!</strong></li>
-                <li>Once done, click <strong>Finish Sketch</strong></li>
-            </ul>
-        </li>
-    </ol>
-                
-                <br> 
-                
-                In the next step, we will revolve this profile to create a symmetric top keychain holder.
-                    <br> 
+        <h4>Part (4): Designing Linkages through Mechanical Design (10 minutes)</h4>
                 
                 <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
@@ -838,7 +673,7 @@
                 
                 
                 
-                <h4>Part (6): Revolving Radially Symmetric Geometry(10 minutes)</h4>
+                <h4>Part (5): Revolving Radially Symmetric Geometry(10 minutes)</h4>
 
             <strong> Video Summary:</strong>
                 
