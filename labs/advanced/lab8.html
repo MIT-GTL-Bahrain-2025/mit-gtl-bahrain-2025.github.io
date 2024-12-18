@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8: Building Sensors from Scratch through Capacitive Sensing!</title>
+    <!-- Bootswatch Litera CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
+       <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
+
+    <link rel="stylesheet" href="../../styles.css"></link>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Container -->
+    <div class="container" >
+    <div class="row">
+        <!-- Lab 1 Page Heading -->        
+        <div class="col-md-4">
+            <div class="sticky-top" style="padding-top:100px;" >
+                <p>Total Time: 2.5 hours</p>
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#introduction">Introduction & Safety</a></li>
+                    <li><a href="#fabq">Fabrication Quest</a></li>
+                    <li><a href="#software">Software & Hardware for the Lab</a></li>
+                    <li><a href="#part0">Part (0): Fusion360 Workspace</a></li>
+                    <li><a href="#part1">Part (1): Sketching Objects and Dimensioning </a></li>
+                    <li><a href="#part2">  Part (2): Mirroring Sketch Geometries </a></li>
+                    <li><a href="#part3"> Part(3): Filletting</a></li>
+                    <li><a href="#part4"> Part(4): Linear Patterning</a></li>
+                      <li><a href="#part5">Part (5): Importing DXF files </a></li>
+                    <li><a href="#part6">  Part (6): Remixing </a></li>
+                    <li><a href="#part7"> Part(7): Exporting DXF files</a></li>
+                    <li><a href="#part8"> Part(8): Laser Cutting</a></li>
+                    <li><a href="#part9"> Part(9): Assembly and Post-Processing</a></li>
+                     <li><a href="#discussion"> Discussion & Reflections</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="col-md-8" style="padding-top:100px;">
+                <section class="mb-4">
+                    <h1 class="mb-5"> <a id="introduction">Lab 8: Building Sensors from Scratch through Capacitive Sensing!</a></h1>
+                   
+                    <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+                    <h2>🦺 Introduction & Safety</h2>(1 minute read)
+                    <br> <br>
+                    <p>Mention how they will use cap sensing for next lab where they build the guitar, so they need to think of how they want to make their guitar keys. and design their guitar for next lab! </p>
+                    
+                    
+                    
+                    In this lab, you'll <b>create</b> a dynamic laser-cut calendar
+                        while learning how to:
+                    <br>
+                    <br> 
+                    <ul>
+                        <li> ✅ Use Fusion360 for 2D CAD sketches</li>
+                        <li> ✅ Learn how to make a lasercut sliding mechanism</li>
+                        <li>✅ Safely operate a laser cutter</li>
+                        <li> ✅ Post-process and assemble cut parts </li>
+                    </ul>
+                    <p><strong>Before we start</strong>, please make sure you understand the following safety precautions:</p>
+        <ul>
+            <li><strong>Material Compatibility:</strong> Ensure that the material is laser-cuttable, has a thickness under 0.25" (6.35mm), and is cut with the correct power/speed settings.</li>
+            <li><strong>Fumes:</strong> Keep ventilation on and wait before opening the lid after cutting.</li>
+            <li><strong>Eye Protection:</strong> Monitor the process without staring directly at the laser.</li>
+            <li><strong>Emergencies:</strong> In case of fire, do not open the laser cutter lid, simply stop the machine and alert the shop manager immediately. <a id="fabq"> </a></li>
+            <li><strong>Consultation:</strong> Always consult the D-Lab shop manager before cutting!</li>
+            
+        </ul>
+            
+                </section>
+           
+                <hr>
+
+            
+                    <img src=media/fab-quest-picture.png class="rounded mx-auto d-block img-fluid"> 
+                <br>
+            <h2> 🔨 Fabrication Quest of the Day </h2>
+                <ul>
+                    <li><strong>Today, you will CAD 2 parts:</strong>
+                        <ul>
+                            <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
+                            <li> (B) The day of the month slider (<strong>x1</strong>)</li>
+                        </ul>
+                    </li>
+            <li><strong>And fabricate 1+ parts:</strong>
+                <ul>
+                    <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
+                    <li>(C) Your own <dfn title="add your own flair">“Remix”</dfn> to the assignment</li>
+                </ul>
+                    </li>
+                </ul>
+
+                <b>Remixing</b>
+                <p>Remixing refers to you adding your own touch to a template so that it has your own creative touch to it. This will be a common theme throughout the labs.</p>
+
+                <b>Your instructors will provide you with the following:</b>
+            <a id="software"> </a>
+                <ul>
+                <li>(B) The day of the month slider (<strong>x1</strong>)</li>
+                <li>(D) Day of the week slider (<strong>x1</strong>)</li>
+                <li>(E) & (F) Slider stoppers (<strong>x2</strong>)</li>
+                <li>(G) The triangular leg joints (<strong>x2</strong>)  </li>
+                </ul>
+
+ 
+                <hr>
+                
+
+                <!-- Materials Section -->
+           
+                <section class="mb-4">
+                    <h2>🏗️ Software & Hardware</h2>
+
+
+                    <h5>Software:</h5>
+                        <ul>
+                            <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> (must download before workshop)</li>
+                            <li> <a href="">Adobe Illustrator</a> <i> *Can download through Creative Cloud*</i> </li>
+                    
+                    </ul>
+
+                        <h5>PPE:</h5>
+                        <ul>
+                        <li>Safety goggles</li>
+                        <li>Face mask</li>
+                        <li>Nitrile gloves</li>
+                        </ul>
+
+                        <h5>Hardware:</h5>
+                        <ul>
+                            <li>Prefabricated pieces (<strong>x6</strong>)</li>
+                            <li>Wood boards (calendar)</li>
+                            <li>Wood glue <a id="part0"> </a></li> 
+                            <li>Sandpaper</li>
+                            </ul>
+
+                        <h5>Machines:</h5> 
+                        <ul>
+                    <li>Laser cutter</li>
+                        </ul>
+
+                </section>
+
+                <hr>
+
+                <!-- Procedure Section -->
+                <section class="mb-4">
+                    <!-- Part 0: Understanding Fusion360 Workspace -->
+                    
+                                        <img src=media/fab-quest-picture.png class="rounded mx-auto d-block img-fluid"> 
+
+
+                    <h4>Part (0): Principles of Capacitive Sensing- recap(2 mins)</h4>
+            what is capacitive sensing, where do we see it, what affects it, and what can it be used for? 
+  
+                    <hr>
+                    
+                    <!-- Part 1: Designing the Calendar -->
+                    <h4>Part (1): Building a single-input Cap-Sensor w/ Arduino Cap-Sense Pin (20 mins)</h4>
+
+
+Use copper tape and cap sense pin to make your first cap sensor; explain the graph,  explain thresholding, explain 
+                    the use and purpose of the resistor. 
+
+
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 1</h4> <a id="part2"> </a>
+                        Ask your instructor for a check-off on completing Part (1)
+                    </div>
+        <br> 
+                    <hr> 
+                    
+                    <h4>Part (2): Wiring of multiple Inputs with a Multiplexer (20 minutes)</h4>
+
+       Breadboard breakdown of the adafruit sensing pin and why we use it
+                    
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 3</h4> <a id="part3"> </a>
+                        Show your instructor that you have constructed all four rectangular holes
+                    </div>
+                    
+
+        <hr> 
+                    <!-- Part 4: Assembly and Post-Processing -->
+            <h4>Part (3): Arduino Code for CapSense Multiplexer Combination (5 minutes)</h4>
+                    
+                    
+        
+        <hr>
+            
+                    <h4>Part (4): Exploring Materials 🚨(Remixing)🚨(10 minutes)</h4>
+
+                                        <img src=media/cap-sense-material.png class="rounded mx-auto d-block img-fluid"> 
+
+
+Explain what materials are available for them to use here; and say that they need to choose one new method other than using copper wires; 
+                    also tell them that for 3D printing the resistivity is going to be high etc; 
+                    <br>
+                    <ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+ <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+                   </ol>     
+                        <br> 
+                        
+                    
+                                            <b> On Combining Fabrics with 3D Printing:</b>
+
+
+                        <b> On Combining Fabrics with 3D Printing:</b> explain how this can be used for both the
+                    conductive filament and the conductive mesh and printing with non conductive filament etc 
+                    if the resistance is too high. note that you can laser-cut fabric and that 
+                    
+                  <br> 
+                    
+                    <b> On Spray-painting:</b>
+
+<br> 
+                    
+                    
+                                        <b> On use of conductive thread:</b>
+
+
+
+                <hr>
+
+        <h4>Part (5): Designing a Guitar 🚨(Remixing)🚨 (5 minutes)</h4>
+
+       Based on the material you chose, sketch your guitar and how you want to wire connections to the material of your choice 
+                    (ie plan this out). We have also provided a DXF file for a guitar here, but please feel free to alter as long as you do not go above the size limit of XX cm by XXcm,
+                    and have the holes which house the arduino.
+                
+            
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 6</h4> <a id="part6"> </a>
+        Show the correctly imported and placed dxf to your instructor            </div>
+        <hr> 
+                
+                
+                
+                <h4>Part (6):  Fabrication Time! (30 minutes)</h4>
+
+            
+                <hr> 
+                
+                
+                
+                <h4>Part (7): Putting all together and testing! (5 minutes)</h4>
+                   
+                        <h4>Checkoff 8</h4>
+        Show the exported file to your instructor to start lasercutting        </div>      
+                <hr> 
+
+           
+        <p>Congratulations, your multi-input capacitive sensor is ready! 🎉</p>
+
+                
+            
+                <!-- Submission Section -->
+                <section class="mb-4">
+                    <h2>Discussion & Reflections</h2>
+        <ol>
+            <li><strong>Discuss the advantages and limitations of using laser cutting for digital fabrication.</strong>
+                <ul>
+                    <li>What can we make? What is difficult to make?</li>
+                </ul>
+            </li>
+            <li><strong>Reflect on the design process</strong> 
+                <ul>
+                    <li>Consider any modifications that you would like to implement to improve/elevate your designed remix.</li>
+                </ul>
+            </li>
+            
+            <li><strong>Further Readings</strong> 
+                <ul>
+                    <li> <a href="https://dl.acm.org/doi/abs/10.1145/3290605.3300796"> Kyub: A 3D Editor for Modeling Sturdy Laser-Cut Objects
+ </a></li>
+                    
+          <li> <a href="https://dl.acm.org/doi/abs/10.1145/3639473.3665787">PopCore: Personal Fabrication of 3D Foamcore Models for Professional High-Quality Applications in Design and Architecture
+ </a></li>
+           
+        <li> <a href="https://dl.acm.org/doi/10.1145/2470654.2481358"> LaserOrigami: laser-cutting 3D objects
+
+ </a></li>
+                   
+                    
+                </ul>
+            </li>
+            
+        </ol>
+                </section>
+    </div>
+</div>
+        
+        
+
+    </div> <!-- End Container -->
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2025 Actuated Experiences · MIT</p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script to Load Header -->
+    <script src="../../js/load_header_labs.js"></script>
+</body>
+</html>
