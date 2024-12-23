@@ -15,15 +15,43 @@
     <script src="js/load_header.js"></script>
     <script src="js/common.js"></script>
     <script src="js/student.js"></script>
+
+    <style>
+        #student-photo {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+        }
+    </style>
+
 </head>
 <body>
     <div id="header-placeholder"></div>
     <div class="container mt-5" style="padding-top:100px;">
-        <h1 id="student-name" class="text-center">Student Name</h1>
+        <div class="col-12 col-md-8  mx-auto">
+        
+        <!-- Student Information -->
         <div class="text-center">
-            <img id="student-photo" src="" class="img-fluid rounded" alt="Student Photo">
+            <img id="student-photo" src="" alt="Student Photo" class="my-4">
         </div>
-        <p id="student-bio" class="mt-4">This is a placeholder for the student biography and project information.</p>
+        <h1 id="student-name" class="text-center"></h1>
+        <p id="student-bio" class="mt-4"></p>
+
+        <!-- Lab 1 Section -->
+        <div class="lab-section mt-5">
+            <h3>Lab 1</h3>
+            <p id="lab1-description" class="mt-3"></p>
+            <img id="lab1-image" src="" alt="Lab 1 Image" class="img-fluid mt-3">
+            
+        </div>
+
+        <!-- Lab 2 Section -->
+        <div class="lab-section mt-5">
+            <h3>Lab 2</h3>
+            <p id="lab2-description" class="mt-3"></p>
+            <img id="lab2-image" src="" alt="Lab 2 Image" class="img-fluid mt-3">
+        </div>
+        </div>
     </div>
 
     <!-- Footer -->

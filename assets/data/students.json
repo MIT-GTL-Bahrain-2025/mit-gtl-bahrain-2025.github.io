@@ -2,31 +2,29 @@
     {
         "id": "niuniuzhu",
         "name": "Niuniu Zhu",
-        "photo": "assets/student_images/niuniuzhu.jpg",
-        "bio": "Niuniu is a creative designer who loves working on interactive projects."
+        "bio": "Niuniu is a creative designer who loves working on interactive projects.",
+        "lab1": "cat-shaped laser-cut calendar",
+        "lab2": "cat-themed 3D printed keychain designed in fusion."
+
     },
     {
         "id": "pookah",
         "name": "Pookah",
-        "photo": "assets/student_images/emma.jpg",
         "bio": "Pookah specializes in rapid prototyping and has a passion for cats."
     },
     {
         "id": "kippy",
         "name": "Kippy",
-        "photo": "assets/student_images/liam.jpg",
         "bio": "Kippy is a skilled developer who focuses on frontend design."
     },
     {
         "id": "triscuitz",
         "name": "Triscuitz",
-        "photo": "assets/student_images/olivia.jpg",
         "bio": "Triscuitz enjoys creating interactive systems for learning."
     },
     {
         "id": "woof",
         "name": "Woof",
-        "photo": "assets/student_images/woof.jpg",
         "bio": "Woof is a backend expert who loves dogs."
     }
 ]
