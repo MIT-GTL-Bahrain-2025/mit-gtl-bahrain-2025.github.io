@@ -264,7 +264,7 @@
 
  
                     <!-- Part 4: Assembly and Post-Processing -->
-            <h4>Part (3): Filletting (5 minutes)</h4>
+            <h4>Part (2): Filletting (5 minutes)</h4>
                     
                     <span style="color: red"> <b> Note</b> that the video shows 4 extra rectangles at the corner, but please ignore them-- these were required to be CADed by the Beginner section, but in your case, we will 
                     use a plug-in to make them. </span>
@@ -282,7 +282,7 @@
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 4</h4> <a id="part4"> </a>
+                        <h4>Checkoff 1</h4> <a id="part4"> </a>
                     Show the filetted corners to your instructor
                     
                     </div>
@@ -357,14 +357,78 @@
                     
                     
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 5</h4><a id="part5"> </a>
+                        <h4>Checkoff 2</h4><a id="part5"> </a>
                         Show your lineared patterned result and answer the reflection question
                     </div>
                 </section>
 
                 <hr>
 
-        <h4>Part (4): Importing DXF File (5 minutes)</h4>
+    
+            
+            <h4> Part (6): Making the Rectangular Legs</h4>
+               
+            
+                        <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid" height="600"> 
+
+
+            
+  <h5>Video Summary</h5>
+
+        <ol>
+        <li><strong>Top Panel:</strong> Save/open files and see current file names.</li>
+        <li><strong>Command Tools Panel:</strong> Solid, surface, and sketch tools are here.</li>
+        <li><strong>Side Panel:</strong> Shows document settings, created bodies, and sketches. You can rename objects, toggle visibility, and track the design hierarchy.</li>
+        <li><strong>Workspace:</strong> Where your sketches or bodies appear; control view angles. <a id="part1"> </a></li>
+        <li><strong>History Timeline:</strong> Tracks all design steps. You can adjust or delete steps by right-clicking. To enable, right-click "Document Settings" and select "Capture Design History."</li>
+        </ol>     
+            
+            <br> 
+            
+            
+              <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 3</h4><a id="part5"> </a>
+                        Show your lineared patterned result and answer the reflection question
+                    </div>
+                    <hr> 
+                    
+                    <p> For the next section, we want you to create finger-joints, but creating finger joints
+                    seamlessly requires us to use a plug-in since we want to teach you how to create plug-ins and want you to create
+                        the finger joints quickly (lab time constraint) that requires us to extrude the part.</p>
+                    
+                    <hr> 
+                    <h4> Part (7): Loading the Finger-joint plug-in</h4>
+                    
+            
+                 <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid" height="600"> 
+
+
+            
+                     <h5>Video Summary:</h5>
+
+        <ol>
+        <li><strong>Download the Plug-in:</strong> Go to the following <a href="https://github.com/FlorianPommerening/FingerJoints"> link</a> to donwload the Finger Joint plug-in. Click on the green button that says "Code", and choose under https "download zip file"</li>
+        <li><strong>Unzip the File:</strong> Unzip the file in your downloads folder.</li>
+        <li><strong>Rename the unzipped folder:</strong> Remove the "-master" at the end of the folder's name.</li>
+        <li><strong>Move the folder to the Fusion360 Add-ins folder:</strong> <ul> <li> Mac users: Open Finder, click "Go" in the menu bar, select "Go to Folder" (or press Shift + Command + G), paste <code>/Users/NameofYourUserGoesHere/Library/Application Support/Autodesk/Autodesk Fusion 360/API/AddIns</code> (replacing <em>NameofYourUserGoesHere</em> with your username), and click "Go".</li>
+            
+            <li> Windows Users: Follow similiar steps compatible with windows to access the "Add-ins" file. (eg. 
+* Windows:  `%AppData%\Autodesk\Autodesk Fusion 360\API\AddIns`)</li>
+            </ul>
+        <li><strong>Find the Plug-in in Fusion:</strong> Find the plug-in under the "Modify" tab in Fusion360.</li>
+        </ol>     
+            
+            <br> 
+                    
+                    <h4> Part (8): Extruding the Parts</h4>
+                    
+                    <h4> Part (9): Creating the finger joints</h4>
+                    
+                  <h4> Part (10): Projecting Sketch Entities </h4>
+
+            <hr> 
+            
+            <h4>Part (12): Importing DXF File (5 minutes)</h4>
 
         <p>We need to add text to our calendar, so let’s import a DXF file.</p>
 
@@ -372,13 +436,13 @@
         <p><strong>What is a DXF?</strong></p>
         <p>A DXF (Drawing Exchange Format) is a vector file format used for 2D designs, allowing you to import elements like text from software like Illustrator into Fusion360.</p>
                     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nB-scyy2t7M?si=27qVVnxvxmoU3u2N" title="YouTube video player" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_mM0iL9y2m4?si=PtHB5IAgfiXV04dm" title="YouTube video player" allowfullscreen></iframe>
         </div>
                 
         <ol>
             <li>Click Insert → Insert DXF in Fusion360.</li>
             <li>Select a Plane: You'll need to choose a plane to import the DXF onto. Select the XY plane.</li>
-            <li>Move the text to the desired position in the workspace by dragging it (here, move to X:-20mm, Y:208mm)-- you may adjust this a bit in Illustrator later if it feels too close to the slider edge aesthetically </li>
+            <li>Move the text to the desired position in the workspace by dragging it (here, move to X:-2.5mm, Y:-103mm)-- you may adjust this a bit in Illustrator later if it feels too close to the slider edge aesthetically </li>
             <li>Now, you’ve imported the text! You can always design in external software (like Illustrator) and bring it into Fusion360 as a DXF file to further manipulate-- this will be helpful later on if you want to add logos for 3D printing, for example.</li>
         </ol>
 
@@ -386,13 +450,12 @@
             
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 6</h4> <a id="part6"> </a>
+                        <h4>Checkoff 3</h4> <a id="part6"> </a>
         Show the correctly imported and placed dxf to your instructor            </div>
         <hr> 
-                
-                
-                
-                <h4>Part (5): 🚨Remixing🚨 (30 minutes)</h4>
+            
+            
+            <h4>Part (11): 🚨Remixing🚨 (30 minutes)</h4>
 
                 
                     <img src=media/Remixing-examples.png class="rounded mx-auto d-block img-fluid"> 
@@ -403,42 +466,37 @@
             If there's anything specific you want to create but aren't sure how, 
             let us know so we can guide you!</p>      
             
+            
+            <br> 
+            
+            <hr> 
+            
+            <br> 
+            
+            
+            We encourage you to explore using living hinges in your remix. We have provided swatches for you on your tables,
+            and a curavture guide. Below is a video on how you couldmake a living hinge and use it in an example in this calendar. 
+            
+            
                 <a id="part7"> </a>
         <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
+            
+            
+        
                         <h4>Checkoff 7</h4>
         Show your remix to your instructor            </div>
         <hr> 
                 
-                <hr> 
-                
-           
             
-            <h4> Part (6): Making the Rectnagular Legs</h4>
-                
-                    
-                    <hr> 
-                    
-                    <p> For the next section, we want you to create finger-joints, but creating finger joints
-                    seamlessly requires us to use a plug-in since we want to teach you how to create plug-ins and want you to create
-                        the finger joints quickly (lab time constraint) that requires us to extrude the part.</p>
-                    
-                    <hr> 
-                    <h4> Part (7): Loading the Finger-joint plug-in</h4>
-                    
-                    
-                    
-                    <h4> Part (8): Extruding the Parts</h4>
-                    
-                    <h4> Part (9): Creating the finger joints</h4>
-                    
-                    <h4> Part (10): Projecting Sketch Entities </h4>
 
 
 
             
                 
-                <h4>Part (11): Exporting DXF file (5 minutes)</h4>
+                <h4>Part (12): Exporting DXF file (5 minutes)</h4>
+            
+            [NEED NEW VIDEO]
                     <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lyzCHFN4ET4?si=BcMsPMzGjG_zk4Fo" title="YouTube video player" allowfullscreen></iframe>
         </div>
