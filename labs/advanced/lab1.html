@@ -146,7 +146,7 @@
                         <ul>
                             <li>Prefabricated pieces (<strong>x4</strong>)</li>
                             <li>Wood boards (calendar)</li>
-                            <li>Wood glue <a id="part0"> </a></li> 
+                            <li>Superglue/ Wood glue <a id="part0"> </a></li> 
                             <li>Sandpaper</li>
                             </ul>
 
@@ -366,7 +366,7 @@
 
     
             
-            <h4> Part (6): Making the Rectangular Legs</h4>
+            <h4> Part (4): Making the Rectangular Legs</h4>
                
             
                         <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid" height="600"> 
@@ -376,26 +376,33 @@
   <h5>Video Summary</h5>
 
         <ol>
-        <li><strong>Top Panel:</strong> Save/open files and see current file names.</li>
-        <li><strong>Command Tools Panel:</strong> Solid, surface, and sketch tools are here.</li>
-        <li><strong>Side Panel:</strong> Shows document settings, created bodies, and sketches. You can rename objects, toggle visibility, and track the design hierarchy.</li>
-        <li><strong>Workspace:</strong> Where your sketches or bodies appear; control view angles. <a id="part1"> </a></li>
-        <li><strong>History Timeline:</strong> Tracks all design steps. You can adjust or delete steps by right-clicking. To enable, right-click "Document Settings" and select "Capture Design History."</li>
+        <li><strong>Draw the triangle:</strong> Draw a right triangle with a base of 50.8mm, and a hypotenuse of 115mm on the YZ axis.</li>
+        <li><strong>Offset the triangle:</strong> Offset the triangle by 10.4mm to create a smaller triangle (this hollows out the big triangle).</li>
+        <li><strong>Draw finger joints:</strong> Draw two rectnagles of dimensions 12mm x thickness of wood you are using (here we are using 0.25" thick wood, which is 6.32mm) and make them along the hypotenuse. Let each of these rectangles be 4mm away from the edge.</li>
+        <li><strong>Fillet:</strong> Fillet the sharp edges (except for the finger joints) by a radius of 0.2mm</li>
         </ol>     
             
             <br> 
             
             
+         <img src=media/triangle-base.png class="rounded mx-auto d-block img-fluid" height="600"> 
+
+
+            <br> 
+            
+            
               <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 3</h4><a id="part5"> </a>
+                        <h4>Checkoff 3</h4><a id="part44"> </a>
                         Show your lineared patterned result and answer the reflection question
                     </div>
+            
+        
                     <hr> 
                     
-                 <p>To create finger joints seamlessly and quickly (due to lab time constraints), we will use a plug-in, which also introduces you to plug-in loading and requires extruding the part.</p>
+                 <p>To create finger joints seamlessly and quickly (to help you with your final project or remix), we will use a plug-in, which also introduces you to plug-in loading and requires extruding the part.</p>
 
                     <hr> 
-                    <h4> Part (7): Loading the Finger-joint plug-in</h4>
+                    <h4> Part (5): Loading the Finger-joint plug-in</h4>
                     
             
                  <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid" height="600"> 
@@ -410,8 +417,8 @@
         <li><strong>Rename the unzipped folder:</strong> Remove the "-master" at the end of the folder's name.</li>
         <li><strong>Move the folder to the Fusion360 Add-ins folder:</strong> <ul> <li> Mac users: Open Finder, click "Go" in the menu bar, select "Go to Folder" (or press Shift + Command + G), paste <code>/Users/NameofYourUserGoesHere/Library/Application Support/Autodesk/Autodesk Fusion 360/API/AddIns</code> (replacing <em>NameofYourUserGoesHere</em> with your username), and click "Go".</li>
             
-            <li> Windows Users: Follow similiar steps compatible with windows to access the "Add-ins" file. (eg. 
-* Windows:  `%AppData%\Autodesk\Autodesk Fusion 360\API\AddIns`)</li>
+            <li> Windows Users: Follow similiar steps compatible with windows to access the "Add-ins" file. (eg. <code>
+                * Windows:  `%AppData%\Autodesk\Autodesk Fusion 360\API\AddIns` </code>)</li>
             </ul>
         <li><strong>Find the Plug-in in Fusion:</strong> Find the plug-in under the "Modify" tab in Fusion360.</li>
         </ol>     
@@ -420,7 +427,7 @@
             
             <hr> 
                     
-                    <h4> Part (8): Extruding the Parts</h4>
+                    <h4> Part (6): Extruding the Parts</h4>
             
             Using the finger-joint plug-in requires us to have the parts be extruded 3D models. This is why we need to extrude our 2D geometry.
             
@@ -431,19 +438,81 @@
                      <h5>Video Summary:</h5>
 
         <ol>
-        <li><strong>Download the Plug-in:</strong> Go to the following <a href="https://github.com/FlorianPommerening/FingerJoints"> link</a> to donwload the Finger Joint plug-in. Click on the green button that says "Code", and choose under https "download zip file"</li>
-        <li><strong>Unzip the File:</strong> Unzip the file in your downloads folder.</li>
-        <li><strong>Rename the unzipped folder:</strong> Remove the "-master" at the end of the folder's name.</li>
-        <li><strong>Find the Plug-in in Fusion:</strong> Find the plug-in under the "Modify" tab in Fusion360.</li>
+        <li> <strong>Draw Aligenment Construction Line :</strong> Create two vertical construction lines that are 4mm away from the edge of the calendar body.</li>
+        <li><strong>Extrude the triangle :</strong> Extrude the triangle to the thickness of the wood piece provided to you. Here, we were using 0.25" wood stock.</li>
+        <li><strong>Extrude the calendar body:</strong> Following the same steps above, extrude the calendar body.</li>
+        <li><strong>Align the hypotenuse to the face of the calendar:</strong> Select the face created by the triangle hypotenuse, hold shift, select the calendar's face, right click on "Align".</li>
+        <li><strong>Align the edge of the trinagular base to the edge of the calendar:</strong>  Select and align.</li>
+        <li><strong>Align the edge of the hypotenuse with the construction line:</strong> Select both and align.</li>
+
+
+
         </ol>     
             
                 
             
             <hr> 
-                    <h4> Part (9): Creating the finger joints</h4>
+                    <h4> Part (7): Creating the finger joints</h4>
                     
-                  <h4> Part (10): Projecting Sketch Entities </h4>
+                          <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid" height="600"> 
 
+  
+            
+            
+                     <h5>Video Summary:</h5>
+         <img src=media/finger-joint-settings.png class="rounded mx-auto d-block img-fluid" height="600"> 
+
+
+        <ol>
+            
+            
+        <li> 
+
+
+            
+            <strong> Click on the Plug-in :</strong> Click on the "Finger Joint" plug-in, which should be under modify in the solid tab</li>
+        <li> <strong> Select the bodies :</strong> Select the two bodies, and set the direction of joint to the edge of the finger joint you created on the triangle in part (4).</li>
+        <li> <strong> Finger Settings :</strong> Set finger placement to outside, number to fixed (set to 2), size to equal notch and finger size, and gap to part to the "kerf" of your lasercutter. Here, our lasercutter kerf is 0.2mm.</li>
+        <li> <strong> Click Ok :</strong> Click Ok to create the joints.</li>
+
+
+            </ol>
+            
+            
+            
+              <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 4</h4><a id="part4"> </a>
+                        Show your lineared patterned result and answer the reflection question
+                    </div>
+            
+
+            <hr> 
+            
+                  <h4> Part (8): Projecting Sketch Entities </h4>
+
+            
+             <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid" height="600"> 
+
+  
+            
+            
+                     <h5>Video Summary:</h5>
+
+        <ol>
+            
+            
+        <li> 
+
+            <strong> Create a New Sketch:</strong> Create a new sketch on the XY plane.</li>
+            
+            <li>Click <strong>Create</strong> --> <strong>Project/Include</strong> --> <strong>Project Entities</strong>.</li>
+            <li>Select the extruded calendar body (selection filter set as bodies). Set <strong>Projection Link</strong> to <strong>On</strong>.</li>
+            <li>Click <strong>OK</strong> to complete.</li>
+            
+            </ol>
+            
+            
+            
             <hr> 
             
             <h4>Part (12): Importing DXF File (5 minutes)</h4>
@@ -478,7 +547,7 @@
                 
                     <img src=media/Remixing-examples.png class="rounded mx-auto d-block img-fluid"> 
 
-
+<br> 
         <p> Now it's time to “remix” this assignment by adding your own flair! Be creative and 
             think about how you can personalize your design.
             If there's anything specific you want to create but aren't sure how, 
@@ -487,13 +556,21 @@
             
             <br> 
             
-            <hr> 
+        
+            <h6>Living Hinges (Optional for Remix) </h6>           
+            
+            
+                                <img src=media/living-hinge-temps.png class="rounded mx-auto d-block img-fluid"> 
+
+
+            We encourage you to explore using living hinges in your remix (You will get a shout-out from your instructors if you do so!).
+            We have provided swatches for you on your tables,
+            and a curavture guide. Simply place the swatch on the curvature guide to understand what bend radii are compatible with 
+            the swatch you want to CAD. 
             
             <br> 
-            
-            
-            We encourage you to explore using living hinges in your remix. We have provided swatches for you on your tables,
-            and a curavture guide. Below is a video on how you couldmake a living hinge and use it in an example in this calendar. 
+            <br> 
+            Below is a video on how you can make a living hinge with an example application. 
             
             
                 <a id="part7"> </a>
