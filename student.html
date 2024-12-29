@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css">
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css"></link>
+    <script src="js/load_header.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/student.js"></script>
+
+    <style>
+        #student-photo {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+        }
+    </style>
+
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="container mt-5" style="padding-top:100px;">
+        <div class="col-12 col-md-8  mx-auto">
+        
+        <!-- Student Information -->
+        <div class="text-center">
+            <img id="student-photo" src="" alt="Student Photo" class="my-4">
+        </div>
+        <h1 id="student-name" class="text-center"></h1>
+        <p id="student-bio" class="mt-4"></p>
+
+        <!-- Lab 1 Section -->
+        <div class="lab-section mt-5">
+            <h3>Lab 1</h3>
+            <p id="lab1-description" class="mt-3"></p>
+            <img id="lab1-image" src="" alt="Lab 1 Image" class="img-fluid mt-3">
+            
+        </div>
+
+        <!-- Lab 2 Section -->
+        <div class="lab-section mt-5">
+            <h3>Lab 2</h3>
+            <p id="lab2-description" class="mt-3"></p>
+            <img id="lab2-image" src="" alt="Lab 2 Image" class="img-fluid mt-3">
+        </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2025 · MIT GTL Bahrain</p>
+    </footer>
+</body>
+</html>

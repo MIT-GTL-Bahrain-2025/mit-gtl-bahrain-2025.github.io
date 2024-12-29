@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3: Let’s 3D Print & Post-Process a Rotating Keychain!</title>
+    <!-- Bootswatch Litera CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
+
+    <link rel="stylesheet" href="../../styles.css"></link>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Container -->
+    <div class="container" >
+    <div class="row">
+        <!-- Lab 1 Page Heading -->        
+        <div class="col-md-4">
+            <div class="sticky-top" style="padding-top:100px;" >
+                <p>Total Time: 2.5 hours</p>
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#introduction">Introduction & Safety</a></li>
+                    <li><a href="#software">Fabrication Quest</a></li>
+                    <li><a href="#ppe">Software & Hardware for the Lab</a></li>
+                    <li><a href="#machines">Part (1): Variables & Equations </a></li>
+                    <li><a href="#assembly">  Part (2): Sketching Parametrically </a></li>
+                    <li><a href="#testing"> Part(3): Extrusion </a></li>
+                    <li><a href="#conclusion"> Part(4): Threaded Holes</a></li>
+                      <li><a href="#machines">Part (5): Sketching Revolve Profiles </a></li>
+                    <li><a href="#assembly">  Part (6): Revolving </a></li>
+                    <li><a href="#testing"> Part(7): Extrude Cut</a></li>
+                    <li><a href="#conclusion"> Part(8): UNderstanding Sketch Constraints</a></li>
+                    <li><a href="#conclusion"> Part(9): Creating Blocks (REMIX) </a></li>
+                    <li><a href="#conclusion"> Part(10): Material Assignment</a></li>
+                     <li><a href="#conclusion"> Part(11): CAD Assemblies</a></li>
+                    <li><a href="#conclusion"> Part(12): Rendering </a></li>
+                    <li><a href="#conclusion"> Part(13): Export for 3D Printing </a></li>
+                    <li><a href="#conclusion"> Part(14): Setting up File for 3D Printing </a></li>
+                    <li><a href="#conclusion"> Discussion & Reflection </a></li>
+
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="col-md-8" style="padding-top:100px;">
+                <section class="mb-4">
+                    <h1 class="mb-5">Lab 3: Let’s 3D Print & Post-Process a Rotating Keychain!</h1>
+                    <img src=media/3dprinting-post-process-main.png class="rounded mx-auto d-block img-fluid"> 
+                    <h2> 🦺 Introduction & Safety</h2>(1 minute read) <br> <br>
+                    <p>
+3D printing is an additive (add material) manufacturing process where computer-aided G-code (instruction code for the machine) is translated to build up
+                        material layer by layer. It has various techniques, including <a href="https://www.hubs.com/knowledge-base/what-is-fdm-3d-printing/"> FDM </a>, which extrudes hot <a href="https://pslc.ws/macrog/plastic.htm" > thermoplastics </a> 
+                        (plastics that melt at elevated temperatures), 
+                        <a href="https://formlabs.com/blog/ultimate-guide-to-stereolithography-sla-3d-printing/">SLA</a>, which uses photoresin polymers that cure via light, and
+                        <a href="https://www.stratasys.com/en/guide-to-3d-printing/technologies-and-materials/polyjet-technology/">Polyjet 3D printing</a>, among others.</p>
+                    In this lab, you will <b> learn</b> how to: 
+                    <br> <br> 
+                    <ul>
+                        <li> ✅ Create 3D-models from 2D-sketches (extrusion and revolving operations) </li>
+                        <li> ✅ CAD a simple rotating element around a shaft</li>
+                        <li> ✅ CAD a threaded object</li>
+                         <li> ✅ Make a Mechanical Assembly </li>
+                        <li> ✅ Render a 3D Model in Fusion360</li>
+                        <li> ✅ Export files and prepare them for 3D printing 
+</li>
+                    </ul>
+
+                </section>
+                <hr>
+
+                <br>
+                    <h2>🔨 Fabrication Quest of the Day</h2>
+                <ul>
+                    <li><strong>Today, you will CAD 4-5 parts:</strong>
+                        <ul>
+                            <li>(a) Threaded Shaft (<strong>x1</strong>)-- allows Remixing</li>
+                            <li> (b) Rotating Blocks  (<strong>x3-4</strong>)-- allows Remixing</li>
+                        </ul>
+                    </li>
+                    
+            <li><strong>Fabricated results will be for next lab, but  you will put your files on the 3D printer today; </strong>
+
+<br> <br> 
+                <b>Your instructors will provide you with the following:</b>
+                <ul>
+                <li>(c) The screw cap (<strong>x1</strong>), <a href="media/Lab2_Screw_cap.stl"> (Download Here) </a></li>
+                </ul>
+
+
+                <hr>
+                
+
+                <!-- Materials Section -->
+                <section class="mb-4">
+                    <h2>🏗️ Software & Hardware</h2>
+
+
+                    <h5>Software:</h5>
+                        <ul>
+                            <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> </li>
+                            <li> <a href= "https://ultimaker.com/software/ultimaker-cura/"> Ultimaker Cura </a> (Ultimaker 3D Printer Slicing Program) </li>
+                    
+                    </ul>
+
+
+                        <h5>Machines:</h5>
+                        <ul>
+                    <li>FDM 3D Printer</li>
+                        </ul>
+
+                </section>
+
+                <hr>
+
+                <!-- Procedure Section -->
+
+                You don't need to do all post processing techniques; you can pick and choose! These are not in order, but if you wanted an order, let your instructor know; 
+                    
+                <br> 
+                
+                <hr> 
+                    <!-- Part 1: Designing the Calendar -->
+                    <h4>Part (1): Sanding  </h4>
+                
+            Sanding is somehow similar to Lab-1: use sandpaper and sand in a circular motion. Do not sand in one direction only. <br> Sanding is a 
+                subtractive/abrasive process and reduces part size,
+                so avoid sanding critical surfaces unless it's intentional 
+                or fits were designed oversized.
+                <br> 
+                
+                First, start with 100-200 grit sandpaper. This is so you can remove the 
+                steepness caused by the grains. Then increase to 600 (which is a fine grit),
+                so that you may remove the lines resulting from the sanding process. 
+                
+
+
+
+
+
+                    <hr> 
+                    
+    
+                                
+               <h4>Part (4): Sandable Epoxy  </h4>
+                    <img src=media/spray-paint-1-color.png class="rounded mx-auto d-block img-fluid"> 
+
+
+
+                           <hr> 
+                
+               <h4>Part (3): Spray Painting  </h4>
+                    <img src=media/spray-paint-1-color.png class="rounded mx-auto d-block img-fluid"> 
+
+
+
+                           <hr> 
+                
+                    <h4>Part (5): Masks & Spray Painting </h4>
+
+                    <img src=media/mask-pt1.png class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/mask-pt2.png class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/post-process-mask-remove.png class="rounded mx-auto d-block img-fluid"> 
+
+
+
+
+              
+        <hr>
+            
+                    <h4>Part (4): Vapor Smoothing (7 minutes)</h4>
+
+                PLA ==> what chemical to use  (isoprobyl alcohol)--> if 3D printng with the silk one
+                ABS ==>  acetone 
+                
+                
+                <hr> 
+        <h4>Part (5): Bondo Fillers for Smoothing (🚨REMIX🚨) (20 minutes)</h4>
+
+        <hr> 
+                
+                
+                
+                
+                <!-- Submission Section -->
+                <section class="mb-4">
+                    <h2>Discussion & Reflections</h2>
+        <ol>
+            <li><strong>Discuss the advantages and limitations of using 3D Printing for digital fabrication.</strong>
+                <ul>
+                    <li>What can we make? What is difficult to make?</li>
+                </ul>
+            </li>
+            <li><strong>Reflect on the design process</strong> 
+                <ul>
+                    <li>Consider any modifications that could have improved/elevated youre remix design.</li>
+                </ul>
+            </li>
+            
+        </ol>
+                </section>
+                
+                    </li>
+            </ul>
+    </div>
+</div>
+        
+        
+
+    </div> <!-- End Container -->
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2025 Actuated Experiences · MIT</p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script to Load Header -->
+    <script src="../../js/load_header_labs.js"></script>
+</body>
+</html>

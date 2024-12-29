@@ -1,0 +1,30 @@
+[
+    {
+        "id": "niuniuzhu",
+        "name": "Niuniu Zhu",
+        "bio": "Niuniu is a creative designer who loves working on interactive projects.",
+        "lab1": "cat-shaped laser-cut calendar",
+        "lab2": "cat-themed 3D printed keychain designed in fusion."
+
+    },
+    {
+        "id": "pookah",
+        "name": "Pookah",
+        "bio": "Pookah specializes in rapid prototyping and has a passion for cats."
+    },
+    {
+        "id": "kippy",
+        "name": "Kippy",
+        "bio": "Kippy is a skilled developer who focuses on frontend design."
+    },
+    {
+        "id": "triscuitz",
+        "name": "Triscuitz",
+        "bio": "Triscuitz enjoys creating interactive systems for learning."
+    },
+    {
+        "id": "woof",
+        "name": "Woof",
+        "bio": "Woof is a backend expert who loves dogs."
+    }
+]

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2: Let’s 3D Model a Rotating Keychain!</title>
+    <!-- Bootswatch Litera CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
+
+    <link rel="stylesheet" href="../../styles.css"></link>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Container -->
+    <div class="container" >
+    <div class="row">
+        <!-- Lab 1 Page Heading -->        
+        <div class="col-md-4">
+            <div class="sticky-top" style="padding-top:100px;" >
+                <p>Total Time: 2.5 hours</p>
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#introduction">Introduction & Safety</a></li>
+                    <li><a href="#software">Fabrication Quest</a></li>
+                    <li><a href="#ppe">Software & Hardware for the Lab</a></li>
+                    <li><a href="#machines">Part (1): Variables & Equations </a></li>
+                    <li><a href="#assembly">  Part (2): Sketching Parametrically </a></li>
+                    <li><a href="#testing"> Part(3): Extrusion </a></li>
+                    <li><a href="#conclusion"> Part(4): Threaded Holes</a></li>
+                      <li><a href="#machines">Part (5): Sketching Revolve Profiles </a></li>
+                    <li><a href="#assembly">  Part (6): Revolving </a></li>
+                    <li><a href="#testing"> Part(7): Extrude Cut</a></li>
+                    <li><a href="#conclusion"> Part(8): UNderstanding Sketch Constraints</a></li>
+                    <li><a href="#conclusion"> Part(9): Creating Blocks (REMIX) </a></li>
+                    <li><a href="#conclusion"> Part(10): Material Assignment</a></li>
+                     <li><a href="#conclusion"> Part(11): CAD Assemblies</a></li>
+                    <li><a href="#conclusion"> Part(12): Rendering </a></li>
+                    <li><a href="#conclusion"> Part(13): Export for 3D Printing </a></li>
+                    <li><a href="#conclusion"> Part(14): Setting up File for 3D Printing </a></li>
+                    <li><a href="#conclusion"> Discussion & Reflection </a></li>
+
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="col-md-8" style="padding-top:100px;">
+                <section class="mb-4">
+                    <h1 class="mb-5">Lab 2: Let’s 3D Model a Rotating Keychain!</h1>
+                    <img src=media/3dprinting-post-process-main.png class="rounded mx-auto d-block img-fluid"> 
+                    <h2> 🦺 Introduction & Safety</h2>(1 minute read) <br> <br>
+                    <p>
+3D printing is an additive (add material) manufacturing process where computer-aided G-code (instruction code for the machine) is translated to build up
+                        material layer by layer. It has various techniques, including <a href="https://www.hubs.com/knowledge-base/what-is-fdm-3d-printing/"> FDM </a>, which extrudes hot <a href="https://pslc.ws/macrog/plastic.htm" > thermoplastics </a> 
+                        (plastics that melt at elevated temperatures), 
+                        <a href="https://formlabs.com/blog/ultimate-guide-to-stereolithography-sla-3d-printing/">SLA</a>, which uses photoresin polymers that cure via light, and
+                        <a href="https://www.stratasys.com/en/guide-to-3d-printing/technologies-and-materials/polyjet-technology/">Polyjet 3D printing</a>, among others.</p>
+                    In this lab, you will <b> learn</b> how to: 
+                    <br> <br> 
+                    <ul>
+                        <li> ✅ Create 3D-models from 2D-sketches (extrusion and revolving operations) </li>
+                        <li> ✅ CAD a simple rotating element around a shaft</li>
+                        <li> ✅ CAD a threaded object</li>
+                         <li> ✅ Make a Mechanical Assembly </li>
+                        <li> ✅ Render a 3D Model in Fusion360</li>
+                        <li> ✅ Export files and prepare them for 3D printing 
+</li>
+                    </ul>
+
+                </section>
+                <hr>
+
+
+                    <img src=media/keychain-parts.png class="rounded mx-auto d-block img-fluid  max-width: 10%"> 
+                <br>
+                    <h2>🔨 Fabrication Quest of the Day</h2>
+                <ul>
+                    <li><strong>Today, you will CAD 4-5 parts:</strong>
+                        <ul>
+                            <li>(a) Threaded Shaft (<strong>x1</strong>)-- allows Remixing</li>
+                            <li> (b) Rotating Blocks  (<strong>x3-4</strong>)-- allows Remixing</li>
+                        </ul>
+                    </li>
+                    
+            <li><strong>Fabricated results will be for next lab, but  you will put your files on the 3D printer today; </strong>
+
+<br> <br> 
+                <b>Your instructors will provide you with the following:</b>
+                <ul>
+                <li>(c) The screw cap (<strong>x1</strong>), <a href="media/Lab2_Screw_cap.stl"> (Download Here) </a></li>
+                </ul>
+
+
+                <hr>
+                
+
+                <!-- Materials Section -->
+                <section class="mb-4">
+                    <h2>🏗️ Software & Hardware</h2>
+
+
+                    <h5>Software:</h5>
+                        <ul>
+                            <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> </li>
+                            <li> <a href= "https://ultimaker.com/software/ultimaker-cura/"> Ultimaker Cura </a> (Ultimaker 3D Printer Slicing Program) </li>
+                            <li> <a href= ""> Bambu Studio </a> (Bambu 3D Printer Slicing Program) </li>
+                            <li> <a href= ""> XX for SLA </a> (SLA) </li>
+
+
+
+                    </ul>
+
+
+                        <h5>Machines:</h5>
+                        <ul>
+                    <li>FDM 3D Printer (multi</li>
+                    <li>FDM 3D Printer</li>
+                        </ul>
+
+                </section>
+
+                <hr>
+
+                <!-- Procedure Section -->
+
+                    
+                    <!-- Part 1: Designing the Calendar -->
+                    <h4>Part (1): Creating Variables & Equations for Dynamic Dimensioning! (10 minutes)
+
+</h4>
+  <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6S8xpPzyGAQ?si=et1cR-XHRD9FAPry" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+
+     <br> 
+                
+                <!--note that thread size is 7mmx1mm by making a hole--> 
+                <strong> Video Summary </strong> 
+       
+                <ol>
+        <li>Dimensioning models through variables allows for model dimension modification with ease</li>
+        <li> To create dimension variables go to: <b>  Modify -> Change Parameters -> Add User Parameter (top "+" sign) </b> </li>
+                    <li>Create a variable for “shaft_outer_d” representing the inner diameter of the Threaded Shaft, and set it to 9mm.</li>
+        <li>Follow table below to add all the following variables, and one equation to your Fusion File Parameters. Don't forget to save as you go! </li>
+    </ol>
+                <br> 
+                
+                
+                <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+        <th scope="col">Part Name (do not add to Fusion)</th>
+      <th scope="col">Variable Name (add in Fusion)</th>
+      <th scope="col">Expression</th>
+      <th scope="col">Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      
+    <tr>
+      <th scope="row">2</th>
+      <td> Shaft Outer Diamter</td>
+      <td>shaft_outer_d</td>
+      <td>9</td>
+      <td>mm</td>
+
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Shaft Length for 3 Rotating Blocks</td>
+      <td>shaft_length_3b</td>
+      <td>36.2 </td>
+      <td>mm</td>
+    </tr>
+ 
+      
+ 
+    <tr>
+      <th scope="row">4</th>
+      <td>Shaft Length for 4 Rotating Blocks</td>
+      <td>shaft_length_4b</td>
+      <td>48.2 </td>
+      <td>mm</td>
+    </tr>
+      
+          <tr>
+      <th scope="row">5</th>
+      <td>Shaft Threaded Hole Depth</td>
+      <td>thread_depth</td>
+      <td>10</td>
+      <td>mm</td>
+              
+
+      
+            <tr>
+      <th scope="row">7</th>
+      <td>Keychain Hole Diameter</td>
+      <td>keychain_hole_d</td>
+      <td>4</td>
+      <td>mm</td>
+    </tr>
+               <tr>
+      <th scope="row">9</th>
+      <td>Rotating Block Size</td>
+      <td>rot_b_size</td>
+      <td>12</td>
+      <td>mm</td>
+    </tr>   
+ 
+               <tr>
+      <th scope="row">10</th>
+      <td>Rotating Block thickness</td>
+      <td>rot_b_thick</td>
+      <td>12</td>
+      <td>mm</td>
+    </tr>
+      
+               <tr>
+      <th scope="row">11</th>
+      <td>Rotating Block Hole Tolerance</td>
+      <td>tolerance</td>
+      <td>0.6</td>
+      <td>mm</td>
+    </tr>  
+
+                <tr>
+      <th scope="row">12</th>
+      <td>Rotating Block Hole Diameter</td>
+      <td>rot_b_hole_d</td>
+      <td>shaft_outer_d + tolerance</td>
+      <td>mm</td>
+    </tr>  
+           
+      
+  </tbody>
+</table>
+                
+                
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 1</h4>
+                        Ask your instructor for a check-off on completing Part (1)
+                    </div>
+        <br> 
+                    <hr> 
+                    
+                    <h4>Part (2): Sketch and Dimension Parametrically  (Sketching Keychain Shaft) (5 minutes)</h4>
+
+                    <img src=media/3dprinting-pt2.png class="rounded mx-auto d-block img-fluid"> 
+
+
+                <br>
+                
+                <strong> Instructions </strong> 
+       
+             
+                <br> 
+                
+        <ol>
+        <li>Draw a circle at the center (0,0).</li>
+        <li>Dimension the first circle with “shaft_outer_d.”</li>
+        <li> Exit Sketch, and rename the Sketch to "shaft-circle"</li>
+                </ol>
+                <br>
+                
+                📍 If you need a refresher on how to sketch or dimension, please visit <a href="lab1.html"> Lab 1</a> !
+                <br> 
+   
+                    
+         <hr>
+                    <!-- Part 4: Assembly and Post-Processing -->
+            <h4>Part (3): Extruding the Sketch (give height to the shaft!) (5 minutes)</h4>
+                    
+                    
+                            <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+
+
+                            
+            <br> 
+                
+                                <strong> Steps: </strong> 
+<br> 
+
+                <ol>
+        <li>Click on <strong>Create</strong>.</li>
+        <li>Select the <strong>Extrude Tool</strong>.</li>
+        <li>Under <strong>Profile</strong>, select the area formed by the circle from your "shaft-circle" sketch.</li>
+        <li>Set the <strong>Direction</strong> to <strong>One Side</strong>.</li>
+        <li>Type the <strong>Distance</strong> as “shaft_length_3b” or "shaft_length_4b"-- here you must decide whether you
+                    will make a 3 block or 4 block keychain; No worries if you change your mind later on! 🤗</li>
+        <li>Choose the operation as <strong>New Component</strong>. <span style="color: red;">Why?</span> For creating assemblies, it's best to use components.</li>
+        <li>Click <strong>Ok</strong> to create the solid cylinder.</li>
+                    <li> Write click on the component and <strong> Rename it</strong> to "Shaft"</li>
+    </ol>
+                
+                <br> 
+                   
+        <hr>
+            
+                    <h4>Part (4): Making a Threaded Hole (7 minutes)</h4>
+
+                
+                
+                    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wXWqRJZoUgk?si=gpR0gE7b-c3LxezM" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                <br> 
+<b> Video Summary: </b>   
+            
+                <ol>
+        <li> Toggle "Shaft-circle" sketch back on</li>
+        <li>Go to <strong>Create</strong>.</li>
+        <li>Select the <strong>"Hole" Tool</strong>.</li>
+        <li>Under <strong>Face</strong>, select the top face of the cylinder.</li>
+        <li>Set the <strong>Reference</strong> to <strong>the center of the circle sketch</strong> (i.e. the "point" at the circle's center from the sketch).</li>
+        <li>Set the <strong>Hole Type</strong> to <b> “Simple” </b></li>
+        <li>Set the <strong>Hole Tap Type</strong> to <b> “Tapped” </b></li>
+        <li>Set the <strong>Thread Offset</strong> to <b> “Full” </b></li>
+        <li>Set the <strong>Drill Point</strong> to <b> “Angle” </b></li>
+        <li>Set the <strong>Depth</strong> to <b> "thread_depth" </b></li>
+        <li>Set the <strong>Size</strong> to <b> 7mm </b></li>
+         <li>Set the <strong>Designation</strong> to <b> M7mmx1mm </b></li>
+         <li>Have <strong>Modeled</strong> checked <b> ON </b></li>
+        <li>Click <strong>Ok</strong> to create your threaded hole.</li>
+    </ol>
+                <br> 
+             
+              <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 2</h4>
+                    Show your shaft with its threaded hole to your instructor, and explain to them what M7mmx1mm means (you are encouraged to look up the answer online 👀)!
+                    
+                    </div>  
+                
+
+                <hr>
+
+                                
+                <hr> 
+        <h4>Part (5): Creating Profile of Keychain Holder Head  (🚨REMIX🚨) (20 minutes)</h4>
+
+                
+                 <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/m07_IYGyhos?si=PRVqOGwR-EquRE_3" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                
+                
+            <ol>
+        <li>
+            <strong>Create an Axis Through the Cylinder:</strong>
+            <ul>
+                <li>Go to the <strong>Construct</strong> command in the top menu.</li>
+                <li>Select <strong>Axis Through Cylinder</strong>.</li>
+                <li>Click on the cylinder to establish the axis of rotation.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Create a Plane at an Angle to the Axis:</strong>
+            <ul>
+                <li>Again, in the <strong>Construct</strong> menu, select <strong>Plane at Angle</strong>.</li>
+                <li>Click on the axis you created.</li>
+                <li>Enter the angle as "0" for the plane, then confirm.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Use the Plane to Sketch the profile for the Top Holder on [🚨 REMIX OPPORTUNITY🚨]:</strong>
+            
+                                <img src=media/revolve-profiles.png class="rounded mx-auto d-block img-fluid"> 
+
+            
+            <ul>
+                <li>On the new plane, right click on it and select <strong>Create New Sketch</strong> (there are other ways 
+                    of doing this, but we opt for right clicking on plane for now).</li>
+                <li> To ensure we remain within bounds, go to <strong> Create</strong>, then <strong> Project</strong>, <strong> Select Entity (Selection Filter)</strong> and click on the perimeter of the top circle of the cylinder for <strong> Geometry</strong>. Kepp Projection Link on.
+                
+                <li> Your Design Constraints for your REMIX are as follows: </li>
+                <li>Draw the profile you would be revolving for the top holder on this plane. Recall that this should be symmetric and should not extrude out too much. Make sure that the profile is <strong> closed!</strong></li>
+                <li>Once done, click <strong>Finish Sketch</strong></li>
+            </ul>
+        </li>
+    </ol>
+                
+                <br> 
+                
+                In the next step, we will revolve this profile to create a symmetric top keychain holder.
+                    <br> 
+                
+                <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 4</h4>
+        Show & explain your sketched profile to your instructor ensuring that your design meets Remix Design Constraints!           </div>
+        <hr> 
+                
+                
+                
+                <h4>Part (6): Revolving Radially Symmetric Geometry(5 minutes)</h4>
+
+                  
+                 <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/owtCM5rS0ps?si=YSIwGU58CVGw1WB6" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                
+                
+            <strong> Video Summary:</strong>
+                
+                 <ol>
+        <li><strong>Revolve Command:</strong> Go to <strong>Create &gt; Revolve</strong> in the toolbar.</li>
+        <li><strong>Select Profile:</strong> Click on the profile (the closed shape) that you want to revolve.</li>
+        <li><strong>Select Axis:</strong> Click the axis of symmetry (the cyliner axis we constructed) around which the profile will revolve.</li>
+        <li><strong>Set Angle:</strong> In the Revolve dialog, set the <strong>angle</strong> to 360° (or the desired angle for partial revolution if you want to play around with this!).</li>
+        <li><strong>OK:</strong> Click <strong>OK</strong> to complete the operation.</li>
+    </ol>
+        
+            
+                <br>
+
+        <hr> 
+                
+                <hr> 
+                
+                
+                
+                <h4>Part (7): Making Hole for Keychain (5 minutes)</h4>
+                
+                
+                    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0mJ34pklLXE?si=cYmi39padUjUi0-z" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                
+        <ol>
+        <li><strong>Create a Tangent Plane:</strong> Create a plane that is tangent to the surface of your revolved part using <strong>Construct &gt; Tangent Plane</strong>.</li>
+        <li><strong>Sketch a Circle on the Tangent Plane:</strong> Start a sketch on the tangent plane and draw a circle where you want the hole.</li>
+        <li><strong>Dimension the Circle:</strong> Use the <strong>Dimension</strong> tool to set the circle's diameter to <strong>4mm</strong> (or your desired size).</li>
+        <li><strong>Extrude Cut the Hole:</strong> Use <strong>Create &gt; Extrude</strong>, select the circle, and set it to <strong>Cut</strong> with the <strong>Symmetric</strong> direction to cut both sides of the part.</li>
+        <li><strong>Finish:</strong> Click <strong>OK</strong> to complete the hole creation process.</li>
+    </ol>
+                
+                <br> 
+        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 8</h4>
+        Show your shaft's keychain hole to your instructor       </div>      
+                <hr> 
+                
+                
+                            <h4>Part (8): Understanding Sketch Relationships & Constraints (5 minutes)</h4>
+
+                
+                                    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Vb8D2daPgbA?si=sd1_Dsjn0t7W8Iy2" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+                
+                <hr> 
+                
+                
+                
+            <h4>Part (9): Warping/Embossing a Design on your cylindrical shaft (5 minutes)</h4>
+
+                
+                
+                <hr> 
+                
+                         
+                      
+                
+
+            <h4>Part (10): Creating Blocks (🚨REMIX🚨) (30 minutes)</h4>
+
+                
+                <i> As you create you <b> BLOCKS </b> we recommend creating them as <b>"New Components"</b> even though video shows Bodies
+                </i>
+                
+              <br> <br> 
+                
+                 <p>Now is the time to be as ✨creative✨ as you'd like! Create your keychain blocks by following the design guidelines outlined below, 
+                     and refer to the video to guide through some steps to understand those guidelins. Note that although the video says "Part-9", this is "Part-10" 
+                for you;</p> 
+                
+                
+  <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4wlEyLQyJ1Q?si=KMSg9hT7WvpJJxRh" title="YouTube video player" allowfullscreen></iframe>
+        </div>                
+                <br> 
+                <p> Below are some of your instructor's creations-- you might 
+                also consider designing something in illustrator and importing as DXF (like what you learned in <a href="lab1.html"> Lab 1</a>), and as demonstrated in the video!</p>
+              
+  <img src=media/block_remix_no_material.png class="rounded mx-auto d-block img-fluid"> 
+
+                
+                <strong>Design Constraints Summary: </strong>
+                <br> <br> 
+                <ol> <li> Block Size: 12mm (variable: rot_b_size)  </li>
+                 <li>  Hole Size:  9.6mm (variable: rot_b_hole_d)  </li>
+                 <li>  General 3D Printing Guidelines:  <a href= "https://www.hydraresearch3d.com/design-rules"> Link1</a>, <a href="https://wikifactory.com/+wikifactory/stories/ultimate-guide-how-to-design-for-3d-printing"> Link2</a>
+                    <ul> 
+                     <li> Minimum Feature size:  2x Nozzle diameter (e.g. 0.8mm for 0.4mm Nozzle) </li>
+                        <li> Angles (for minumum support material):  < 50 Degrees </li>
+                     </ul></li></ol>
+                <br> 
+              
+
+ <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 8</h4>
+        Show your keychain blocks to your instructor & share your creative vision!       </div>        
+                
+        <hr>     
+                
+    <h4>Part (13):Sweep Features for aesthetic corners (OPTIONAL)</h4>
+
+
+                
+                <hr> 
+                
+                
+        <h4>Part (14): Deciding Components for Multi-material Printing (ONLY DO IF YOU DECIDE TO FDM 3D PRINT)</h4>
+
+
+                
+                <hr> 
+                
+        <h4>Part (15): Assigning Materials & Colors (10 minutes)</h4>
+
+                
+                <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HgylKcMsB1k?si=y-r43sab3YSCSSYi" title="YouTube video player" allowfullscreen></iframe>
+        </div> 
+                
+                <br> 
+              Below are examples from some of your instructor's--
+                <br> 
+             <img src=media/block-examples.png class="rounded mx-auto d-block img-fluid"> 
+
+
+                <ol>
+        <li>
+            <strong>Assign Material:</strong>
+            <ul>
+                <li>Right-click the <strong>body/component</strong> in the <strong>Browser</strong> and select <strong>"Appearance"</strong>.</li>
+                <li>Drag a material from the <strong>Appearance</strong> panel to the body (whole body or specific faces).</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Custom Color (<a href="https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-AD91BF4B-C721-49CD-9C37-C0E82A06A669">Tutorial-Link</a>):</strong>
+            <ul>
+                <li>Right-click the applied material and choose <strong>"Edit"</strong>.</li>
+                <li>Click the <strong>color box</strong> to select a <strong>custom color</strong>.</li>
+            </ul>
+        </li>
+    </ol>
+
+<hr> 
+                
+   <h4>Part (16): Assemblies in CAD (10 minutes)</h4>
+
+                
+                            <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bhVTQeAzOVw?si=aWKcNbwl4mxNKyDq" title="YouTube video player" allowfullscreen></iframe>
+        </div> 
+                
+             <ol>
+        <li>
+            <strong>Ensure Blocks Are Components:</strong>
+            <ul>
+                <li>Convert blocks to <strong>components</strong> by right-clicking and selecting <strong>"Convert to Component"</strong>.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Create Assembly:</strong>
+            <ul>
+                <li>Click <strong>"Assemble"</strong> > <strong>"Joint"</strong>.</li>
+                <li>Choose the <strong>Shaft</strong> as <strong>Component 1</strong> and the first <strong>Block</strong> as <strong>Component 2</strong>.</li>
+                <li>Define the joint type as <strong>"Simple"</strong> and <strong>"Revolute"</strong> .</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Add Remaining Blocks:</strong>
+            <ul>
+                <li>Apply <strong>"Joint"</strong> again from the prevuous steps.</li>
+            </ul>
+        </li>
+    </ol>   
+
+            <hr> 
+                
+                 <h4>Part (17): Rendering (5 minutes)</h4>
+                
+                                <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lW3K_Cl8bww?si=hGGt-U0ipD4wKm97" title="YouTube video player" allowfullscreen></iframe>
+        </div> 
+            
+                <br> 
+                Below are examples from some of your instructor's--
+                <br>
+  <img src=media/block-examples-rendered.png class="rounded mx-auto d-block img-fluid"> 
+
+                <ol>
+        <li>
+            <strong>Switch to Render Workspace:</strong>
+            <ul>
+                <li>Click on the <strong>Design</strong> tab and switch to the <strong>Render</strong> workspace.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Adjust Scene Settings:</strong>
+            <ul>
+                <li>Click on <strong>Scene Settings</strong> to adjust the lighting and background to your liking.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Render and Save Image:</strong>
+            <ul>
+                <li>Click on <strong>In-Canvas Render</strong> to generate the render.</li>
+                <li>Once done, save the image to your computer.</li>
+                 <li>Upload Render image to <a href="">Lab-2 Drive Folder</a> under the name "LastName_FirstName_keychain"</li>
+
+
+            </ul>
+        </li>
+    </ol>
+                <br> 
+        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 8</h4>
+        Show your shaft's keychain hole to your instructor       </div>      
+                
+            <hr> 
+
+ <h4>Part (18): Export STL Files & Share Fusion Project (10 minutes)</h4>
+
+                                                <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="  https://www.youtube.com/embed/-lfI6YwKkOQ?si=8cFkHIRUrJsF7zLe" title="YouTube video player" allowfullscreen></iframe>
+        </div> 
+                
+              
+                
+                
+                We would like to export each part individually. To do so: 
+                  <ol>
+        <li>
+            Go to the hierarchy in Fusion 360, right-click on the component or body, and click <strong>Export</strong>.
+        </li>
+        <li>
+            Select the file type as <strong>STL</strong> and save it locally. Use the naming convention:
+            <em>"LastName_FirstName_Number"</em> (e.g., <strong>Jane_Doe_1</strong>).
+        </li>
+        <li>
+            Repeat the same steps for all components you have.
+        </li>
+        <li>
+            Upload all STL files to your <strong>Google Drive</strong>.
+        </li>
+        <li>
+            Share the link to your Fusion 360 file so your instructors can access and edit your files if necessary. To do this:
+            <ol>
+                <li>Open your project in Fusion 360.</li>
+                <li>Click on the <strong>File</strong> menu and select <strong>Share > Share File Link</strong>.</li>
+                <li>Enable the option to allow downloading</li>
+                <li>Copy the generated link and share it with your instructors.</li>
+            </ol>
+        </li>
+             
+                </ol>               
+        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 8</h4>
+        Show your shaft's keychain hole to your instructor       </div>      
+                      
+         <hr>        
+                
+                
+                <p> Below are options based on what you pick: (1) FDM 3D Printing (2) STL Printing </p>
+ <h4>Part (19-A): Directly Export for 3D Printing (FDM)</h4>
+                
+                
+                ADD VIDEO HERE
+                
+
+                    <ol>
+        <li>
+            <strong>Export the 3D Model:</strong>
+            <ul>
+                <li>Click <strong>File</strong> in the top-left corner, then select <strong>3D Print</strong>.</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Use the 3D Print Utility:</strong>
+            <ul>
+                <li>Click on <strong>3D Print from Utility</strong>.</li>
+                <li>Choose <strong>Application Custom</strong>, and then <strong>load CURA</strong> from your applications list.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Open in Cura:</strong>
+            <ul>
+                <li>After selecting your model, click <strong>OK</strong>.</li>
+                <li><strong>CURA</strong> will open automatically with the selected model.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Export Each Component:</strong>
+            <ul>
+                <li>Repeat the process for each component to export them one by one.</li>
+            </ul>
+        </li>
+    </ol>
+                
+                
+  <hr> 
+                
+             
+         <h4>Part (19-B): Setting up File for Multi-material 3D Printing (FDM)</h4>        
+                
+                
+  <h4>Part (19-C): Setting Up Print Parameters </h4>
+
+<ol>
+        <li>
+            <strong>Adjust Model Orientation:</strong>
+            <ul>
+                <li>Ensure your models are in the correct orientation.</li>
+                <li>Use <strong>Rotate</strong> and <strong>Move</strong> tools to adjust the position if needed.</li>
+                <li>Make sure models do not overlap.</li>
+            </ul>
+        </li>
+        
+        <li>
+            <strong>Adjust 3D Printing Settings:</strong>
+            <ul>
+                <li>Set <strong>Layer Thickness</strong> to <strong>0.1mm</strong> (fine quality, for threading).</li>
+                <li>Set <strong>Speed</strong> to <strong>100mm/s</strong>.</li>
+                <li>Set <strong>Fill Density</strong> to <strong>15%</strong>.</li>
+                <li>Enable <strong>Support</strong> (set to "only touching the print bed").</li>
+                <li>Disable <strong>Build Plate Adhesion</strong> (usually recommend to use brim, but here we just don't want to 
+                    affect your design).</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Slicing and Preview:</strong>
+            <ul>
+                <li>Click <strong>Slice</strong> to generate the G-code.</li>
+                <li>Click <strong>Preview</strong> to check your print setup before exporting.</li>
+            </ul>
+        </li>
+    </ol>
+                <hr> 
+                
+                
+                
+                
+        <h4>Part (20-A): Setting Up Print parameters and Setup for SLA Printing </h4>
+
+
+                
+                <!-- Submission Section -->
+                <section class="mb-4">
+                    <h2>Discussion & Reflections</h2>
+        <ol>
+            <li><strong>Discuss the advantages and limitations of using 3D Printing for digital fabrication.</strong>
+                <ul>
+                    <li>What can we make? What is difficult to make?</li>
+                </ul>
+            </li>
+            <li><strong>Reflect on the design process</strong> 
+                <ul>
+                    <li>Consider any modifications that could have improved/elevated youre remix design.</li>
+                </ul>
+            </li>
+            
+        </ol>
+                </section>
+                
+                    </li>
+            </ul>
+    </div>
+</div>
+        
+        
+
+    </div> <!-- End Container -->
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© 2025 Actuated Experiences · MIT</p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script to Load Header -->
+    <script src="../../js/load_header_labs.js"></script>
+</body>
+</html>
