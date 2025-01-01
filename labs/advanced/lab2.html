@@ -62,7 +62,9 @@
                     In this lab, you will <b> learn</b> how to: 
                     <br> <br> 
                     <ul>
-                        <li> ✅ Create 3D-models from 2D-sketches (extrusion and revolving operations) </li>
+                        <li> ✅ Learn advanced 3D modeling Techniques (Revolve, Sweep, Warp) </li>
+                        <li> ✅ Design for Multimaterial 3D Printing </li>
+
                         <li> ✅ CAD a simple rotating element around a shaft</li>
                         <li> ✅ CAD a threaded object</li>
                          <li> ✅ Make a Mechanical Assembly </li>
@@ -107,20 +109,35 @@
                         <ul>
                             <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> </li>
                             <li> <a href= "https://ultimaker.com/software/ultimaker-cura/"> Ultimaker Cura </a> (Ultimaker 3D Printer Slicing Program) </li>
-                            <li> <a href= ""> Bambu Studio </a> (Bambu 3D Printer Slicing Program) </li>
-                            <li> <a href= ""> XX for SLA </a> (SLA) </li>
+                            <li> <a href= "https://bambulab.com/en/download/studio"> Bambu Studio </a> (Bambu 3D Printer Slicing Program) </li>
+                            <li> <a href= "https://store.anycubic.com/pages/anycubic-photon-workshop-3d-slicer-software?srsltid=AfmBOoqAbVcUO8ohgeLGpOpwcLqC7J2-KagPRhPm0KPDFiELjHm86_Te"> Photoworkshop for Anycube SLA Printer </a> (SLA) </li>
 
 
 
                     </ul>
 
 
-                        <h5>Machines:</h5>
+                        <h5>Machines (available for you):</h5>
                         <ul>
-                    <li>FDM 3D Printer (multi</li>
-                    <li>FDM 3D Printer</li>
-                        </ul>
+                    <li>FDM 3D Printers (multi-material printing): Ultimaker S3, Bambu</li>
+                    <li>FDM 3D Printer (single material): Ultimaker, Prusa </li>
+                   <li>SLA(single material): Anycube </li>
+                    
+                    </ul>
 
+            
+                    
+                    
+                 <h5>Materials (available for you):</h5>
+                        <ul>
+                    <li>Thermoplastics: PLA, Alcohol-soluble PLA (Polysmooth), TPU (rubber)</li>
+                    <li>Conductive TPU</li>
+                    <li>Conductive PLA</li>
+                    <li>Ferroelectric PLA (sticks to magnets)</li>
+                    <li>SLA Resin (only with Anycube)</li>
+
+    
+                    </ul>
                 </section>
 
                 <hr>
@@ -278,7 +295,7 @@
             <h4>Part (3): Extruding the Sketch (give height to the shaft!) (5 minutes)</h4>
                     
                     
-                            <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+                            <img src=media/extrude.png class="rounded mx-auto d-block img-fluid"> 
 
 
                             
@@ -449,6 +466,19 @@
                 <hr> 
                 
                 
+                
+                <hr> 
+                
+                
+                <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 9: Pick your 3D Printing Fabrication Method</h4>
+        Let your Instructor Know which 3D printing method you would like to use. We have a spreadsheet to coordinate printing, and this will also affect what colors you would use.
+                </div>      
+                 
+                
+                <hr> 
+                
                             <h4>Part (8): Understanding Sketch Relationships & Constraints (5 minutes)</h4>
 
                 
@@ -460,7 +490,7 @@
                 
                 
                 
-            <h4>Part (9): Warping/Embossing a Design on your cylindrical shaft (5 minutes)</h4>
+            <h4>Part (9): Warping/Embossing a Design on your cylindrical shaft (5 minutes) <b> [Only for FDM Multi-material Printing] </b></h4>
 
                 
                 
@@ -507,23 +537,57 @@
 
  <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 8</h4>
+                        <h4>Checkoff 10</h4>
         Show your keychain blocks to your instructor & share your creative vision!       </div>        
                 
         <hr>     
                 
-    <h4>Part (13):Sweep Features for aesthetic corners (OPTIONAL)</h4>
+    <h4>Part (13):Sweeping for Aesthetic Corners </h4>
 
 
                 
                 <hr> 
                 
+    
                 
-        <h4>Part (14): Deciding Components for Multi-material Printing (ONLY DO IF YOU DECIDE TO FDM 3D PRINT)</h4>
-
+                
+          <h4>Part (16): Assemblies in CAD (10 minutes)</h4>
 
                 
-                <hr> 
+                            <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bhVTQeAzOVw?si=aWKcNbwl4mxNKyDq" title="YouTube video player" allowfullscreen></iframe>
+        </div> 
+                
+             <ol>
+        <li>
+            <strong>Ensure Blocks Are Components:</strong>
+            <ul>
+                <li>Convert blocks to <strong>components</strong> by right-clicking and selecting <strong>"Convert to Component"</strong>.</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Create Assembly:</strong>
+            <ul>
+                <li>Click <strong>"Assemble"</strong> <strong>"Joint"</strong>.</li>
+                <li>Choose the <strong>Shaft</strong> as <strong>Component 1</strong> and the first <strong>Block</strong> as <strong>Component 2</strong>.</li>
+                <li>Define the joint type as <strong>"Simple"</strong> and <strong>"Revolute"</strong> .</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong>Add Remaining Blocks:</strong>
+            <ul>
+                <li>Apply <strong>"Joint"</strong> again from the prevuous steps.</li>
+            </ul>
+        </li>
+    </ol>            
+                
+                
+                
+                
+                <hr>
+                
                 
         <h4>Part (15): Assigning Materials & Colors (10 minutes)</h4>
 
@@ -555,40 +619,7 @@
             </ul>
         </li>
     </ol>
-
-<hr> 
                 
-   <h4>Part (16): Assemblies in CAD (10 minutes)</h4>
-
-                
-                            <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bhVTQeAzOVw?si=aWKcNbwl4mxNKyDq" title="YouTube video player" allowfullscreen></iframe>
-        </div> 
-                
-             <ol>
-        <li>
-            <strong>Ensure Blocks Are Components:</strong>
-            <ul>
-                <li>Convert blocks to <strong>components</strong> by right-clicking and selecting <strong>"Convert to Component"</strong>.</li>
-            </ul>
-        </li>
-
-        <li>
-            <strong>Create Assembly:</strong>
-            <ul>
-                <li>Click <strong>"Assemble"</strong> > <strong>"Joint"</strong>.</li>
-                <li>Choose the <strong>Shaft</strong> as <strong>Component 1</strong> and the first <strong>Block</strong> as <strong>Component 2</strong>.</li>
-                <li>Define the joint type as <strong>"Simple"</strong> and <strong>"Revolute"</strong> .</li>
-            </ul>
-        </li>
-
-        <li>
-            <strong>Add Remaining Blocks:</strong>
-            <ul>
-                <li>Apply <strong>"Joint"</strong> again from the prevuous steps.</li>
-            </ul>
-        </li>
-    </ol>   
 
             <hr> 
                 
@@ -632,7 +663,7 @@
                 <br> 
         <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 8</h4>
+                        <h4>Checkoff 11</h4>
         Show your shaft's keychain hole to your instructor       </div>      
                 
             <hr> 
@@ -674,7 +705,7 @@
                 </ol>               
         <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 8</h4>
+                        <h4>Checkoff 12</h4>
         Show your shaft's keychain hole to your instructor       </div>      
                       
          <hr>        
