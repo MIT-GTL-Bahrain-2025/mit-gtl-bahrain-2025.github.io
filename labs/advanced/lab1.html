@@ -29,16 +29,20 @@
                     <li><a href="#introduction">Introduction & Safety</a></li>
                     <li><a href="#fabq">Fabrication Quest</a></li>
                     <li><a href="#software">Software & Hardware for the Lab</a></li>
-                    <li><a href="#part0">Part (0): Fusion360 Workspace</a></li>
+                    <li><a href="#part0">Part (0): Fusion360 Refresher</a></li>
                     <li><a href="#part1">Part (1): Sketching Objects and Dimensioning </a></li>
-                    <li><a href="#part2">  Part (2): Mirroring Sketch Geometries </a></li>
-                    <li><a href="#part3"> Part(3): Filletting</a></li>
-                    <li><a href="#part4"> Part(4): Linear Patterning</a></li>
-                      <li><a href="#part5">Part (5): Importing DXF files </a></li>
-                    <li><a href="#part6">  Part (6): Remixing </a></li>
-                    <li><a href="#part7"> Part(7): Exporting DXF files</a></li>
-                    <li><a href="#part8"> Part(8): Laser Cutting</a></li>
-                    <li><a href="#part9"> Part(9): Assembly and Post-Processing</a></li>
+                    <li><a href="#part2">  Part (2): Filletting </a></li>
+                    <li><a href="#part3"> Part (3): Linear Patterning</a></li>
+                    <li><a href="#part4"> Part (4): Sketching the Triangular Legs</a></li>
+                    <li><a href="#part5">Part (5): Loading the Finger-joint plug-in </a></li>
+                    <li><a href="#part6">  Part (6): Extruding the Parts </a></li>
+                    <li><a href="#part7"> Part (7): Creating the finger joints</a></li>
+                    <li><a href="#part8"> Part (8): Projecting Sketch Entities</a></li>
+                    <li><a href="#part9"> Part (9): Importing DXF File</a></li>
+                    <li><a href="#part10"> Part (10): Remixing</a></li>
+                    <li><a href="#part11"> Part (11): Exporting DXF File</a></li>
+                    <li><a href="#part12"> Part (12): Lasercutting</a></li>
+                    <li><a href="#part13"> Part (13): Assemble the Calendar and Sand the Edges</a></li>
                      <li><a href="#discussion"> Discussion & Reflections</a></li>
                 </ul>
             </div>
@@ -165,7 +169,7 @@
                 <section class="mb-4">
                     <!-- Part 0: Understanding Fusion360 Workspace -->
                     <h4>Part (0):  Fusion360 Refresher (optional)</h4>
-                    <p>If you feel a bit rusty on using Fusion360, please refer to the <a href="https://mit-gtl-bahrain-2025.github.io/labs/beginner/lab1.html">Beginner Lab</a>
+                    <p id="part1">If you feel a bit rusty on using Fusion360, please refer to the <a href="https://mit-gtl-bahrain-2025.github.io/labs/beginner/lab1.html">Beginner Lab</a>
                          to get a refresher on basic CADing principles.</p>
                     
                 
@@ -251,9 +255,9 @@
                     <li>Dimension the new rectangle to 120 mm (length) and 8 mm (width).</li>
                     <li>Now, dimension the vertical distance from the new rectangle to the main rectangle's top length to 20 mm.
                         <li> Dimension again the horizontal distance from the width of the slider hole to the width of the main rectangle to be 8mm (right-side).</li>
-                    <li>Repeat these steps, ensuring the vertical and horizontal distances are (vertical: 67 mm from bottom), (horizontal: 8mm from right) respectively.</li>
+                    <li id="part2">Repeat these steps, ensuring the vertical and horizontal distances are (vertical: 67 mm from bottom), (horizontal: 8mm from right) respectively.</li>
                 </ul>
-                <br>
+                <br >
             </li>
         
         
@@ -284,7 +288,7 @@
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 1</h4> <a id="part4"> </a>
+                    <h4 id="part3">Checkoff 1</h4>
                     Show the filetted corners to your instructor
                     
                     </div>
@@ -358,8 +362,8 @@
                     
                     
                     
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 2</h4><a id="part5"> </a>
+                    <div id="part4" class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 2</h4>
                         Show your linear patterned result, and answer the reflection question
                     </div>
                 </section>
@@ -401,7 +405,7 @@
             
         
                     <hr> 
-                    
+                    <a id="part5"> </a>
                  <p>To create finger joints seamlessly and quickly (to help you with your final project or remix), we will use a plug-in, which also introduces you to plug-in loading and requires extruding the part.</p>
 
                     <hr> 
@@ -424,9 +428,10 @@
             <li> Windows Users: Follow similiar steps compatible with windows to access the "Add-ins" file. (eg. <code>
                 * Windows:  `%AppData%\Autodesk\Autodesk Fusion 360\API\AddIns` </code>)</li>
             </ul>
+            <a id="part6"> </a>
         <li><strong>Find the Plug-in in Fusion:</strong> Find the plug-in under the "Modify" tab in Fusion360.</li>
         </ol>     
-            
+        
             <br> 
             
             <hr> 
@@ -446,6 +451,7 @@
         <li> <strong>Draw Aligenment Construction Line :</strong> Create two vertical construction lines that are 4mm away from the edge of the calendar body.</li>
         <li><strong>Extrude the triangle :</strong> Extrude the triangle to the thickness of the wood piece provided to you which is 5mm. In the video and at MIT, we were using 0.25" wood stock.</li>
         <li><strong>Extrude the calendar body:</strong> Following the same steps above, extrude the calendar body.</li>
+        <a id="part7"> </a>
         <li><strong>Align the hypotenuse to the face of the calendar:</strong> Select the face created by the triangle hypotenuse, hold shift, select the calendar's face, right click on "Align".</li>
         <li><strong>Align the edge of the trinagular base to the edge of the calendar:</strong>  Select and align.</li>
         <li><strong>Align the edge of the hypotenuse with the construction line:</strong> Select both and align.</li>
@@ -455,7 +461,7 @@
         </ol>     
             
                 
-            
+        
             <hr> 
                     <h4> Part (7): Creating the finger joints</h4>
                     
@@ -486,9 +492,9 @@
             </ol>
             
             
-            
+            <a id="part8"> </a>
               <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 4</h4><a id="part4"> </a>
+                        <h4>Checkoff 4</h4>
 Show your finger joints to your instructor                    </div>
             
 
@@ -513,7 +519,7 @@ Show your finger joints to your instructor                    </div>
         <li> 
 
             <strong> Create a New Sketch:</strong> Create a new sketch on the XY plane.</li>
-            
+            <a id="part9"> </a>
             <li>Click <strong>Create</strong> --> <strong>Project/Include</strong> --> <strong>Project Entities</strong>.</li>
             <li>Select the extruded calendar body (selection filter set as bodies). Set <strong>Projection Link</strong> to <strong>On</strong>.</li>
             <li>Click <strong>OK</strong> to complete.</li>
@@ -545,8 +551,8 @@ Show your finger joints to your instructor                    </div>
                 
             
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
-                        <h4>Checkoff 5</h4> <a id="part6"> </a>
+                        <a id="part10"> </a>
+                        <h4>Checkoff 5</h4> 
         Show the correctly imported and placed dxf to your instructor            </div>
         <hr> 
             
@@ -598,7 +604,7 @@ Show your finger joints to your instructor                    </div>
             
             <br> 
             
-        
+            <a id="part11"> </a>
                         <h4>Checkoff 6</h4>
         Show your remix to your instructor            </div>
         <hr> 
@@ -636,13 +642,13 @@ Show your finger joints to your instructor                    </div>
                 </ul>
             </li>
         </ol>
-
+        
         <p><em>Note</em>: In future labs, we’ll demonstrate a method to export without including construction lines, which will streamline your workflow!</p>
 
-                <a id="part8"> </a>
+                
                             
         <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
+            <a id="part12"> </a>
                         <h4>Checkoff 7</h4>
         Show the exported file to your instructor to start lasercutting        </div>      
                 <hr> 
@@ -675,7 +681,7 @@ Show your finger joints to your instructor                    </div>
             </ol>
 
             Below is a summary of what makes something cut as vector and something as raster-- we also provide some examples in the graphic below: 
-            
+            <a id="part9"> </a>
                                 <img src=media/vector_raster.png class="rounded mx-auto d-block img-fluid"> 
 
                             
@@ -685,22 +691,17 @@ Show your finger joints to your instructor                    </div>
             <li> <b>Vector Cutting: </b> 
                 
                 <ul> 
-                <li> 🔴 RGB red color (255, 0, 0) <a id="part9"> </a> </li>
+                <li> 🔴 RGB red color (255, 0, 0)  </li>
                     <li> ⭕ Vector Shape (only outline, no infill) </li>
                 <li> ✏️ outline line width (0.01pt)</li>
                 </ul>
                 
-
+                <a id="part13"> </a>
                 <br> 
             
              <li> <b>Raster Engraving:</b> Anything that does not meet vector requirements</li>
-
-            
-
-            </ol>
-
-            
-                   <hr> 
+            </ol>            
+            <hr> 
                 
         <h4>Part (13): Assemble the Calendar and Sand the Edges (30 minutes)</h4>
 
