@@ -164,11 +164,81 @@
                     
                     <!-- Part 1: Designing the Calendar -->
                     <h4>Part (1): Building a single-input Cap-Sensor w/ Arduino Cap-Sense Pin (20 mins)</h4>
+                    <p>
+                        We will implement touch sensing based on the principle of capacitive touch sensing. The circuit for capacitive touch sensing requires
+                        a sender pin, which outputs a signal, and a receiver pin, which listens to the signal. The sender and receiver pin have the touch
+                        button connected between them. When a user touches the touch button, the signal that was injected through the sender pin will take
+                        longer to discharge due to a capacitive object (finger) nearby. The microcontroller can measure this time difference and thereby detect touch.
+                    </p>
+                    <br>
+                    <p>
+                        To delay the discharge from the user's finger and make the time difference measurable on the ESP32, you will add a resistor between the sender
+                        and the receiver pin. A higher resistance enables more sensitive sensing (a 10MOhm resistor enables sensing of a finger up to 10cm distance,
+                        while a 10kOhm resistor would not make such a large distance detectable). However, higher resistance comes at the cost of speed because the
+                        signal takes longer to discharge. Since we only want to sense touch and do not need to sense hovering of a finger, we will use a 100kOhm resistor
+                        because it offers a good trade-off between sensitivity and sensing speed.
+                    </p>
+                    <div class="d-inline-flex row-cols-2">
+                        <img src=media/CapTouch/capsense.png class="w-auto mx-auto d-block img-fluid"> 
+                        <img src=media/capTouch/circuit.png class="w-auto mx-auto d-block img-fluid"> 
+                    </div>
+                    <p>
+                        Lets first make our capacitive touch pad. Take a roughly finger sized piece of copper tape. Poke a M-M jumper cable through about 1/2cm from one end 
+                        (careful not to poke yourself). Then solder the jumper down to the copper. It should look like this:
+                    </p>
+                    <img src=media/CapTouch/CapTouchPad.jpg class="w-50 mx-auto d-block img-fluid">
+                    <p>Let's build the circuit and write the code for one touch button, and then later repeat the procedure for the other touch buttons. To get started, follow these steps:
+                    </p>
+                    <ul>
+                        <li>Sender Pin: For the sender pin, you can use any GPIO pin on the Ardiuno. For this first touch button, we ask you to use GPIO pin 2.</li>
+                        
+                        <li>Receiver Pin: For the receiver pin, it is best to use the ardiuno capactive touch pin 3. This pins is optimized to serve as receivers for capacitive sensing and therefore return cleaner signals, so we will use them for our sensing application. </li>
+    
+                        <li>Resistor: We will examine a 10k (Yes 10k) Ohm resistor. Add the resistor to the circuit between your sender and receiver pin for your first touch button as shown in the schematic image above.</li>
+                    </ul>
+                    
+                    <p>The result should look something like this. The pad is tucked under the ardiuno for photo-taking sake</p>
+                    <img src=media/CapTouch/CapTouchSingle1.jpg class="mx-auto d-block img-fluid">
 
+                    <p>Install the CapacitiveSensor library by Paul Badger. Then, upload the following code to your ardiuno:</p>
+                    <pre>
+                        /*******************************************************************************
+                        * Capacitive Sensing for Touch and Proximity
+                        *
+                        * Reads values from two capacitive sensors and displays results on the Serial Plotter.
+                        *******************************************************************************/
 
-Use copper tape and cap sense pin to make your first cap sensor; explain the graph,  explain thresholding, explain 
-                    the use and purpose of the resistor. 
+                        #include <CapacitiveSensor.h>
 
+                        // Define sender and receiver pins for the two touch pads
+                        int sender = 2; // Shared sender pin
+                        int touch_pin = 3; // Receiver for touch pad 2
+
+                        // Number of samples to take per reading
+                        int samples_touch = 10;
+
+                        // Create capacitive sensor objects
+                        CapacitiveSensor sensor1 = CapacitiveSensor(sender, touch_pin);
+
+                        void setup() {
+                        Serial.begin(9600); // Initialize Serial communication
+                        Serial.println("Capacitive Touch Sensor Ready!");
+                        }
+
+                        void loop() {
+                        // Read capacitive values
+                        double analog_touch_1 = sensor1.capacitiveSensor(samples_touch);
+
+                        // Print values to Serial Plotter (comma-separated for multi-channel display)
+                        Serial.print(analog_touch_1);
+                        Serial.println(",");
+
+                        delay(10);
+                        }
+
+                    </pre>
+
+                    <p>Examine the output on the serial plotter (top right button) in the Ardiuno IDE. Now swap the 10k resistor for a 1M Ohm resistor. How does it change?</p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4> <a id="part2"> </a>
@@ -179,12 +249,26 @@ Use copper tape and cap sense pin to make your first cap sensor; explain the gra
                     
                     <h4>Part (2): Wiring of multiple Inputs with a Multiplexer (20 minutes)</h4>
 
-       Breadboard breakdown of the adafruit sensing pin and why we use it
-                    
+                    <p>The MPR121 Adafruit shield allows us to use 12 capacitive touch sensors. Often we only need to know if the sensor is "touched" or "not-touched." 
+                        The shield and library can set an automatic threshold for any object. The shield is made for alligator clips, in which we can clip to just about anything.
+                        We can also solder to it.
+                    </p>
+
+                    <p>Create a total of 6 capacitive touch sensors out of whatever material you want. Solder the headers onto the MPR121. Solder the jumpers onto the MPR121.
+                        It should look something like this (you don't have to stick the copper tape down, but your pads can't touch)
+                    </p>
+
+                    <img src=media/CapTouch/CapTouch6Zoom2.jpg class="mx-auto d-block img-fluid">
+                    <br>
+                    <img src=media/CapTouch/CapTouch6Assem.jpg class="mx-auto d-block img-fluid">
+
+                    <p>Using the shield is easy. Install the Adafruit MPR121 library. Then go to File -> Examples -> Adafruit MPR121 -> MP121test. 
+                        It should work out of the box.</p>
+
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 3</h4> <a id="part3"> </a>
-                        Show your instructor that you have constructed all four rectangular holes
+                        Show your instructor that you can use 6 capacitive touch sensors
                     </div>
                     
 
