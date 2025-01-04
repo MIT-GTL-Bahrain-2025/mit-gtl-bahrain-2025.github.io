@@ -7,7 +7,12 @@
     <!-- Bootswatch Litera CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
-    <link rel="stylesheet" href="../../styles.css">
+
+    <!-- Code Highlighting CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+    <link rel="stylesheet" href="../../styles.css"></link>
 </head>
 <body>
 
@@ -55,7 +60,6 @@
                 </section>
                 <hr>
 
-                <img src="media/fab-quest-picture.png" class="rounded mx-auto d-block img-fluid">
                 <br>
                 <h2>🔨 Fabrication Quest of the Day</h2>
                 <ul>
@@ -96,52 +100,61 @@
                     <p>Our first sensor is a photoresistor. A photoresistor is a special type of resistor whose resistance depends on the amount of light that shines on it. Higher luminosity decreases the resistance. They are simple, inexpensive, and effective for detecting relative brightness, making them ideal for applications like guiding a robot toward a light source.</p>
                     <strong>Always have your Arduino unpowered when breadboarding.</strong>
                     <ol>
-                        <li>Wire your photoresistor and 10kOhm resistor as shown below. The yellow wire is going to A2 (analog input). Red to 5V. Black to Gnd. This has created a voltage divider. Because the resistance of the photoresistor changes with light, it will change the voltage at A2.</li>
-                        <li>Now we can read the resistance value through the analog pin A2. It will be converted to an integer between 0-1023. Write the following code to your Arduino.</li>
-                        <pre>
-                            // Pin assignments for photoresistors
-                            const int Photoresistor = A1;
-                            
-                            void setup() {
-                              Serial.begin(9600); // Initialize Serial Monitor
-                            }
-                            
-                            void loop() {
-                              // Read light intensity from photoresistors
-                              int photoValue = analogRead(Photoresistor);
-                            
-                              // Print sensor values to Serial Monitor for debugging
-                              Serial.print("PhotoResistor: ");
-                              Serial.println(photoValue);
-                            
-                              delay(20);
-                            }
-                        </pre>
-                        
+                        <li>Wire your photoresistor and 10kOhm resistor as shown below. The yellow wire is going to A0 (analog input). Red to 5V. Black to Gnd. This has created a voltage divider. Because the resistance of the photoresistor changes with light, it will change the voltage at A0.</li>
+                        <img src="media/lab78/PhotoBreadboard.png" class="rounded mx-auto d-block img-fluid mt-3">
+                        <li>Now we can read the resistance value through the analog pin A0. It will be converted to an integer between 0-1023. Write the following code to your Arduino.</li>
+                        <pre class = "language-javascript"><code>
+// Pin assignments for photoresistors
+const int Photoresistor = A1;
+
+void setup() {
+    Serial.begin(9600); // Initialize Serial Monitor
+}
+
+void loop() {
+    // Read light intensity from photoresistors
+    int photoValue = analogRead(Photoresistor);
+
+    // Print sensor values to Serial Monitor for debugging
+    Serial.print("PhotoResistor: ");
+    Serial.println(photoValue);
+
+    delay(20);
+}
+                        </code></pre>
                         <li>What is the ambient value in the room? Try shining your flashlight directly on it. What is the largest value you can achieve?</li>
-                        <li>Add 2 more resistors and photoresistor pairs, wiring to A0, and A1. Ensure you have spaced them out and angled them slightly forward.</li>
+                        <li>Add 2 more resistors and photoresistor pairs, wiring to A1, and A2. Ensure you have spaced them out and angled them slightly forward. Refer to the images below</li>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <img src="media/lab78/PhotoBreadboard1.jpg" class="rounded mx-auto d-block img-fluid mt-3">
+                            </div>
+                            <div class="col-md-6">
+                                <img src="media/lab78/PhotoBreadboard2.jpg" class="rounded mx-auto d-block img-fluid mt-3">
+                            </div>
+                        </div>
                         <li>Adjust the following code to print the new values. How consistent are the values between each photoresistor?</li>
-                        <pre>
-                            // Pin assignments for photoresistors
-                            const int rightPhotoresistor = A3;
-                            const int middlePhotoresistor = A4;
-                            const int leftPhotoresistor = A5;
+                        <pre><code class="language-javascript">
+// Pin assignments for photoresistors
+const int rightPhotoresistor = A3;
+const int middlePhotoresistor = A4;
+const int leftPhotoresistor = A5;
 
-                            void setup() {
-                            Serial.begin(9600); // Initialize Serial Monitor
-                            }
+void setup() {
+    Serial.begin(9600); // Initialize Serial Monitor
+}
 
-                            void loop() {
-                            // TODO: Read light intensity from photoresistors
-                            int rightValue = ;
-                            int middleValue = ;
-                            int leftValue = ;
+void loop() {
+    // TODO: Read light intensity from photoresistors
+    int rightValue = ;
+    int middleValue = ;
+    int leftValue = ;
 
-                            // TODO: Print sensor values to Serial Monitor
-                            
+    // TODO: Print sensor values to Serial Monitor
 
-                            delay(20);
-                            }
+
+    delay(20);
+}
+                        </code>
                         </pre>
                     </ol>
 
@@ -149,62 +162,57 @@
                         Now we can read the values from our photoresistor. Before we write an algorithm for our robot to follow a bright light, we should clean our sensor data. Our algorithm will decide
                         the driving direction based off differences between sensors, so we want to amplify the difference. A bright room will have high base values for all sensors and the change from a flashlight will be relatively small. 
                         We will subtract the ambient value from the sensors. If your ambient value is significantly different (+/- 30) for each sensor, you should use a seperate ambient value for each sensor. 
-
-                        <strong>Write the values for the ambient values of each sensor.</strong>
-                        <pre>
-                            // Threshold for ambient light and minimum variation to move
-                            const int ambientThresholdR = 500;
-                            const int ambientThresholdM = 500; 
-                            const int ambientThresholdL = 500;
-                        </pre>
-
-                        Subtract it from the analog reading.
-                        <pre>
-                            // Read light intensity from photoresistors
-                            int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
-                            int middleValue = analogRead(middlePhotoresistor) - ambientThresholdM;
-                            int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;                          
-                        </pre>
-                        
-                    </p>
-
+                        <strong>Write the values for the ambient values of each sensor.</strong>                   
+                     </p>   
+                        <pre><code class="language-javascript">
+// Threshold for ambient light and minimum variation to move
+const int ambientThresholdR = 500;
+const int ambientThresholdM = 500; 
+const int ambientThresholdL = 500;
+                        </code></pre>
+                        <p>Subtract it from the analog reading.</p>
+                        <pre><code class="language-javascript">
+// Read light intensity from photoresistors
+int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
+int middleValue = analogRead(middlePhotoresistor) - ambientThresholdM;
+int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;                          
+                        </code></pre>
                     <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255.
-                        To create a function in Ardiuno, you must declare the return type. If the function should return nothing, then the type is void. Otherwise, say we wanted a function to return the 
-                        values of our photoresistors then the type would be int.
                     </p>
                     <p>Fill in the if/else conditions below and place these functions at the bottom of the script.</p>
                     <pre>
-                        void setLeftSpeed(int value) {
-                            if (value > ??) {
-                              leftMotor.setSpeed(value);
-                              leftMotor.run(FORWARD);
-                            } else if (value < ??) {
-                              leftMotor.setSpeed(-value); // Convert to positive speed
-                              leftMotor.run(BACKWARD);
-                            } else {
-                              leftMotor.run(RELEASE); // Stop the motor
-                            }
-                          }
-                        void setRightSpeed(int value) {
-                            if (value > ??) {
-                              rightMotor.setSpeed(value);
-                              rightMotor.run(FORWARD);
-                            } else if (value < ??) {
-                              rightMotor.setSpeed(-value); // Convert to positive speed
-                              rightMotor.run(BACKWARD);
-                            } else {
-                              rightMotor.run(RELEASE); // Stop the motor
-                            }
-                          }
-
-                    </pre>
+                    <code class="language-javascript">
+void setLeftSpeed(int value) {
+    if (value > ??) {
+        leftMotor.setSpeed(value);
+        leftMotor.run(FORWARD);
+    } else if (value < ??) {
+        leftMotor.setSpeed(-value); // Convert to positive speed
+        leftMotor.run(BACKWARD);
+    } else {
+        leftMotor.run(RELEASE); // Stop the motor
+    }
+}
+void setRightSpeed(int value) {
+    if (value > ??) {
+        rightMotor.setSpeed(value);
+        rightMotor.run(FORWARD);
+    } else if (value < ??) {
+        rightMotor.setSpeed(-value); // Convert to positive speed
+        rightMotor.run(BACKWARD);
+    } else {
+        rightMotor.run(RELEASE); // Stop the motor
+    }
+}
+                    </code></pre>
                     <p>We can call our function in the same way we call any other function. To test it, we will change the speed/direction of the left and right 
                         motors depending on the values of the left and right photoresistors. Add the following lines to your script and make sure it behaves as you expect.
                     </p>
                     <pre>
-                        setLeftSpeed(leftValue); // left photoresistor value
-                        setRightSpeed(rightValue); // right photoresistor value
-                    </pre>
+                    <code class="language-javascript">
+setLeftSpeed(leftValue); // left photoresistor value
+setRightSpeed(rightValue); // right photoresistor value
+                    </code></pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4>
@@ -225,57 +233,59 @@
                     When there is little variation between the photoresistors or the overall light level is too low, the motors are turned off. Adjust the variation threshold and bang constant.
                     </p>
                     <pre>
-                        const int variationThreshold = 50; // Minimum difference between sensors to trigger movement
-                        const int bang = 50;
+                    <code class="language-javascript">
+const int variationThreshold = 50; // Minimum difference between sensors to trigger movement
+const int bang = 50;
 
-                        void setup() {
-                        Serial.begin(9600); // Initialize Serial Monitor
-                        
-                        // Set initial motor speed
-                        setLeftSpeed(100);  // Adjust speed (0-255)
-                        setRightSpeed(100);
-                        }
+void setup() {
+    Serial.begin(9600); // Initialize Serial Monitor
 
-                        void loop() {
-                        // Read light intensity from photoresistors
-                        int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
-                        int middleValue = analogRead(middlePhotoresistor) - ambientThresholdM;
-                        int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
+    // Set initial motor speed
+    setLeftSpeed(100);  // Adjust speed (0-255)
+    setRightSpeed(100);
+}
 
-                        // Print sensor values to Serial Monitor for debugging
-                        Serial.print("Left: ");
-                        Serial.print(leftValue);
-                        Serial.print("  Middle: ");
-                        Serial.print(middleValue);
-                        Serial.print("  Right: ");
-                        Serial.println(rightValue);
+void loop() {
+    // Read light intensity from photoresistors
+    int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
+    int middleValue = analogRead(middlePhotoresistor) - ambientThresholdM;
+    int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
 
-                        // TODO: Calculate the average light level
-                        int averageLight = ;
+    // Print sensor values to Serial Monitor for debugging
+    Serial.print("Left: ");
+    Serial.print(leftValue);
+    Serial.print("  Middle: ");
+    Serial.print(middleValue);
+    Serial.print("  Right: ");
+    Serial.println(rightValue);
 
-                        // Determine if there is little variation in light intensity
-                        int maxDifference = max(abs(middleValue - leftValue), abs(middleValue - rightValue));
+    // TODO: Calculate the average light level
+    int averageLight = ;
 
-                        // Light is ambient or too uniform; stop the robot (Hint: || is OR)
-                        if () {
-                            setLeftSpeed(0);
-                            setRightSpeed(0);
-                        } else if () {
-                            // Middle light is greater than left AND right (Hint: && is AND)
-                            setLeftSpeed(100);
-                            setRightSpeed(100);
-                        } else if () {
-                            // Brightest light is to the left; turn left
-                            setLeftSpeed(100);
-                            setRightSpeed(100 + bang);
-                        } else if () {
-                            // Brightest light is to the right; turn right
-                            setLeftSpeed(100 + bang);
-                            setRightSpeed(100);
-                        }
+    // Determine if there is little variation in light intensity
+    int maxDifference = max(abs(middleValue - leftValue), abs(middleValue - rightValue));
 
-                        delay(100); // Small delay for stability
-                        }
+    // Light is ambient or too uniform; stop the robot (Hint: || is OR)
+    if () {
+        setLeftSpeed(0);
+        setRightSpeed(0);
+    } else if () {
+        // Middle light is greater than left AND right (Hint: && is AND)
+        setLeftSpeed(100);
+        setRightSpeed(100);
+    } else if () {
+        // Brightest light is to the left; turn left
+        setLeftSpeed(100);
+        setRightSpeed(100 + bang);
+    } else if () {
+        // Brightest light is to the right; turn right
+        setLeftSpeed(100 + bang);
+        setRightSpeed(100);
+    }
+
+    delay(50); // Small delay for stability
+}
+                    </code>
                     </pre>
 
                     <strong>Proportional Controller</strong>
@@ -286,54 +296,56 @@
                         proportional constant which multiplies this error to result in a motor command.
                     </p>
                     <pre>
-                        const float Kp = 0.3;
-                        const int BASE_SPEED = 80;
+                    <code class="language-javascript">
+const float Kp = 0.3;
+const int BASE_SPEED = 80;
 
-                        void setup() {
-                        Serial.begin(9600); // Initialize Serial Monitor
-                        }
+void setup() {
+    Serial.begin(9600); // Initialize Serial Monitor
+}
 
-                        void loop() {
-                        // Read light intensity from photoresistors
-                        int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
-                        int middleValue = analogRead(middlePhotoresistor) - ambientThresholdM;
-                        int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
+void loop() {
+    // Read light intensity from photoresistors
+    int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
+    int middleValue = analogRead(middlePhotoresistor) - ambientThresholdM;
+    int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
 
-                        // Print sensor values to Serial Monitor for debugging
-                        Serial.print("Left: ");
-                        Serial.print(leftValue);
-                        Serial.print("  Middle: ");
-                        Serial.print(middleValue);
-                        Serial.print("  Right: ");
-                        Serial.println(rightValue);
+    // Print sensor values to Serial Monitor for debugging
+    Serial.print("Left: ");
+    Serial.print(leftValue);
+    Serial.print("  Middle: ");
+    Serial.print(middleValue);
+    Serial.print("  Right: ");
+    Serial.println(rightValue);
 
-                        // Calculate the average light level
-                        int averageLight = (rightValue + middleValue + leftValue) / 3;
+    // Calculate the average light level
+    int averageLight = (rightValue + middleValue + leftValue) / 3;
 
-                        if (averageLight < 0) {
-                            // Light is ambient or too uniform; stop the robot
-                            setLeftSpeed(0);
-                            setRightSpeed(0);
-                        } else {
-                            // Calculate error signals for proportional control
-                            if (leftValue > rightValue) {
-                            int error = middleValue - leftValue;
-                            }
-                            else{
-                            int error = - (middleValue - rightValue);
-                            }
+    if (averageLight < 0) {
+        // Light is ambient or too uniform; stop the robot
+        setLeftSpeed(0);
+        setRightSpeed(0);
+    } else {
+        // Calculate error signals for proportional control
+        if (leftValue > rightValue) {
+        int error = middleValue - leftValue;
+        }
+        else{
+        int error = - (middleValue - rightValue);
+        }
 
-                            // Calculate motor speeds based on proportional control
-                            int leftSpeed = BASE_SPEED + Kp * error;
-                            int rightSpeed = BASE_SPEED - Kp * error;
+        // Calculate motor speeds based on proportional control
+        int leftSpeed = BASE_SPEED + Kp * error;
+        int rightSpeed = BASE_SPEED - Kp * error;
 
-                            // Set motor speeds and directions
-                            setLeftSpeed(leftSpeed);
-                            setRightSpeed(rightSpeed);
-                        }
+        // Set motor speeds and directions
+        setLeftSpeed(leftSpeed);
+        setRightSpeed(rightSpeed);
+    }
 
-                        delay(50); // Small delay for smoother control
-                        }
+    delay(50); // Small delay for smoother control
+}
+                    </code>
                     </pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
@@ -345,101 +357,115 @@
 
                     <!-- Part 2: Driving the Robot -->
                     <h4 id="part2">Part (2): Wall Following</h4>
-                    <p>While te photoresistors are a rather simple sensor, the framework we have made will allow us to slot in another sensor. We will use a ultrasonic distance sensor to follow a wall.
-                        The ultrasonic sensor we are using is the HC-SR04. It has a range of about 80cm. Get it, its servo mount and 4 long M-F jumper wires. Unfortunately, the motor shield blocks our access to the digital PWM
-                        pins which we need for this sensor. Its not elegant, but we can solder a double female header to the back pins. Do this to pins 5 and 6. Then, plug the HC-SR04
-                        Vcc, Trig, Echo, GND into 5v, pin 5, pin 6, and GND respectively. This is a very common sensor and there are many tutorials of how to use it online. You will rarely
+                    <img src="media/lab78/HC-SR04.png" class="rounded mx-auto d-block img-fluid mb-2">
+                    <p>While the photoresistors are a rather simple sensor, the framework we have made will allow us to slot in another more complex sensor. We will use a ultrasonic distance sensor to follow a wall.
+                        The ultrasonic sensor we are using is the HC-SR04. It has a range of up to 400cm. Get it, its servo mount and 4 long M-F jumper wires. </p>
+                        <img src="media/lab78/UltraSoundWires.jpg" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
+                    <p>
+                        Unfortunately, the motor shield blocks our access to the digital PWM pins which we need for this sensor. Its not elegant, but we can solder
+                        a double female header to the back pins. Do this to pins 5 and 6. Then, plug the HC-SR04 Vcc, Trig, Echo, GND into 5v, pin 5, pin 6, and 
+                        GND respectively. 
+                    </p>
+                    <img src="media/lab78/RobotUltraSoundPins.jpg" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
+                    <p> This is a very common sensor and there are many tutorials of how to use it online. You will rarely
                         know exactly how to program a sensor from memory. Use the internet to make/find a function called measureDistance() that returns an integer of the distance from the 
                         ultrasonic sensor. Then, upload the following code and move your hand in front of the ultrasonic sensor and make sure it responds as you expect.
                     </p>
                     <pre>
-                        // Pin assignments for HC-SR04
-                        const int trigPin = 5;  // Trigger pin connected to digital pin 9
-                        const int echoPin = 6; // Echo pin connected to digital pin 10
+                    <code class="language-javascript">
+// Pin assignments for HC-SR04
+const int trigPin = 5;  // Trigger pin connected to digital pin 9
+const int echoPin = 6; // Echo pin connected to digital pin 10
 
-                        void setup() {
-                            Serial.begin(9600); // Initialize Serial Monitor
+void setup() {
+    Serial.begin(9600); // Initialize Serial Monitor
 
-                            // Set up HC-SR04 pins
-                            pinMode(trigPin, OUTPUT);
-                            pinMode(echoPin, INPUT);
-                        }
+    // Set up HC-SR04 pins
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+}
 
-                        void loop() {
-                            // Measure distance using HC-SR04
-                            int distance = measureDistance();
+void loop() {
+    // Measure distance using HC-SR04
+    int distance = measureDistance();
 
-                            Serial.print("Distance: ");
-                            Serial.print(distance);
+    Serial.print("Distance: ");
+    Serial.print(distance);
 
-                            delay(50); // Small delay for stability
-                        }
+    delay(50); // Small delay for stability
+}
+                    </code>
                     </pre>
 
                     <p>Now we can use this function and our proportional controller to track a wall. Pick left or right, and angle your ultrasonic sensor at about 80degrees
-                        from straight forward (pointing mostly left or right). It is important that it is not at 90 degrees. The following code follows a right wall. Alter it
-                        and tune the proportional constants to follow a left wall.
+                        from straight forward (pointing mostly left or right). It is important that it is not at 90 degrees.
+                    </p>
+                    <img src="media/lab78/UltraSoundOrientation.png" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
+                    <p>The following code follows a right wall. Alter it and tune the proportional constants to follow a left wall.
                     </p>
                     <pre>
-                        // Pin assignments for HC-SR04
-                        const int trigPin = 5;  // Trigger pin connected to digital pin 9
-                        const int echoPin = 6; // Echo pin connected to digital pin 10
+                    <code class="language-javascript">
+// Pin assignments for HC-SR04
+const int trigPin = 5;  // Trigger pin connected to digital pin 9
+const int echoPin = 6; // Echo pin connected to digital pin 10
 
-                        // Create motor objects for two motors
-                        AF_DCMotor rightMotor(1);  // Motor connected to M1
-                        AF_DCMotor leftMotor(2); // Motor connected to M2
+// Create motor objects for two motors
+AF_DCMotor rightMotor(1);  // Motor connected to M1
+AF_DCMotor leftMotor(2); // Motor connected to M2
 
-                        // Desired distance from the wall (in cm)
-                        const int targetDistance = 27; // Adjust as needed
+// Desired distance from the wall (in cm)
+const int targetDistance = 27; // Adjust as needed
 
-                        // Proportional control gains
-                        const float KpLeft = 1.5;  // Proportional gain for the left motor
-                        const float KpRight = 3.0; // Proportional gain for the right motor
+// Proportional control gains
+const float KpLeft = 1.5;  // Proportional gain for the left motor
+const float KpRight = 3.0; // Proportional gain for the right motor
 
-                        // Base motor speed (0-255)
-                        const int baseSpeedLeft = 60;
-                        const int baseSpeedRight = 65;
+// Base motor speed (0-255)
+const int baseSpeedLeft = 60;
+const int baseSpeedRight = 65;
 
-                        void setup() {
-                            Serial.begin(9600); // Initialize Serial Monitor
+void setup() {
+    Serial.begin(9600); // Initialize Serial Monitor
 
-                            // Set up HC-SR04 pins
-                            pinMode(trigPin, OUTPUT);
-                            pinMode(echoPin, INPUT);
-                        }
+    // Set up HC-SR04 pins
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+}
 
-                        void loop() {
-                            // Measure distance using HC-SR04
-                            int distance = measureDistance();
+void loop() {
+    // Measure distance using HC-SR04
+    int distance = measureDistance();
 
-                            // Calculate the error
-                            int error = targetDistance - distance;
+    // Calculate the error
+    int error = targetDistance - distance;
 
-                            // Calculate speed adjustments based on proportional control
-                            int leftAdjustment = KpLeft * error;
-                            int rightAdjustment = KpRight * error;
+    // Calculate speed adjustments based on proportional control
+    int leftAdjustment = KpLeft * error;
+    int rightAdjustment = KpRight * error;
 
-                            // Determine motor speeds
-                            int leftMotorSpeed = constrain(baseSpeedLeft - leftAdjustment, 0, 100);
-                            int rightMotorSpeed = constrain(baseSpeedRight + rightAdjustment, 0, 100);
+    // Determine motor speeds
+    int leftMotorSpeed = constrain(baseSpeedLeft - leftAdjustment, 0, 100);
+    int rightMotorSpeed = constrain(baseSpeedRight + rightAdjustment, 0, 100);
 
-                            // Print debugging information
-                            Serial.print("Distance: ");
-                            Serial.print(distance);
-                            Serial.print(" cm  Error: ");
-                            Serial.print(error);
-                            Serial.print("  Left Speed: ");
-                            Serial.print(leftMotorSpeed);
-                            Serial.print("  Right Speed: ");
-                            Serial.println(rightMotorSpeed);
+    // Print debugging information
+    Serial.print("Distance: ");
+    Serial.print(distance);
+    Serial.print(" cm  Error: ");
+    Serial.print(error);
+    Serial.print("  Left Speed: ");
+    Serial.print(leftMotorSpeed);
+    Serial.print("  Right Speed: ");
+    Serial.println(rightMotorSpeed);
 
-                            // Apply motor speeds straight movement
-                            setLeftSpeed(leftMotorSpeed);
-                            setRightSpeed(rightMotorSpeed);
+    // Apply motor speeds straight movement
+    setLeftSpeed(leftMotorSpeed);
+    setRightSpeed(rightMotorSpeed);
 
-                            delay(50); // Small delay for stability
-                        }
+    delay(50); // Small delay for stability
+}
+                    </code>
                     </pre>
+
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 3</h4>
                         <a id="part3"></a>

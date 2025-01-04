@@ -7,6 +7,9 @@
     <!-- Bootswatch Litera CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
        <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
+    <!-- Code Highlighting CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
 
     <link rel="stylesheet" href="../../styles.css"></link>
 </head>
@@ -201,40 +204,40 @@
                     <img src=media/CapTouch/CapTouchSingle1.jpg class="mx-auto d-block img-fluid">
 
                     <p>Install the CapacitiveSensor library by Paul Badger. Then, upload the following code to your ardiuno:</p>
-                    <pre>
-                        /*******************************************************************************
-                        * Capacitive Sensing for Touch and Proximity
-                        *
-                        * Reads values from two capacitive sensors and displays results on the Serial Plotter.
-                        *******************************************************************************/
+                    <pre class="language-javascript">
+/*******************************************************************************
+* Capacitive Sensing for Touch and Proximity
+*
+* Reads values from two capacitive sensors and displays results on the Serial Plotter.
+*******************************************************************************/
 
-                        #include <CapacitiveSensor.h>
+#include <CapacitiveSensor.h>
 
-                        // Define sender and receiver pins for the two touch pads
-                        int sender = 2; // Shared sender pin
-                        int touch_pin = 3; // Receiver for touch pad 2
+// Define sender and receiver pins for the two touch pads
+int sender = 2; // Shared sender pin
+int touch_pin = 3; // Receiver for touch pad 2
 
-                        // Number of samples to take per reading
-                        int samples_touch = 10;
+// Number of samples to take per reading
+int samples_touch = 10;
 
-                        // Create capacitive sensor objects
-                        CapacitiveSensor sensor1 = CapacitiveSensor(sender, touch_pin);
+// Create capacitive sensor objects
+CapacitiveSensor sensor1 = CapacitiveSensor(sender, touch_pin);
 
-                        void setup() {
-                        Serial.begin(9600); // Initialize Serial communication
-                        Serial.println("Capacitive Touch Sensor Ready!");
-                        }
+void setup() {
+    Serial.begin(9600); // Initialize Serial communication
+    Serial.println("Capacitive Touch Sensor Ready!");
+}
 
-                        void loop() {
-                        // Read capacitive values
-                        double analog_touch_1 = sensor1.capacitiveSensor(samples_touch);
+void loop() {
+    // Read capacitive values
+    double analog_touch_1 = sensor1.capacitiveSensor(samples_touch);
 
-                        // Print values to Serial Plotter (comma-separated for multi-channel display)
-                        Serial.print(analog_touch_1);
-                        Serial.println(",");
+    // Print values to Serial Plotter (comma-separated for multi-channel display)
+    Serial.print(analog_touch_1);
+    Serial.println(",");
 
-                        delay(10);
-                        }
+    delay(10);
+}
 
                     </pre>
 

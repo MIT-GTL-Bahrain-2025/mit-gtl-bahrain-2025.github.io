@@ -7,7 +7,11 @@
     <!-- Bootswatch Litera CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
-    <link rel="stylesheet" href="../../styles.css">
+    <!-- Code Highlighting CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+    <link rel="stylesheet" href="../../styles.css"></link>
 </head>
 <body>
 
@@ -53,7 +57,6 @@
                     </ul>
                 </section>
                 <hr>
-                <img src="media/fab-quest-picture.png" class="rounded mx-auto d-block img-fluid">
                 <br>
                 <h2><a id="fabq">🔨 Fabrication Quest of the Day</a></h2>
                 <ul>
@@ -105,23 +108,33 @@
                     <ol>
                         <li><strong>Download Motor Library</strong> Click the books icon on the left side of the Ardiuno IDE and install "Adafruit Motor Shield library"</li>
                         <li>Initialize the library. This tells Ardiuno that you can use functions from this external library</li>
+                        <pre><code class="language-javascript"> #include &#60;AFMotor.h&#62; </code></pre> 
                         <li>Create motor objects for two motors</li>
+                        <pre><code class="language-javascript">AF_DCMotor rightMotor(1);  // Motor connected to M1
+AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre> 
                         <li>Set motor speed. setSpeed only takes a range of 0-255. It sends a PWM signal to the motor.</li>
-                        <li>Set motor direction. The options are FORWARD, BACKWARD, and RELEASE</li>
+                        <pre><code class="language-javascript">void setup() {
+    rightMotor.setSpeed(100);
+    leftMotor.setSpeed(100);
+}</code></pre>
+                        <li>Set motor direction. The options are FORWARD, BACKWARD, and RELEASE. RELEASE stops the motors.</li>
+                        <pre><code class="language-javascript"> void setup() {
+    rightMotor.setSpeed(100);
+    leftMotor.setSpeed(100);
+    rightMotor.run(FORWARD);
+    leftMotor.run(FORWARD);
+}</code></pre>
                         <li>Plug the motor shield into the Ardiuno, making sure the pins are all aligned.</li>
-                        <li>Get two of the yellow TT motors and plug them into the M1 and M2 terminals on the shield as shown. It actually doesn't matter which terminal has red or black. If you swap it, it will just reverse the direction of the motor</li>
-                        <li>Upload the code. Why do the motors spin so slow? It's because they are being powered by the Ardiuno which cannot supply enough current.</li>
-                        <li>Alter the code to switch the direction of the motors. Make sure it behaves how you expect it to</li>
+                        <li>Get two of the yellow TT motors and plug them into the M1 and M2 terminals on the shield as shown. M1 should be the left motor, and M2 the right motor. It actually doesn't matter which terminal has red or black. If you swap it, it will just reverse the direction of the motor</li>
+                        <img src="media/lab78/MotorCableOrder1.jpg" class="rounded mx-auto d-block img-fluid mb-3 mt-3">
+                        <li>Upload the code. The reason the motors spin so slow is because they are being powered by the Ardiuno which cannot supply enough current.</li>
+                        <li>Alter the code to switch the direction of the motors.</li>
                     </ol>
-                    <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255.</p>
-                    <ol>
-                        <li>Create a function at the bottom of your script like the following. We are going to be making a lot of functions, and you will likely find it useful to use this as a template.</li>
-                        <li>We can call our function in the same way we call any other function. The following code will swap the motor direction every 3 seconds using our handy new function. Make sure it behaves how you expect.</li>
-                    </ol>
+                    <p>Now, make alter your code to drive the motors forward for 3 seconds, stops for 1 seconds, drive backward for 3 seconds and repeat.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4>
                         <a id="part2"></a>
-                        Ask your instructor for a check-off on completing Part (1)
+                        Ask your instructor for a check-off on completing Part (1). Demonstrate your forward, stop, and backwards script.
                     </div>
                     <hr>
 
@@ -161,11 +174,54 @@
                     <ol>
                         <li>Try driving your robot in a straight line by setting each motor to some speed. What do you notice about the direction? Does it drive straight?</li>
                         <li>Adjust the relative motor speeds until your robot drives roughly straight.</li>
-                        <li>Create a new function at the end that drives straight a certain time called driveStraight(millis). Fill in the values you found in the previous step.</li>
-                        <li>Test it by driving forward for .5, 1, 3 seconds</li>
-                        <li>Try to command your robot to turn in place exactly 90 degrees counter clockwise. How should each motor be commanded? Set a turn speed, and just alter the duration of turn to dial in 90 degrees. Call your function turnRight()</li>
-                        <li>Create a function with your robot now turning to the left. Call this function “turnLeft()”</li>
-                        <li>In the loop() of your code, write code to drive in a square with side length 50cm clockwise. Do it again going counterclockwise. How well does it return to its starting location? What might cause this? What ideas of sensors could we use to fix this?</li>
+                        <li>We will create a new function that drives straight for a certain time called driveStraight(millis). To create a function in Ardiuno, you must declare the return type.
+                             If the function should return nothing, then the type is void (as it is here). Otherwise, consider a function that would return an integer value of a sensor - it would have type int.
+                             Fill in the body of the driveStraight function with the values you found in the previous step and place it at the end of the 
+                            script. Even though function is at the end, it can still be called at the top. This is because the Ardiuno IDE reads the entire script before running it.
+                        </li>
+                        <div class="d-flex">
+                            <div class="flex-fill">
+                                <pre><code class="language-javascript">
+void driveStraight(int millis) {
+    // TODO: Fill in the body of this function
+}
+
+
+                                </code></pre>
+                            </div>
+                            <div class="flex-fill">
+                                <img src="media/lab78/driveStraight.gif" class="rounded mx-auto d-block img-fluid">
+                            </div>
+                        </div>
+                        <li>Test it by driving forward for 0.5, 1, 3 seconds</li>
+                        <li>Try to command your robot to turn in place exactly 90 degrees counter clockwise. How should each motor be commanded? Set a turn speed, and just alter the duration of turn to dial in 90 degrees. </li>
+                        <li>Using this timing, fill in the body of the function called turnRight(). Then do the same process to create turnLeft(). Place both functions at at the end of your script.</li>
+                        <div class="d-flex">
+                            <div class="flex-fill">
+                                <pre class="language-javascript">
+                                    <code class="language-javascript">
+void turnRight() {
+    // TODO: Fill in the body of this function
+}
+
+void turnLeft() {   
+    // TODO: Fill in the body of this function
+}
+
+
+
+
+
+
+
+                                    </code></pre>
+                            </div>
+                            <div class="flex-fill">
+                                <img src="media/lab78/turnRight.gif" class="rounded mx-auto d-block img-fluid mb-2">
+                                <img src="media/lab78/turnLeft.gif" class="rounded mx-auto d-block img-fluid">
+                            </div>
+                        </div>
+                        <li>In the loop() of your code, use your turning and driving functions.e with side length 50cm clockwise. Do it again going counterclockwise. How well does it return to its starting location? What might cause this? What ideas of sensors could we use to fix this?</li>
                     </ol>
                     <p>You may have noticed that it was difficult to get your robot to drive straight and turn a desired amount consistently. This is because the robot is open-loop. It has no idea where it is or where it is going. We are going to close the loop next lab by adding sensors so the robot can detect where it is and where it wants to go.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
