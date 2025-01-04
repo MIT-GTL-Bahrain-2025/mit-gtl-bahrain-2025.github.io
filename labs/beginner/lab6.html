@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 1: Let’s Laser-Cut a Calendar!</title>
+    <title>Lab 6:  Circuits, Breadboards, Inputs & Outputs!</title>
     <!-- Bootswatch Litera CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
        <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
+    <!-- Code Highlighting CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
 
     <link rel="stylesheet" href="../../styles.css"></link>
 </head>
@@ -21,22 +24,20 @@
         <!-- Lab 1 Page Heading -->        
         <div class="col-md-4">
             <div class="sticky-top" style="padding-top:100px;" >
-                <p>Total Time: 2.5 hours</p>
+                <p>Total Time: 1.75 hours</p>
                 <h5>Quick Links</h5>
                 <ul>
                     <li><a href="#introduction">Introduction & Safety</a></li>
                     <li><a href="#fabq">Fabrication Quest</a></li>
                     <li><a href="#software">Software & Hardware for the Lab</a></li>
-                    <li><a href="#part0">Part (0): Fusion360 Workspace</a></li>
-                    <li><a href="#part1">Part (1): Sketching Objects and Dimensioning </a></li>
-                    <li><a href="#part2">  Part (2): Mirroring Sketch Geometries </a></li>
-                    <li><a href="#part3"> Part(3): Filletting</a></li>
-                    <li><a href="#part4"> Part(4): Linear Patterning</a></li>
-                      <li><a href="#part5">Part (5): Importing DXF files </a></li>
-                    <li><a href="#part6">  Part (6): Remixing </a></li>
-                    <li><a href="#part7"> Part(7): Exporting DXF files</a></li>
-                    <li><a href="#part8"> Part(8): Laser Cutting</a></li>
-                    <li><a href="#part9"> Part(9): Assembly and Post-Processing</a></li>
+                    <li><a href="#part0">Part (0): Hello World, Arduino! </a></li>
+                    <li><a href="#part1">Part (1): Breadboarding Basics and Multimeters </a></li>
+                    <li><a href="#part2">  Part (2): Making a LED Blink </a></li>
+                    <li><a href="#part3"> Part (3): Learning Soldering</a></li>
+                    <li><a href="#part4"> Part (4): Understanding with a Multimeter </a></li>
+                      <li><a href="#part5">Part (5): Wiring the GND, 3.3 V, and Input Pins </a></li>
+                    <li><a href="#part6">  Part (6): Guitar Hero</a></li>
+                    <li><a href="#part7">  Part (7): 🚨Remixing🚨 </a></li>
                      <li><a href="#discussion"> Discussion & Reflections</a></li>
                 </ul>
             </div>
@@ -45,34 +46,30 @@
         <!-- Introduction Section -->
         <div class="col-md-8" style="padding-top:100px;">
                 <section class="mb-4">
-                    <h1 class="mb-5"> <a id="introduction">Lab 1: Let’s Laser-Cut a Calendar!</a></h1>
+<h1 class="mb-5"> <a id="introduction">Lab 6:  Circuits, Breadboards, Inputs & Outputs!</a></h1>
                    
-                    <img src=media/introduction-picture.png class="rounded mx-auto d-block img-fluid"> 
+<img src=media/guitar-hero-main-pic.png class="rounded mx-auto d-block img-fluid"> 
+
                     <h2>🦺 Introduction & Safety</h2>(1 minute read)
                     <br> <br>
-                    <p>Laser cutting is a digital fabrication method that uses a laser to cut or 
-                        “subtract” materials. </p>
+                    <p> This is an introduction to interfacing with the electrical world and code to 
+                        really make your projects come to life! 
+                    </p>
                     
                     
-                    
-                    In this lab, you'll <b>create</b> a dynamic laser-cut calendar
+                    In this lab, you'll <b>create</b> a SOMETHING 
                         while learning how to:
                     <br>
                     <br> 
                     <ul>
-                        <li> ✅ Use Fusion360 for 2D CAD sketches</li>
-                        <li> ✅ Learn how to make a lasercut sliding mechanism</li>
-                        <li>✅ Safely operate a laser cutter</li>
-                        <li> ✅ Post-process and assemble cut parts </li>
+                        <li> ✅ Code in Arduino</li>
+                        <li> ✅ Learn how to wire and understand electronics</li>
+                        <li>✅ SOMETHING</li>
                     </ul>
                     <p><strong>Before we start</strong>, please make sure you understand the following safety precautions:</p>
         <ul>
-            <li><strong>Material Compatibility:</strong> Ensure that the material is laser-cuttable, has a thickness under 0.25" (6.35mm), and is cut with the correct power/speed settings.</li>
-            <li><strong>Fumes:</strong> Keep ventilation on and wait before opening the lid after cutting.</li>
-            <li><strong>Eye Protection:</strong> Monitor the process without staring directly at the laser.</li>
-            <li><strong>Emergencies:</strong> In case of fire, do not open the laser cutter lid, simply stop the machine and alert the shop manager immediately. <a id="fabq"> </a></li>
-            <li><strong>Consultation:</strong> Always consult the D-Lab shop manager before cutting!</li>
-            
+            <li><strong>High Current:</strong> Never connect power and ground directly with a wire. High currents 
+            are very dangerous.</li>
         </ul>
             
                 </section>
@@ -80,34 +77,27 @@
                 <hr>
 
             
-                    <img src=media/fab-quest-picture.png class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/guitar-hero-items.png class="rounded mx-auto d-block img-fluid"> 
                 <br>
             <h2> 🔨 Fabrication Quest of the Day </h2>
                 <ul>
-                    <li><strong>Today, you will CAD 2 parts:</strong>
+                    <li><strong>Today, you will make a LED blink:</strong>
                         <ul>
-                            <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
-                            <li> (B) The day of the month slider (<strong>x1</strong>)</li>
+                            <li>(A) Breadboard with a Circuit! (<strong>x1</strong>)</li>
                         </ul>
                     </li>
-            <li><strong>And fabricate 1+ parts:</strong>
+            <li><strong>And SOMETHING:</strong>
                 <ul>
-                    <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
-                    <li>(C) Your own <dfn title="add your own flair">“Remix”</dfn> to the assignment</li>
+                    <li>(B) SOMETHING (<strong>x1</strong>)</li>
                 </ul>
                     </li>
                 </ul>
-
-                <b>Remixing</b>
-                <p>Remixing refers to you adding your own touch to a template so that it has your own creative touch to it. This will be a common theme throughout the labs.</p>
 
                 <b>Your instructors will provide you with the following:</b>
             <a id="software"> </a>
                 <ul>
-                <li>(B) The day of the month slider (<strong>x1</strong>)</li>
-                <li>(D) Day of the week slider (<strong>x1</strong>)</li>
-                <li>(E) & (F) Slider stoppers (<strong>x2</strong>)</li>
-                <li>(G) The triangular leg joints (<strong>x2</strong>)  </li>
+                <li>(B) SOMETHING (<strong>x1</strong>)</li>
+                <li>(C) Electrical components (buttons, wire, etc.) (<strong>x1</strong>)</li>
                 </ul>
 
  
@@ -119,33 +109,24 @@
                 <section class="mb-4">
                     <h2>🏗️ Software & Hardware</h2>
 
-
                     <h5>Software:</h5>
                         <ul>
-                            <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> (must download before workshop)</li>
-                            <li> <a href="">Adobe Illustrator</a> <i> *Can download through Creative Cloud*</i> </li>
+                            <li> <a href="https://www.arduino.cc/en/software">Arduino IDE</a></li>
                     
                     </ul>
 
-                        <h5>PPE:</h5>
-                        <ul>
-                        <li>Safety goggles</li>
-                        <li>Face mask</li>
-                        <li>Nitrile gloves</li>
-                        </ul>
-
                         <h5>Hardware:</h5>
                         <ul>
-                            <li>Prefabricated pieces (<strong>x6</strong>)</li>
-                            <li>Wood boards (calendar)</li>
-                            <li>Wood glue <a id="part0"> </a></li> 
-                            <li>Sandpaper</li>
+                            <li>Breadboard</li>
+                            <li>Wire</li>
+                            <li>Wire Cutter</li> 
+                            <li>LED</li>
+                            <li>Resistor</li>
+                            <li>Arduino Uno</li>
+                            <li>Multimeter</li>
+                            <li>Laptop</li>
+                            <li>SOMETHING</li>
                             </ul>
-
-                        <h5>Machines:</h5> 
-                        <ul>
-                    <li>Laser cutter</li>
-                        </ul>
 
                 </section>
 
@@ -153,536 +134,222 @@
 
                 <!-- Procedure Section -->
                 <section class="mb-4">
-                    <!-- Part 0: Understanding Fusion360 Workspace -->
-                    <h4>Part (0): Understanding Fusion360 Workspace (2 mins)</h4>
-                    <p>Watch the introductory video on the Fusion360 workspace and its basic tools.</p>
-                    
-                
-
-                    
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lau71uJUpFo?si=NMwULfvQgD7PLSRF" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-                    
+                    <!-- Part 0: Hello World, Arduino! -->
+                    <h4>Part (0): Hello World, Arduino! (15 min) <a id="part0"> </a></h4>
                     <br> 
                     
-                <h5>Video Summary</h5>
+                <h5>Setup:</h5>
 
         <ul>
-        <li><strong>Top Panel:</strong> Save/open files and see current file names.</li>
-        <li><strong>Command Tools Panel:</strong> Solid, surface, and sketch tools are here.</li>
-        <li><strong>Side Panel:</strong> Shows document settings, created bodies, and sketches. You can rename objects, toggle visibility, and track the design hierarchy.</li>
-        <li><strong>Workspace:</strong> Where your sketches or bodies appear; control view angles. <a id="part1"> </a></li>
-        <li><strong>History Timeline:</strong> Tracks all design steps. You can adjust or delete steps by right-clicking. To enable, right-click "Document Settings" and select "Capture Design History."</li>
+        <li>Download <a href="https://www.arduino.cc/en/software"> Arduino (5 mins)</a></li>
+        <li>Plug in the Arduino Uno to your laptop</li>
+        <li>Open Arduino</li>
+        <li>Let's try coding. Line that begin with a <b>//</b> are comments which are instructions that are just for 
+            human readability and not read by the machine. Code is usually put into functions. For the first function, 
+            the <b>void</b> means that the function is returning nothing which is what we want for a simple program. Then, the 
+            name of the function comes next, in this case, it is <i>setup</i>. The <b>()</b> tells you the inputs of the function. 
+            We have no inputs. Then, the body of the function is enclosed in curly braces, {}.
+            Code the following into the terminal:
+            <br>
+            <pre>
+                <code class="language-javascript">
+// there are two functions in Arduino: setup and loop
+// setup runs only once
+void setup() {
+    Serial.begin(9600); // open the serial port at 9600 bps:
+}
+
+// loop runs over and over
+void loop() {
+    Serial.println("Hello World!");  // prints to the terminal and makes a new line
+    delay(1000);    // sleeps the program for 1000 ms (1 second)
+}
+                </code>
+            </pre>
+        </li>
+        <li>Go to Tools > Serial Monitor to open the print window.</li>
+        <li>Try clicking the run button (the circle with the arrow at the top of the window).</li>
+        <li>You should see something printing now!</li>
         </ul>
         
                     <hr>
                     
-                    <!-- Part 1: Designing the Calendar -->
-                    <h4>Part (1): Sketching Objects and Dimensioning (20 mins)</h4>
-
-
-                                
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jjxOnX3LFSA?si=exsTBOIyfLFpX1Sg" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-                    <br> 
-                <strong>[Parts 1-4 ONLY Covered in video] </strong> 
-        <ol>
-            
-            
-            <li>Create a New Design:
-
-
-                <ul>
-                    <li>Open Fusion360 and create a new design by going to File → New Design → Save. Name it "myDynamicCalendar".</li>
-                    
-                </ul>
-                <br>
-            </li>
-            <li>Choose a Plane for the Sketch:
-            
-
-
-            <ul>
-                    <li> To begin sketching, we need to pick a plane or surface. In this case, we’ll use a plane.</li>
-                    <li>Orient yourself to the top view and click on the xy plane. Make sure the "origin" folder is toggled on so you can see the plane.</li>
-                    <li>Click the Sketch tool icon in the top panel. You’re now in sketch mode. <br> </li> 
-                </ul>
-                        <br>
-            </li>
-            <li>Create the Main Rectangle:
-
-
-                <ul>
-                    <li>Select the Rectangle tool and click on the workspace to begin drawing. Place the first corner at the origin (the white dot).</li>
-                    <li>Drag the rectangle outward and click again to place the other corner. This point can be anywhere for now.</li>
-                    <li>Hit escape or done to stop drawing more rectangles.</li>
-                </ul>
-                <br>
-            </li>
-            <li>Dimension the Rectangle:
-
-
-                <ul>
-                    <li>Select the Dimension tool under Create → Sketch Dimension, or use the shortcut "D".</li>
-                    <li>Click on the width of the rectangle, drag downward, and click on the workspace. Assign it a value of 115 mm (ie, 11.5 cm).</li>
-                    <li>Repeat the process for the length, assigning it 170 mm (ie, 17 cm).</li>
-                </ul>
-                <br>
-                    <hr> 
-            </li>
-            
-
-            <li>Draw the Slider Holes:
-                
-            
-                        <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Y3tvmqTnfUA?si=Q1St_J6LqrtVpEE9" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-
-                
-                        <strong>[Part 5 ONLY Covered in video] </strong> 
-
-
-
-                <ul>
-                    <li>Using the same steps as above, draw another rectangle inside the first one. This will be the hole for the slider.</li>
-                    <li>Dimension the new rectangle to 114 mm (length) and 8 mm (width).</li>
-                    <li>Now, dimension the vertical distance from the new rectangle to the main rectangle's top length to 20 mm.
-                        <li> Dimension again the horizontal distance from the width of the slider hole to the width of the main rectangle to be 8mm (right-side).</li>
-                    <li>Repeat these steps, ensuring the vertical and horizontal distances are (vertical: 67 mm from bottom), (horizontal: 8mm from right) respectively.</li>
-                </ul>
-                <br>
-            </li>
-            <li>Add the Hole for the Triangular Base Finger Joint:
-                                                            <img src=media/Part1-hole-dims.png class="rounded mx-auto d-block img-fluid" height="350" > 
-
-
-                <ul>
-                    <li>To add the next hole, draw another rectangle like before and dimension it to 12mm (length) by "thickness of wood-0.095mm" (width).</li>
-                    <li>Set the distance from the top of the hole rectangle to the main rectangle as 4 mm and from the left side to be 4 mm too.</li>
-                </ul>
-                <br>
-            </li>
-            <li>Quickly Duplicating Rectangles: 
-
-
-                <ul>
-                    <li>We need three more rectangular holes, but instead of drawing them again, we’ll show a trick in the next section to quickly create multiple rectangles. This method saves time, especially if you have many shapes to duplicate.</li>
-                </ul>
-                <br>
-            </li>
-        
-        </ol>
-
-
+                    <!-- Part 1: Getting a Preliminary GUI -->
+                    <h4>Part (1): Breadboarding Basics and Multimeters (25 mins)  <a id="part1"> </a></h4>
+                    <p> The goal of this section is to make a LED blink. However, we need to 
+                        lay our circuit on something like a breadboard.
+                        A breadboard is basically like a preliminary construction board for making circuits! The areas 
+                        highlighted in green are the parts that are connected. The holes allow you to stick wires inside.
+                    </p>
+                    <img src=media/lab6/breadboard-diagram.png class="rounded mx-auto d-block img-fluid">
+                    <p>Typically, you put the ground line on the blue minus rail (-) and the power on the 
+                        red plus rail (+). This way, you can easily grab those connections.</p>
+                    <p>When you want to insert a resistor, you do not want to put both legs in the same row (same green region).
+                         You want to put it in a different row (a different green line). This is because the first method shorts it. 
+                         Current would simply never flow into it since it wants to go the path of least resistance. Below is a 
+                         good example:
+                    </p>
+                    <img src=media/lab6/wiring-breadboard-ex.png class="rounded mx-auto d-block img-fluid">
+                    <p>We want to introduce you to some other tools, too. How do we get wire to connect components? We can use a 
+                        <b>wire stripper</b> and get it from a spool of wire. In the image below, you can see the stripper. 
+                        There are different-sized holes representing the gauge of the wire.
+                    </p>
+                    <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
+                    <p>In the image above, using the hole makes an incision on only the insulation, and then you pull the insulation off to 
+                        only expose the metal on a potion of the wire. To cut the wire, you clamp the wire on the section where it says 
+                        cut on the strippers (the bottom portion of the sharp edge). You should get something like this:</p>
+                    <img src=media/lab6/wire-stripped.jpeg class="rounded mx-auto d-block img-fluid">    
+                    <p>To test connections, there is another tool for sensing: the <b>multimeter</b>. It has features like testing voltage, current, 
+                        connection, etc. The orientations of the symbols change from multimeter to multimeter, but the symbols are what stay consistent. 
+                        We will note the ones that matter for this lab and future labs here. 
+                    </p>
+                    <img src=media/lab6/multimeter.jpg class="rounded mx-auto d-block img-fluid"> 
+                    <p>
+                        The <b>V</b> with a dotted and straight lines above it measures DC voltage. DC, or direct current, is basically 
+                        signals not changing consistently or very often. The ohm symbol, <b>Ω</b>, stands for measuring resistance. The 
+                        WiFi looking signal with the curved lines in series is <b>continuity</b> mode. It beeps when there is an electrical connection 
+                        between the positive and negative terminals of the multimeter. Try testing each of these modes and be prepared to show 
+                        them off during checkoff.
+                    </p>
+                    <p>Now, this is the schematic we will build:</p>
+                    <img src=media/lab6/led-res-schem.png class="rounded mx-auto d-block img-fluid"> 
+                    <p>However, we will not tell you what resistor value to use. Using <b>V=IR</b>, we will ask you to figure out 
+                    what resistory to use. Note that the Arduino supplies 3.3 V. For current, let's try to get between 10-15 mA.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 1</h4> <a id="part2"> </a>
-                        Ask your instructor for a check-off on completing Part (1)
+                        <h4>Checkoff 1</h4> 
+                        Show your instructor your calculations and your multimeter skills!
                     </div>
         <br> 
                     <hr> 
                     
-                    <h4>Part (2): Mirroring Sketch Geometries (10 minutes)</h4>
+                    <h4>Part (2): Making a LED Blink (20 minutes)  <a id="part2"> </a></h4>
+        
+                <p>Now, you're ready to start making your full circuit on the breadboard. We will use pin 11 as our output pin 
+                    (the positive terminal) instead of the 3.3 V. Also, the shorter leg of the LED should be connected to ground. 
+                    Anode is the positive end of the LED (longer leg) while cathode is the other leg.
+                    To make the LED blink, use this code: </p>
+                <pre>
+                    <code class="language-javascript">
+// there are two functions in Arduino: setup and loop
+// setup runs only once
+void setup() {
+    pinMode(11, OUTPUT);
+}
 
-        <p> To save time, let’s mirror the rectangle instead of creating it again. Mirroring works by reflecting shapes about a line or plane, similar to how you <a href= "https://www.mathsisfun.com/geometry/reflection.html">learned in school</a> with x,y and z axes.
-            </p>
-                    <ol>
-                <li>Create a Mirror Line:
-
-                        <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pRuzVzj0WeU?si=5M0H3JGPHdoHU4PS" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-
-
-                <ul>
-                    <li>Select the Line tool, but don’t click done or anywhere on the workspace yet.</li>
-                    <li>On the side panel, choose Construction Line. This type of line is not part of the model itself, it’s used purely for construction purposes.</li>
-                </ul>
-            </li>
-            <li>Position the Line:
-
-
-                <ul>
-                    <li>Hover over the length of the rectangle until you see a small triangle appear—this marks the midpoint of the rectangle’s length.</li>
-                    <li>Click on the midpoint and drag your mouse to the opposite side of the rectangle. Ensure you also see the triangle (indicating midpoint) and a symbol indicating the line is perpendicular to the rectangle width.</li>
-                    <li>Now you've created a construction line that we can mirror the rectangle across!</li>
-                </ul>
-            </li>
-        </ol>
+// loop runs over and over
+void loop() {
+  // turn the LED on (HIGH is the voltage level)
+  digitalWrite(11, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  // turn the LED off by making the voltage LOW
+  digitalWrite(11, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
+                    </code>
+                </pre>
+                
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 2</h4>
-                        Show your instructor that you have constructed a mirroring line
+                        Show your instructor that you have a blinking LED!
                     </div>
                     
-                    
-                    
-                    
-            <p>Now, let's create a horizontal construction line across the rectangle’s width:</p>
-                    <ol>
-            <li>Create a Horizontal Line:                                                       
-                        <img src=media/Part1-horizontal-construction.png class="rounded mx-auto d-block img-fluid" height="500"> 
-
-
-
-
-                <ul>
-                    <li>Repeat the previous steps to draw a line, but this time horizontally.</li>
-                    <li>Start and end the line at the midpoints of the rectangle’s width. Remember, it’s a construction line!</li>
-                </ul>
-                <br>
-            </li>
-            <li>Mirror the Rectangular Hole:
-
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mgZkK3gfzWQ?si=SRhefPmbBLAhNABt" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-                <ul>
-                    <li>Go to the mirror tool (under Create → Mirror).</li>
-                    <li>In the pop-up, select the rectangular hole you made as the object to mirror.</li>
-                    <li>Choose the vertical construction line as the mirror line.</li>
-                    <li>Congratulations, you’ve mirrored the part and have two holes!</li>
-                </ul>
-                <br>
-            </li>
-            <li>Mirror Again: 
-                        <img src=media/Part2-mirroring-horizontal.png class="rounded mx-auto d-block img-fluid" height="600"> 
-
-
-
-                <ul>
-                    <li>Repeat the mirroring process, but this time use the horizontal construction line to mirror both holes.</li>
-                    <li>All your four holes are now complete!</li>
-                </ul>
-            </li>
-        </ol>
+                    <!-- Part 3: Assembly of the Electronics on the Guitar -->
+            <h4>Part (3): Learning Soldering (15 mins) <a id="part3"></a></h4>
+                    <p>Soldering is a technique to connect two electrical components together. 
+                        Solder is usually a leaded metal that you melt down and acts as glue. The soldering
+                        iron heats up the solder to turn it into a liquid that can flow. For our first step,
+                        let's turn on the iron to 450 degrees Celsius. For this whole process, don't be afraid 
+                        to ask for help from one of your instructors. Soldering can be daunting at first.
+                    </p>
+                    <p>Cut a long piece of wire (about 25 cm). Strip the wire to expose some of the metal.</p>
+                    <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
+                    <p>Now, bring the solder, soldering iron, the wire, and the leg of the button together.
+                        You will see the solder melt and become a glue. It only becomes a glue that keeps 
+                        components together when it cools and becomes solid. So when it is cooling, make 
+                        sure that everything is stable and holds together. Using clips to hold things together 
+                        helps with all of this. This is pictured below.
+                    </p>
+                    <img src=media/lab9/clips-solder.jpeg class="rounded mx-auto d-block img-fluid"> 
+                    <p>Repeat this with two more legss on the button to have three legs soldered for a single button.</p>
                     
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 3</h4> <a id="part3"> </a>
-                        Show your instructor that you have constructed all four rectangular holes
-                    </div>
-                    
-
-        <hr> 
-                    <!-- Part 4: Assembly and Post-Processing -->
-            <h4>Part (3): Filletting (5 minutes)</h4>
-                    
-                    
-                    
-                                <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W_fzMl9RQEg?si=CREtiFmW-6NQiuxQ" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-                        <p>Filleting is the process of rounding off sharp edges on your design.  For laser cutting, filleting is important because sharp corners can create stress points in the material, which may lead to cracks or breakage. Filleting smooths out those corners, improving durability and aesthetics.</p>
-
-
-        <p>Now your design is filleted and ready for a cleaner, more durable laser cut!</p>
-
-
-
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
-                        <h4>Checkoff 4</h4> <a id="part4"> </a>
-                    Show the filetted corners to your instructor
+                        <h4>Checkoff 3</h4> 
+                    Show a soldered button to your instructor
                     
                     </div>
         <hr>
             
-                    <h4>Part (4): Linear Patterning (10 minutes)</h4>
-
-                        <p>Next, let's design the small day-of-the-month slider:</p>
-
-
-                    <ol>
-            <li><strong>Draw the Outer Rectangle</strong>:
-                                <img src=media/part4-drawrect.png class="rounded mx-auto d-block img-fluid" height="600"> 
-
-
-                <ul>
-                    <li>Similar to Part(1), draw a rectangle. Dimension it to <strong>74mm by 65mm</strong>, and make sure it’s not overlapping the previous design's main.</li>
-                </ul>
-            </li>
-            <li><strong>Create a Smaller Rectangle Inside</strong>:
-                <ul>
-                    <li>Inside this rectangle, draw a smaller one representing the holes for days of the month. Dimension it to <strong>7mm by 8mm</strong>.</li>
-                    <li>Place this smaller rectangle <strong>10 mm</strong> from the top and <strong>2 mm</strong> from the side (left).</li>
-                </ul>
-                
-            <img src=media/part4-filett.png class="rounded mx-auto d-block img-fluid" height="600"> 
-
-
-            </li>
-            <li><strong>Fillet the Rectangles</strong>:
-                <ul>
-                    <li>Input the fillet radius as <strong>2 mm</strong>.</li>
-                </ul>
-                <br>
-                        <p>  Now that we have filleted our rectangles, let’s create the remaining rectangles.</p>     
-
-
-            </li>
-            <li><strong>Adding Multiple Rectangles</strong>:
-                <ul>
-                    <li>Instead of creating X more rectangles manually, let’s use <strong>linear patterning</strong>.</li>
-                </ul>
-                
-            </li>
-            <li><strong>What is Linear Patterning?</strong>
-                <ul>
-                    
-                    <li>Linear patterning replicates an object along a straight line, horizontally, vertically, or both. It’s a shortcut to avoid repetitive work.</li>
-                </ul>
-                                        <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zUqkUZr-fq0?si=tAs3AjpJF9ugEhpL" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-            </li>
-            <li><strong>Use the Linear Pattern Tool</strong>:
-                <ul>
-                    <li>Select the part you just made. </li>
-                    <li>For the horizontal patterning, set spacing to <strong>9 mm</strong> and the number of copies to <strong>7</strong>.</li>
-                    <li>For the vertical patterning, set spacing to <strong>13 mm</strong> and the number to <strong>5</strong>.</li>
-                </ul>
-            </li>
-            <li><strong>Reflect</strong>:
-                <ul>
-                    <li>Why don’t we use mirroring here?</li>
-                </ul>
-            </li>
-        </ol>
-            
-                    
-                    
-                    
+                    <h4>Part (4): Understanding with a Multimeter (15 mins) </h4><a id="part4"> </a>
+                    <p>To understand how the button is wired internally, we have to use multimeter, specifically its 
+                        continuity mode that we learned about in a previous lab. Draw a picture of what the internal 
+                        wiring of the button looks like. What legs are the button are connected? Which leg will you 
+                        connect to GND, 3.3 V, and the input pin?
+                    </p>
+                    <br>
+                    <p>Solder wires to two other buttons like you did in Part (3). Your instructor will check your soldering.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 5</h4><a id="part5"> </a>
-                        Show your lineared patterned result and answer the reflection question
+                        <h4>Checkoff 4</h4>
+                        Show your diagram and your soldering job for the other two buttons to the instructor!
                     </div>
                 </section>
 
                 <hr>
 
-        <h4>Part (5): Importing DXF File (5 minutes)</h4>
-
-        <p>We need to add text to our calendar, so let’s import a DXF file.</p>
-
-                Download DXF file from <a href= "media/text-calendar.dxf"> here</a>
-        <p><strong>What is a DXF?</strong></p>
-        <p>A DXF (Drawing Exchange Format) is a vector file format used for 2D designs, allowing you to import elements like text from software like Illustrator into Fusion360.</p>
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nB-scyy2t7M?si=27qVVnxvxmoU3u2N" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-                
-        <ol>
-            <li>Click Insert → Insert DXF in Fusion360.</li>
-            <li>Select a Plane: You'll need to choose a plane to import the DXF onto. Select the XY plane.</li>
-            <li>Move the text to the desired position in the workspace by dragging it (here, move to X:-20mm, Y:208mm)-- you may adjust this a bit in Illustrator later if it feels too close to the slider edge aesthetically </li>
-            <li>Now, you’ve imported the text! You can always design in external software (like Illustrator) and bring it into Fusion360 as a DXF file to further manipulate-- this will be helpful later on if you want to add logos for 3D printing, for example.</li>
-        </ol>
-
-                
-            
+        <h4>Part (5): Wiring the GND, 3.3 V, and Input Pins (25 mins)</h4> <a id="part5"> </a>
+        <p>Now, solder all the GND wires together, the 3.3 V wires together, and input pins and plug them into the Arduino.
+        Zip tie all the wires together and electrical tape them to have clean design. The electrical tape should cover all 
+        the exposed metal. You should have something that looks like this: </p>
+        <img src=media/lab9/wiring-guitar.jpeg class="rounded mx-auto d-block img-fluid"> 
+        
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 6</h4> <a id="part6"> </a>
-        Show the correctly imported and placed dxf to your instructor            </div>
+                        <h4>Checkoff 5</h4> 
+        Finish wiring the rest of the buttons to have fully functioning electronics.            </div>
         <hr> 
                 
                 
                 
-                <h4>Part (6): 🚨Remixing🚨 (30 minutes)</h4>
+                <h4>Part (6): Guitar Hero and 🚨Remixing🚨 (10 minutes)</h4><a id="part6"> </a>
 
+                <p>Go to this url and download the folder. <a href="https://github.com/fzaman500/mit-gtl-bahrain-2025-guitar-hero">Guitar Hero Link.</a> 
+                    Open Processing and try running the game with just the arrow keys (left, down, right). If that works, then we can test the Serial.
+                 Open Arduino and run the Serial code we ran prior. This will ensure that information is being written into the port that we can grab from 
+                Processing. Now, run the Processing code once more. Your controller should work now! Don't hesitate to ask questions if you have any. 
+                Take a bit of time to understand the Processing code. You will be asked some questions during the discussion portion of the lab, particularly, 
+                about the Serial communication portion. </p>
+
+                <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                    <h4>Checkoff 6</h4>
+                    Show your working game to your instructor.            </div>
                 
-                    <img src=media/Remixing-examples.png class="rounded mx-auto d-block img-fluid"> 
-
-
+                <hr> 
+                <br>
+                <h4>Part (7): 🚨Remixing🚨 (10 minutes)</h4><a id="part7"> </a>
         <p> Now it's time to “remix” this assignment by adding your own flair! Be creative and 
             think about how you can personalize your design.
             If there's anything specific you want to create but aren't sure how, 
-            let us know so we can guide you!</p>      
+            let us know so we can guide you! Some suggestions are chaning the button designs on the GUI, adding another button, 
+            changing scoring, etc.</p>      
             
-                <a id="part7"> </a>
-        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
-                        <h4>Checkoff 7</h4>
-        Show your remix to your instructor            </div>
+            <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                <h4>Checkoff 7</h4>
+                Show your remix to your instructor.           
+            </div>
+                
+                        
+        <p>Congratulations, your custom Guitar Hero game and controller are ready! 🎉</p>
         <hr> 
-                
-                <hr> 
-                
-                
-                
-                <h4>Part (7): Exporting DXF file (5 minutes)</h4>
-                    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lyzCHFN4ET4?si=BcMsPMzGjG_zk4Fo" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-        <ol>
-            <li><strong>Export the Sketch</strong>:
-                <ul>
-                    <li>Right-click on your sketch.</li>
-                    <li>Select <em>Export as DXF</em>.</li>
-                </ul>
-            </li>
-            <li><strong>Open the DXF File</strong>:
-                <ul>
-                    <li>Open the exported DXF file in Adobe Illustrator (set the import to <b> 1 unit = 1mm </b>-- <i> make sure units are in mm</i>).</li>
-                </ul>
-            </li>
-            <li><strong>Remove Construction Lines</strong>:
-                <ul>
-                    <li>Delete the lines that correspond to the construction lines included in the export.</li>
-                </ul>
-            </li>
-        </ol>
-
-        <p><em>Note</em>: In future labs, we’ll demonstrate a method to export without including construction lines, which will streamline your workflow!</p>
-
-                <a id="part8"> </a>
-                            
-        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
-                        <h4>Checkoff 8</h4>
-        Show the exported file to your instructor to start lasercutting        </div>      
-                <hr> 
-
-            <h4>Part (8): Lasercutting (30 minutes)</h4>
-            
-            <p> For this part, please follow your instructors to D-Lab in order to lasercut; We will 
-            use <a href="https://creativecloud.adobe.com/apps/download/creative-cloud?trackingid=KCJMVLR9&mv=in-product"> Adobe 
-                Illustrator</a> as our choice of <a href="https://www.adobe.com/creativecloud/design/discover/vector-file.html"> Vector</a> editing 
-            file that we can open our DXF in it, and interface with the lasercutter. </p>
-            
-            <p> Your instructors will demonstrate to you what vector vs. raster files are, and how to set-up files for 
-            lasercutting. You may skip reading this scetion and just <strong> head to D-Lab. 😎</strong></p>   
-            For your future reference, we will provide some insructions below on how to create an image for "vector cutting" vs. 
-            "rastering/engraving": 
-            <br> 
-            
-                    <img src=media/cut-engrave-raster.png class="rounded mx-auto d-block img-fluid"> 
-            
-            
-            <ol> 
-            <li> <b>Vector Cutting:</b> The laser follows a path to cut through material (subtracts material).</li>
-                
-            <li> <b>Engraving: </b> The laser etches or marks the surface without cutting through (usually like an outline).</li>
-                
-            
-             <li> <b>Rastering: </b> The laser scans and etches (no cutting) in a grid pattern to create detailed images or shading on the surface (great for photos and textures).</li>
-
-            
-            </ol>
-
-            Below is a summary of what makes something cut as vector and something as raster-- we also provide some examples in the graphic below: 
-            
-                                <img src=media/vector:raster.png class="rounded mx-auto d-block img-fluid"> 
-
-                            
-                <br> 
-            
-                   <ol> 
-            <li> <b>Vector Cutting: </b> 
-                
-                <ul> 
-                <li> 🔴 RGB red color (255, 0, 0) <a id="part9"> </a> </li>
-                    <li> ⭕ Vector Shape (only outline, no infill) </li>
-                <li> ✏️ outline line width (0.01pt)</li>
-                </ul>
-                
-
-                <br> 
-            
-             <li> <b>Raster Engraving:</b> Anything that does not meet vector requirements</li>
-
-            
-
-            </ol>
-
-            
-                   <hr> 
-                
-        <h4>Part (9): Assemble the Calendar and Sand the Edges (30 minutes)</h4>
-
-                            <img src=media/sanding.png class="rounded mx-auto d-block img-fluid"> 
-                
-                
-
-
-
-
-        <ol>
-            
-            
-            
-            
-            <li><strong>Sanding Surface</strong>:
-                <ul>
-                
-                    <li>something about sanding goes here</li>
-                </ul>
-                
-                
-                                            <img src=media/sanding-edges.png class="rounded mx-auto d-block img-fluid"> 
-            <li><strong>Sanding Edges</strong>:
-                <ul>
-                
-                    <li>something about sanding goes here</li>
-                </ul>
-
-                
-                <img src=media/assembly-1.png class="rounded mx-auto d-block img-fluid"> 
-
-
-                <li><strong>Insert the Sliding Mechanism</strong>:
-                <ul>
-                    <li>Begin by inserting the stopper component for the day of the month into its designated slots as shown in figure (a) immediately above .</li>
-                </ul>
-            </li>
-
-            <li><strong>Glue the Stoppers</strong>:
-                <ul>
-                    <li>Start by gluing the stopper and place the slider on top of it (c-d). Make sure to hold in position until the glue sets (15 minutes dry time).</li>
-                </ul>
-            </li>
-
-                <li><strong>Repeat</strong>:
-                <ul>
-                    <li>Repeat previous steps for the month slider.</li>
-                </ul>
-                    
-                            <img src=media/assembly-2-pressfit.png class="rounded mx-auto d-block img-fluid"> 
-
-
-            </li>
-            
-            
-            <li><strong>Assemble the Legs</strong> <a id="discussion"> </a>:
-                <ul>
-                    <li>Once the glue has dried, press-fit the legs into their corresponding holes to secure them in place.</li>
-                </ul>
-            </li>
-            <li><strong>Final Assembly</strong>:
-                <ul>
-                    <li>If you created any remix pieces, assemble those as well.</li>
-                </ul>
-            </li>
-        </ol>
-
-        <p>Congratulations, your dynamic calendar is ready! 🎉</p>
-
-                
+        <br>
             
                 <!-- Submission Section -->
                 <section class="mb-4">
                     <h2>Discussion & Reflections</h2>
         <ol>
-            <li><strong>Discuss the advantages and limitations of using laser cutting for digital fabrication.</strong>
+            <li><strong>Give a brief overview of how the code works.</strong>
                 <ul>
-                    <li>What can we make? What is difficult to make?</li>
+                    <li>How are the serial inputs being processed into game inputs?</li>
                 </ul>
             </li>
             <li><strong>Reflect on the design process</strong> 
