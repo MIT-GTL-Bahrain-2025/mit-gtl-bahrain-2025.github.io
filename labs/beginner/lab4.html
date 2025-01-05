@@ -611,7 +611,7 @@ After you ask for instructor check-off, refer to the two sections with mechanism
                 <ul>
     
     
-  <li> ⚪ A <strong>circular CAM</strong> produces no height variation.</li>
+                    <li> ⚪ A <strong>circular CAM</strong> produces no height variation. <span style=color:red> (think, why?) </span></li>
   <li>🥚 Changing the shape to an <strong>ellipse</strong> introduces height, where the height difference equals the difference between the radii.</li>
 </ul>
    <img src=media/CAM-height-differance.png class="rounded mx-auto d-block img-fluid"> 
@@ -732,6 +732,19 @@ Assuming that a CAM is circular, and its shaft is in the center, what would happ
                     </div>  
                 
                 
+                Now, based on what you learned, sketch your CAM with these principles and show to instructor. 
+                
+                <br> 
+                <br> 
+          <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+               
+ 
+                    
+                        <h4>Checkoff 4</h4>
+Show your CAM design math (for your automata) to your instructor                    
+                    </div>  
+                
                 
                    <hr> 
                     <!-- Part 4: Assembly and Post-Processing -->
@@ -740,18 +753,59 @@ Assuming that a CAM is circular, and its shaft is in the center, what would happ
                     
         <hr>
             
-                    <h4>Part (5): Designing Gears (Mechanical Principles) (7 minutes)</h4>
-              
+                    <h4>Part (5): Designing Gears (Mechanical Principles) (20 minutes)</h4>
+                There are many types of gears, which you can explore using <a href="https://khkgears.net/new/gear_knowledge/introduction_to_gears/types_of_gears.html"> this link</a>. 
+                For our lab, we’ll focus on spur gears and rack and pinion systems. For a summary of gear types and their applications, refer to <a href="">Table-2</a>.
+                <br> 
+                <br> 
+                
+                
+                 <h5> Gear Composition</h5>
+                <p> Gears (from a very high level) are "circular" discs with evenly spaced teeth around their circumference (you will see later that gears can in fact be non-circular).</p>
+                
+         <img src=media/outer-diameter.png class="rounded mx-auto d-block img-fluid"> 
+
+
+                
+                <h5> Gear Module</h5>
+                <p> Gears always come in pairs since they transfer motion/force. In order to have two gears mesh with each other 
+                    (ie, the teeth engage and fit into each other), 
+                    they must have the same <span style=color:red> gear module. </span> The equation for the gear module is as follows
+                    (You can access additional equations <a href="https://ronsongears.com.au/wp-content/uploads/2018/05/spur-gear-formulation-calculations.pdf"> here</a>): </p>
+                
+                
+                
+                
+               <center> <strong> Module (m) = <sup>OD</sup>/<sub>(N+2)</sub> </strong> </center> 
+                
+                <p> where OD is the outer diameter, and N is the number of teeth </p>
+                
+                So, if a gear has an OD (outer diameter) of 9cm, and has 16 teeth, then its module would be 
+                (9/(16+2)= 0.5cm), hence the module is <strong>0.5cm</strong>
+                <br> 
+                
+                
                 <br> 
              
               <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                
-                        <h4>Checkoff 2</h4>
-                    Show your shaft with its threaded hole to your instructor, and explain to them what M7mmx1mm means (you are encouraged to look up the answer online 👀)!
+                        <h4>Checkoff [Check My Understanding]</h4>
+                    Which of the following gears will mesh with the gear from the example (ie, they too would have a module of 0.5cm)? 
                     
                     </div>  
                 
+
+                
+                                <h5> Gear Ratio</h5>
+
+
+                
+                 <h5> Intermittent Spur Gears</h5>
+
+                
+                
+                <h5> Linear Gears</h5>
 
                 <hr>
 <h4>Part (6): Modelling Gears in Fusion-360 (7 minutes)</h4>
