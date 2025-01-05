@@ -501,7 +501,7 @@
                 <ol> 
                 
                 <li>Pick two of the mechanisms in the tables above (eg, CAM with a gear as two mechanisms)-- for the sake of time, we encourage you to not design linkages 
-                    unless you would really like to, but please consult with your mentos first.</li>
+                    unless you would really like to, but please consult with your mentors first.</li>
                 <li>Refer to the type of the output/input motion </li>
                     <li> Refer to the table section "applications in automata" to further understand how each mechanism looks like or is applied. 
                </li>
@@ -585,10 +585,25 @@ After you ask for instructor check-off, refer to the two sections with mechanism
                 
                 <hr> 
                 
-                    <h4>Part (4): Designing CAMs by mechanical principles (5 minutes)</h4>
+                    <h4>Part (4): Designing CAMs by mechanical principles (20 minutes)</h4>
 
                 
-                <p>CAMs affect two main aspects: speed and height. When considering height, two factors play a role: the <strong>shape of the CAM</strong> and the <strong>location of the shaft</strong>. Let’s first focus on the shape of the CAM, assuming the shaft is positioned at the center.</p>
+                <p>CAMs affect two main aspects: 💨 speed and ↕️ height, which you can design around. </p> 
+
+
+
+                
+                
+                <br> 
+                
+                
+                <h5> Designing CAM around Height:</h5>
+                
+               <p> When considering height, two factors play a role: the <strong>shape of the CAM</strong> and the <strong>location of the shaft</strong>. Let’s first focus on the shape of the CAM, assuming the shaft is positioned at the center, then change the shaft location.</p>
+
+
+                <br> 
+                <h5> 🔴 Part (A): CAM Shape</h5>
                 
                 
                                 <img src=media/CAM-height.png class="rounded mx-auto d-block img-fluid"> 
@@ -607,9 +622,93 @@ After you ask for instructor check-off, refer to the two sections with mechanism
 <p><strong>For example:</strong></p>
 <p>If you need a design to move up by 3 cm and the smaller radius (1) is 5 cm, the larger radius (2) should be <strong>8 cm</strong> (5 cm + 3 cm).</p>
 
-<p>The <strong>location of the shaft</strong> also affects height, but we will address this aspect later.</p>
+                
+                
+                <br> 
+                
+                CAMS can come in many shapes as you can see in <a href=""> Table-1</a>, like triangles, hearts, and stars. Let's
+                check your understanding now with a triangle CAM and the height difference corresponding to it.
+                
+                <br> <br> 
+                
+                <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+               
+                       <img src=media/CAM-triangle.png class="rounded mx-auto d-block img-fluid"> 
+
+ 
+                    
+                        <h4>Checkoff [Check My Understanding]</h4>
+                     If I have a CAM in the shape of an equilateral triangle, how many heights does it have? Additionally, if I want the height to vary from 2 cm (h1) to 4 cm (h2), what would the side length of the triangle be?
+                    
+                    </div>  
+                
+                
+                
+<p>The <strong>location of the shaft</strong> also affects height. We will address this next.</p>
+                
+                
+                <hr> 
+                                <h5>  🔴 Part (B): CAM Shaft Location</h5>
+                
+
+
+
+                       <img src=media/off-center-CAM-circle.png class="rounded mx-auto d-block img-fluid"> 
+<ul>
+  <li><strong>Centered Shaft:</strong> A circular CAM with its shaft positioned at the center produces no height change in the CAM follower.</li>
+  <li><strong>Off-Center Shaft (Eccentric CAM):</strong> Moving the shaft off-center transforms the same circular CAM into an "eccentric CAM," which creates height variation.</li>
+  <li><strong>Application to Other Shapes:</strong> This principle applies to all CAM shapes, such as ellipses. Shifting the shaft from the geometric center introduces height changes, even in shapes that already produce height variation when centered.</li>
+</ul>
+                
+                
+                
+                <br> 
+                ⭐<b>Example</b>⭐: ramen noodles showing and hiding-- refer to <a href=""> Table-1</a> for more design refrences
+                
+                                             <img src=media/ramen-up-down.png class="rounded mx-auto d-block img-fluid"> 
+
+
+                <hr> 
+
+                <h5> Placement of CAM & Effect on Rotation/Speed:</h5>
+
+Assuming that a CAM is circular, and its shaft is in the center, what would happen if the CAM is right below the center of the follower? What if it's a bit away from the follower's center?
+                
+                
+            
+        <img src=media/CAM-position-rotation.png class="rounded mx-auto d-block img-fluid"> 
 
                 
+<p>To understand how a CAM affects a follower, let’s examine three scenarios:</p>
+
+<ol>
+  <li>
+    <strong>CAM Directly Below the Follower's Center (1):</strong>
+    <ul>
+      <li><strong>Circular CAM with Centered Shaft:</strong> No notable effects (may cause minor wobbling depending on constraints).</li>
+      <li><strong>Elliptical or Eccentric CAM:</strong> Produces a <em>change in height</em> only, with little to no rotation (possible slight wobble).</li>
+    </ul>
+  </li>
+  <li>
+    <strong>CAM Off-Center from the Follower ( 2 & 3):</strong>
+    <ul>
+      <li>The CAM causes <em>rotation</em> in the follower.</li>
+      <li>The farther the CAM is from the follower’s center, the easier it is to rotate the follower.</li>
+      <li><strong>Why?</strong> The torque principle: Torque increases with the distance to the pivot.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>CAM Producing Both Height Change and Rotation:</strong>
+    <ul>
+      <li>If the CAM shape inherently produces height change (e.g., elliptical) and is placed off-center, it will result in both <em>rotation</em> and <em>height variation</em> simultaneously.</li>
+    </ul>
+  </li>
+</ol>
+      
+       <img src=media/CAM-position-rotation.png class="rounded mx-auto d-block img-fluid"> 
+
+     
                 
                 
                    <hr> 
