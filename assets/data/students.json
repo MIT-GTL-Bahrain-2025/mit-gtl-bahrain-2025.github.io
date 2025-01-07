@@ -1,30 +1,135 @@
 [
     {
-        "id": "niuniuzhu",
-        "name": "Niuniu Zhu",
-        "bio": "Niuniu is a creative designer who loves working on interactive projects.",
-        "lab1": "cat-shaped laser-cut calendar",
-        "lab2": "cat-themed 3D printed keychain designed in fusion."
-
+        "id": "Abdulaziz_Alhamad",
+        "name": "Abdulaziz Alhamad",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
     },
     {
-        "id": "pookah",
-        "name": "Pookah",
-        "bio": "Pookah specializes in rapid prototyping and has a passion for cats."
+        "id": "Ahmed_Bassam",
+        "name": "Ahmed Bassam",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
     },
     {
-        "id": "kippy",
-        "name": "Kippy",
-        "bio": "Kippy is a skilled developer who focuses on frontend design."
+        "id": "Ahmed_Hammad",
+        "name": "Ahmed Hammad",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
     },
     {
-        "id": "triscuitz",
-        "name": "Triscuitz",
-        "bio": "Triscuitz enjoys creating interactive systems for learning."
+        "id": "Ali_Abbas",
+        "name": "Ali Abbas",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
     },
     {
-        "id": "woof",
-        "name": "Woof",
-        "bio": "Woof is a backend expert who loves dogs."
+        "id": "Ali_Althawadi",
+        "name": "Ali Althawadi",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Batool_Albonni",
+        "name": "Batool Albonni",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Fariha_Akbar",
+        "name": "Fariha Akbar",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Fatima_Ali",
+        "name": "Fatima Ali",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Ibrahim_Aawan",
+        "name": "Ibrahim Aawan",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Jawad_Tawfeeq",
+        "name": "Jawad Tawfeeq",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Maryam_Albonni",
+        "name": "Maryam Albonni",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Mohammed_AlJalahma",
+        "name": "Mohammed AlJalahma",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Nathalie_Ahmed",
+        "name": "Nathalie Ahmed",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Noor_Hasan",
+        "name": "Noor Hasan",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Raneem_Sabri",
+        "name": "Raneem Sabri",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Sabah_Hassan",
+        "name": "Sabah Hassan",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Sumayya_Nazeer",
+        "name": "Sumayya Nazeer",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Yousif_Abuzuhaira",
+        "name": "Yousif Abuzuhaira",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
+    },
+    {
+        "id": "Zain_Mayoof",
+        "name": "Zain Mayoof",
+        "bio": "",
+        "lab1": "",
+        "lab2": ""
     }
 ]
