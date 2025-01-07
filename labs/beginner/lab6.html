@@ -24,7 +24,7 @@
         <!-- Lab 1 Page Heading -->        
         <div class="col-md-4">
             <div class="sticky-top" style="padding-top:100px;" >
-                <p>Total Time: 1.75 hours</p>
+                <p>Total Time: 1 hour and 45 mins</p>
                 <h5>Quick Links</h5>
                 <ul>
                     <li><a href="#introduction">Introduction & Safety</a></li>
@@ -33,7 +33,7 @@
                     <li><a href="#part0">Part (0): Hello World, Arduino! </a></li>
                     <li><a href="#part1">Part (1): Breadboarding Basics and Multimeters </a></li>
                     <li><a href="#part2">  Part (2): Making a LED Blink </a></li>
-                    <li><a href="#part3"> Part (3): Learning Soldering</a></li>
+                    <li><a href="#part3"> Part (3): Wiring RFID</a></li>
                     <li><a href="#part4"> Part (4): Understanding with a Multimeter </a></li>
                       <li><a href="#part5">Part (5): Wiring the GND, 3.3 V, and Input Pins </a></li>
                     <li><a href="#part6">  Part (6): Guitar Hero</a></li>
@@ -57,14 +57,14 @@
                     </p>
                     
                     
-                    In this lab, you'll <b>create</b> a SOMETHING 
+                    In this lab, you'll <b>create</b> a RFID reader that grants access depending on your ID  
                         while learning how to:
                     <br>
                     <br> 
                     <ul>
                         <li> ✅ Code in Arduino</li>
-                        <li> ✅ Learn how to wire and understand electronics</li>
-                        <li>✅ SOMETHING</li>
+                        <li> ✅ Learn how to wire and understand basic electronics</li>
+                        <li>✅ Wire a peripheral (the RFID chip)</li>
                     </ul>
                     <p><strong>Before we start</strong>, please make sure you understand the following safety precautions:</p>
         <ul>
@@ -86,7 +86,7 @@
                             <li>(A) Breadboard with a Circuit! (<strong>x1</strong>)</li>
                         </ul>
                     </li>
-            <li><strong>And SOMETHING:</strong>
+            <li><strong>And wire an RFID reader:</strong>
                 <ul>
                     <li>(B) SOMETHING (<strong>x1</strong>)</li>
                 </ul>
@@ -118,10 +118,10 @@
                         <h5>Hardware:</h5>
                         <ul>
                             <li>Breadboard</li>
-                            <li>Wire</li>
+                            <li>Jumper Wires</li>
                             <li>Wire Cutter</li> 
-                            <li>LED</li>
-                            <li>Resistor</li>
+                            <li>LEDs</li>
+                            <li>Resistors</li>
                             <li>Arduino Uno</li>
                             <li>Multimeter</li>
                             <li>Laptop</li>
@@ -144,7 +144,7 @@
         <li>Download <a href="https://www.arduino.cc/en/software"> Arduino (5 mins)</a></li>
         <li>Plug in the Arduino Uno to your laptop</li>
         <li>Open Arduino</li>
-        <li>Let's try coding. Line that begin with a <b>//</b> are comments which are instructions that are just for 
+        <li>Let's try coding in C, the programming language that Arduino uses. Line that begin with a <b>//</b> are comments which are instructions that are just for 
             human readability and not read by the machine. Code is usually put into functions. For the first function, 
             the <b>void</b> means that the function is returning nothing which is what we want for a simple program. Then, the 
             name of the function comes next, in this case, it is <i>setup</i>. The <b>()</b> tells you the inputs of the function. 
@@ -211,13 +211,15 @@ void loop() {
                         between the positive and negative terminals of the multimeter. Try testing each of these modes and be prepared to show 
                         them off during checkoff.
                     </p>
+                    <p>I NEED TO FILM VIDEOS DOING EACH OF THE FUNCTIONS ON THE MULTIMETER</p>
                     <p>Now, this is the schematic we will build:</p>
                     <img src=media/lab6/led-res-schem.png class="rounded mx-auto d-block img-fluid"> 
                     <p>However, we will not tell you what resistor value to use. Using <b>V=IR</b>, we will ask you to figure out 
-                    what resistory to use. Note that the Arduino supplies 3.3 V. For current, let's try to get between 10-15 mA.</p>
+                    what resistor to use. Note that the Arduino supplies 3.3 V. For current, let's try to get between 10-15 mA.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4> 
-                        Show your instructor your calculations and your multimeter skills!
+                        Show your instructor your calculations and your multimeter skills! Your instructor will also bring a wire 
+                        and wire stripper to briefly practice wire stripping.
                     </div>
         <br> 
                     <hr> 
@@ -226,8 +228,16 @@ void loop() {
         
                 <p>Now, you're ready to start making your full circuit on the breadboard. We will use pin 11 as our output pin 
                     (the positive terminal) instead of the 3.3 V. Also, the shorter leg of the LED should be connected to ground. 
-                    Anode is the positive end of the LED (longer leg) while cathode is the other leg.
-                    To make the LED blink, use this code: </p>
+                    Anode is the positive end of the LED (longer leg) while cathode is the other leg.</p>
+                    <div style="display: flex; justify-content: center; gap: 10px;">
+                        <img src=media/lab6/LED-Diode-Diagram.png class="rounded mx-auto d-block img-fluid" style="max-width: 30%; height: auto;">
+                        <img src=media/lab6/led-image-and-graph.webp class="rounded mx-auto d-block img-fluid" style="max-width: 30%; height: auto;">
+                    </div>
+                    <p>Since we have limited wire strippers and limited time, let's just use jumper wires. These are just pre-cut 
+                        wires that you can insert immediately into the breadboard.
+                    </p>
+                    <img src=media/lab6/led-res-schem.png class="rounded mx-auto d-block img-fluid"> 
+                    <p>To make the LED blink, replace the code in the code editor with this code: </p>
                 <pre>
                     <code class="language-javascript">
 // there are two functions in Arduino: setup and loop
@@ -247,7 +257,7 @@ void loop() {
 }
                     </code>
                 </pre>
-                
+                <p>You should have a blinking LED now!</p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 2</h4>
@@ -255,23 +265,16 @@ void loop() {
                     </div>
                     
                     <!-- Part 3: Assembly of the Electronics on the Guitar -->
-            <h4>Part (3): Learning Soldering (15 mins) <a id="part3"></a></h4>
-                    <p>Soldering is a technique to connect two electrical components together. 
-                        Solder is usually a leaded metal that you melt down and acts as glue. The soldering
-                        iron heats up the solder to turn it into a liquid that can flow. For our first step,
-                        let's turn on the iron to 450 degrees Celsius. For this whole process, don't be afraid 
-                        to ask for help from one of your instructors. Soldering can be daunting at first.
+            <h4>Part (3): Wiring RFID (20 mins) <a id="part3"></a></h4>
+                    <p>As mentioned in lecture, Radio Frequency Identification (RFID) is a universal security system. 
+                        There are three main components of RFID: the PICC (your card), the PCD (the reader), and the 
+                        computer (the Arduino). RFID is very difficult to make from scratch. So, we will use some help. 
+                        The RC522 chip module does a lot of the processing for us and will act us a reader.</p>
+                        <img src=media/lab6/rc522.jpeg class="rounded mx-auto d-block img-fluid"> 
+                    <p>However, we do still need to connect the RC522 to our Arduino to communicate to it. 
+                        We slot it into our breadboard like this such that the reader is facing out.
+                        INSERT IMAGE
                     </p>
-                    <p>Cut a long piece of wire (about 25 cm). Strip the wire to expose some of the metal.</p>
-                    <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
-                    <p>Now, bring the solder, soldering iron, the wire, and the leg of the button together.
-                        You will see the solder melt and become a glue. It only becomes a glue that keeps 
-                        components together when it cools and becomes solid. So when it is cooling, make 
-                        sure that everything is stable and holds together. Using clips to hold things together 
-                        helps with all of this. This is pictured below.
-                    </p>
-                    <img src=media/lab9/clips-solder.jpeg class="rounded mx-auto d-block img-fluid"> 
-                    <p>Repeat this with two more legss on the button to have three legs soldered for a single button.</p>
                     
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
