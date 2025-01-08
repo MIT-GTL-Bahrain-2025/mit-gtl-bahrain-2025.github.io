@@ -70,6 +70,8 @@
         <ul>
             <li><strong>High Current:</strong> Never connect power and ground directly with a wire. High currents 
             are very dangerous.</li>
+            <li><strong>Wiring with Power Off:</strong> Whenever wiring on your breadboard, please disconnect the Arduino wire 
+            from the computer so that the power is off.</li>
         </ul>
             
                 </section>
@@ -234,7 +236,8 @@ void loop() {
                     <hr> 
                     
                     <h4>Part (2): Making a LED Blink on Your Breadboard (20 minutes)  <a id="part2"> </a></h4>
-                    <p>Let's go over the compoents and how to to insert components. </p>
+                    <p>Again, Whenever wiring on your breadboard, please disconnect the Arduino wire 
+                        from the computer so that the power is off. Let's go over the compoents and how to to insert components. </p>
                     <p>Since we have limited wire strippers and limited time, let's just use jumper wires. These are just pre-cut 
                         wires that you can insert immediately into the breadboard.
 
@@ -293,9 +296,37 @@ void loop() {
                         <img src=media/lab6/rc522.jpeg class="rounded mx-auto d-block img-fluid"> 
                     <p>However, we do still need to connect the RC522 to our Arduino to communicate to it. 
                         We slot it into our breadboard like this such that the reader is facing out.
-                        
+                        <b>PUT PHOTO CHIP IN BREADBOARD</b>
                     </p>
-                    
+                    <p>Now, we need to wire the RFID chip to the Arduino. This will require quite a few wires. Try
+                        to plan your wiring to be as neat as possible. Use the jumper wires to make the connections. 
+                        Here is a diagram and table of the connections.
+                    </p>
+                    <img src=media/lab6/wires-rfid.png class="rounded mx-auto d-block img-fluid"> 
+                    <br>
+                    <img src=media/lab6/rfid-wiring-arduino.webp class="rounded mx-auto d-block img-fluid"> 
+                    <br>
+                    <p>Once you are confident enough in your wiring, it is time to test it using code. We will use a 
+                        <i>library</i> to help us. A library is code that someone else has written that we borrow functions from. 
+                        We will install the MFRC522 library.
+                        <b>HEY YUNYI CAM U MAKE A GIF OF INSTALLING THE MFRC522 Library by github community</b>
+                    </p>
+                   
+                    <p>Now, the library has been installed. Let's open an example. Go to File > Examples > MFRC522 > DumpInfo.</p>
+                    <img src=media/lab6/open-ex.png class="rounded mx-auto d-block img-fluid"> 
+                    <p>This will open a DumpInfo file. Example files are pre-written files of code that are ready to be ran. There are 
+                        many examples you can explore at a later time. Now, we will need to make one small change to our DumpInfo file to 
+                        make it work for us.
+                    </p>
+                    <p>Line 41 currently is written as: </p>
+<pre>
+    <code class="language-javascript">
+                    #define RST_PIN         9          // Configurable, see typical pin layout above
+                    </code>
+                </pre>
+                <p>Change the 9 to a 5. This is because we are using pin 5 instead as the reset as we have wired. Now, try running 
+                    the file with your Serial Monitor. Tap the RFID tag/card on the reader. You should see info show up! Congrats!
+                </p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 3</h4> 
