@@ -86,26 +86,14 @@
                             <li>(A) Breadboard with a Circuit! (<strong>x1</strong>)</li>
                         </ul>
                     </li>
-            <li><strong>And wire an RFID reader:</strong>
-                <ul>
-                    <li>(B) SOMETHING (<strong>x1</strong>)</li>
-                </ul>
+            <li><strong>And wire an RFID reader!</strong>
                     </li>
                 </ul>
-
-                <b>Your instructors will provide you with the following:</b>
-            <a id="software"> </a>
-                <ul>
-                <li>(B) SOMETHING (<strong>x1</strong>)</li>
-                <li>(C) Electrical components (buttons, wire, etc.) (<strong>x1</strong>)</li>
-                </ul>
-
- 
                 <hr>
                 
 
                 <!-- Materials Section -->
-           
+                <p><b>HEY YUNYI CAN U JUST UPDATE THIS SECTION WITH CORRECT PARTS</b></p>
                 <section class="mb-4">
                     <h2>🏗️ Software & Hardware</h2>
 
@@ -125,7 +113,7 @@
                             <li>Arduino Uno</li>
                             <li>Multimeter</li>
                             <li>Laptop</li>
-                            <li>SOMETHING</li>
+                            <li>RC522 Chip Module</li>
                             </ul>
 
                 </section>
@@ -137,20 +125,44 @@
                     <!-- Part 0: Hello World, Arduino! -->
                     <h4>Part (0): Hello World, Arduino! (15 min) <a id="part0"> </a></h4>
                     <br> 
-                    
-                <h5>Setup:</h5>
 
-        <ul>
-        <li>Download <a href="https://www.arduino.cc/en/software"> Arduino (5 mins)</a></li>
-        <li>Plug in the Arduino Uno to your laptop</li>
-        <li>Open Arduino</li>
-        <li>Let's try coding in C, the programming language that Arduino uses. Line that begin with a <b>//</b> are comments which are instructions that are just for 
-            human readability and not read by the machine. Code is usually put into functions. For the first function, 
-            the <b>void</b> means that the function is returning nothing which is what we want for a simple program. Then, the 
-            name of the function comes next, in this case, it is <i>setup</i>. The <b>()</b> tells you the inputs of the function. 
-            We have no inputs. Then, the body of the function is enclosed in curly braces, {}.
-            Code the following into the terminal:
-            <br>
+                    <p>Today, we will be working with Arduino, a microcontroller. A microcontroller is basically a very small computer 
+                        chip that can interface with the real world using voltages. Arduino is just a user-friendly and widely used microcontroller.
+                    </p>
+        
+        <p>Our first step is downloading the software, Arduino IDE. Arduino is the physical microcontroller 
+            and the IDE is the code software. 
+            Navigate to this <a href="https://www.arduino.cc/en/software">link</a>.</p>
+        
+        <p>Then, we need to physically plug in the Arduino Uno into the laptop. <b>PUT GIF OF PLUGGIN IN ARDUINO HERE</b></p>
+        <p>Now, we can try to open the Arduino IDE program. You should be greeted by a window that looks like this:</p>
+        <img src=media/lab6/arduino-start.png class="rounded mx-auto d-block img-fluid">
+        <p>Mine happened to automatically connect to the Arduino Uno. However, to double check that the device was configured, 
+            navigate to Tools > Port > Arduino Uno and make sure that is the Arduino Uno. You should get something like this:
+        </p>
+        <img src=media/lab6/device-setup.png class="rounded mx-auto d-block img-fluid">
+        <p>Let's also click Tools > Serial Monitor. A terminal at the bottom of your window will appear. The Serial Monitor 
+            is a print window which you can output information. This a great tool to make sure your code is working correctly, 
+            a term called <i>debugging</i>. We will come back to the terminal once we start running our code.
+        </p>
+        <p>Now, we will try to understand the basic structure of Arduino code which is in the C programming language.
+            The program is divided into setup() and loop(). The code inside setup is ran once when the Arduino is first powered 
+            while the code inside loop is ran repeatedly after the setup. Let's take a deeper look into a code block.
+        </p>
+        <pre>
+            <code class="language-javascript">
+// this is a comment
+void setup() { // this is an in-line comment
+    Serial.begin(9600); // this is code that opens the Serial port and 9600 bits per second
+}</code>
+        </pre>
+        <p>When you see parenthesis after some text, it is typically a function>. So, <i>setup()</i>, <i>loop()</i>, and <i>begin()</i> are 
+            all functions. A function is a block of code. The parenthesis can be empty like <i>setup()</i> and <i>loop()</i> or have an input. 
+            <i>begin(9600)</i> for instance has an input of 9600. In the above code, we are defining what is inside setup(), hence the curly braces. 
+            The void at the beginning means are returning nothing at the end of the function. Then, inside of the {} is the body of the code. 
+            Each line of code in the body must end in a ;. Lines that begin with a <b>//</b> are comments which are instructions that are just for 
+            human readability and not read by the machine. Type the above code into your window. Let's move to the loop function.
+        </p>
             <pre>
                 <code class="language-javascript">
 // there are two functions in Arduino: setup and loop
@@ -161,17 +173,15 @@ void setup() {
 
 // loop runs over and over
 void loop() {
-    Serial.println("Hello World!");  // prints to the terminal and makes a new line
+    Serial.println("Hello World!");  // prints to the Serial Monitor and makes a new line
     delay(1000);    // sleeps the program for 1000 ms (1 second)
 }
                 </code>
             </pre>
-        </li>
-        <li>Go to Tools > Serial Monitor to open the print window.</li>
-        <li>Try clicking the run button (the circle with the arrow at the top of the window).</li>
-        <li>You should see something printing now!</li>
-        </ul>
-        
+<p>Now, type the above code into your code window. This will print "Hello World!" into your Serial Monitor every second. 
+    Try clicking the run button (the circle with the arrow at the top of the window). You should see something printing now!
+    Congrats on *maybe* your first Arduino program!
+</p>    
                     <hr>
                     
                     <!-- Part 1: Getting a Preliminary GUI -->
@@ -184,22 +194,18 @@ void loop() {
                     <img src=media/lab6/breadboard-diagram.png class="rounded mx-auto d-block img-fluid">
                     <p>Typically, you put the ground line on the blue minus rail (-) and the power on the 
                         red plus rail (+). This way, you can easily grab those connections.</p>
-                    <p>When you want to insert a resistor, you do not want to put both legs in the same row (same green region).
-                         You want to put it in a different row (a different green line). This is because the first method shorts it. 
-                         Current would simply never flow into it since it wants to go the path of least resistance. Below is a 
-                         good example:
-                    </p>
-                    <img src=media/lab6/wiring-breadboard-ex.png class="rounded mx-auto d-block img-fluid">
+                    
                     <p>We want to introduce you to some other tools, too. How do we get wire to connect components? We can use a 
                         <b>wire stripper</b> and get it from a spool of wire. In the image below, you can see the stripper. 
                         There are different-sized holes representing the gauge of the wire.
                     </p>
+                    <p><b>CAN U CROP SOME OF THESE PHOTOS YUNYI</b></p>
                     <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
                     <p>In the image above, using the hole makes an incision on only the insulation, and then you pull the insulation off to 
                         only expose the metal on a potion of the wire. To cut the wire, you clamp the wire on the section where it says 
                         cut on the strippers (the bottom portion of the sharp edge). You should get something like this:</p>
                     <img src=media/lab6/wire-stripped.jpeg class="rounded mx-auto d-block img-fluid">    
-                    <p>To test connections, there is another tool for sensing: the <b>multimeter</b>. It has features like testing voltage, current, 
+                    <p>To test connections, there is another tool for measuring: the <b>multimeter</b>. It has features like testing voltage, current, 
                         connection, etc. The orientations of the symbols change from multimeter to multimeter, but the symbols are what stay consistent. 
                         We will note the ones that matter for this lab and future labs here. 
                     </p>
@@ -211,39 +217,53 @@ void loop() {
                         between the positive and negative terminals of the multimeter. Try testing each of these modes and be prepared to show 
                         them off during checkoff.
                     </p>
-                    <p>I NEED TO FILM VIDEOS DOING EACH OF THE FUNCTIONS ON THE MULTIMETER</p>
-                    <p>Now, this is the schematic we will build:</p>
+                    <p><b>I NEED TO FILM VIDEOS DOING EACH OF THE FUNCTIONS ON THE MULTIMETER</b></p>
+                    <p>Measuring Voltage:</p>
+                    <p>Measuring Resistance:</p>
+                    <p>Continuity Mode:</p>
+                    <p>Now, this is the schematic we will build in the <i>next section</i>:</p>
                     <img src=media/lab6/led-res-schem.png class="rounded mx-auto d-block img-fluid"> 
                     <p>However, we will not tell you what resistor value to use. Using <b>V=IR</b>, we will ask you to figure out 
                     what resistor to use. Note that the Arduino supplies 3.3 V. For current, let's try to get between 10-15 mA.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4> 
                         Show your instructor your calculations and your multimeter skills! Your instructor will also bring a wire 
-                        and wire stripper to briefly practice wire stripping.
+                        and wire stripper to briefly practice wire stripping. You do not need to build your circuit in this section.
                     </div>
         <br> 
                     <hr> 
                     
-                    <h4>Part (2): Making a LED Blink (20 minutes)  <a id="part2"> </a></h4>
-        
-                <p>Now, you're ready to start making your full circuit on the breadboard. We will use pin 11 as our output pin 
-                    (the positive terminal) instead of the 3.3 V. Also, the shorter leg of the LED should be connected to ground. 
+                    <h4>Part (2): Making a LED Blink on Your Breadboard (20 minutes)  <a id="part2"> </a></h4>
+                    <p>Let's go over the compoents and how to to insert components. </p>
+                    <p>Since we have limited wire strippers and limited time, let's just use jumper wires. These are just pre-cut 
+                        wires that you can insert immediately into the breadboard.
+
+                        <b>INSERT GIF OF JUMPER WIRES</b>
+                    </p>
+
+                    <p>When you want to insert a resistor, you do not want to put both legs in the same row (same green region).
+                        You want to put it in a different row (a different green line). This is because the first method shorts it. 
+                        Current would simply never flow into it since it wants to go the path of least resistance. This is a diagram 
+                        of what you will build:
+                   </p>
+                   <img src=media/lab6/wiring-breadboard-ex.png class="rounded mx-auto d-block img-fluid">
+                   <p>An LED has two diffent legs. The shorter leg of the LED should be connected to ground. 
                     Anode is the positive end of the LED (longer leg) while cathode is the other leg.</p>
                     <div style="display: flex; justify-content: center; gap: 10px;">
                         <img src=media/lab6/LED-Diode-Diagram.png class="rounded mx-auto d-block img-fluid" style="max-width: 30%; height: auto;">
                         <img src=media/lab6/led-image-and-graph.webp class="rounded mx-auto d-block img-fluid" style="max-width: 30%; height: auto;">
                     </div>
-                    <p>Since we have limited wire strippers and limited time, let's just use jumper wires. These are just pre-cut 
-                        wires that you can insert immediately into the breadboard.
-                    </p>
-                    <img src=media/lab6/led-res-schem.png class="rounded mx-auto d-block img-fluid"> 
-                    <p>To make the LED blink, replace the code in the code editor with this code: </p>
+        
+                <p>Now, you're ready to start making your full circuit on the breadboard. We will use pin 11 as our output pin 
+                    (the positive terminal).</p>
+                <p>After you have built the circuit physically, it is time to code again. 
+                    To make the LED blink, replace the code in the code editor with this code: </p>
                 <pre>
                     <code class="language-javascript">
 // there are two functions in Arduino: setup and loop
 // setup runs only once
 void setup() {
-    pinMode(11, OUTPUT);
+    pinMode(11, OUTPUT); // this makes pin 11 an output
 }
 
 // loop runs over and over
@@ -263,7 +283,7 @@ void loop() {
                         <h4>Checkoff 2</h4>
                         Show your instructor that you have a blinking LED!
                     </div>
-                    
+                    <hr>
                     <!-- Part 3: Assembly of the Electronics on the Guitar -->
             <h4>Part (3): Wiring RFID (20 mins) <a id="part3"></a></h4>
                     <p>As mentioned in lecture, Radio Frequency Identification (RFID) is a universal security system. 
@@ -273,77 +293,25 @@ void loop() {
                         <img src=media/lab6/rc522.jpeg class="rounded mx-auto d-block img-fluid"> 
                     <p>However, we do still need to connect the RC522 to our Arduino to communicate to it. 
                         We slot it into our breadboard like this such that the reader is facing out.
-                        INSERT IMAGE
+                        
                     </p>
                     
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 3</h4> 
-                    Show a soldered button to your instructor
-                    
+                    Show your instructor your wiring and working dump file!
                     </div>
         <hr>
             
-                    <h4>Part (4): Understanding with a Multimeter (15 mins) </h4><a id="part4"> </a>
-                    <p>To understand how the button is wired internally, we have to use multimeter, specifically its 
-                        continuity mode that we learned about in a previous lab. Draw a picture of what the internal 
-                        wiring of the button looks like. What legs are the button are connected? Which leg will you 
-                        connect to GND, 3.3 V, and the input pin?
-                    </p>
-                    <br>
-                    <p>Solder wires to two other buttons like you did in Part (3). Your instructor will check your soldering.</p>
+                    <h4>Part (4): Making an Access System for your ID (20 mins)</h4><a id="part4"> </a>
+                    
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 4</h4>
-                        Show your diagram and your soldering job for the other two buttons to the instructor!
+                        Show your instructor your Access System working with only YOUR ID!
                     </div>
                 </section>
 
                 <hr>
-
-        <h4>Part (5): Wiring the GND, 3.3 V, and Input Pins (25 mins)</h4> <a id="part5"> </a>
-        <p>Now, solder all the GND wires together, the 3.3 V wires together, and input pins and plug them into the Arduino.
-        Zip tie all the wires together and electrical tape them to have clean design. The electrical tape should cover all 
-        the exposed metal. You should have something that looks like this: </p>
-        <img src=media/lab9/wiring-guitar.jpeg class="rounded mx-auto d-block img-fluid"> 
-        
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
-                        <h4>Checkoff 5</h4> 
-        Finish wiring the rest of the buttons to have fully functioning electronics.            </div>
-        <hr> 
-                
-                
-                
-                <h4>Part (6): Guitar Hero and 🚨Remixing🚨 (10 minutes)</h4><a id="part6"> </a>
-
-                <p>Go to this url and download the folder. <a href="https://github.com/fzaman500/mit-gtl-bahrain-2025-guitar-hero">Guitar Hero Link.</a> 
-                    Open Processing and try running the game with just the arrow keys (left, down, right). If that works, then we can test the Serial.
-                 Open Arduino and run the Serial code we ran prior. This will ensure that information is being written into the port that we can grab from 
-                Processing. Now, run the Processing code once more. Your controller should work now! Don't hesitate to ask questions if you have any. 
-                Take a bit of time to understand the Processing code. You will be asked some questions during the discussion portion of the lab, particularly, 
-                about the Serial communication portion. </p>
-
-                <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                    <h4>Checkoff 6</h4>
-                    Show your working game to your instructor.            </div>
-                
-                <hr> 
-                <br>
-                <h4>Part (7): 🚨Remixing🚨 (10 minutes)</h4><a id="part7"> </a>
-        <p> Now it's time to “remix” this assignment by adding your own flair! Be creative and 
-            think about how you can personalize your design.
-            If there's anything specific you want to create but aren't sure how, 
-            let us know so we can guide you! Some suggestions are chaning the button designs on the GUI, adding another button, 
-            changing scoring, etc.</p>      
-            
-            <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                <h4>Checkoff 7</h4>
-                Show your remix to your instructor.           
-            </div>
-                
-                        
-        <p>Congratulations, your custom Guitar Hero game and controller are ready! 🎉</p>
-        <hr> 
         <br>
             
                 <!-- Submission Section -->
@@ -352,12 +320,12 @@ void loop() {
         <ol>
             <li><strong>Give a brief overview of how the code works.</strong>
                 <ul>
-                    <li>How are the serial inputs being processed into game inputs?</li>
+                    <li>How did we import packages? How do we change the Master ID value?</li>
                 </ul>
             </li>
             <li><strong>Reflect on the design process</strong> 
                 <ul>
-                    <li>Consider any modifications that you would like to implement to improve/elevate your designed remix.</li>
+                    <li>How can we make our wiring cleaner?</li>
                 </ul>
             </li>
             
