@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const teams = await fetchData("assets/data/teams.json");
+    const students = await fetchData("assets/data/students.json"); // Fetch student data
 
     const beginnerTeamsContainer = document.getElementById("beginner-teams");
     const advancedTeamsContainer = document.getElementById("advanced-teams");
@@ -7,31 +8,48 @@ document.addEventListener("DOMContentLoaded", async () => {
     beginnerTeamsContainer.innerHTML = ""; // Clear existing content
     advancedTeamsContainer.innerHTML = ""; // Clear existing content
 
+    const placeholderImage = "assets/team_images/placeholder.png"; // Default placeholder image
+
     teams.forEach((team) => {
         const teamCard = `
-            <div class="col-12 col-md-6 mb-4">
-                <div class="card">
-                    <a href="team.html?team=${team.id}" class="text-decoration-none">
-                        <img src="${team.image}" class="card-img-top" alt="${team.name}">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">${team.name}</h5>
+            <div class="col-12 mb-4">
+                <div class="card p-3">
+                    <div class="d-flex align-items-start">
+                        <!-- Team Profile Picture -->
+                        <div class="flex-shrink-0" style="margin-right: 20px;">
+                            <img src="${team.image}" alt="${team.name}" class="img-fluid" 
+                                style="width: 150px; height: auto; object-fit: cover; border-radius: 10px;">
                         </div>
-                    </a>
-                    <div class="card-footer">
-                        <ul class="list-unstyled">
-                            ${team.members
-                                .map(
-                                    (member) =>
-                                        `<li><a href="student.html?student=${member}" class="btn btn-link">${member}</a></li>`
-                                )
-                                .join("")}
-                        </ul>
+                        <!-- Team Name and Members -->
+                        <div class="flex-grow-1">
+                            <h5 class="card-title mb-2" style="line-height: 1;">${team.name}</h5>
+                            <ul class="list-unstyled mb-0" style="padding-left: 0; line-height: 1.5;">
+                                ${team.members
+                                    .map((memberId) => {
+                                        const student = students.find((s) => s.id === memberId);
+                                        return `<li><a href="student.html?student=${memberId}" class="btn btn-link p-0">${student ? student.name : memberId}</a></li>`;
+                                    })
+                                    .join("")}
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Milestone Pictures Grid -->
+                    <div class="row mt-3">
+                        ${team.milestones
+                            .map(
+                                (milestone) => `
+                                <div class="col-6 col-md-3 mb-3">
+                                    <img src="${milestone || placeholderImage}" alt="Milestone" class="img-fluid" 
+                                        style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
+                                </div>`
+                            )
+                            .join("")}
                     </div>
                 </div>
             </div>
         `;
 
-        // Divide teams into Beginner and Advanced sections
+        // Add the card to the respective section
         if (team.category === "beginner") {
             beginnerTeamsContainer.innerHTML += teamCard;
         } else if (team.category === "advanced") {

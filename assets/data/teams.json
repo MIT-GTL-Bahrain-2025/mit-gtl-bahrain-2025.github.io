@@ -1,20 +1,32 @@
 [
     {
-        "id": "cat",
-        "name": "Team Cat",
-        "image": "assets/team_images/team_cat_profile.png",
+        "id": "1",
+        "name": "Team 1",
+        "image": "assets/team_images/birth-tim.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
-        "members": ["niuniuzhu", "pookah", "kippy", "triscuitz"],
+        "members": ["Abdulaziz_Alhamad", "Ahmed_Bassam", "Ahmed_Hammad", "Ali_Abbas"],
+        "milestones": [
+            "",
+            "",
+            "",
+            ""
+        ],
         "category": "beginner"
     },
     {
-        "id": "dog",
-        "name": "Team Dog",
-        "image": "assets/team_images/team_dog_profile.png",
+        "id": "2",
+        "name": "Team 2",
+        "image": "assets/team_images/team-tim.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
         "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
-        "members": ["niuniuzhu", "woof"],
+        "members": ["Ali_Althawadi", "Batool_Albonni","Fariha_Akbar","Fatima_Ali"],
+        "milestones": [
+            "",
+            "",
+            "",
+            ""
+        ],
         "category": "advanced"
     }
 ]
