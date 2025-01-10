@@ -5,14 +5,16 @@
         "image": "assets/team_images/team_cat_profile.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
-        "members": ["niuniuzhu", "pookah", "kippy", "triscuitz"]
+        "members": ["niuniuzhu", "pookah", "kippy", "triscuitz"],
+        "category": "beginner"
     },
     {
         "id": "dog",
         "name": "Team Dog",
         "image": "assets/team_images/team_dog_profile.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
-        "projectSketchDescription": "Team Dog's Project 1 focuses on creating efficient systems for real-world problems.",
-        "members": ["niuniuzhu", "woof"]
+        "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
+        "members": ["niuniuzhu", "woof"],
+        "category": "advanced"
     }
 ]
