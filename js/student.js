@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("student-name").innerText = student.name;
         document.getElementById("student-photo").src = `assets/student_headshots/${studentId}.jpg` || "assets/student_images/placeholder.png";
         document.getElementById("student-photo").alt = student.name;
+        document.getElementById("student-section").innerHTML = `Section: <span>${student.section || "N/A"}</span>`;
         document.getElementById("student-year").innerHTML = `Year: <span>${student.year || "N/A"}</span>`;
         document.getElementById("student-major").innerHTML = `Major: <span>${student.major || "N/A"}</span>`;
         document.getElementById("student-school").innerHTML = `School: <span>${student.school || "N/A"}</span>`;
