@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                             .map(
                                 (milestone) => `
                                 <div class="col-6 col-md-3 mb-3">
-                                    <a href="team.html?id=${team.id}">
+                                    <a href="team.html?team=${team.id}">
                                         <img src="${milestone || placeholderImage}" alt="Milestone" class="img-fluid" 
                                             style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
                                     </a>
