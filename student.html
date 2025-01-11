@@ -17,40 +17,89 @@
     <script src="js/student.js"></script>
 
     <style>
+        /* Student Column */
         #student-photo {
-            width: 200px; 
+            width: 100%;
             aspect-ratio: 5/7;
-            border-radius: 10px; 
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        #student-info {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        #student-info h3,
+        #student-info p {
+            text-align: left;
+        }
+
+        /* Lab Cards */
+        .lab-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        .lab-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .lab-card-body {
+            padding: 15px;
+        }
+        .lab-card-body p {
+            margin-bottom: 10px;
+        }
+
+        /* Modal Styles */
+        .modal img {
+            width: 100%;
+            height: auto;
         }
     </style>
-
 </head>
 <body>
     <div id="header-placeholder"></div>
-    <div class="container mt-5" style="padding-top:100px;">
-        <div class="col-12 col-md-8  mx-auto">
-        
-        <!-- Student Information -->
-        <div class="text-center">
-            <img id="student-photo" src="" alt="Student Photo" class="my-4">
-        </div>
-        <h1 id="student-name" class="text-center"></h1>
-        <p id="student-bio" class="mt-4"></p>
-
-        <!-- Lab 1 Section -->
-        <div class="lab-section mt-5">
-            <h3>Lab 1</h3>
-            <p id="lab1-description" class="mt-3"></p>
-            <img id="lab1-image" src="" alt="Lab 1 Image" class="img-fluid mt-3">
+    <div class="container mt-5" style="padding-top:60px;">
+        <div class="row">
+            <!-- Left Column: Student Information -->
+            <div class="col-12 col-md-3">
+                <div id="student-info" class="border p-3">
+                    <img id="student-photo" src="" alt="Student Photo" class="mb-3">
+                    <h3 id="student-name"></h3>
+                    <p id="student-section">Section: <span></span></p>
+                    <p id="student-year">Year: <span></span></p>
+                    <p id="student-major">Major: <span></span></p>
+                    <p id="student-school">School: <span></span></p>
+                </div>
+            </div>
             
+            <!-- Right Column: Lab Cards -->
+            <div class="col-12 col-md-9">
+                <div class="row" id="labs-container">
+                    <!-- Labs will be added dynamically -->
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Lab 2 Section -->
-        <div class="lab-section mt-5">
-            <h3>Lab 2</h3>
-            <p id="lab2-description" class="mt-3"></p>
-            <img id="lab2-image" src="" alt="Lab 2 Image" class="img-fluid mt-3">
-        </div>
+    <!-- Image Preview Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" alt="Lab Image" id="modal-image">
+                </div>
+            </div>
         </div>
     </div>
 

@@ -5,7 +5,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "Mechanical Engineering",
+        "year": "2nd year"
     },
     {
         "id": "Ahmed_Bassam",
@@ -13,7 +17,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "BSc in Mechanical Engineering",
+        "year": "3rd year"
     },
     {
         "id": "Ahmed_Hammad",
@@ -21,7 +29,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "Polytechnic",
+        "field": "Engineering",
+        "major": "Bs Mechanical Engineering",
+        "year": "3rd year"
     },
     {
         "id": "Ali_Abbas",
@@ -29,7 +41,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Ali_Althawadi",
@@ -37,7 +53,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "BSc in Mechanical Engineering",
+        "year": "3rd year"
     },
     {
         "id": "Batool_Albonni",
@@ -45,7 +65,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Fariha_Akbar",
@@ -53,7 +77,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Fatima_Ali",
@@ -61,7 +89,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Ibrahim_Aawan",
@@ -69,7 +101,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "Polytechnic",
+        "field": "Engineering",
+        "major": "BTech in Mechanical Engineering",
+        "year": "3rd year"
     },
     {
         "id": "Jawad_Tawfeeq",
@@ -77,7 +113,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Maryam_Albonni",
@@ -85,7 +125,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Mohammed_AlJalahma",
@@ -93,7 +137,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Nathalie_Ahmed",
@@ -101,7 +149,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Noor_Hasan",
@@ -109,7 +161,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Raneem_Sabri",
@@ -117,7 +173,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "UoB",
+        "field": "Engineering",
+        "major": "BSc in Architecture",
+        "year": "4th year"
     },
     {
         "id": "Sabah_Hassan",
@@ -125,7 +185,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Sumayya_Nazeer",
@@ -133,7 +197,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Yousif_Abuzuhaira",
@@ -141,7 +209,11 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     },
     {
         "id": "Zain_Mayoof",
@@ -149,6 +221,274 @@
         "bio": "",
         "lab1": "",
         "lab2": "",
-        "section": "advanced"
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Abdullah_AlSaif",
+        "name": "Abdullah AlSaif",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Laurence_Mascarenas",
+        "name": "Laurence Mascarenas",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Sara_Aljeeran",
+        "name": "Sara Aljeeran",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "UoB",
+        "field": "IT/ Computing",
+        "major": "BSc in Computer Science",
+        "year": "1st year"
+    },
+    {
+        "id": "Afham_Haleema",
+        "name": "Afham Haleema",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "UTB",
+        "field": "IT/ Computing",
+        "major": "BSc in Computer science",
+        "year": "2nd year"
+    },
+    {
+        "id": "Malak_AlSalam",
+        "name": "Malak AlSalam",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Sara_Alshamari",
+        "name": "Sara Alshamari",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Ahmed_Almanea",
+        "name": "Ahmed Almanea",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Mariam_AlAraab",
+        "name": "Mariam AlAraab",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Syed_Rayed",
+        "name": "Syed Rayed",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Ali_Hussein",
+        "name": "Ali Hussein",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Maryam_Hasan",
+        "name": "Maryam Hasan",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Zahraa_Busuheil",
+        "name": "Zahraa Busuheil",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Batool_Isa",
+        "name": "Batool Isa",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "Polytechnic",
+        "field": "IT/ Computing",
+        "major": "Bachelor of Information and Communications Technology (Programming Major)",
+        "year": "4th year"
+    },
+    {
+        "id": "Mohammed_AlLaith",
+        "name": "Mohammed AlLaith",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Zainab_Fardan",
+        "name": "Zainab Fardan",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "UoB",
+        "field": "Engineering",
+        "major": "Bsc in architecture engineering",
+        "year": "1st year"
+    },
+    {
+        "id": "Duha_AlAbbasi",
+        "name": "Duha AlAbbasi",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Mohammed_Ali_Ahmed",
+        "name": "Mohammed Ali Ahmed",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "Polytechnic",
+        "field": "Engineering",
+        "major": "BEngTech in Electromechanical Engineering",
+        "year": "3rd year"
+    },
+    {
+        "id": "Ziyad_AlHajri",
+        "name": "Ziyad AlHajri",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Eman_Mohammed",
+        "name": "Eman Mohammed",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Moosa_Aljoami",
+        "name": "Moosa Aljoami",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    },
+    {
+        "id": "Hana_Wahban",
+        "name": "Hana Wahban",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "AUBH",
+        "field": "IT/ Computing",
+        "major": "Computer Science",
+        "year": "2nd year"
+    },
+    {
+        "id": "Muneera_AlBinali",
+        "name": "Muneera AlBinali",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
     }
 ]

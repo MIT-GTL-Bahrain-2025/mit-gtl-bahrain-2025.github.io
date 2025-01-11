@@ -10,6 +10,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"></link>
     <script src="js/load_header.js"></script>
+    <script src="js/load_teams.js"></script>
 </head>
 
 <body>
@@ -22,94 +23,24 @@
     
     <div id="header-placeholder"></div>
     <div class="container mt-5" style="padding-top:60px;">
-        <h1 class="text-center" style="padding-bottom:20px;">Our Teams</h1>
-        <div class="row">
-            <!-- Beginner Teams -->
+        <div class="row" >
+            <!-- Beginner Teams Section -->
             <div class="col-12 col-md-6">
-                <h2 class="text-center" style="padding-bottom:20px;">Beginner Teams</h2>
-                <div class="row">
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <a href="team.html?team=cat" class="text-decoration-none">
-                                <img src="assets/team_images/team-tim.png" class="card-img-top" alt="Team Cat">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">Team Tim</h5>
-                                </div>
-                            </a>
-                            <div class="card-footer">
-                                <ul class="list-unstyled">
-                                    <li><a href="student.html?student=niuniuzhu" class="btn btn-link">Niuniu Zhu</a></li>
-                                    <li><a href="student.html?student=emma" class="btn btn-link">Pookah</a></li>
-                                    <li><a href="student.html?student=liam" class="btn btn-link">Kippy</a></li>
-                                    <li><a href="student.html?student=olivia" class="btn btn-link">Triscuitz</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <a href="team.html?team=dog" class="text-decoration-none">
-                                <img src="assets/team_images/team-timmy.png" class="card-img-top" alt="Team Dog">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">Team Timmy Boy</h5>
-                                </div>
-                            </a>
-                            <div class="card-footer">
-                                <ul class="list-unstyled">
-                                    <li><a href="student.html?student=niuniuzhu" class="btn btn-link">Lulu</a></li>
-                                    <li><a href="student.html?student=niuniuzhu" class="btn btn-link">Woof</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="text-center mb-4">Beginner Teams</h2>
+                <div id="beginner-teams" class="row">
+                    <!-- Beginner teams will be dynamically populated here -->
                 </div>
             </div>
-    
-            <!-- Advanced Teams -->
+
+            <!-- Advanced Teams Section -->
             <div class="col-12 col-md-6">
-                <h2 class="text-center" style="padding-bottom:20px;">Advanced Teams</h2>
-                <div class="row">
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <a href="team.html?team=cat" class="text-decoration-none">
-                                <img src="assets/team_images/birth-tim.png" class="card-img-top" alt="Team Cat">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">Team Tim Tom</h5>
-                                </div>
-                            </a>
-                            <div class="card-footer">
-                                <ul class="list-unstyled">
-                                    <li><a href="student.html?student=niuniuzhu" class="btn btn-link">Niuniu Zhu</a></li>
-                                    <li><a href="student.html?student=emma" class="btn btn-link">Pookah</a></li>
-                                    <li><a href="student.html?student=liam" class="btn btn-link">Kippy</a></li>
-                                    <li><a href="student.html?student=olivia" class="btn btn-link">Triscuitz</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 mb-4">
-                        <div class="card">
-                            <a href="team.html?team=dog" class="text-decoration-none">
-                                <img src="assets/team_images/team-outdoor-tim.png" class="card-img-top" alt="Team Dog">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">Team Outdoor Timmy</h5>
-                                </div>
-                            </a>
-                            <div class="card-footer">
-                                <ul class="list-unstyled">
-                                    <li><a href="student.html?student=niuniuzhu" class="btn btn-link">Lulu</a></li>
-                                    <li><a href="student.html?student=niuniuzhu" class="btn btn-link">Woof</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <h2 class="text-center mb-4">Advanced Teams</h2>
+                <div id="advanced-teams" class="row">
+                    <!-- Advanced teams will be dynamically populated here -->
                 </div>
             </div>
         </div>
     </div>
-    </div>
-
-
 
     <!-- Footer -->
     <footer class="text-center py-4">
