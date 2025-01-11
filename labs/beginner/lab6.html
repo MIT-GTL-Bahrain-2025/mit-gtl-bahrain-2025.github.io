@@ -340,6 +340,124 @@ void loop() {
                         small addition. The same way that we did the LED circuit in a previous part, wire one circuit for a green LED 
                         and one for a red LED. The green LED should use Pin 0, and the red LED should use Pin 1.
                     </p>
+                    <img src=media/lab6/rfid-all-schem.png class="rounded mx-auto d-block img-fluid">
+                    <br>
+                    <p>The schematic above shows the whole circuit you should have. The Green LED is connected to Pin 0 while the 
+                        Red LED is connected to Pin 1. The RFID circuit itself stays the same.
+                    </p>
+                    <p>Once you feel confident that your circuit is correct, it's time to test it with some code. 
+                        We will go step-by-step with this code and keep appending to the same file.
+                        Make a new file in Arduino (File > New Sketch).
+                    </p>
+                    <pre>
+                        <code class="language-javascript">
+#include &lt;SPI.h&gt; //import libraries like this
+#include &lt;MFRC522.h&gt;   
+                        </code>
+                    </pre>
+                    <p>Then, we will define names for certain pins that we will reuse in the code. Instead of using the pin number, 
+                        we can just use the real english name for easier understanding.
+                    </p>
+                    <pre>
+                        <code class="language-javascript">
+#define RST_PIN 9 
+#define SS_PIN 10 
+
+// Create instances
+MFRC522 mfrc522(SS_PIN, RST_PIN);
+                        </code>
+                    </pre>
+                    <p>Now, we will make some variables. Variables hold values in names. We also make an MFRC522 instance. 
+                        This is basically a big custom variable with many properties, in a way.
+                    </p>
+                    <pre>
+                        <code class="language-javascript">
+byte readCard[4];
+String MasterTag = "873FA939";	// REPLACE this Tag ID with your Tag ID!!!
+String tagID = "";                            
+                        </code>
+                    </pre>
+                    <p>Now, we want to make our setup code. This will run only once and initialize everything we need.</p>
+                    <pre>
+                        <code class="language-javascript">
+void setup() 
+{
+    // Initiating
+    Serial.begin(9600);
+    SPI.begin(); // SPI bus
+    mfrc522.PCD_Init(); // MFRC522
+    Serial.println("Access System");
+    pinMode(1, OUTPUT);
+    pinMode(0, OUTPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(0, LOW);
+}
+                        </code>
+                    </pre>
+                    <p>Then, we can write our loop code that runs multiple times. This will be the code always checking the ID and 
+                        operating the LEDs.
+                    </p>
+                    <pre>
+                        <code class="language-javascript">
+void loop() 
+{
+    // Wait until new tag is available
+    // the inside code executes when a valid tag is present
+    while (getID()) 
+    {
+        Serial.println(tagID);
+    
+    if (tagID == MasterTag) 
+    {
+        Serial.println(" Access Granted!");
+        digitalWrite(0, HIGH);
+        delay(2000);
+        digitalWrite(0, LOW);
+    }
+    else
+    {
+        Serial.println(" Access Denied!");
+        digitalWrite(1, HIGH);
+        delay(2000);
+        digitalWrite(1, LOW);
+    }
+    delay(2000);
+    }
+}
+                        </code>
+                    </pre>
+                    <p>The getID() function is a custom function. We have to write its logic separately using the MFRC522 library functions.</p>
+                    <pre>
+                        <code class="language-javascript">
+//Read new tag if available
+boolean getID() 
+{
+    // Getting ready for Reading PICCs
+    if ( ! mfrc522.PICC_IsNewCardPresent()) { //If a new PICC placed to RFID reader continue
+        return false;
+    }
+    if ( ! mfrc522.PICC_ReadCardSerial()) { //Since a PICC placed get Serial and continue
+        return false;
+    }
+    tagID = "";
+    for ( uint8_t i = 0; i &lt; 4; i++) { // The MIFARE PICCs that we use have 4 byte UID
+        //readCard[i] = mfrc522.uid.uidByte[i];
+        tagID.concat(String(mfrc522.uid.uidByte[i], HEX)); // Adds the 4 bytes in a single String variable
+    }
+    tagID.toUpperCase();
+    mfrc522.PICC_HaltA(); // Stop reading
+    return true;
+                            </code>
+                    </pre>
+                    <p>Yay, we're finally done with the code! Open your Serial Monitor. Let's try running it now. If it runs without 
+                        errors, that's great. If not, try to debug the code and see what the error message says. Try to solve it 
+                        on your own, but if you need help, raise your hand. Now, tap your student ID card. It should flash red since 
+                        we have not manually set it as the master ID. However, we should see the ID number show up in the Serial Monitor. 
+                        Replace that ID number inside of the line that sets MasterTag at the beginning. For instance, if your number was "123",
+                        that line should be <i>String MasterTag = "123";</i>. After changing that line, run the code again. Now, your green LED 
+                        should flash whenever your student ID is tapped and red for any other card. Congratulations for your custom 
+                        RFID Access System.
+                    </p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 4</h4>
                         Show your instructor your Access System working with only YOUR ID!
@@ -366,13 +484,13 @@ void loop() {
             
             <li><strong>Further Readings</strong> 
                 <ul>
-                    <li> <a href="https://dl.acm.org/doi/abs/10.1145/3290605.3300796"> Kyub: A 3D Editor for Modeling Sturdy Laser-Cut Objects
+                    <li> <a href="https://www.atlasrfidstore.com/rfid-resources/rfid-beginners-guide/?srsltid=AfmBOopOrDfkuv5pk-b8hsrY-UvM8ZfgE_vZopbdeUAFlb73lhN8k-Ge"> Beginner's Guide to RFID
  </a></li>
                     
-          <li> <a href="https://dl.acm.org/doi/abs/10.1145/3639473.3665787">PopCore: Personal Fabrication of 3D Foamcore Models for Professional High-Quality Applications in Design and Architecture
+          <li> <a href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino/">Arduino Documentation
  </a></li>
            
-        <li> <a href="https://dl.acm.org/doi/10.1145/2470654.2481358"> LaserOrigami: laser-cutting 3D objects
+        <li> <a href="https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/"> Introductory MIT Circuits Course
 
  </a></li>
                    
