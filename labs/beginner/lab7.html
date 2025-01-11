@@ -107,30 +107,38 @@
                     <p>We are going to start this lab by understanding how we can control our motors using the AF_Motor library you installed. Then we will test the motors and make a function that will be even better at controlling the motors.</p>
                     <ol>
                         <li><strong>Download Motor Library</strong> Click the books icon on the left side of the Ardiuno IDE and install "Adafruit Motor Shield library"</li>
-                        <li>Initialize the library. This tells Ardiuno that you can use functions from this external library</li>
+                        <img src="media/lab78/loadLibrary.gif" class="rounded mx-auto d-block img-fluid mb-3 mt-3">
+                        <li>Initialize the library at the very top of the script (above setup). This tells Ardiuno that you can use functions from this external library</li>
                         <pre><code class="language-javascript"> #include &#60;AFMotor.h&#62; </code></pre> 
-                        <li>Create motor objects for two motors</li>
+                        <li>Create motor objects for two motors above setup. </li>
                         <pre><code class="language-javascript">AF_DCMotor rightMotor(1);  // Motor connected to M1
 AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre> 
-                        <li>Set motor speed. setSpeed only takes a range of 0-255. It sends a PWM signal to the motor.</li>
+                        <li>Set motor speed in setup. setSpeed only takes a range of 0-255 (0 stopped, 255 full speed). It sends a PWM signal to the motor.</li>
                         <pre><code class="language-javascript">void setup() {
-    rightMotor.setSpeed(100);
-    leftMotor.setSpeed(100);
+    rightMotor.setSpeed(255);
+    leftMotor.setSpeed(255);
 }</code></pre>
-                        <li>Set motor direction. The options are FORWARD, BACKWARD, and RELEASE. RELEASE stops the motors.</li>
+                        <li>Now set motor direction in setup. The options are FORWARD, BACKWARD, and RELEASE. RELEASE stops the motors.</li>
                         <pre><code class="language-javascript"> void setup() {
-    rightMotor.setSpeed(100);
-    leftMotor.setSpeed(100);
+    rightMotor.setSpeed(255);
+    leftMotor.setSpeed(255);
     rightMotor.run(FORWARD);
     leftMotor.run(FORWARD);
 }</code></pre>
                         <li>Plug the motor shield into the Ardiuno, making sure the pins are all aligned.</li>
                         <li>Get two of the yellow TT motors and plug them into the M1 and M2 terminals on the shield as shown. M1 should be the left motor, and M2 the right motor. It actually doesn't matter which terminal has red or black. If you swap it, it will just reverse the direction of the motor</li>
-                        <img src="media/lab78/MotorCableOrder1.jpg" class="rounded mx-auto d-block img-fluid mb-3 mt-3">
-                        <li>Upload the code. The reason the motors spin so slow is because they are being powered by the Ardiuno which cannot supply enough current.</li>
-                        <li>Alter the code to switch the direction of the motors.</li>
+                        <div class="d-flex align-items-stretch" style="gap: 5px; padding-bottom: 20px;">
+                            <div class="flex-fill">
+                                <img src="media/lab78/MotorCableOrder1.jpg" class="object-fit-cover h-100 w-100 rounded mx-auto d-block img-fluid mb-3 mt-3", style="object-fit: cover;">
+                            </div>
+                            <div class="flex-fill">
+                                <img src="media/lab78/screwTerminal.gif" class="object-fit-cover h-100 w-100 rounded mx-auto d-block img-fluid mb-3 mt-3", style="object-fit: cover;">
+                            </div>
+                        </div>
+                        <li>Upload the code. It should drive your motors forward at a constant speed. It is going to be very slow because we are powering from our connection to our Ardiuno which cannot
+                            supply enough current. This will be fixed once we connect our battery in the next part.</li>
                     </ol>
-                    <p>Now, make alter your code to drive the motors forward for 3 seconds, stops for 1 seconds, drive backward for 3 seconds and repeat.</p>
+                    <p><strong> Now, make alter your code to drive the motors forward for 3 seconds, stop for 1 seconds, drive backward (remember how to change direction) for 3 seconds and repeat.</strong></p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4>
                         <a id="part2"></a>
@@ -198,26 +206,29 @@ void driveStraight(int millis) {
                         <li>Using this timing, fill in the body of the function called turnRight(). Then do the same process to create turnLeft(). Place both functions at at the end of your script.</li>
                         <div class="d-flex">
                             <div class="flex-fill">
-                                <pre class="language-javascript">
-                                    <code class="language-javascript">
+                                <pre><code class="language-javascript">
 void turnRight() {
     // TODO: Fill in the body of this function
 }
 
+
+                                </code></pre>
+                            </div>
+                            <div class="flex-fill">
+                                <img src="media/lab78/turnRight.gif" class="rounded mx-auto d-block img-fluid">
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="flex-fill">
+                                <pre><code class="language-javascript">
 void turnLeft() {   
-    // TODO: Fill in the body of this function
+    // TODO: Fill in the body of this functions
 }
 
 
-
-
-
-
-
-                                    </code></pre>
+                                </code></pre>
                             </div>
                             <div class="flex-fill">
-                                <img src="media/lab78/turnRight.gif" class="rounded mx-auto d-block img-fluid mb-2">
                                 <img src="media/lab78/turnLeft.gif" class="rounded mx-auto d-block img-fluid">
                             </div>
                         </div>
