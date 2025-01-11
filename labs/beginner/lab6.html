@@ -219,11 +219,11 @@ void loop() {
                     </p>
                     
                     <br> <br> 
-                    <img src=media/lab6/multimeter.jpg class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/lab6/multimeter-edited.png class="rounded mx-auto d-block img-fluid"> 
                     <p>
                         The <b>V</b> with a dotted and straight lines above it measures DC voltage. DC, or direct current, is basically 
                         signals not changing consistently or very often. The ohm symbol, <b>Ω</b>, stands for measuring resistance. The 
-                        WiFi looking signal with the curved lines in series is <b>continuity</b> mode. It beeps when there is an electrical connection 
+                        WiFi looking signal with the curved lines in series is <b>continuity</b> mode. It beeps 🔉 when there is an electrical connection 
                         between the positive and negative terminals of the multimeter. Try testing each of these modes and be prepared to show 
                         them off during checkoff.
                     </p>
@@ -244,8 +244,8 @@ void loop() {
                     <hr> 
                     
                     <h4>Part (2): Making a LED Blink on Your Breadboard (20 minutes)  <a id="part2"> </a></h4>
-                    <p>Again, Whenever wiring on your breadboard, please disconnect the Arduino wire 
-                        from the computer so that the power is off. Let's go over the compoents and how to to insert components. </p>
+                    <p> ⚠️ Again, whenever wiring on your breadboard, please <b>disconnect</b> the Arduino wire 
+                        from the computer so that the power is <b>OFF</b>. Let's go over the compoents and how to to insert components. </p>
                     <p>Since we have limited wire strippers and limited time, let's just use jumper wires. These are just pre-cut 
                         wires that you can insert immediately into the breadboard.
 
@@ -288,7 +288,7 @@ void loop() {
 }
                     </code>
                 </pre>
-                <p>You should have a blinking LED now!</p>
+                <p>You should have a 💡blinking LED💡 now!</p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 2</h4>
@@ -306,7 +306,7 @@ void loop() {
                         We slot it into our breadboard like this such that the reader is facing out.
                         <b>PUT PHOTO CHIP IN BREADBOARD</b>
                     </p>
-                    <p>Deconstruct the LED circuit before wiring the RFID chip.
+                    <p>🚧 Deconstruct the LED circuit before wiring the RFID chip.
                         Now, we need to wire the RFID chip to the Arduino. This will require quite a few wires. Try
                         to plan your wiring to be as neat as possible. Use the jumper wires to make the connections. 
                         Here is a diagram and table of the connections.
@@ -331,12 +331,21 @@ void loop() {
 #define RST_PIN         9 
                     </code>
                 </pre>
-                <p>Change the 9 to a 5. This is because we are using pin 5 instead as the reset as we have wired. Now, try running 
+                Change the <span style=color:red> 9</span> to a <span style=color:red> 5</span>  .
+                    
+                    <br> 
+                    <p> This is because we are using pin 5 instead as the reset as we have wired.</p> 
+                    
+                    <p> Now, try running 
                     the file with your Serial Monitor. Tap the RFID tag/card on the reader. You should see info show up! 
                     It's a bit messy but at least we can read information. There's a lot of information other than just the 
                     UID that we can extract from the card in the Serial Monitor but we just wanted to confirm that it 
-                    works. Yay, congrats!
+                    works. 
+                        
                 </p>
+                    
+                    Yay, congrats!🎉
+                    <br> <br> 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 3</h4> 
@@ -460,15 +469,55 @@ boolean getID()
     return true;
                             </code>
                     </pre>
-                    <p>Yay, we're finally done with the code! Open your Serial Monitor. Let's try running it now. If it runs without 
-                        errors, that's great. If not, try to debug the code and see what the error message says. Try to solve it 
-                        on your own, but if you need help, raise your hand. Now, tap your student ID card. It should flash red since 
-                        we have not manually set it as the master ID. However, we should see the ID number show up in the Serial Monitor. 
-                        Replace that ID number inside of the line that sets MasterTag at the beginning. For instance, if your number was "123",
-                        that line should be <i>String MasterTag = "123";</i>. After changing that line, run the code again. Now, your green LED 
-                        should flash whenever your student ID is tapped and red for any other card. Congratulations for your custom 
-                        RFID Access System.
-                    </p>
+
+                    
+                Yay, we’re finally done with the code!🎉
+                    <br> <br>
+
+
+                    
+                    <ul>
+        <li>Open your Serial Monitor.</li>
+        <li>Try running the code:
+            <ul>
+                <li>If it runs without errors, that’s great 👏.</li>
+                <li>If there are 👾 errors 👾, try debugging the code and check the error message.</li>
+                <li>Try solving it on your own, but raise your hand if you need help.</li>
+            </ul>
+            
+            <br> 
+            
+            
+             <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 4</h4>
+                        Show your instructor your Access System working with only YOUR ID!
+                    </div>
+            
+            <hr> 
+            
+        </li>
+        <li>Tap your student ID card. It should flash red because it hasn't been set as the master ID yet.</li>
+        <li>The ID number should appear in the Serial Monitor.</li>
+        <li>Replace the ID number in the line that sets <code>MasterTag</code> at the beginning:
+            <ul>
+                <li>For example, if your ID number is "123", change the line to:  
+                    <i>String MasterTag = "123";</i>
+                </li>
+            </ul>
+        </li>
+        <li>After making that change, run the code again.</li>
+        <li>Your green LED should now flash when your student ID is tapped, and red for any other card.</li>
+        <li>Congratulations on your custom RFID Access System!</li>
+    </ul>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 4</h4>
                         Show your instructor your Access System working with only YOUR ID!
