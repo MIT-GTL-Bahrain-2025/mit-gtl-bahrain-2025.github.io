@@ -34,10 +34,7 @@
                     <li><a href="#part1">Part (1): Breadboarding Basics and Multimeters </a></li>
                     <li><a href="#part2">  Part (2): Making a LED Blink </a></li>
                     <li><a href="#part3"> Part (3): Wiring RFID</a></li>
-                    <li><a href="#part4"> Part (4): Understanding with a Multimeter </a></li>
-                      <li><a href="#part5">Part (5): Wiring the GND, 3.3 V, and Input Pins </a></li>
-                    <li><a href="#part6">  Part (6): Guitar Hero</a></li>
-                    <li><a href="#part7">  Part (7): 🚨Remixing🚨 </a></li>
+                    <li><a href="#part4"> Part (4): Making an Access System for your ID </a></li>
                      <li><a href="#discussion"> Discussion & Reflections</a></li>
                 </ul>
             </div>
@@ -298,13 +295,12 @@ void loop() {
                         We slot it into our breadboard like this such that the reader is facing out.
                         <b>PUT PHOTO CHIP IN BREADBOARD</b>
                     </p>
-                    <p>Now, we need to wire the RFID chip to the Arduino. This will require quite a few wires. Try
+                    <p>Deconstruct the LED circuit before wiring the RFID chip.
+                        Now, we need to wire the RFID chip to the Arduino. This will require quite a few wires. Try
                         to plan your wiring to be as neat as possible. Use the jumper wires to make the connections. 
                         Here is a diagram and table of the connections.
                     </p>
-                    <img src=media/lab6/wires-rfid.png class="rounded mx-auto d-block img-fluid"> 
-                    <br>
-                    <img src=media/lab6/rfid-wiring-arduino.webp class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/lab6/rfid-wiring-arduino.jpg class="rounded mx-auto d-block img-fluid"> 
                     <br>
                     <p>Once you are confident enough in your wiring, it is time to test it using code. We will use a 
                         <i>library</i> to help us. A library is code that someone else has written that we borrow functions from. 
@@ -321,11 +317,14 @@ void loop() {
                     <p>Line 41 currently is written as: </p>
 <pre>
     <code class="language-javascript">
-                    #define RST_PIN         9          // Configurable, see typical pin layout above
+#define RST_PIN         9 
                     </code>
                 </pre>
                 <p>Change the 9 to a 5. This is because we are using pin 5 instead as the reset as we have wired. Now, try running 
-                    the file with your Serial Monitor. Tap the RFID tag/card on the reader. You should see info show up! Congrats!
+                    the file with your Serial Monitor. Tap the RFID tag/card on the reader. You should see info show up! 
+                    It's a bit messy but at least we can read information. There's a lot of information other than just the 
+                    UID that we can extract from the card in the Serial Monitor but we just wanted to confirm that it 
+                    works. Yay, congrats!
                 </p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
@@ -335,7 +334,12 @@ void loop() {
         <hr>
             
                     <h4>Part (4): Making an Access System for your ID (20 mins)</h4><a id="part4"> </a>
-                    
+                    <p>We can extract information from the cards, but we don't do anything with the UID yet. We'll 
+                        make a simple Access System. A green LED will flash when the correct card is read while a red 
+                        LED will flash when a wrong card is read. Let's construct our circuit first. We only need to make a 
+                        small addition. The same way that we did the LED circuit in a previous part, wire one circuit for a green LED 
+                        and one for a red LED. The green LED should use Pin 0, and the red LED should use Pin 1.
+                    </p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 4</h4>
                         Show your instructor your Access System working with only YOUR ID!
