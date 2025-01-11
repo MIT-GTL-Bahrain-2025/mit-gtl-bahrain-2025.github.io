@@ -30,10 +30,13 @@
                         <li><a href="#introduction">Introduction & Safety</a></li>
                         <li><a href="#fabq">Fabrication Quest</a></li>
                         <li><a href="#software">Software & Hardware for the Lab</a></li>
-                        <li><a href="#part0">Part (0): Understanding Code and Testing the Motors</a></li>
+                        <li><a href="#part1">Part (1): Understanding Code and Testing the Motors</a></li>
                         <li><a href="#part2">Part (2): Assembling the Chassis</a></li>
-                        <li><a href="#part3">Part (3): Driving the Robot</a></li>
-                        <li><a href="#part4">Part (4): Remix Driving!</a></li>
+                        <li><a href="#part3">Part (3): Driving Straight</a></li>
+                        <li><a href="#part4">Part (4): Creating Turning Functions</a></li>
+                        <li><a href="#part5">Part (5): Driving a Loop</a></li>
+                        <li><a href="#part5">Part (5): Driving a Loop</a></li>
+                        <li><a href="#part6">Part (6): Remix Driving!</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,8 +46,9 @@
                 <section class="mb-4">
                     <h1 class="mb-5"><a id="introduction">Lab 7: Building a Mr. Roboto (Part-1): Motors!</a></h1>
                     <img src="media/lab78/motors-lab-gif-ezgif.com-video-to-gif-converter.gif" class="rounded mx-auto d-block img-fluid">
+                    <hr>
                     <p>This is the first in a series of two labs that will introduce you to building and programming your own robot. In this series, you will learn the basics of DC motors, motor control, sensor integration and algorithm development. In this first lab, we will learn about DC motors and tackle the assembly and motor control. By the end you will have your robot driving a trajectory you designed.</p>
-                    
+                    <hr>
                     <h2>🦺 Safety and Important Tips</h2>
                     <p>(1 minute read)</p>
                     <p>The voltages and currents we are using are not capable of being harmful, but there are <b>infinite ways</b> to fry your circuit.</p>
@@ -66,15 +70,16 @@
                             <li>Give basic driving commands</li>
                         </ul>
                     </li>
-                </ul>
-                <b>Your instructors will provide you with the following:</b>
-                <a id="software"></a>
-                <ul>
-                    <li>Laser cut robotic chassis (<strong>x1</strong>)</li>
-                    <li>Motor mount (<strong>x2</strong>)</li>
-                    <li>Ardiuno + motor shield (<strong>x1</strong>)</li>
-                    <li>Ardiuno mount (<strong>x1</strong>)</li>
-                    <li>Caster wheel standoff (<strong>x2</strong>)</li>
+                    <li><b>Your instructors will provide you with the following:</b>
+                    <a id="software"></a>
+                    <ul>
+                        <li>Laser cut robotic chassis (<strong>x1</strong>)</li>
+                        <li>Motor mount (<strong>x2</strong>)</li>
+                        <li>Ardiuno + motor shield (<strong>x1</strong>)</li>
+                        <li>Ardiuno mount (<strong>x1</strong>)</li>
+                        <li>Caster wheel standoff (<strong>x2</strong>)</li>
+                    </ul>
+                    </li>
                 </ul>
                 <p>All other parts can be found on the shelves. Ask if you have trouble finding anything.</p>
                 <hr>
@@ -84,7 +89,7 @@
                     <h2>🏗️ Software & Hardware</h2>
                     <h5>Software:</h5>
                     <ul>
-                        <li><a href="https://www.autodesk.com/education/edu-software/fusion">Fusion360</a> Ardiuno IDE</li>
+                        <li> Ardiuno IDE</li>
                     </ul>
                     <h5>Hardware:</h5>
                     <ul>
@@ -102,7 +107,7 @@
                 <!-- Procedure Section -->
                 <section class="mb-4">
                     <!-- Part 0: Understanding Fusion360 Workspace -->
-                    <h4><a id="part0">Part (0): Understanding Code and Testing the Motors (25 mins)</a></h4>
+                    <h4><a id="part1">Part (1): Understanding Code and Testing the Motors (25 mins)</a></h4>
                     <p>We are using the L293D motor shield. It has support for 4 DC motors (or 2 steppers) and 2 servos. We can also power the motors and Ardiuno through the shield. We are using the AFMotor library because, while we technically don’t need it, libraries make our code easier to write and read. We don’t have to worry about the exact pins and values we are writing to or creating our own PWM signals.</p>
                     <p>We are going to start this lab by understanding how we can control our motors using the AF_Motor library you installed. Then we will test the motors and make a function that will be even better at controlling the motors.</p>
                     <ol>
@@ -135,10 +140,10 @@ AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre>
                                 <img src="media/lab78/screwTerminal.gif" class="object-fit-cover h-100 w-100 rounded mx-auto d-block img-fluid mb-3 mt-3", style="object-fit: cover;">
                             </div>
                         </div>
-                        <li>Upload the code. It should drive your motors forward at a constant speed. It is going to be very slow because we are powering from our connection to our Ardiuno which cannot
+                        <li>Upload the code. It should drive your motors forward at a constant speed. It is going to be very slow because we are powering from our laptop's connection to the Ardiuno which cannot
                             supply enough current. This will be fixed once we connect our battery in the next part.</li>
                     </ol>
-                    <p><strong> Now, make alter your code to drive the motors forward for 3 seconds, stop for 1 seconds, drive backward (remember how to change direction) for 3 seconds and repeat.</strong></p>
+                    <p><strong> Now, alter your code to drive the motors forward for 3 seconds, stop for 1 seconds, drive backward (remember how to change direction) for 3 seconds and repeat (Hint: write code in loop())</strong></p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4>
                         <a id="part2"></a>
@@ -175,17 +180,14 @@ AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre>
                         Ask your instructor for a check-off on completing Part (2)
                     </div>
                     <hr>
-
                     <!-- Part 3: Driving the Robot -->
-                    <h4><a id="part3">Part (3) Driving the Robot</a></h4>
+                    <h4><a id="part3">Part (3) Driving Straight</a></h4>
                     <p>We are now going to control our robot</p>
                     <ol>
-                        <li>Try driving your robot in a straight line by setting each motor to some speed. What do you notice about the direction? Does it drive straight?</li>
+                        <li>Using your motor drive code from above, try driving your robot in a straight line by setting both motors to the same speed. Does it drive straight?</li>
                         <li>Adjust the relative motor speeds until your robot drives roughly straight.</li>
-                        <li>We will create a new function that drives straight for a certain time called driveStraight(millis). To create a function in Ardiuno, you must declare the return type.
-                             If the function should return nothing, then the type is void (as it is here). Otherwise, consider a function that would return an integer value of a sensor - it would have type int.
-                             Fill in the body of the driveStraight function with the values you found in the previous step and place it at the end of the 
-                            script. Even though function is at the end, it can still be called at the top. This is because the Ardiuno IDE reads the entire script before running it.
+                        <li>Create a `driveStraight(millis)` function to drive straight for a set time. Use `void` as the return type since it doesn't return a value.
+                            Fill in the function with the values you found earlier and place it at the end of the script.
                         </li>
                         <div class="d-flex">
                             <div class="flex-fill">
@@ -193,8 +195,6 @@ AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre>
 void driveStraight(int millis) {
     // TODO: Fill in the body of this function
 }
-
-
                                 </code></pre>
                             </div>
                             <div class="flex-fill">
@@ -202,8 +202,19 @@ void driveStraight(int millis) {
                             </div>
                         </div>
                         <li>Test it by driving forward for 0.5, 1, 3 seconds</li>
+                    </ol>
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 3</h4>
+                        <a id="part3"></a>
+                        Ask your instructor for a check-off on completing Part (3)
+                    </div>
+                    <hr>
+
+                    <!-- Part 4: Creating Turning Functions -->
+                    <h4><a id="part4">Part (4) Creating Turning Functions</a></h4>
+                    <ol>
                         <li>Try to command your robot to turn in place exactly 90 degrees counter clockwise. How should each motor be commanded? Set a turn speed, and just alter the duration of turn to dial in 90 degrees. </li>
-                        <li>Using this timing, fill in the body of the function called turnRight(). Then do the same process to create turnLeft(). Place both functions at at the end of your script.</li>
+                        <li>Using this timing, fill in the body of the function called turnRight(). Then do the same process to create turnLeft(). They won't necessarily have the same timings. Place both functions at the end of your script.</li>
                         <div class="d-flex">
                             <div class="flex-fill">
                                 <pre><code class="language-javascript">
@@ -232,18 +243,32 @@ void turnLeft() {
                                 <img src="media/lab78/turnLeft.gif" class="rounded mx-auto d-block img-fluid">
                             </div>
                         </div>
-                        <li>In the loop() of your code, use your turning and driving functions.e with side length 50cm clockwise. Do it again going counterclockwise. How well does it return to its starting location? What might cause this? What ideas of sensors could we use to fix this?</li>
                     </ol>
-                    <p>You may have noticed that it was difficult to get your robot to drive straight and turn a desired amount consistently. This is because the robot is open-loop. It has no idea where it is or where it is going. We are going to close the loop next lab by adding sensors so the robot can detect where it is and where it wants to go.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 3</h4>
-                        <a id="part2"></a>
-                        Ask your instructor for a check-off on completing Part (3) CCW/CW loops.
+                        <h4>Checkoff 4</h4>
+                        <a id="part4"></a>
+                        Ask your instructor for a check-off on completing Part (4)
                     </div>
                     <hr>
 
-                    <!-- Part 4: Remix Driving -->
-                    <h4><a id="part4">Part (4) Remix Driving!</a></h4>
+                    <!-- Part 5: Driving a Loop -->
+                    <h4><a id="part5">Part (5) Driving a Loop</a></h4>
+                    <p>In the loop() of your code, use your turning and driving functions to drive in a square with side length 50cm clockwise.
+                        Do it again going counterclockwise. How well does it return to its starting location? What might cause this? What potential sensors could we use to fix this?</li>
+                    </p>
+                    <hr>
+                    <p><i>You may have noticed that it was difficult to get your robot to drive straight and turn a desired amount consistently.
+                        This is because the robot is open-loop. It has no idea where it is or where it is going. We are going to close the loop next lab
+                        by adding sensors so the robot can detect where it is and where it wants to go.</i></p>
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 5</h4>
+                        <a id="part5"></a>
+                        Ask your instructor for a check-off on completing Part (5) CCW/CW loops.
+                    </div>
+                    <hr>
+
+                    <!-- Part 6: Remix Driving -->
+                    <h4><a id="part6">Part (6) Remix Driving!</a></h4>
                     <p>Now that you have a robot that can drive as you command it, try driving in more interesting shapes. Here are some ideas to get you started:</p>
                     <ul>
                         <li>Drive in a circle with a desired radius</li>
@@ -251,6 +276,13 @@ void turnLeft() {
                         <li>Drive in an infinity symbol</li>
                         <li>Drive in the shape of some mathematical function</li>
                     </ul>
+                    <p><strong> This will be the video that shows up on your portfolio, so make it drive well.</strong></p>
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 6</h4>
+                        <a id="part6"></a>
+                        Ask your instructor for a check-off on completing Part (6) remix.
+                    </div>
+                    <hr>
                 </section>
             </div>
         </div>
