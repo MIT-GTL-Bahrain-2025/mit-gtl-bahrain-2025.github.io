@@ -63,7 +63,7 @@
                         <li> ✅ Learn how to wire and understand basic electronics</li>
                         <li>✅ Wire a peripheral (the RFID chip)</li>
                     </ul>
-                    <p><strong>Before we start</strong>, please make sure you understand the following safety precautions:</p>
+                    <p><strong> ⚠️ Before we start ⚠️</strong>, please make sure you understand the following safety precautions:</p>
         <ul>
             <li><strong>High Current:</strong> Never connect power and ground directly with a wire. High currents 
             are very dangerous.</li>
@@ -140,14 +140,18 @@
             navigate to Tools > Port > Arduino Uno and make sure that is the Arduino Uno. You should get something like this:
         </p>
         <img src=media/lab6/device-setup.png class="rounded mx-auto d-block img-fluid">
-        <p>Let's also click Tools > Serial Monitor. A terminal at the bottom of your window will appear. The Serial Monitor 
+        <p>Let's also click Tools > Serial Monitor. A terminal at the bottom of your window will appear.
+            
+            <br> <br> <b> The Serial Monitor </b> 
             is a print window which you can output information. This a great tool to make sure your code is working correctly, 
-            a term called <i>debugging</i>. We will come back to the terminal once we start running our code.
+            a term called <a href="https://aws.amazon.com/what-is/debugging/#:~:text=Debugging%20is%20the%20process%20of,determine%20why%20any%20errors%20occurred."> <i>debugging</i> </a>. We will come back to the terminal once we start running our code.
         </p>
         <p>Now, we will try to understand the basic structure of Arduino code which is in the C programming language.
             The program is divided into setup() and loop(). The code inside setup is ran once when the Arduino is first powered 
             while the code inside loop is ran repeatedly after the setup. Let's take a deeper look into a code block.
         </p>
+                    
+                    <br>  
         <pre>
             <code class="language-javascript">
 // this is a comment
@@ -155,9 +159,11 @@ void setup() { // this is an in-line comment
     Serial.begin(9600); // this is code that opens the Serial port and 9600 bits per second
 }</code>
         </pre>
-        <p>When you see parenthesis after some text, it is typically a function>. So, <i>setup()</i>, <i>loop()</i>, and <i>begin()</i> are 
+                    <p>When you see parenthesis after some text, it is typically a <span style=color:red> function </span>. So,  <span style=color:red> <i>setup()</i> </span>, <span style=color:red> <i>loop()</i> </span>, and <span style=color:red> <i>begin()</i> </span> are 
             all functions. A function is a block of code. The parenthesis can be empty like <i>setup()</i> and <i>loop()</i> or have an input. 
-            <i>begin(9600)</i> for instance has an input of 9600. In the above code, we are defining what is inside setup(), hence the curly braces. 
+            <i>begin(9600)</i> for instance has an input of 9600. 
+            
+            <br> <br> In the above code, we are defining what is inside setup(), hence the curly braces. 
             The void at the beginning means are returning nothing at the end of the function. Then, inside of the {} is the body of the code. 
             Each line of code in the body must end in a ;. Lines that begin with a <b>//</b> are comments which are instructions that are just for 
             human readability and not read by the machine. Type the above code into your window. Let's move to the loop function.
@@ -188,11 +194,11 @@ void loop() {
                     <p> The goal of this section is to make a LED blink. However, we need to 
                         lay our circuit on something like a breadboard.
                         A breadboard is basically like a preliminary construction board for making circuits! The areas 
-                        highlighted in green are the parts that are connected. The holes allow you to stick wires inside.
+                        highlighted in green are the parts that are electrically connected to each other. The holes allow you to stick wires inside.
                     </p>
                     <img src=media/lab6/breadboard-diagram.png class="rounded mx-auto d-block img-fluid">
-                    <p>Typically, you put the ground line on the blue minus rail (-) and the power on the 
-                        red plus rail (+). This way, you can easily grab those connections.</p>
+                    <p>💡 Typically, you put the ground line on the blue minus rail (➖) and the power on the 
+                        red plus rail (➕). This way, you can easily grab those connections.</p>
                     
                     <p>We want to introduce you to some other tools, too. How do we get wire to connect components? We can use a 
                         <b>wire stripper</b> and get it from a spool of wire. In the image below, you can see the stripper. 
@@ -201,13 +207,18 @@ void loop() {
                     <p><b>CAN U CROP SOME OF THESE PHOTOS YUNYI</b></p>
                     <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
                     <p>In the image above, using the hole makes an incision on only the insulation, and then you pull the insulation off to 
-                        only expose the metal on a potion of the wire. To cut the wire, you clamp the wire on the section where it says 
+                        only expose the metal on a portion of the wire. To cut the wire, you clamp the wire on the section where it says 
                         cut on the strippers (the bottom portion of the sharp edge). You should get something like this:</p>
                     <img src=media/lab6/wire-stripped.jpeg class="rounded mx-auto d-block img-fluid">    
+                    
+                    
+                    <br> <br>
                     <p>To test connections, there is another tool for measuring: the <b>multimeter</b>. It has features like testing voltage, current, 
                         connection, etc. The orientations of the symbols change from multimeter to multimeter, but the symbols are what stay consistent. 
                         We will note the ones that matter for this lab and future labs here. 
                     </p>
+                    
+                    <br> <br> 
                     <img src=media/lab6/multimeter.jpg class="rounded mx-auto d-block img-fluid"> 
                     <p>
                         The <b>V</b> with a dotted and straight lines above it measures DC voltage. DC, or direct current, is basically 
