@@ -123,7 +123,6 @@
                 <section class="mb-4">
                     <!-- Part 0: Hello World, Arduino! -->
                     <h4>Part (0): Hello World, Arduino! (15 min) <a id="part0"> </a></h4>
-                    <br> 
 
                     <p>Today, we will be working with Arduino, a microcontroller. A microcontroller is basically a very small computer 
                         chip that can interface with the real world using voltages. Arduino is just a user-friendly and widely used microcontroller.
@@ -136,10 +135,12 @@
         <p>Then, we need to physically plug in the Arduino Uno into the laptop. <b>PUT GIF OF PLUGGIN IN ARDUINO HERE</b></p>
         <p>Now, we can try to open the Arduino IDE program. You should be greeted by a window that looks like this:</p>
         <img src=media/lab6/arduino-start.png class="rounded mx-auto d-block img-fluid">
+        <br>
         <p>Mine happened to automatically connect to the Arduino Uno. However, to double check that the device was configured, 
             navigate to Tools > Port > Arduino Uno and make sure that is the Arduino Uno. You should get something like this:
         </p>
         <img src=media/lab6/device-setup.png class="rounded mx-auto d-block img-fluid">
+        <br>
         <p>Let's also click Tools > Serial Monitor. A terminal at the bottom of your window will appear.
             
             <br> <br> <b> The Serial Monitor </b> 
@@ -150,8 +151,6 @@
             The program is divided into setup() and loop(). The code inside setup is ran once when the Arduino is first powered 
             while the code inside loop is ran repeatedly after the setup. Let's take a deeper look into a code block.
         </p>
-                    
-                    <br>  
         <pre>
             <code class="language-javascript">
 // this is a comment
@@ -210,6 +209,7 @@ void loop() {
                     </p>
                     <p><b>CAN U CROP SOME OF THESE PHOTOS YUNYI</b></p>
                     <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
+                    <br>
                     <p>In the image above, using the hole makes an incision on only the insulation, and then you pull the insulation off to 
                         only expose the metal on a portion of the wire. To cut the wire, you clamp the wire on the section where it says 
                         cut on the strippers (the bottom portion of the sharp edge). You should get something like this:</p>
@@ -256,10 +256,12 @@ void loop() {
                         <b>INSERT GIF OF JUMPER WIRES</b>
                     </p>
 
-                    <p>When you want to insert a resistor, you do not want to put both legs in the same row (same green region).
+                    <p>Refer to the breadboard image in Part (1) to understand the green lines we're talking about. 
+                        When you want to insert a resistor, you do not want to put both legs in the same row (same green region).
                         You want to put it in a different row (a different green line). This is because the first method shorts it. 
-                        Current would simply never flow into it since it wants to go the path of least resistance. This is a diagram 
-                        of what you will build:
+                        Current would simply never flow into it since it wants to go the path of least resistance. 
+                        The image below is a valid way of inserting a resistor. The resistor's legs are in two different rows.
+                        This is a diagram of what you will build:
                    </p>
                    <img src=media/lab6/wiring-breadboard-ex.png class="rounded mx-auto d-block img-fluid">
                    <p>An LED has two diffent legs. The shorter leg of the LED should be connected to ground. 
@@ -271,7 +273,10 @@ void loop() {
         
                 <p>Now, you're ready to start making your full circuit on the breadboard. We will use pin 11 as our output pin 
                     (the positive terminal).</p>
-                <p>After you have built the circuit physically, it is time to code again. 
+                <p>After you have built the circuit physically, it is time to code again. We will be introducing two new functions: 
+                    <i>pinMode()</i> and <i>digitaWrite()</i>. <i>pinMode()</i> sets a pin of the Arduino to some mode. We make it 
+                    OUPUT mode so that we can "write" to it and set it to voltages. To write to a pin, we use the digitalWrite() to 
+                    assign a voltage to a pin.
                     To make the LED blink, replace the code in the code editor with this code: </p>
                 <pre>
                     <code class="language-javascript">
@@ -379,9 +384,8 @@ void loop() {
 #include &lt;MFRC522.h&gt;   
                         </code>
                     </pre>
-                    <p>Then, we will define names for certain pins that we will reuse in the code. Instead of using the pin number, 
-                        we can just use the real english name for easier understanding.
-                    </p>
+                    <p>First, we import our libraries to write less code from scratch ourselves.</p>
+                    
                     <pre>
                         <code class="language-javascript">
 #define RST_PIN 9 
@@ -391,9 +395,10 @@ void loop() {
 MFRC522 mfrc522(SS_PIN, RST_PIN);
                         </code>
                     </pre>
-                    <p>Now, we will make some variables. Variables hold values in names. We also make an MFRC522 instance. 
-                        This is basically a big custom variable with many properties, in a way.
+                    <p>Then, we will define names for certain pins that we will reuse in the code. Instead of using the pin number, 
+                        we can just use the real english name for easier understanding.
                     </p>
+                    
                     <pre>
                         <code class="language-javascript">
 byte readCard[4];
@@ -401,7 +406,10 @@ String MasterTag = "873FA939";	// REPLACE this Tag ID with your Tag ID!!!
 String tagID = "";                            
                         </code>
                     </pre>
-                    <p>Now, we want to make our setup code. This will run only once and initialize everything we need.</p>
+                    <p>Now, we will make some variables. Variables hold values in names. We also make an MFRC522 instance. 
+                        This is basically a big custom variable with many properties, in a way.
+                    </p>
+                    
                     <pre>
                         <code class="language-javascript">
 void setup() 
@@ -418,9 +426,8 @@ void setup()
 }
                         </code>
                     </pre>
-                    <p>Then, we can write our loop code that runs multiple times. This will be the code always checking the ID and 
-                        operating the LEDs.
-                    </p>
+                    <p>Now, we want to make our setup code. This will run only once and initialize everything we need.</p>
+                    
                     <pre>
                         <code class="language-javascript">
 void loop() 
@@ -450,7 +457,10 @@ void loop()
 }
                         </code>
                     </pre>
-                    <p>The getID() function is a custom function. We have to write its logic separately using the MFRC522 library functions.</p>
+                    <p>Then, we can write our loop code that runs multiple times. This will be the code always checking the ID and 
+                        operating the LEDs.
+                    </p>
+                    
                     <pre>
                         <code class="language-javascript">
 //Read new tag if available
@@ -471,15 +481,92 @@ boolean getID()
     tagID.toUpperCase();
     mfrc522.PICC_HaltA(); // Stop reading
     return true;
+}
                             </code>
                     </pre>
+                    <p>The getID() function is a custom function. We have to write its logic separately using the MFRC522 library functions.</p>
+<br>
+                <p>So your entire file should look something like this:</p>
+                <pre>
+                    <code class="language-javascript">
+#include &lt;SPI.h&gt;
+#include &lt;MFRC522.h&gt;
 
-                    
-                Yay, we’re finally done with the code!🎉
-                    <br> <br>
+#define RST_PIN 9 
+#define SS_PIN 10
 
+byte readCard[4];
+String MasterTag = "873FA939";	// REPLACE this Tag ID with your Tag ID!!!
+String tagID = "";
 
-                    
+// Create instances
+MFRC522 mfrc522(SS_PIN, RST_PIN);
+
+void setup() 
+{
+    // Initiating
+    Serial.begin(9600);
+    SPI.begin(); // SPI bus
+    mfrc522.PCD_Init(); // MFRC522
+    Serial.println("Access System");
+    pinMode(1, OUTPUT);
+    pinMode(0, OUTPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(0, LOW);
+}
+
+void loop() 
+{
+    //Wait until new tag is available
+    while (getID()) 
+    {
+    Serial.println(tagID);
+    
+    if (tagID == MasterTag) 
+    {
+        
+        Serial.println(" Access Granted!");
+        digitalWrite(0, HIGH);
+        delay(2000);
+        digitalWrite(0, LOW);
+    }
+    else
+    {
+        Serial.println(" Access Denied!");
+        digitalWrite(1, HIGH);
+        delay(2000);
+        digitalWrite(1, LOW);
+    }
+    
+        
+    delay(2000);
+    }
+}
+
+//Read new tag if available
+boolean getID() 
+{
+    // Getting ready for Reading PICCs
+    if ( ! mfrc522.PICC_IsNewCardPresent()) { //If a new PICC placed to RFID reader continue
+        return false;
+    }
+    if ( ! mfrc522.PICC_ReadCardSerial()) { //Since a PICC placed get Serial and continue
+        return false;
+    }
+    tagID = "";
+    for ( uint8_t i = 0; i &lt; 4; i++) { // The MIFARE PICCs that we use have 4 byte UID
+        //readCard[i] = mfrc522.uid.uidByte[i];
+        tagID.concat(String(mfrc522.uid.uidByte[i], HEX)); // Adds the 4 bytes in a single String variable
+    }
+    tagID.toUpperCase();
+    mfrc522.PICC_HaltA(); // Stop reading
+    return true;
+}
+                        </code>
+                        </pre>
+                <p>Yay, we’re finally done with the code!🎉</p>
+                    <br> 
+        <p>Now, we're in the homestretch to make it only work with ONLY YOUR student ID.</p>
                     <ul>
         <li>Open your Serial Monitor.</li>
         <li>Try running the code:
@@ -494,10 +581,8 @@ boolean getID()
             
              <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 4</h4>
-                        Show your instructor your Access System working with only YOUR ID!
+                        Show your instructor your Access System flashing red with your ID.
                     </div>
-            
-            <hr> 
             
         </li>
         <li>Tap your student ID card. It should flash red because it hasn't been set as the master ID yet.</li>
@@ -513,17 +598,9 @@ boolean getID()
         <li>Your green LED should now flash when your student ID is tapped, and red for any other card.</li>
         <li>Congratulations on your custom RFID Access System!</li>
     </ul>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 4</h4>
+                        <h4>Checkoff 5</h4>
                         Show your instructor your Access System working with only YOUR ID!
                     </div>
                 </section>
