@@ -98,6 +98,7 @@
                         <li>3mm x 15 (<strong>x20000002</strong>)</li>
                         <li>2.5mm x 15 (<strong>x1231232</strong>)</li>
                         <li>4mm x 15 (<strong>x22 million</strong>)</li>
+                        <img src="media/lab78/BOM.png" class="rounded mx-auto d-block img-fluid">
                     </ul>
                     <h5>Machines:</h5>
                     <ul>
@@ -158,35 +159,46 @@ AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre>
                     <p>We are now going to assemble our chassis. Make sure you have all the following pieces as shown in the image below.</p>
                     <ul>
                         <li>Laser cut chassis (<strong>x1</strong>)</li>
-                        <li>Motor mount (<strong>x2</strong>)</li>
+                        <li>Motor + mount (<strong>x2</strong>)</li>
                         <li>Ardiuno + motor shield (<strong>x1</strong>)</li>
                         <li>Ardiuno mount (<strong>x1</strong>)</li>
-                        <li>Caster wheel standoff (<strong>x2</strong>)</li>
-                        <li>2/2.5/3mm screws.</li>
+                        <li>Caster wheel + bracket (<strong>x2</strong>)</li>
+                        <li>M2x12 (servo)</li>
+                        <li>M3x10 (motor mount))</li>
+                        <li>M3x25/M3x30 (motors))</li>
+                        <img src="media/lab78/BOM.png" class="rounded mx-auto d-block img-fluid">
                     </ul>
-                    <p>Now attach components to the laser cut chassis in the following order. <strong>Don't do it out of order.</strong> Use the gridlines on
+                    <p>Now attach components to the laser cut chassis in the following order. <strong>Don't do it out of order.</strong> you can use the gridlines on
                     the cutting matts in between desks to determine fastener length.</p>
                     <ol>
+                        <li>Attach the ball caster to its mount using the screws (the pointy ones). Then dasten the ball caster mount
+                         to the chassis using <strong>3mm x 8mm (x2)</strong> bolts.</li>
+                        <img src="media/lab78/CasterWheel.png" class="rounded mx-auto d-block img-fluid"> 
                         <li>Attach the Ardiuno (without shield) to its mount and the chassis using <strong>3mm x 16mm (x3)</strong> bolts. Then add the shield.</li>
+                        <img src="media/lab78/ArdiunoMount.png" class="rounded mx-auto d-block img-fluid">
                         <li>Use the small screws in your kit to attach the servo to the front of the chassis. The hole is intentionally offset so that the 
                             axis of the servo is aligned with the midline of the robot. </li>
-                        <li>Attach the motor mounts to the chassis using <strong>3mm x 12mm (x4)</strong> bolts. Place a M3 nut in each hexagonal cutout.</li>
+                        <img src="media/lab78/ServoMount.png" class="rounded mx-auto d-block img-fluid">
+                        <li>Attach the motor mounts to the chassis using <strong>3mm x 10mm (x4)</strong> bolts. Place a M3 nut in each hexagonal cutout.</li>
+                        <img src="media/lab78/MotorMountMount.png" class="rounded mx-auto d-block img-fluid">
                         <li> Use <strong>3mm x 25mm (x2)</strong> bolts to attach the motors to the motor brackets. </li>
-                        <li>Attach the ball caster to its mount using the screws (the pointy ones)</li>
-                        <li>Fasten the ball caster mount to the chassis using <strong>3mm x 8mm (x2)</strong> bolts.</li>
+                        <img src="media/lab78/MotorMount.png" class="rounded mx-auto d-block img-fluid">
                         <li>Attach the battery pack to the bottom of the chassis using double sided tape. <strong>The switch should be facing down.</strong></li>
-                        <li>Stick mini breadboard in the orientation depicted</li>
-                        <li>Add wheels. Push them on fully.</li>
+                        <img src="media/lab78/BatteryMount.png" class="rounded mx-auto d-block img-fluid">
+                        <li>Stick mini breadboard in the orientation depicted and add the Ultrasound sensor with its bracket to the servo</li>
+                        <img src="media/lab78/BreadMount.png" class="rounded mx-auto d-block img-fluid">
+                        <li>Add wheels. Push them on fully, but be careful not to snap the motor mounts. </li>
                     </ol>
 
                     <p> Now we need to plug in the motors and battery bank to the Ardiuno Shield. </p>
                     <ol>
                         <li>Feed the servo wires through the back hole and connect to the shield as shown. THE YELLOW WIRE IS SIGNAL, BROWN IS GND.</li>
-                        <img src="media/lab78/ServoToL293D.jpg" class="rounded mx-auto d-block img-fluid">
+                        <!-- <img src="media/lab78/ServoToL293D.jpg" class="rounded mx-auto d-block img-fluid"> -->
                         <li>Feed the motors wires through the back hole into the screw terminals as shown. M1 should be the left motor, and M2 the right motor.</li>
-                        <img src="media/lab78/MotorCableOrder.jpg" class="rounded mx-auto d-block img-fluid">
+                        <!-- <img src="media/lab78/MotorCableOrder.jpg" class="rounded mx-auto d-block img-fluid"> -->
                         <li>Finally, attach the power cables to the shield being careful to not swap the power wires.</li>
-                        <img src="media/lab78/L293DPower.jpg" class="rounded mx-auto d-block img-fluid">
+                        <img src="media/lab78/Wiring.png" class="rounded mx-auto d-block img-fluid">
+                        <!-- <img src="media/lab78/L293DPower.jpg" class="rounded mx-auto d-block img-fluid"> -->
                     </ol>
                     <p><b>Congrats!</b> You have built a robot.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
