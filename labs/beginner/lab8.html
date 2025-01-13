@@ -32,10 +32,14 @@
                         <li><a href="#fabq">Fabrication Quest</a></li>
                         <li><a href="#software">Software & Hardware for the Lab</a></li>
                         <li><a href="#part1">Part (1): Reading Values from Photoresistors</a></li>
-                        <li><a href="#part1">Part (1): Light Following</a></li>
-                        <li><a href="#part2">Part (2): Driving the Robot</a></li>
-                        <li><a href="#part3">Part (3): Remix Driving</a></li>
-                        <li><a href="#discussion">Discussion & Reflections</a></li>
+                        <li><a href="#part2">Part (2): Determining Ambient Light</a></li>
+                        <li><a href="#part3">Part (3): Writing a Nicer Motor Function</a></li>
+                        <li><a href="#part4">Part (4): Light Following BANG-BANG</a></li>
+                        <li><a href="#part5">Part (5): Light Following Proportional Controller</a></li>
+                        <li><a href="#part6">Part (6): Ultrasound Connection</a></li>
+                        <li><a href="#part7">Part (7): Using the Ultrasound</a></li>
+                        <li><a href="#part8">Part (8): Wall Following</a></li>
+                        <li><a href="#part9">Part (9): Remix Sensor</a></li>
                     </ul>
                 </div>
             </div>
@@ -95,7 +99,7 @@
                 <!-- Procedure Section -->
                 <section class="mb-4">
                     <!-- Part 0: Reading Values from Photoresistors -->
-                    <h4 id="part1">Part (1): Reading Values from Photoresistors (25 mins)</h4>
+                    <h4 id="part1">Part (1): Reading Values from Photoresistors</h4>
                     <p>It's time we used our Arduino to sense the outside world. There are hundreds of different types of sensors we could use, but we are going to start with the most simple. The principles we learn here will apply to implementing all sensors with Arduino.</p>
                     <p>Our first sensor is a photoresistor. A photoresistor is a special type of resistor whose resistance depends on the amount of light that shines on it. Higher luminosity decreases the resistance. They are simple, inexpensive, and effective for detecting relative brightness, making them ideal for applications like guiding a robot toward a light source.</p>
                     <strong>Always have your Arduino unpowered when breadboarding.</strong>
@@ -154,10 +158,17 @@ void loop() {
 
     delay(20);
 }
-                        </code>
-                        </pre>
+                        </code></pre>
                     </ol>
 
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 1</h4>
+                        <a id="part1"></a>
+                        Ask your instructor for a check-off on completing Part (1). Show the serial monitor with the values of the photoresistors.
+                    </div>
+                    <hr>
+
+                    <h4 id="part2">Part (2): Determining Ambient Light</h4>
                     <p>
                         Now we can read the values from our photoresistor. Before we write an algorithm for our robot to follow a bright light, we should clean our sensor data. Our algorithm will decide
                         the driving direction based off differences between sensors, so we want to amplify the difference. A bright room will have high base values for all sensors and the change from a flashlight will be relatively small. 
@@ -177,7 +188,17 @@ int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
 int middleValue = analogRead(middlePhotoresistor) - ambientThresholdM;
 int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;                          
                         </code></pre>
-                    <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255.
+
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 2</h4>
+                        <a id="part2"></a>
+                        Ask your instructor for a check-off on completing Part (2). Show the serial monitor with the adjusted values of the photoresistors.
+                    </div>
+                    <hr>
+
+                    <h4 id="part2">Part (2): Writing a Nicer Motor Function</h4>
+
+                    <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255 instead of 0-255.
                     </p>
                     <p>Fill in the if/else conditions below and place these functions at the bottom of the script.</p>
                     <pre>
@@ -206,7 +227,8 @@ void setRightSpeed(int value) {
 }
                     </code></pre>
                     <p>We can call our function in the same way we call any other function. To test it, we will change the speed/direction of the left and right 
-                        motors depending on the values of the left and right photoresistors. Add the following lines to your script and make sure it behaves as you expect.
+                        motors depending on the values of the left and right photoresistors. Add the following lines to your script. When you shine your light on the left/right photoresistor,
+                        the left/right motor should speed up, and when you cover the left/right photoresistor, the left/right motor should slow down.
                     </p>
                     <pre>
                     <code class="language-javascript">
@@ -215,16 +237,17 @@ setRightSpeed(rightValue); // right photoresistor value
                     </code></pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 1</h4>
-                        <a id="part1"></a>
-                        Ask your instructor for a check-off on completing Part (0).
+                        <h4>Checkoff 3</h4>
+                        <a id="part3"></a>
+                        Ask your instructor for a check-off on completing Part (3). Show the motor speed changes in response to the photoresistor values.
                     </div>
                     <hr>
 
                     <!-- Part 1: Assembling the Chassis -->
-                    <h4 id="part1">Part (1): Light Following</h4>
-                    <p>The field of robotics control is enormous. The robot we have made is simple, but with good sensors and control it can exhibit complex behavior.
-                        We will start with a controller called BANG-BANG controller and then move to a proportional controller. The code for these controllers is relatively 
+                    <h4 id="part4">Part (4): Light Following BANG-BANG</h4>
+                    <p>The field of robotics control is enormous. The robot we have made is simple, but with good sensors and control it can exhibit complex behavior such as light
+                        following and wall following.
+                        We will start with a controller called a BANG-BANG controller and then move to a proportional controller. The code for these controllers is relatively 
                         brief but most of the work comes from tuning their constants for better performance. For best performance, you should copy your straight line speeds from
                         the previous lab into the base speeds here.
                     </p>
@@ -241,8 +264,8 @@ void setup() {
     Serial.begin(9600); // Initialize Serial Monitor
 
     // Set initial motor speed
-    setLeftSpeed(100);  // Adjust speed (0-255)
-    setRightSpeed(100);
+    setLeftSpeed();  // TODO: Copy speed from previous section
+    setRightSpeed();
 }
 
 void loop() {
@@ -285,19 +308,23 @@ void loop() {
 
     delay(50); // Small delay for stability
 }
-                    </code>
-                    </pre>
-
-                    <strong>Proportional Controller</strong>
+                    </code></pre>
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 4</h4>
+                        <a id="part4"></a>
+                        Ask your instructor for a check-off on completing Part (4). Show the robot following the light.
+                    </div>
+                    <hr>
+                    <h4 id="part4">Part (4): Light Following Proportional Controller</h4>
                     <p>
-                        Proportional control is the first step of a PID controller (a classic controller used all over robotics). This controller now changes the size of 
+                        Proportional control is the first step of a PID controller (a classic controller used all over robotics). This controller now </italic>changes the size of 
                         the speed boost based off the amount of light intensity deviation between the middle and sides. The response is
-                        <i>proportional</i> to the error. Here, the error is the amount by which one side is greater than the middle. The new constant to control is the
-                        proportional constant which multiplies this error to result in a motor command.
+                        <i>proportional</i> to the error. Here, the error is the amount by which one side is greater than the middle. The new constant to adjust is the
+                        proportional constant which multiplies this error to result in a motor command. We will change this value for a stronger/weaker response.
                     </p>
                     <pre>
                     <code class="language-javascript">
-const float Kp = 0.3;
+const float Kp = 0.3; // Proportional gain for the controller
 const int BASE_SPEED = 80;
 
 void setup() {
@@ -319,19 +346,19 @@ void loop() {
     Serial.println(rightValue);
 
     // Calculate the average light level
-    int averageLight = (rightValue + middleValue + leftValue) / 3;
+    int averageLight = ;
 
-    if (averageLight < 0) {
+    if () {
         // Light is ambient or too uniform; stop the robot
         setLeftSpeed(0);
         setRightSpeed(0);
     } else {
         // Calculate error signals for proportional control
         if (leftValue > rightValue) {
-        int error = middleValue - leftValue;
+            int error = middleValue - leftValue;
         }
         else{
-        int error = - (middleValue - rightValue);
+            int error = - (middleValue - rightValue);
         }
 
         // Calculate motor speeds based on proportional control
@@ -349,28 +376,38 @@ void loop() {
                     </pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 2</h4>
-                        <a id="part2"></a>
-                        Ask your instructor for a check-off on completing Part (1). Show both bang-bang and proportional control.
+                        <h4>Checkoff 5</h4>
+                        <a id="part5"></a>
+                        Ask your instructor for a check-off on completing Part (5). Show proportional control.
                     </div>
                     <hr>
 
                     <!-- Part 2: Driving the Robot -->
-                    <h4 id="part2">Part (2): Wall Following</h4>
+                    <h4 id="part6">Part (6): Ultrasound Connection</h4>
                     <img src="media/lab78/HC-SR04.png" class="rounded mx-auto d-block img-fluid mb-2">
                     <p>While the photoresistors are a rather simple sensor, the framework we have made will allow us to slot in another more complex sensor. We will use a ultrasonic distance sensor to follow a wall.
                         The ultrasonic sensor we are using is the HC-SR04. It has a range of up to 400cm. Get it, its servo mount and 4 long M-F jumper wires. </p>
                         <img src="media/lab78/UltraSoundWires.jpg" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
                     <p>
                         Unfortunately, the motor shield blocks our access to the digital PWM pins which we need for this sensor. Its not elegant, but we can solder
-                        a double female header to the back pins. Do this to pins 5 and 6. Then, plug the HC-SR04 Vcc, Trig, Echo, GND into 5v, pin 5, pin 6, and 
+                        a double female header to the back pins. <strong>UNPOWER YOUR SYSTEM</strong>. Have an instuctor help you do this to pins 5 and 6. Then, plug the HC-SR04 Vcc, Trig, Echo, GND into 5v, pin 5, pin 6, and 
                         GND respectively. 
                     </p>
+
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 6</h4>
+                        <a id="part6"></a>
+                        Ask your instructor for a check-off on completing Part (6). We will check correct wiring.
+                    </div>
+                    <hr>
+
+                    <h4 id="part7">Part (6): Using the Ultrasound</h4>
                     <img src="media/lab78/RobotUltraSoundPins.jpg" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
                     <p> This is a very common sensor and there are many tutorials of how to use it online. You will rarely
                         know exactly how to program a sensor from memory. Use the internet to make/find a function called measureDistance() that returns an integer of the distance from the 
                         ultrasonic sensor. Then, upload the following code and move your hand in front of the ultrasonic sensor and make sure it responds as you expect.
                     </p>
+
                     <pre>
                     <code class="language-javascript">
 // Pin assignments for HC-SR04
@@ -392,13 +429,21 @@ void loop() {
     Serial.print("Distance: ");
     Serial.print(distance);
 
-    delay(50); // Small delay for stability
+    delay(20);
 }
-                    </code>
-                    </pre>
+                    </code></pre>
+                    <p>We know this is pretty vague, but its an important skill to learn how to use new sensors/parts.</p>
 
-                    <p>Now we can use this function and our proportional controller to track a wall. Pick left or right, and angle your ultrasonic sensor at about 80degrees
-                        from straight forward (pointing mostly left or right). It is important that it is not at 90 degrees.
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 7</h4>
+                        <a id="part7"></a>
+                        Ask your instructor for a check-off on completing Part (7). Show the ultrasound working.
+                    </div>
+                    <hr>
+
+                    <h4 id="part8">Part (8): Wall Following</h4>
+                    <p>Now we can use this function and our proportional controller to track a wall. Angle your ultrasonic sensor at about 80degrees
+                        from straight forward (pointing mostly left). It is important that it is not at 90 degrees. (Mirror of the image below).
                     </p>
                     <img src="media/lab78/UltraSoundOrientation.png" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
                     <p>The following code follows a right wall. Alter it and tune the proportional constants to follow a left wall.
@@ -467,21 +512,31 @@ void loop() {
                     </pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 3</h4>
-                        <a id="part3"></a>
-                        Ask your instructor for a check-off on completing Part (2) wall following.
+                        <h4>Checkoff 8</h4>
+                        <a id="part8"></a>
+                        Ask your instructor for a check-off on completing Part (8) Wall Following.
                     </div>
                     <hr>
 
                     <!-- Part 3: Remix Driving -->
-                    <h4 id="part3">Part (3): Remix Driving!</h4>
-                    <p>Now that you have a robot that can drive as you command it, try driving in more interesting shapes. Here are some ideas to get you started:</p>
-                    <ul>
-                        <li>Drive in a circle with a desired radius</li>
-                        <li>Drive in an n-sided polygon (square, hexagon, octagon, etc.). Can you make a function that can take in a number of sides and drive in that shape?</li>
-                        <li>Drive in an infinity symbol</li>
-                        <li>Drive in the shape of some mathematical function</li>
-                    </ul>
+                    <h4 id="part9">Part (9): Remix Sensor</h4>
+                    <p>Now that know how to write code for a given sensor, pick a sensor/output that you think will be useful for your project and make it work. This could
+                        be spinning a stepper motor, using a temperature or color sensor, or even the IMU. If you are unsure of a direction, ask your instructor for suggestions.
+                        Below is a list of inputs and outputs you can use.
+                    </p>
+                    <ol>
+                        <li>Color sensor</li>
+                        <li>IR transmitter & reciever</li>
+                        <li>IMU</li>
+                        <li>Temperature sensor</li>
+                        <li>LCD / OLED</li>
+                        <li>Servo motor</li>
+                        <li>Stepper motor</li>
+                    </ol>
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 9</h4>
+                        <a id="part9"></a>
+                        Ask your instructor for a check-off on completing Part (9) Remix Sensor.
                 </section>
             </div> <!-- End Container -->
 

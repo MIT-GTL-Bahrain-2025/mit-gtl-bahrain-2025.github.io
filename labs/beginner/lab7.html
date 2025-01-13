@@ -74,14 +74,16 @@
                     <a id="software"></a>
                     <ul>
                         <li>Laser cut robotic chassis (<strong>x1</strong>)</li>
-                        <li>Motor mount (<strong>x2</strong>)</li>
+                        <li>Motors + mount (<strong>x2</strong>)</li>
                         <li>Ardiuno + motor shield (<strong>x1</strong>)</li>
                         <li>Ardiuno mount (<strong>x1</strong>)</li>
-                        <li>Caster wheel standoff (<strong>x2</strong>)</li>
+                        <li>Ultrasound + bracket (<strong>x1</strong>)</li>
+                        <li>Caster wheel + bracket (<strong>x1</strong>)</li>
+                        <li>Fasteners</li>
                     </ul>
                     </li>
                 </ul>
-                <p>All other parts can be found on the shelves. Ask if you have trouble finding anything.</p>
+                <p>Ask if you have trouble finding anything.</p>
                 <hr>
 
                 <!-- Materials Section -->
@@ -131,7 +133,7 @@ AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre>
     leftMotor.run(FORWARD);
 }</code></pre>
                         <li>Plug the motor shield into the Ardiuno, making sure the pins are all aligned.</li>
-                        <li>Get two of the yellow TT motors and plug them into the M1 and M2 terminals on the shield as shown. M1 should be the left motor, and M2 the right motor. It actually doesn't matter which terminal has red or black. If you swap it, it will just reverse the direction of the motor</li>
+                        <li>Get two of the yellow TT motors and plug them into the M1 and M2 terminals on the shield as shown. It actually doesn't matter which terminal has red or black. If you swap it, it will just reverse the direction of the motor</li>
                         <div class="d-flex align-items-stretch" style="gap: 5px; padding-bottom: 20px;">
                             <div class="flex-fill">
                                 <img src="media/lab78/MotorCableOrder1.jpg" class="object-fit-cover h-100 w-100 rounded mx-auto d-block img-fluid mb-3 mt-3", style="object-fit: cover;">
@@ -153,7 +155,7 @@ AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre>
 
                     <!-- Part 1: Assembling the Chassis -->
                     <h4><a id="part2">Part (2) Assembling the Chassis</a></h4>
-                    <p>We are now going to assemble our chassis. Make sure you have all the following pieces.</p>
+                    <p>We are now going to assemble our chassis. Make sure you have all the following pieces as shown in the image below.</p>
                     <ul>
                         <li>Laser cut chassis (<strong>x1</strong>)</li>
                         <li>Motor mount (<strong>x2</strong>)</li>
@@ -162,22 +164,35 @@ AF_DCMotor leftMotor(2);   // Motor connected to M2</code></pre>
                         <li>Caster wheel standoff (<strong>x2</strong>)</li>
                         <li>2/2.5/3mm screws.</li>
                     </ul>
-                    <p>Now attach components to the laser cut chassis in the following order:</p>
+                    <p>Now attach components to the laser cut chassis in the following order. <strong>Don't do it out of order.</strong> Use the gridlines on
+                    the cutting matts in between desks to determine fastener length.</p>
                     <ol>
-                        <li>Attach the motor mounts to the chassis using <strong>3mm x 12mm (x4)</strong> bolts</li>
-                        <li>Attach the Ardiuno to its mount and the chassis using <strong>3mm x 16mm (x3)</strong> bolts</li>
-                        <li>Attach the ball caster and spacer to its mount and the chassis using <strong>3mm x 16mm (x3)</strong> bolts</li>
-                        <li>Mount Motors to motor brackets using long <strong>3mm x 16mm (x3)</strong> bolts</li>
-                        <li>Mount Servo at front using <strong>2mm x 6mm (x3)</strong> bolts. This is a bit tricky so don't do it if you are running low on time.</li>
-                        <li>Use double sided tape to mount battery pack on bottom in orientation depicted</li>
-                        <li>Stick mini breadboard to robot</li>
-                        <li>Add wheel</li>
+                        <li>Attach the Ardiuno (without shield) to its mount and the chassis using <strong>3mm x 16mm (x3)</strong> bolts. Then add the shield.</li>
+                        <li>Use the small screws in your kit to attach the servo to the front of the chassis. The hole is intentionally offset so that the 
+                            axis of the servo is aligned with the midline of the robot. </li>
+                        <li>Attach the motor mounts to the chassis using <strong>3mm x 12mm (x4)</strong> bolts. Place a M3 nut in each hexagonal cutout.</li>
+                        <li> Use <strong>3mm x 25mm (x2)</strong> bolts to attach the motors to the motor brackets. </li>
+                        <li>Attach the ball caster to its mount using the screws (the pointy ones)</li>
+                        <li>Fasten the ball caster mount to the chassis using <strong>3mm x 8mm (x2)</strong> bolts.</li>
+                        <li>Attach the battery pack to the bottom of the chassis using double sided tape. <strong>The switch should be facing down.</strong></li>
+                        <li>Stick mini breadboard in the orientation depicted</li>
+                        <li>Add wheels. Push them on fully.</li>
+                    </ol>
+
+                    <p> Now we need to plug in the motors and battery bank to the Ardiuno Shield. </p>
+                    <ol>
+                        <li>Feed the servo wires through the back hole and connect to the shield as shown. THE YELLOW WIRE IS SIGNAL, BROWN IS GND.</li>
+                        <img src="media/lab78/ServoToL293D.jpg" class="rounded mx-auto d-block img-fluid">
+                        <li>Feed the motors wires through the back hole into the screw terminals as shown. M1 should be the left motor, and M2 the right motor.</li>
+                        <img src="media/lab78/MotorCableOrder.jpg" class="rounded mx-auto d-block img-fluid">
+                        <li>Finally, attach the power cables to the shield being careful to not swap the power wires.</li>
+                        <img src="media/lab78/L293DPower.jpg" class="rounded mx-auto d-block img-fluid">
                     </ol>
                     <p><b>Congrats!</b> You have built a robot.</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 2</h4>
                         <a id="part2"></a>
-                        Ask your instructor for a check-off on completing Part (2)
+                        Ask your instructor for a check-off on completing Part (2). We will provide your batteries upon checkoff completion.
                     </div>
                     <hr>
                     <!-- Part 3: Driving the Robot -->
