@@ -34,10 +34,7 @@
                     <li><a href="#part1">Part (1): Breadboarding Basics and Multimeters </a></li>
                     <li><a href="#part2">  Part (2): Making a LED Blink </a></li>
                     <li><a href="#part3"> Part (3): Wiring RFID</a></li>
-                    <li><a href="#part4"> Part (4): Understanding with a Multimeter </a></li>
-                      <li><a href="#part5">Part (5): Wiring the GND, 3.3 V, and Input Pins </a></li>
-                    <li><a href="#part6">  Part (6): Guitar Hero</a></li>
-                    <li><a href="#part7">  Part (7): 🚨Remixing🚨 </a></li>
+                    <li><a href="#part4"> Part (4): Making an Access System for your ID </a></li>
                      <li><a href="#discussion"> Discussion & Reflections</a></li>
                 </ul>
             </div>
@@ -66,7 +63,7 @@
                         <li> ✅ Learn how to wire and understand basic electronics</li>
                         <li>✅ Wire a peripheral (the RFID chip)</li>
                     </ul>
-                    <p><strong>Before we start</strong>, please make sure you understand the following safety precautions:</p>
+                    <p><strong> ⚠️ Before we start ⚠️</strong>, please make sure you understand the following safety precautions:</p>
         <ul>
             <li><strong>High Current:</strong> Never connect power and ground directly with a wire. High currents 
             are very dangerous.</li>
@@ -79,7 +76,7 @@
                 <hr>
 
             
-                    <img src=media/guitar-hero-items.png class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/lab6/mise-en-place.png class="rounded mx-auto d-block img-fluid"> 
                 <br>
             <h2> 🔨 Fabrication Quest of the Day </h2>
                 <ul>
@@ -95,7 +92,6 @@
                 
 
                 <!-- Materials Section -->
-                <p><b>HEY YUNYI CAN U JUST UPDATE THIS SECTION WITH CORRECT PARTS</b></p>
                 <section class="mb-4">
                     <h2>🏗️ Software & Hardware</h2>
 
@@ -126,7 +122,6 @@
                 <section class="mb-4">
                     <!-- Part 0: Hello World, Arduino! -->
                     <h4>Part (0): Hello World, Arduino! (15 min) <a id="part0"> </a></h4>
-                    <br> 
 
                     <p>Today, we will be working with Arduino, a microcontroller. A microcontroller is basically a very small computer 
                         chip that can interface with the real world using voltages. Arduino is just a user-friendly and widely used microcontroller.
@@ -136,16 +131,21 @@
             and the IDE is the code software. 
             Navigate to this <a href="https://www.arduino.cc/en/software">link</a>.</p>
         
-        <p>Then, we need to physically plug in the Arduino Uno into the laptop. <b>PUT GIF OF PLUGGIN IN ARDUINO HERE</b></p>
+        <p>Then, we need to physically plug in the Arduino Uno into the laptop like this: </p>
+        <img src=media/lab6/arduino-laptop.webp class="rounded mx-auto d-block img-fluid">
         <p>Now, we can try to open the Arduino IDE program. You should be greeted by a window that looks like this:</p>
         <img src=media/lab6/arduino-start.png class="rounded mx-auto d-block img-fluid">
+        <br>
         <p>Mine happened to automatically connect to the Arduino Uno. However, to double check that the device was configured, 
             navigate to Tools > Port > Arduino Uno and make sure that is the Arduino Uno. You should get something like this:
         </p>
         <img src=media/lab6/device-setup.png class="rounded mx-auto d-block img-fluid">
-        <p>Let's also click Tools > Serial Monitor. A terminal at the bottom of your window will appear. The Serial Monitor 
+        <br>
+        <p>Let's also click Tools > Serial Monitor. A terminal at the bottom of your window will appear.
+            
+            <br> <br> <b> The Serial Monitor </b> 
             is a print window which you can output information. This a great tool to make sure your code is working correctly, 
-            a term called <i>debugging</i>. We will come back to the terminal once we start running our code.
+            a term called <a href="https://aws.amazon.com/what-is/debugging/#:~:text=Debugging%20is%20the%20process%20of,determine%20why%20any%20errors%20occurred."> <i>debugging</i></a>. We will come back to the terminal once we start running our code.
         </p>
         <p>Now, we will try to understand the basic structure of Arduino code which is in the C programming language.
             The program is divided into setup() and loop(). The code inside setup is ran once when the Arduino is first powered 
@@ -158,9 +158,11 @@ void setup() { // this is an in-line comment
     Serial.begin(9600); // this is code that opens the Serial port and 9600 bits per second
 }</code>
         </pre>
-        <p>When you see parenthesis after some text, it is typically a function>. So, <i>setup()</i>, <i>loop()</i>, and <i>begin()</i> are 
+                    <p>When you see parenthesis after some text, it is typically a <span style=color:red> function </span>. So,  <span style=color:red> <i>setup()</i> </span>, <span style=color:red> <i>loop()</i> </span>, and <span style=color:red> <i>begin()</i> </span> are 
             all functions. A function is a block of code. The parenthesis can be empty like <i>setup()</i> and <i>loop()</i> or have an input. 
-            <i>begin(9600)</i> for instance has an input of 9600. In the above code, we are defining what is inside setup(), hence the curly braces. 
+            <i>begin(9600)</i> for instance has an input of 9600. 
+            
+            <br> <br> In the above code, we are defining what is inside setup(), hence the curly braces. 
             The void at the beginning means are returning nothing at the end of the function. Then, inside of the {} is the body of the code. 
             Each line of code in the body must end in a ;. Lines that begin with a <b>//</b> are comments which are instructions that are just for 
             human readability and not read by the machine. Type the above code into your window. Let's move to the loop function.
@@ -191,31 +193,40 @@ void loop() {
                     <p> The goal of this section is to make a LED blink. However, we need to 
                         lay our circuit on something like a breadboard.
                         A breadboard is basically like a preliminary construction board for making circuits! The areas 
-                        highlighted in green are the parts that are connected. The holes allow you to stick wires inside.
+                        highlighted in green are the parts that are electrically connected to each other. The holes allow you to stick wires inside.
                     </p>
+                    <p>Normal Breadboard:</p>
+                    <img src=media/lab6/breadboard-raw.jpg class="rounded mx-auto d-block img-fluid">
+                    <br>
+                    <p>Internal Wiring of Breadboard:</p>
                     <img src=media/lab6/breadboard-diagram.png class="rounded mx-auto d-block img-fluid">
-                    <p>Typically, you put the ground line on the blue minus rail (-) and the power on the 
-                        red plus rail (+). This way, you can easily grab those connections.</p>
+                    <p>💡 Typically, you put the ground line on the blue minus rail (➖) and the power on the 
+                        red plus rail (➕). This way, you can easily grab those connections.</p>
                     
                     <p>We want to introduce you to some other tools, too. How do we get wire to connect components? We can use a 
                         <b>wire stripper</b> and get it from a spool of wire. In the image below, you can see the stripper. 
                         There are different-sized holes representing the gauge of the wire.
                     </p>
-                    <p><b>CAN U CROP SOME OF THESE PHOTOS YUNYI</b></p>
-                    <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/lab6/wire-gauge-edit.png class="rounded mx-auto d-block img-fluid"> 
+                    <br>
                     <p>In the image above, using the hole makes an incision on only the insulation, and then you pull the insulation off to 
-                        only expose the metal on a potion of the wire. To cut the wire, you clamp the wire on the section where it says 
+                        only expose the metal on a portion of the wire. To cut the wire, you clamp the wire on the section where it says 
                         cut on the strippers (the bottom portion of the sharp edge). You should get something like this:</p>
-                    <img src=media/lab6/wire-stripped.jpeg class="rounded mx-auto d-block img-fluid">    
+                    <img src=media/lab6/wire-stripped-edit.png class="rounded mx-auto d-block img-fluid">    
+                    
+                    
+                    <br> 
                     <p>To test connections, there is another tool for measuring: the <b>multimeter</b>. It has features like testing voltage, current, 
                         connection, etc. The orientations of the symbols change from multimeter to multimeter, but the symbols are what stay consistent. 
                         We will note the ones that matter for this lab and future labs here. 
                     </p>
-                    <img src=media/lab6/multimeter.jpg class="rounded mx-auto d-block img-fluid"> 
+                    
+                    <br> <br> 
+                    <img src=media/lab6/multimeter-edited.png class="rounded mx-auto d-block img-fluid"> 
                     <p>
                         The <b>V</b> with a dotted and straight lines above it measures DC voltage. DC, or direct current, is basically 
                         signals not changing consistently or very often. The ohm symbol, <b>Ω</b>, stands for measuring resistance. The 
-                        WiFi looking signal with the curved lines in series is <b>continuity</b> mode. It beeps when there is an electrical connection 
+                        WiFi looking signal with the curved lines in series is <b>continuity</b> mode. It beeps 🔉 when there is an electrical connection 
                         between the positive and negative terminals of the multimeter. Try testing each of these modes and be prepared to show 
                         them off during checkoff.
                     </p>
@@ -236,18 +247,19 @@ void loop() {
                     <hr> 
                     
                     <h4>Part (2): Making a LED Blink on Your Breadboard (20 minutes)  <a id="part2"> </a></h4>
-                    <p>Again, Whenever wiring on your breadboard, please disconnect the Arduino wire 
-                        from the computer so that the power is off. Let's go over the compoents and how to to insert components. </p>
+                    <p> ⚠️ Again, whenever wiring on your breadboard, please <b>disconnect</b> the Arduino wire 
+                        from the computer so that the power is <b>OFF</b>. Let's go over the compoents and how to to insert components. </p>
                     <p>Since we have limited wire strippers and limited time, let's just use jumper wires. These are just pre-cut 
                         wires that you can insert immediately into the breadboard.
-
-                        <b>INSERT GIF OF JUMPER WIRES</b>
                     </p>
-
-                    <p>When you want to insert a resistor, you do not want to put both legs in the same row (same green region).
+                    <img src=media/lab6/jumper-gif.gif class="rounded mx-auto d-block img-fluid">   
+                    <br>
+                    <p>Refer to the breadboard image in Part (1) to understand the green lines we're talking about. 
+                        When you want to insert a resistor, you do not want to put both legs in the same row (same green region).
                         You want to put it in a different row (a different green line). This is because the first method shorts it. 
-                        Current would simply never flow into it since it wants to go the path of least resistance. This is a diagram 
-                        of what you will build:
+                        Current would simply never flow into it since it wants to go the path of least resistance. 
+                        The image below is a valid way of inserting a resistor. The resistor's legs are in two different rows.
+                        This is a diagram of what you will build:
                    </p>
                    <img src=media/lab6/wiring-breadboard-ex.png class="rounded mx-auto d-block img-fluid">
                    <p>An LED has two diffent legs. The shorter leg of the LED should be connected to ground. 
@@ -259,7 +271,10 @@ void loop() {
         
                 <p>Now, you're ready to start making your full circuit on the breadboard. We will use pin 11 as our output pin 
                     (the positive terminal).</p>
-                <p>After you have built the circuit physically, it is time to code again. 
+                <p>After you have built the circuit physically, it is time to code again. We will be introducing two new functions: 
+                    <i>pinMode()</i> and <i>digitaWrite()</i>. <i>pinMode()</i> sets a pin of the Arduino to some mode. We make it 
+                    OUPUT mode so that we can "write" to it and set it to voltages. To write to a pin, we use the digitalWrite() to 
+                    assign a voltage to a pin.
                     To make the LED blink, replace the code in the code editor with this code: </p>
                 <pre>
                     <code class="language-javascript">
@@ -280,7 +295,7 @@ void loop() {
 }
                     </code>
                 </pre>
-                <p>You should have a blinking LED now!</p>
+                <p>You should have a 💡blinking LED💡 now!</p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 2</h4>
@@ -294,23 +309,23 @@ void loop() {
                         computer (the Arduino). RFID is very difficult to make from scratch. So, we will use some help. 
                         The RC522 chip module does a lot of the processing for us and will act us a reader.</p>
                         <img src=media/lab6/rc522.jpeg class="rounded mx-auto d-block img-fluid"> 
-                    <p>However, we do still need to connect the RC522 to our Arduino to communicate to it. 
-                        We slot it into our breadboard like this such that the reader is facing out.
-                        <b>PUT PHOTO CHIP IN BREADBOARD</b>
-                    </p>
-                    <p>Now, we need to wire the RFID chip to the Arduino. This will require quite a few wires. Try
+                    <p>🚧 Deconstruct the LED circuit before wiring the RFID chip.
+                        Now, we need to wire the RFID chip to the Arduino. This will require quite a few wires. Try
                         to plan your wiring to be as neat as possible. Use the jumper wires to make the connections. 
                         Here is a diagram and table of the connections.
                     </p>
-                    <img src=media/lab6/wires-rfid.png class="rounded mx-auto d-block img-fluid"> 
-                    <br>
-                    <img src=media/lab6/rfid-wiring-arduino.webp class="rounded mx-auto d-block img-fluid"> 
-                    <br>
-                    <p>Once you are confident enough in your wiring, it is time to test it using code. We will use a 
-                        <i>library</i> to help us. A library is code that someone else has written that we borrow functions from. 
-                        We will install the MFRC522 library.
-                        <b>HEY YUNYI CAM U MAKE A GIF OF INSTALLING THE MFRC522 Library by github community</b>
+                    <img src=media/lab6/rfid-wiring-arduino.jpg class="rounded mx-auto d-block img-fluid"> 
+                    <p>We need to connect the RC522 to our Arduino to communicate to it. 
+                        We slot it into our breadboard like this such that the reader is facing out:
                     </p>
+                    <img src=media/lab6/rfid-bread.png class="rounded mx-auto d-block img-fluid"> 
+                    <br>
+                    <p>So, finish your wiring. Once you are confident enough in your wiring, it is time to test it using code. We will use a 
+                        <i>library</i> to help us. A library is code that someone else has written that we borrow functions from. 
+                        We will install the MFRC522 library. On the left sidebar, there is an icon of books stacked. 
+                        Click it to open the library manager. Type "mfrc522" and install the library <b>MFRC522 by Github Community</b>.
+                    </p>
+                    <img src=media/lab6/library.png class="rounded mx-auto d-block img-fluid"> 
                    
                     <p>Now, the library has been installed. Let's open an example. Go to File > Examples > MFRC522 > DumpInfo.</p>
                     <img src=media/lab6/open-ex.png class="rounded mx-auto d-block img-fluid"> 
@@ -321,12 +336,24 @@ void loop() {
                     <p>Line 41 currently is written as: </p>
 <pre>
     <code class="language-javascript">
-                    #define RST_PIN         9          // Configurable, see typical pin layout above
+#define RST_PIN         9 
                     </code>
                 </pre>
-                <p>Change the 9 to a 5. This is because we are using pin 5 instead as the reset as we have wired. Now, try running 
-                    the file with your Serial Monitor. Tap the RFID tag/card on the reader. You should see info show up! Congrats!
+                Change the <span style=color:red> 9</span> to a <span style=color:red> 5</span>  .
+                    
+                    <br> 
+                    <p> This is because we are using pin 5 instead as the reset as we have wired.</p> 
+                    
+                    <p> Now, try running 
+                    the file with your Serial Monitor. Tap the RFID tag/card on the reader. You should see info show up! 
+                    It's a bit messy but at least we can read information. There's a lot of information other than just the 
+                    UID that we can extract from the card in the Serial Monitor but we just wanted to confirm that it 
+                    works. 
+                        
                 </p>
+                    
+                    Yay, congrats!🎉
+                    <br> <br> 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 3</h4> 
@@ -335,9 +362,244 @@ void loop() {
         <hr>
             
                     <h4>Part (4): Making an Access System for your ID (20 mins)</h4><a id="part4"> </a>
+                    <p>We can extract information from the cards, but we don't do anything with the UID yet. We'll 
+                        make a simple Access System. A green LED will flash when the correct card is read while a red 
+                        LED will flash when a wrong card is read. Let's construct our circuit first. We only need to make a 
+                        small addition. The same way that we did the LED circuit in a previous part, wire one circuit for a green LED 
+                        and one for a red LED. The green LED should use Pin 0, and the red LED should use Pin 1.
+                    </p>
+                    <img src=media/lab6/rfid-all-schem.png class="rounded mx-auto d-block img-fluid">
+                    <br>
+                    <p>The schematic above shows the whole circuit you should have. The Green LED is connected to Pin 0 while the 
+                        Red LED is connected to Pin 1. The RFID circuit itself stays the same.
+                    </p>
+                    <p>Once you feel confident that your circuit is correct, it's time to test it with some code. 
+                        We will go step-by-step with this code and keep appending to the same file.
+                        Make a new file in Arduino (File > New Sketch).
+                    </p>
+                    <pre>
+                        <code class="language-javascript">
+#include &lt;SPI.h&gt; //import libraries like this
+#include &lt;MFRC522.h&gt;   
+                        </code>
+                    </pre>
+                    <p>First, we import our libraries to write less code from scratch ourselves.</p>
                     
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                    <pre>
+                        <code class="language-javascript">
+#define RST_PIN 9 
+#define SS_PIN 10 
+
+// Create instances
+MFRC522 mfrc522(SS_PIN, RST_PIN);
+                        </code>
+                    </pre>
+                    <p>Then, we will define names for certain pins that we will reuse in the code. Instead of using the pin number, 
+                        we can just use the real english name for easier understanding.
+                    </p>
+                    
+                    <pre>
+                        <code class="language-javascript">
+byte readCard[4];
+String MasterTag = "873FA939";	// REPLACE this Tag ID with your Tag ID!!!
+String tagID = "";                            
+                        </code>
+                    </pre>
+                    <p>Now, we will make some variables. Variables hold values in names. We also make an MFRC522 instance. 
+                        This is basically a big custom variable with many properties, in a way.
+                    </p>
+                    
+                    <pre>
+                        <code class="language-javascript">
+void setup() 
+{
+    // Initiating
+    Serial.begin(9600);
+    SPI.begin(); // SPI bus
+    mfrc522.PCD_Init(); // MFRC522
+    Serial.println("Access System");
+    pinMode(1, OUTPUT);
+    pinMode(0, OUTPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(0, LOW);
+}
+                        </code>
+                    </pre>
+                    <p>Now, we want to make our setup code. This will run only once and initialize everything we need.</p>
+                    
+                    <pre>
+                        <code class="language-javascript">
+void loop() 
+{
+    // Wait until new tag is available
+    // the inside code executes when a valid tag is present
+    while (getID()) 
+    {
+        Serial.println(tagID);
+    
+    if (tagID == MasterTag) 
+    {
+        Serial.println(" Access Granted!");
+        digitalWrite(0, HIGH);
+        delay(2000);
+        digitalWrite(0, LOW);
+    }
+    else
+    {
+        Serial.println(" Access Denied!");
+        digitalWrite(1, HIGH);
+        delay(2000);
+        digitalWrite(1, LOW);
+    }
+    delay(2000);
+    }
+}
+                        </code>
+                    </pre>
+                    <p>Then, we can write our loop code that runs multiple times. This will be the code always checking the ID and 
+                        operating the LEDs.
+                    </p>
+                    
+                    <pre>
+                        <code class="language-javascript">
+//Read new tag if available
+boolean getID() 
+{
+    // Getting ready for Reading PICCs
+    if ( ! mfrc522.PICC_IsNewCardPresent()) { //If a new PICC placed to RFID reader continue
+        return false;
+    }
+    if ( ! mfrc522.PICC_ReadCardSerial()) { //Since a PICC placed get Serial and continue
+        return false;
+    }
+    tagID = "";
+    for ( uint8_t i = 0; i &lt; 4; i++) { // The MIFARE PICCs that we use have 4 byte UID
+        //readCard[i] = mfrc522.uid.uidByte[i];
+        tagID.concat(String(mfrc522.uid.uidByte[i], HEX)); // Adds the 4 bytes in a single String variable
+    }
+    tagID.toUpperCase();
+    mfrc522.PICC_HaltA(); // Stop reading
+    return true;
+}
+                            </code>
+                    </pre>
+                    <p>The getID() function is a custom function. We have to write its logic separately using the MFRC522 library functions.</p>
+<br>
+                <p>So your entire file should look something like this:</p>
+                <pre>
+                    <code class="language-javascript">
+#include &lt;SPI.h&gt;
+#include &lt;MFRC522.h&gt;
+
+#define RST_PIN 9 
+#define SS_PIN 10
+
+byte readCard[4];
+String MasterTag = "873FA939";	// REPLACE this Tag ID with your Tag ID!!!
+String tagID = "";
+
+// Create instances
+MFRC522 mfrc522(SS_PIN, RST_PIN);
+
+void setup() 
+{
+    // Initiating
+    Serial.begin(9600);
+    SPI.begin(); // SPI bus
+    mfrc522.PCD_Init(); // MFRC522
+    Serial.println("Access System");
+    pinMode(1, OUTPUT);
+    pinMode(0, OUTPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(0, LOW);
+}
+
+void loop() 
+{
+    //Wait until new tag is available
+    while (getID()) 
+    {
+    Serial.println(tagID);
+    
+    if (tagID == MasterTag) 
+    {
+        
+        Serial.println(" Access Granted!");
+        digitalWrite(0, HIGH);
+        delay(2000);
+        digitalWrite(0, LOW);
+    }
+    else
+    {
+        Serial.println(" Access Denied!");
+        digitalWrite(1, HIGH);
+        delay(2000);
+        digitalWrite(1, LOW);
+    }
+    
+        
+    delay(2000);
+    }
+}
+
+//Read new tag if available
+boolean getID() 
+{
+    // Getting ready for Reading PICCs
+    if ( ! mfrc522.PICC_IsNewCardPresent()) { //If a new PICC placed to RFID reader continue
+        return false;
+    }
+    if ( ! mfrc522.PICC_ReadCardSerial()) { //Since a PICC placed get Serial and continue
+        return false;
+    }
+    tagID = "";
+    for ( uint8_t i = 0; i &lt; 4; i++) { // The MIFARE PICCs that we use have 4 byte UID
+        //readCard[i] = mfrc522.uid.uidByte[i];
+        tagID.concat(String(mfrc522.uid.uidByte[i], HEX)); // Adds the 4 bytes in a single String variable
+    }
+    tagID.toUpperCase();
+    mfrc522.PICC_HaltA(); // Stop reading
+    return true;
+}
+                        </code>
+                        </pre>
+                <p>Yay, we’re finally done with the code!🎉</p>
+                    <br> 
+        <p>Now, we're in the homestretch to make it only work with ONLY YOUR student ID.</p>
+                    <ul>
+        <li>Open your Serial Monitor.</li>
+        <li>Try running the code:
+            <ul>
+                <li>If it runs without errors, that’s great 👏.</li>
+                <li>If there are 👾 errors 👾, try debugging the code and check the error message.</li>
+                <li>Try solving it on your own, but raise your hand if you need help.</li>
+            </ul>
+            
+            <br> 
+            
+            
+             <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 4</h4>
+                        Show your instructor your Access System flashing red with your ID.
+                    </div>
+            
+        </li>
+        <li>Tap your student ID card. It should flash red because it hasn't been set as the master ID yet.</li>
+        <li>The ID number should appear in the Serial Monitor.</li>
+        <li>Replace the ID number in the line that sets <code>MasterTag</code> at the beginning:
+            <ul>
+                <li>For example, if your ID number is "123", change the line to:  
+                    <i>String MasterTag = "123";</i>
+                </li>
+            </ul>
+        </li>
+        <li>After making that change, run the code again.</li>
+        <li>Your green LED should now flash when your student ID is tapped, and red for any other card.</li>
+        <li>Congratulations on your custom RFID Access System!</li>
+    </ul>
+
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 5</h4>
                         Show your instructor your Access System working with only YOUR ID!
                     </div>
                 </section>
@@ -362,13 +624,13 @@ void loop() {
             
             <li><strong>Further Readings</strong> 
                 <ul>
-                    <li> <a href="https://dl.acm.org/doi/abs/10.1145/3290605.3300796"> Kyub: A 3D Editor for Modeling Sturdy Laser-Cut Objects
+                    <li> <a href="https://www.atlasrfidstore.com/rfid-resources/rfid-beginners-guide/?srsltid=AfmBOopOrDfkuv5pk-b8hsrY-UvM8ZfgE_vZopbdeUAFlb73lhN8k-Ge"> Beginner's Guide to RFID
  </a></li>
                     
-          <li> <a href="https://dl.acm.org/doi/abs/10.1145/3639473.3665787">PopCore: Personal Fabrication of 3D Foamcore Models for Professional High-Quality Applications in Design and Architecture
+          <li> <a href="https://docs.arduino.cc/learn/starting-guide/getting-started-arduino/">Arduino Documentation
  </a></li>
            
-        <li> <a href="https://dl.acm.org/doi/10.1145/2470654.2481358"> LaserOrigami: laser-cutting 3D objects
+        <li> <a href="https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/"> Introductory MIT Circuits Course
 
  </a></li>
                    
