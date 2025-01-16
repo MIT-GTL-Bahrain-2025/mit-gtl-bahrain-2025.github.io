@@ -53,27 +53,36 @@
                     <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
                     <h2>🦺 Introduction & Safety</h2>(1 minute read)
                     <br> <br>
-                    <p>Mention how they will use cap sensing for next lab where they build the guitar, so they need to think of how they want to make their guitar keys. and design their guitar for next lab! </p>
+                    <p>In this lab, you will learn how to make a capacitive sensor from scratch!You will then use the capacitive sensors as input for your guitar hero lab. </p>
                     
                     
                     
-                    In this lab, you'll <b>create</b> a dynamic laser-cut calendar
-                        while learning how to:
+                    In this lab, you'll <b>create</b> a capacitive sensors and learn:
+                       
                     <br>
                     <br> 
                     <ul>
-                        <li> ✅ Use Fusion360 for 2D CAD sketches</li>
-                        <li> ✅ Learn how to make a lasercut sliding mechanism</li>
-                        <li>✅ Safely operate a laser cutter</li>
-                        <li> ✅ Post-process and assemble cut parts </li>
+                        <li> ✅ Basic principles of capacitive sensing</li>
+                        <li> ✅ How to use the Arduino built pin for a single capacitive sensing</li>
+                        <li>✅ How to connect to a capacitive touch multiplexer for multiple capacitive sensing input</li>
+                        <li> ✅ How to determine capacitive sensing sensitivity through resistors and process data </li>
+                       <li> ✅ How to use variuous matreials (spray paint, cloth, mesh, 3D printing filament) to create capacitive touch input with.</li>
+
+
+                    
                     </ul>
                     <p><strong>Before we start</strong>, please make sure you understand the following safety precautions:</p>
         <ul>
-            <li><strong>Material Compatibility:</strong> Ensure that the material is laser-cuttable, has a thickness under 0.25" (6.35mm), and is cut with the correct power/speed settings.</li>
-            <li><strong>Fumes:</strong> Keep ventilation on and wait before opening the lid after cutting.</li>
-            <li><strong>Eye Protection:</strong> Monitor the process without staring directly at the laser.</li>
-            <li><strong>Emergencies:</strong> In case of fire, do not open the laser cutter lid, simply stop the machine and alert the shop manager immediately. <a id="fabq"> </a></li>
-            <li><strong>Consultation:</strong> Always consult the D-Lab shop manager before cutting!</li>
+<li><strong>Electrical Wiring:</strong> Ensure your Arduino is disconnected from any power source before connecting components.</li>
+
+
+
+
+
+
+            <li><strong>Soldering:</strong> Always work in a well-ventilated area, wear protective gear, and avoid touching the hot soldering iron or molten solder.</li>
+
+
             
         </ul>
             
@@ -82,34 +91,28 @@
                 <hr>
 
             
-                    <img src=media/fab-quest-picture.png class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
                 <br>
             <h2> 🔨 Fabrication Quest of the Day </h2>
                 <ul>
-                    <li><strong>Today, you will CAD 2 parts:</strong>
+                    <li><strong>Today, you will will:</strong>
                         <ul>
-                            <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
-                            <li> (B) The day of the month slider (<strong>x1</strong>)</li>
+                            <li> Apply copper tape to a wooden template plank and solder it to the capacitive pins.</li>
+                         <li> Remix the guitar for your next lab by adding conductive material of your choice</li>
+
                         </ul>
                     </li>
-            <li><strong>And fabricate 1+ parts:</strong>
-                <ul>
-                    <li>(A) The rectangular calendar body (<strong>x1</strong>)</li>
-                    <li>(C) Your own <dfn title="add your own flair">“Remix”</dfn> to the assignment</li>
-                </ul>
-                    </li>
+    
                 </ul>
 
-                <b>Remixing</b>
-                <p>Remixing refers to you adding your own touch to a template so that it has your own creative touch to it. This will be a common theme throughout the labs.</p>
-
+    
                 <b>Your instructors will provide you with the following:</b>
             <a id="software"> </a>
                 <ul>
-                <li>(B) The day of the month slider (<strong>x1</strong>)</li>
-                <li>(D) Day of the week slider (<strong>x1</strong>)</li>
-                <li>(E) & (F) Slider stoppers (<strong>x2</strong>)</li>
-                <li>(G) The triangular leg joints (<strong>x2</strong>)  </li>
+                <li>Arduino </li>
+                <li> Capacitive Sensing multiplexer</li>
+                 <li> Wooden plank template</li>
+                <li>Copper Tape</li>
                 </ul>
 
  
@@ -126,6 +129,9 @@
                         <ul>
                             <li> <a href="https://www.autodesk.com/education/edu-software/fusion"> Fusion360 </a> (must download before workshop)</li>
                             <li> <a href="">Adobe Illustrator</a> <i> *Can download through Creative Cloud*</i> </li>
+                            <li> <a href="https://www.arduino.cc/en/software">Arduino</a> <i> </i> </li>
+
+
                     
                     </ul>
 
@@ -138,15 +144,23 @@
 
                         <h5>Hardware:</h5>
                         <ul>
-                            <li>Prefabricated pieces (<strong>x6</strong>)</li>
-                            <li>Wood boards (calendar)</li>
-                            <li>Wood glue <a id="part0"> </a></li> 
-                            <li>Sandpaper</li>
+                            <li>Prefabricated piece (<strong>x1</strong>)</li>
+                            <li>Copper Tape</li>
+                            <li>Solder </li> 
+                            <li>Wires</li>
+                            <li>Wire cutter</li>
+                            <li>Scissors</li>
+                            <li>Remix material: spray paint, conductive fielament, conductive mesh etc </li>
                             </ul>
 
                         <h5>Machines:</h5> 
                         <ul>
                     <li>Laser cutter</li>
+                    <li>Soldering iron</li>
+                    <li>3D printer</li>
+                     <li>Airbrush</li>
+
+
                         </ul>
 
                 </section>
@@ -157,7 +171,7 @@
                 <section class="mb-4">
                     <!-- Part 0: Understanding Fusion360 Workspace -->
                     
-                                        <img src=media/fab-quest-picture.png class="rounded mx-auto d-block img-fluid"> 
+                                        <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
 
 
                     <h4>Part (0): Principles of Capacitive Sensing- recap(2 mins)</h4>
