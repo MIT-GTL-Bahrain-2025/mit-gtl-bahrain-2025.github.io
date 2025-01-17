@@ -1,8 +1,8 @@
 [
     {
         "id": "team1",
-        "name": "Team 1",
-        "image": "assets/team_images/birth-tim.png",
+        "name": "team1",
+        "image": "assets/team_images/placeholder.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
         "members": ["Abdulaziz_Alhamad", "Ahmed_Bassam", "Ahmed_Hammad", "Ali_Abbas"],
@@ -15,12 +15,57 @@
         "category": "beginner"
     },
     {
-        "id": "team2",
-        "name": "Team 2",
+        "id": "WeBowling",
+        "name": "WeBowling",
         "image": "assets/team_images/team-tim.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
         "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
-        "members": ["Ali_Althawadi", "Batool_Albonni","Fariha_Akbar","Fatima_Ali"],
+        "members": ["Ali_Abbas", "Batool_Albonni","Maryam_AlBonni","Yousif_Aamir","Sana_Zainaba"],
+        "milestones": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "category": "advanced"
+    },
+    {
+        "id": "AgriBot",
+        "name": "AgriBot",
+        "image": "assets/team_images/team-tim.png",
+        "projectSketch": "assets/team_images/team_dog_project_sketch.png",
+        "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
+        "members": ["Nathalie_Ahmed", "Layan_Altam","Fariha_Akbar","Fatima_Ali","Fiza_Rana"],
+        "milestones": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "category": "advanced"
+    },
+    {
+        "id": "ICE_Wall_Art",
+        "name": "ICE Wall Art",
+        "image": "assets/team_images/team-tim.png",
+        "projectSketch": "assets/team_images/team_dog_project_sketch.png",
+        "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
+        "members": ["Noor_Hasan", "Meshael_Ajaj","Ibrahim_Aawan","Zain_Mayoof","Sumayya_Nazeer"],
+        "milestones": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "category": "advanced"
+    },
+    {
+        "id": "Navcket",
+        "name": "Navcket",
+        "image": "assets/team_images/team-tim.png",
+        "projectSketch": "assets/team_images/team_dog_project_sketch.png",
+        "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
+        "members": ["Ahmed_Bassam", "Ali_Althawadi","Yousif_Abuzuhaira","Ahmed_Hammad", "Mohammed_AlJalahma"],
         "milestones": [
             "",
             "",
@@ -29,4 +74,5 @@
         ],
         "category": "advanced"
     }
+    
 ]
