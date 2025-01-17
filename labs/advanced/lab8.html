@@ -243,21 +243,22 @@
                    
                     <p>
                         Lets first make our capacitive touch pad. Take a roughly finger sized piece of copper tape. Poke a M-M jumper cable through about 1/2cm from one end 
-                        (careful not to poke yourself). Then solder the jumper down to the copper. It should look like this:
+                        (careful not to poke yourself). Then solder the jumper down to the copper. You may also just attach a smallr piece 
+                        of copper tape on top to be faster. It should look like this:
                     </p>
                     <img src=media/CapTouch/capTouchPad-edit.png class=" mx-auto d-block img-fluid">
-                    <p>Let's build the circuit and write the code for one touch button, and then later repeat the procedure for the other touch buttons. To get started, follow these steps:
+                    <p>Let's build the circuit and write the code for one touch button, later we will show you how to do this for multiple touch inputs. To get started, follow these steps:
                     </p>
                     <ul>
-                        <li>Sender Pin: For the sender pin, you can use any GPIO pin on the Ardiuno. For this first touch button, we ask you to use GPIO pin 2.</li>
+                        <li><b> Sender Pin</b>: For the sender pin, you can use any GPIO pin on the Ardiuno. For this first touch button, we ask you to use GPIO pin 2.</li>
                         
-                        <li>Receiver Pin: For the receiver pin, it is best to use the ardiuno capactive touch pin 3. This pins is optimized to serve as receivers for capacitive sensing and therefore return cleaner signals, so we will use them for our sensing application. </li>
+                        <li><b>Receiver Pin</b>: For the receiver pin, it is best to use the ardiuno capactive touch pin 3. This pins is optimized to serve as receivers for capacitive sensing and therefore return cleaner signals, so we will use them for our sensing application. </li>
     
-                        <li>Resistor: We will examine a 10k (Yes 10k) Ohm resistor. Add the resistor to the circuit between your sender and receiver pin for your first touch button as shown in the schematic image above.</li>
+                        <li><b>Resistor</b>: We will examine a <span style=color:red>10k</span> (Yes 10k) Ohm resistor. Add the resistor to the circuit between your sender and receiver pin for your first touch button as shown in the schematic image above.</li>
                     </ul>
                     
-                    <p>The result should look something like this. The pad is tucked under the ardiuno for photo-taking sake</p>
-                    <img src=media/CapTouch/CapTouchSingle1.jpg class="mx-auto d-block img-fluid">
+                    <p>The result should look something like this.</p>
+                    <img src=media/CapTouch/captouch-single-schematic.png class="mx-auto d-block img-fluid">
 
                     <p>Install the CapacitiveSensor library by Paul Badger. Then, upload the following code to your ardiuno:</p>
                     <pre class="language-javascript">
@@ -301,7 +302,7 @@ void loop() {
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4> <a id="part2"> </a>
-                        Ask your instructor for a check-off on completing Part (1)
+                        Ask your instructor for a check-off on completing Part (1) and answer the question on the effect of swapping 10k Ohm with 1M Ohm.
                     </div>
         <br> 
                     <hr> 
@@ -310,16 +311,30 @@ void loop() {
 
                     <p>The MPR121 Adafruit shield allows us to use 12 capacitive touch sensors. Often we only need to know if the sensor is "touched" or "not-touched." 
                         The shield and library can set an automatic threshold for any object. The shield is made for alligator clips, in which we can clip to just about anything.
-                        We can also solder to it.
+                        We can also solder to it, which we would like you to do first.
                     </p>
 
-                    <p>Create a total of 6 capacitive touch sensors out of whatever material you want. Solder the headers onto the MPR121. Solder the jumpers onto the MPR121.
-                        It should look something like this (you don't have to stick the copper tape down, but your pads can't touch)
-                    </p>
+    
 
-                    <img src=media/CapTouch/CapTouch6Zoom2.jpg class="mx-auto d-block img-fluid">
+                    <img src=media/CapTouch/solder-captouch.png class="mx-auto d-block img-fluid">
                     <br>
-                    <img src=media/CapTouch/CapTouch6Assem.jpg class="mx-auto d-block img-fluid">
+                    
+                    
+                         <p>Create a total of 6 capacitive touch sensors out the copper tape (you can swap later with any material you want during your remix). </p>
+                         
+                                             <img src=media/CapTouch/template-pad.png class="mx-auto d-block img-fluid">
+
+<br> 
+                         
+                         <p> First apply the copper tape
+                         into the template pads, then place the wire on the pad, when it's snugly on the pad, put another layer of copper tape on top of it-- this is so it's not permenant and you can just swap out materials later much more quickly. 
+                         (Make sure the copper tape on adjacent pads don't touch!!).
+                         
+                                             <img src=media/CapTouch/add-copper-tape.png class="mx-auto d-block img-fluid">
+
+
+                    </p>
+                    
 
             
 
@@ -327,8 +342,8 @@ void loop() {
 <br> 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 3</h4> <a id="part3"> </a>
-                        Show your instructor that you can use 6 capacitive touch sensors
+                        <h4>Checkoff 2</h4> <a id="part3"> </a>
+                        Show your instructor that you have wired 6 capacitive touch sensors!
                     </div>
                     
 
@@ -346,7 +361,7 @@ void loop() {
            <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 3</h4> <a id="part4"> </a>
-                        Show your instructor that you can use 6 capacitive touch sensors
+                        Show your instructor that you can use 6 capacitive touch sensors with arduino code installed!
                     </div>
                     
         <hr>
@@ -356,17 +371,22 @@ void loop() {
                                         <img src=media/cap-sense-material.png class="rounded mx-auto d-block img-fluid"> 
 
 
-Explain what materials are available for them to use here; and say that they need to choose one new method other than using copper wires; 
-                    also tell them that for 3D printing the resistivity is going to be high etc; 
-                    <br>
-                    <ol>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item</li>
- <li>First item</li>
-  <li>Second item</li>
-  <li>Third item</li>
-                   </ol>     
+<p>You have access to the following materials for creating your touch-sensitive designs. Choose a method other than using copper tape to experiment with a new approach.</p>
+
+    <h5>1️⃣ Conductive Filament</h5>
+    <p>A 3D-printable material that contains conductive additives. Keep in mind that its resistivity is high, which might limit its performance for certain applications.</p>
+
+    <h5>2️⃣ Conductive Spray Paint</h5>
+    <p>A versatile option that can turn almost any surface conductive. It’s ideal for irregular shapes but may require careful application to ensure even coverage.</p>
+
+    <h5>3️⃣ Conductive Mesh</h5>
+    <p>A flexible, pre-made conductive material. Can also lasercut using the fiber laser cutter.</p>
+
+    <h5>4️⃣ Conductive Thread</h5>
+    <p>A thread with conductive properties, perfect for integrating into textiles or other flexible assemblies. Ccan be sewn into designs.</p>
+
+    <h5>📌 Choose Your Material</h5>
+    <p>Select one material other than copper tape for your project. Consider the requirements of your design, such as flexibility, resistivity, and application ease.</p> 
                         <br> 
                         
                     
