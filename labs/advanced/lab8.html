@@ -171,12 +171,13 @@
                 <section class="mb-4">
                     <!-- Part 0: Understanding Fusion360 Workspace -->
                     
-                                        <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
 
 
                     <h5>Part (0): Principles of Capacitive Sensing- RECAP (1 min)</h5>
 
-                    
+                                                            <img src=media/CapTouch/cap-sense-parameters.png class="rounded mx-auto d-block img-fluid"> 
+
+
                     
                     <h5>What is Capacitive Sensing?</h5>
     <p>Capacitive sensing is a versatile method for detecting touch and proximity. It’s widely used in devices like smartphones, touchpads, and interactive displays.</p>
@@ -200,25 +201,46 @@
                     <hr>
                     
                     <!-- Part 1: Designing the Calendar -->
-                    <h4>Part (1): Building a single-input Cap-Sensor w/ Arduino Cap-Sense Pin (20 mins)</h4>
-                    <p>
-                        We will implement touch sensing based on the principle of capacitive touch sensing. The circuit for capacitive touch sensing requires
-                        a sender pin, which outputs a signal, and a receiver pin, which listens to the signal. The sender and receiver pin have the touch
-                        button connected between them. When a user touches the touch button, the signal that was injected through the sender pin will take
-                        longer to discharge due to a capacitive object (finger) nearby. The microcontroller can measure this time difference and thereby detect touch.
-                    </p>
-                    <br>
-                    <p>
-                        To delay the discharge from the user's finger and make the time difference measurable on the ESP32, you will add a resistor between the sender
-                        and the receiver pin. A higher resistance enables more sensitive sensing (a 10MOhm resistor enables sensing of a finger up to 10cm distance,
-                        while a 10kOhm resistor would not make such a large distance detectable). However, higher resistance comes at the cost of speed because the
-                        signal takes longer to discharge. Since we only want to sense touch and do not need to sense hovering of a finger, we will use a 100kOhm resistor
-                        because it offers a good trade-off between sensitivity and sensing speed.
-                    </p>
-                    <div class="d-inline-flex row-cols-2">
+                    <h4>Part (1): Building a Single-input Cap-Sensor w/ Arduino Cap-Sense Pin (20 mins)</h4>
+                   
+                    
+                     <div class="d-inline-flex row-cols-2">
                         <img src=media/CapTouch/capsense.png class="w-auto mx-auto d-block img-fluid"> 
                         <img src=media/capTouch/circuit.png class="w-auto mx-auto d-block img-fluid"> 
                     </div>
+                    
+                       <h5>🔌 Circuit Setup</h5>
+    <p>We will implement touch sensing using the principle of capacitive touch sensing. The setup includes:</p>
+    <ul>
+        <li><strong>📤 Sender Pin:</strong> Outputs a signal.</li>
+        <li><strong>📥 Receiver Pin:</strong> Listens to the signal.</li>
+        <li><strong>🔘 Touch Button:</strong> Connected between the sender and receiver pins.</li>
+    </ul>
+
+    <h5>⚙️ How It Works</h5>
+    <p>When a user touches the touch button:</p>
+    <ul>
+        <li>The signal from the sender pin takes longer to discharge.</li>
+        <li>This happens because the user’s finger acts as a capacitive object. 🖐️</li>
+        <li>The microcontroller detects the touch by measuring the time delay in signal discharge. ⏱️</li>
+    </ul>
+                    <hr> 
+                    
+                    <br>
+                    <p>
+                        To delay the discharge from the user's finger and make the time difference measurable on the Arduino, you will add a resistor between the sender
+                        and the receiver pin.
+                    </p>
+                    
+                
+    <h5>⚙️ Choosing the Right Resistor</h5>
+    <ul>
+        <li>🔍 <strong>High Resistance (e.g., 10MΩ):</strong> Enables sensing a finger up to 10cm away but slows discharge, reducing speed.</li>
+        <li>⏱️ <strong>Low Resistance (e.g., 10kΩ):</strong> Faster discharge but less sensitive, unsuitable for larger distances.</li>
+        <li>👌 <strong>Optimal Choice (100kΩ):</strong> Balances sensitivity and speed, perfect for touch sensing without hover detection.</li>
+    </ul>
+                    
+                   
                     <p>
                         Lets first make our capacitive touch pad. Take a roughly finger sized piece of copper tape. Poke a M-M jumper cable through about 1/2cm from one end 
                         (careful not to poke yourself). Then solder the jumper down to the copper. It should look like this:
@@ -299,9 +321,10 @@ void loop() {
                     <br>
                     <img src=media/CapTouch/CapTouch6Assem.jpg class="mx-auto d-block img-fluid">
 
-                    <p>Using the shield is easy. Install the Adafruit MPR121 library. Then go to File -> Examples -> Adafruit MPR121 -> MP121test. 
-                        It should work out of the box.</p>
+            
 
+
+<br> 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 3</h4> <a id="part3"> </a>
@@ -313,8 +336,19 @@ void loop() {
                     <!-- Part 4: Assembly and Post-Processing -->
             <h4>Part (3): Arduino Code for CapSense Multiplexer Combination (5 minutes)</h4>
                     
+                      <p>Using the shield is easy. Install the Adafruit MPR121 library. Then go to File -> Examples -> Adafruit MPR121 -> MP121test. 
+                        It should work out of the box.</p>
                     
         
+        
+        <br> 
+        
+           <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 3</h4> <a id="part4"> </a>
+                        Show your instructor that you can use 6 capacitive touch sensors
+                    </div>
+                    
         <hr>
             
                     <h4>Part (4): Exploring Materials 🚨(Remixing)🚨(10 minutes)</h4>
@@ -360,8 +394,17 @@ Explain what materials are available for them to use here; and say that they nee
                                         <b> On use of conductive thread (make it like a real guitar!):</b>
 
 
+<br> 
+
+  <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 4</h4> <a id="part4"> </a>
+                        Pick a remix method you would like to explore for your guitar (or could be relevant to your final project!)
+                    </div>
 
                 <hr>
+                
+                
 
         <h4>Part (5): Designing a Guitar 🚨(Remixing)🚨 (5 minutes)</h4>
 
@@ -372,7 +415,7 @@ Explain what materials are available for them to use here; and say that they nee
             
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 6</h4> <a id="part6"> </a>
+                        <h4>Checkoff 5</h4> <a id="part6"> </a>
         Show the correctly imported and placed dxf to your instructor            </div>
         <hr> 
                 
