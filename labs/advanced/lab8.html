@@ -390,13 +390,30 @@ void loop() {
                         <br> 
                         
                     
-                                            <b> On Combining Fabrics with 3D Printing:</b>
+                                        <h5>🧵 Combining Fabrics with 3D Printing</h5>
+    <p>Integrating fabrics with 3D printing opens up so many design possibilities, especially when using conductive materials like 3D Printing filament or copper meshes. Here's how to approach this:</p>
 
+    <h5>1️⃣ Conductive Filament</h5>
+    <p>Conductive filament can be printed onto non-conductive fabric to create custom circuits or sensing areas. However, its high resistivity may limit performance in applications requiring low resistance.</p>
 
-                        <b> On Combining Fabrics with 3D Printing:</b> explain how this can be used for both the
-                    conductive filament and the conductive mesh and printing with non conductive filament etc 
-                    if the resistance is too high. note that you can laser-cut fabric and that 
-                    
+    <h5>2️⃣ Conductive Mesh</h5>
+    <p>Conductive mesh is an excellent alternative since copper is a good conductor-- but it is limiting in form factor. You can combine it with non-conductive 3D printing material to create hybrid structures, leveraging the mesh's low resistance for improved functionality.</p>
+
+    <h5>⚙️ Process Workflow</h5>
+    <ol>
+        <li><strong>Prepare the Fabric:</strong> For non-mesh fabrics, laser-cut holes where printing is required. Mesh fabrics naturally have holes and don’t need additional cutting.</li>
+        <li><strong>Initial Printing:</strong> Print the first two layers of your 3D design directly onto the print bed.</li>
+        <li><strong>Place the Fabric:</strong> Tension the fabric (mesh or non-mesh) over the print bed, ensuring it aligns with your design. You may use painters tape to do so!</li>
+        <li><strong>Continue Printing:</strong> Print the remaining layers on top of the fabric to integrate it into the structure.</li>
+    </ol>
+
+    <h5>🔄 Material Combinations</h5>
+    <ul>
+        <li>🧶 Use <strong>conductive filament</strong> on non-conductive fabric, keeping in mind the filament’s high resistivity.</li>
+        <li>🕸️ Use <strong>non-conductive filament</strong> on conductive mesh to combine the benefits of both materials.</li>
+    </ul>
+    
+    
                                           <img src=media/print-on-fabric.png class="rounded mx-auto d-block img-fluid"> 
 
 
@@ -405,13 +422,12 @@ void loop() {
 
                   <br> 
                     
-                    <b> On Spray-painting: </b> encourge them to use masking techniques learned in lab XX, and mention that for connections, we recommens
-                        using conductive screws and putting a wire around it etc. 
+                    <b> On Spray-painting: </b> You may also experiment with conductive spray-paintable material, which can conform to any surface. 
 
 <br> 
                     
                     
-                                        <b> On use of conductive thread (make it like a real guitar!):</b>
+                                        <b> On use of conductive thread (make it like a real guitar!): Try playing around with conductive thread- making your guitar "strings" conductive!</b>
 
 
 <br> 
@@ -429,9 +445,8 @@ void loop() {
         <h4>Part (5): Designing a Guitar 🚨(Remixing)🚨 (5 minutes)</h4>
 
        Based on the material you chose, sketch your guitar and how you want to wire connections to the material of your choice 
-                    (ie plan this out). We have also provided a DXF file for a guitar here, but please feel free to alter as long as you do not go above the size limit of XX cm by XXcm,
-                    and have the holes which house the arduino.
-                
+                    (ie plan this out). We have also provided a <a href="media/guitar-hero-5mm.dxf"> </a>DXF file for a guitar here, but please feel free to alter as long as you do not go above the size limit of the guitar given to you and not 
+                    remove any holes for finger joints and buttons and what-not.                
             
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
@@ -441,18 +456,6 @@ void loop() {
                 
                 
                 
-                <h4>Part (6):  Fabrication Time! (30 minutes)</h4>
-
-            
-                <hr> 
-                
-                
-                
-                <h4>Part (7): Putting it all together! (5 minutes)</h4>
-                   
-                        <h4>Checkoff 8</h4>
-        Show the exported file to your instructor to start lasercutting        </div>      
-                <hr> 
 
            
         <p>Congratulations, your multi-input capacitive sensor is ready! 🎉</p>
@@ -463,7 +466,7 @@ void loop() {
                 <section class="mb-4">
                     <h2>Discussion & Reflections</h2>
         <ol>
-            <li><strong>Discuss the advantages and limitations of using laser cutting for digital fabrication.</strong>
+            <li><strong>Discuss the advantages and limitations of using capacitive sensing?</strong>
                 <ul>
                     <li>What can we make? What is difficult to make?</li>
                 </ul>
@@ -476,13 +479,16 @@ void loop() {
             
             <li><strong>Further Readings</strong> 
                 <ul>
-                    <li> <a href="https://dl.acm.org/doi/abs/10.1145/3290605.3300796"> Kyub: A 3D Editor for Modeling Sturdy Laser-Cut Objects
+                    <li> <a href="https://dl.acm.org/doi/full/10.1145/3544548.3581361"> MechSense: A Design and Fabrication Pipeline for Integrating Rotary Encoders into 3D Printed Mechanisms
+
  </a></li>
                     
-          <li> <a href="https://dl.acm.org/doi/abs/10.1145/3639473.3665787">PopCore: Personal Fabrication of 3D Foamcore Models for Professional High-Quality Applications in Design and Architecture
+          <li> <a href="https://dl.acm.org/doi/10.1145/3472749.3474806">MetaSense: Integrating Sensing Capabilities into Mechanical Metamaterial
+
  </a></li>
            
-        <li> <a href="https://dl.acm.org/doi/10.1145/2470654.2481358"> LaserOrigami: laser-cutting 3D objects
+        <li> <a href="https://dl.acm.org/doi/10.1145/2807442.2807503"> Capricate: A Fabrication Pipeline to Design and 3D Print Capacitive Touch Sensors for Interactive Objects
+
 
  </a></li>
                    
