@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                         ${team.milestones
                             .map(
                                 (milestone) => `
-                                <div class="col-6 col-md-3 mb-3">
-                                    <a href="team.html?team=${team.id}">
-                                        <img src="${milestone || placeholderImage}" alt="Milestone" class="img-fluid" 
-                                            style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
+                                <div class="col-6 mb-3">
+                                    <a href="team.html?team=${team.id}" class="img-border">
+                                        <img src="${milestone || placeholderImage}" alt="Milestone" class="img-fluid img-border" 
+                                            style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px;">
                                     </a>
                                 </div>`
                             )
