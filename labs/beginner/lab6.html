@@ -371,7 +371,7 @@ void loop() {
                         make a simple Access System. A green LED will flash when the correct card is read while a red 
                         LED will flash when a wrong card is read. Let's construct our circuit first. We only need to make a 
                         small addition. The same way that we did the LED circuit in a previous part, wire one circuit for a green LED 
-                        and one for a red LED. The green LED should use Pin 0, and the red LED should use Pin 1.
+                        and one for a red LED. The green LED should use Pin 2, and the red LED should use Pin 3. The picture is a little wrong.
                     </p>
                     <img src=media/lab6/rfid-all-schem.png class="rounded mx-auto d-block img-fluid">
                     <br>
@@ -513,10 +513,10 @@ void setup()
     SPI.begin(); // SPI bus
     mfrc522.PCD_Init(); // MFRC522
     Serial.println("Access System");
-    pinMode(1, OUTPUT);
-    pinMode(0, OUTPUT);
-    digitalWrite(1, LOW);
-    digitalWrite(0, LOW);
+    pinMode(3, OUTPUT);
+    pinMode(2, OUTPUT);
+    digitalWrite(3, LOW);
+    digitalWrite(2, LOW);
 }
 
 void loop() 
@@ -530,16 +530,16 @@ void loop()
     {
         
         Serial.println(" Access Granted!");
-        digitalWrite(0, HIGH);
+        digitalWrite(2, HIGH);
         delay(2000);
-        digitalWrite(0, LOW);
+        digitalWrite(2, LOW);
     }
     else
     {
         Serial.println(" Access Denied!");
-        digitalWrite(1, HIGH);
+        digitalWrite(3, HIGH);
         delay(2000);
-        digitalWrite(1, LOW);
+        digitalWrite(3, LOW);
     }
     
         

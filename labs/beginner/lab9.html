@@ -24,7 +24,7 @@
         <!-- Lab 1 Page Heading -->        
         <div class="col-md-4">
             <div class="sticky-top" style="padding-top:100px;" >
-                <p>Total Time: 1.75 hours</p>
+                <p>Total Time: 1 hour and 45 mins</p>
                 <h5>Quick Links</h5>
                 <ul>
                     <li><a href="#introduction">Introduction & Safety</a></li>
@@ -152,7 +152,6 @@
                 <section class="mb-4">
                     <!-- Part 0: Understanding Fusion360 Workspace -->
                     <h4>Part (0): Downloading Processing and its libraries <a id="part0"> </a></h4>
-                    <br> 
                     
                 <h5>Setup:</h5>
 
@@ -165,16 +164,26 @@
             <li>Click Sketch > Import Library… > Manage Libraries > Serial</li>
         </ul>
         </ul>
-        
+        <img src=media/lab9/install-lib.gif class="rounded mx-auto d-block img-fluid"> 
                     <hr>
                     
                     <!-- Part 1: Getting a Preliminary GUI -->
                     <h4>Part (1): Getting a Preliminary GUI (10 mins)  <a id="part1"> </a></h4>
-                    <p> Processing uses a programming language called Java. To make a basic window, we will introduce you to a library, controlP5. A library is basically someone else's code and 
-                        you borrow the functions that they have written and simply call them. To use the library, you have to import it 
+                    <p> Processing uses a programming language called Java. Just like Arduino, it has two main functions: 
+                        setup() and draw(). setup() is similar to the setup() in Arduino. It runs once at the beginning. draw() 
+                        is synonymous with loop() from Arduino where the function runs over and over. draw(), in fact, runs 60 
+                        times a second. This means that you can make simple animations!
+                    </p>
+                    <p> To make a basic window, we will introduce you to a library, <b>controlP5</b>. A library is basically someone else's code and 
+                        you borrow the functions that they have written and simply call them. Most libraries have their documentation 
+                    online. Learning to look up documentation is an important skill for any programmer. The controlP5 library can be found 
+                    <a href="https://www.sojamo.de/libraries/controlP5/"> here.</a></p>
+
+
+                        <p>To use the library, you have to import it 
                         before you start using it. We won't go deeply into it, but there are objects in programming that contain certain 
-                        properties. In the following code, we make a ControlP5 object called cp5. This oject has properties and functions like adding 
-                        buttons.
+                        properties. In the following code, we make a ControlP5 object called <i>cp5</i>. This oject has properties and functions like adding 
+                        buttons. And to run the code, press the play button on the top left.
                         Let’s test some preliminary code, type this, and run:</p>
                     <pre>
                         <code class="language-javascript">
@@ -189,28 +198,50 @@ void setup(){
 void draw(){
     background(50, 70, 100); //background color of window (r, g, b) from 0-255
     //let's give title to our window
+    // we have a pen we draw with and we select its color with the fill function
     fill(0, 0, 0); // text color (r, g, b)
     text("GUITAR HERO", 100, 30); // ("text", x coord, y coord) in pixels
 }
                         </code>
                         </pre>
 
-                        <p>You should get a blue window with Guitar Hero.</p>
+                        <p>You should get a dark blue window with Guitar Hero.</p>
+                        <img src=media/lab9/first-code.png class="rounded mx-auto d-block img-fluid"> 
                     <br> 
-                    <p>Now, let's add a Button and font. Just add this code inside the setup() function.</p>
+                    <p>Now, let's add a Button and font. So your code should look like this:
+                    </p>
                     <pre>
                         <code class="language-javascript">
-font = createFont("calibri light", 20);
+import controlP5.*; // import ControlP5 library
+PFont font; 
 
-cp5.addButton("START")  // START is button name
-    .setPosition(100, 50)  // x and y coords of upper left corner
-    .setSize(100, 80)     //(width, height) in pixels
-    .setFont(font)
-    ;
+ControlP5 cp5; // create ControlP5 object
+
+void setup(){
+    size(300, 400); //window size, (width, height) in pixels
+    
+    font = createFont("ComicSansMS", 20); //select the font
+
+    cp5 = new ControlP5(this); // Initialize the ControlP5 object
+
+    cp5.addButton("START")  // START is button name
+        .setPosition(100, 50)  // x and y coords of upper left corner
+        .setSize(100, 80)     //(width, height) in pixels
+        .setFont(font)
+        ;
+}
+
+void draw(){
+    background(50, 70, 100); //background color of window (r, g, b) from 0-255
+    //let's give title to our window
+    fill(0, 0, 0); // text color (r, g, b)
+    text("GUITAR HERO", 100, 30); // ("text", x coord, y coord) in pixels
+}
                         </code>
                         </pre>
                         <p>Rerun and you should see a button.</p>
-
+                        <img src=media/lab9/btn-font.png class="rounded mx-auto d-block img-fluid"> 
+                        <br>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4> <a id="part2"> </a>
@@ -328,6 +359,10 @@ void loop() {
                         let's turn on the iron to 450 degrees Celsius. For this whole process, don't be afraid 
                         to ask for help from one of your instructors. Soldering can be daunting at first.
                     </p>
+                    <p>This YouTube video shows how to solder on a cicruit board and how to solder on wires. The wires part is most relevant to this lab.</p>
+                    <iframe width="560" height="310" class="embed-responsive-item" src="https://www.youtube.com/embed/Qps9woUGkvI?si=WBCRzVkY6fdMaffp" title="YouTube video player"  allowfullscreen></iframe>
+                    <br><br>
+                    <h5>Below is also a quick tutorial as well if you are already familiar with soldering:</h5>
                     <p>Cut a long piece of wire (about 25 cm). Strip the wire to expose some of the metal.</p>
                     <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
                     <p>Now, bring the solder, soldering iron, the wire, and the leg of the button together.
