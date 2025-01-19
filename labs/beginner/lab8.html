@@ -220,10 +220,14 @@ void loop() {
                     </div>
                     <hr>
 
-                    <h4 id="part2">Part (2): Determining Ambient Light</h4>
+                    <h4 id="part2">Part (2): Determining Ambient Light (10 minutes)</h4>
                     <p>
                         Now we can read the values from our photoresistor. Before we write an algorithm for our robot to follow a bright light, we should clean our sensor data. Our algorithm will decide
-                        the driving direction based off differences between sensors, so we want to amplify the difference. A bright room will have high base values for all sensors and the change from a flashlight will be relatively small. 
+                        the driving direction based off differences between sensors, so we want to amplify the difference. 
+                        
+                        <br> <br>
+                        
+                        A bright room will have high base values for all sensors and the change from a flashlight will be relatively small. 
                         We will subtract the ambient value from the sensors. 
                         <strong>Write the values for the ambient values of each sensor. Put above setup()</strong>                   
                      </p>   
@@ -242,13 +246,13 @@ int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
                         </code></pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 2</h4>
+                        <h4>Checkoff 3</h4>
                         <a id="part2"></a>
                         Ask your instructor for a check-off on completing Part (2). Show the serial monitor with the adjusted values of the photoresistors.
                     </div>
                     <hr>
 
-                    <h4 id="part2">Part (3): Writing a Nicer Motor Function</h4>
+                    <h4 id="part2">Part (3): Writing a Nicer Motor Function (20 minutes) </h4>
 
                     <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255 instead of 0-255.
                     </p>
@@ -290,14 +294,14 @@ setRightSpeed(rightValue); // right photoresistor value
                     </code></pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 3</h4>
+                        <h4>Checkoff 4</h4>
                         <a id="part3"></a>
                         Ask your instructor for a check-off on completing Part (3). Show the motor speed changes in response to the photoresistor values.
                     </div>
                     <hr>
 
                     <!-- Part 1: Assembling the Chassis -->
-                    <h4 id="part4">Part (4): Light Following BANG-BANG</h4>
+                    <h4 id="part4">Part (4): Light Following BANG-BANG (15 minutes)</h4>
                     <p>The field of robotics control is enormous. The robot we have made is simple, but with good sensors and control it can exhibit complex behavior such as light
                         following and wall following.
                         We will start with a controller called a BANG-BANG controller and then move to a proportional controller. The code for these controllers is relatively 
@@ -363,7 +367,7 @@ void loop() {
 }
                     </code></pre>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 4</h4>
+                        <h4>Checkoff 5</h4>
                         <a id="part4"></a>
                         Ask your instructor for a check-off on completing Part (4). Show the robot following the light.
                     </div>
@@ -428,7 +432,7 @@ void loop() {
                     </code></pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 5</h4>
+                        <h4>Checkoff 6 </h4>
                         <a id="part5"></a>
                         Ask your instructor for a check-off on completing Part (5). Show proportional control.
                     </div>
@@ -447,7 +451,7 @@ void loop() {
                     </p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 6</h4>
+                        <h4>Checkoff 7</h4>
                         <a id="part6"></a>
                         Ask your instructor for a check-off on completing Part (6). We will check correct wiring.
                     </div>
@@ -487,7 +491,7 @@ void loop() {
                     <p>We know this is pretty vague, but its an important skill to learn how to use new sensors/parts.</p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 7</h4>
+                        <h4>Checkoff 8</h4>
                         <a id="part7"></a>
                         Ask your instructor for a check-off on completing Part (7). Show the ultrasound working.
                     </div>
@@ -564,7 +568,7 @@ void loop() {
                     </pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 8</h4>
+                        <h4>Checkoff 9</h4>
                         <a id="part8"></a>
                         Ask your instructor for a check-off on completing Part (8) Wall Following.
                     </div>
@@ -586,7 +590,7 @@ void loop() {
                         <li>Stepper motor</li>
                     </ol>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 9</h4>
+                        <h4>Checkoff 10</h4>
                         <a id="part9"></a>
                         Ask your instructor for a check-off on completing Part (9) Remix Sensor.
                 </section>
