@@ -107,15 +107,38 @@
                 <!-- Procedure Section -->
                 <section class="mb-4">
                     <!-- Part 0: Reading Values from Photoresistors -->
-                    <h4 id="part1">Part (1): Reading Values from Photoresistors</h4>
+                    <h4 id="part1">Part (1): Reading Values from Photoresistors (1 hour)</h4>
                     <p>It's time we used our Arduino to sense the outside world!
                         
                         <br> 
                         There are hundreds of different types of sensors we could use, but we are going to start with the most simple. The principles we learn here will apply to implementing all sensors with Arduino.</p>
-                    <p>Our first sensor is a photoresistor. A photoresistor is a special type of resistor whose resistance depends on the amount of light that shines on it. Higher luminosity decreases the resistance. They are simple, inexpensive, and effective for detecting relative brightness, making them ideal for applications like guiding a robot toward a light source.</p>
-                    <strong>Always have your Arduino unpowered when breadboarding.</strong>
+                    <p>Our first sensor is a photoresistor. A photoresistor is a special type of resistor whose resistance depends on the amount of light that shines on it. Its resistance decreases as light increases. It's simple, affordable, and perfect for detecting brightness, such as guiding a robot toward light..</p>
+                  
+                    <br> 
+                    
+                    
+                    <strong>⚠️Unplug your Arduino when breadboarding ⚠️</strong>
+                    
+                    <br> 
+                    <br> 
+                    
                     <ol>
-                        <li>Wire your photoresistor and 10kOhm resistor as shown below. The yellow wire is going to A0 (analog input). Red to 5V. Black to Gnd. This has created a voltage divider. Because the resistance of the photoresistor changes with light, it will change the voltage at A0.</li>
+                        <li>On the breadboard atop your Mr. Roboto, wire your photoresistor and 10kOhm resistor as shown in the circuit diagram below. 
+                            
+                            <br> 
+                            <ol> 
+                            
+                            
+                
+                            
+                           <li>  The yellow wire is going to <b>A0</b> (analog input) </li>
+                            <li>Red to <b>5V</b></li> 
+                            <li>Black to <b>Gnd</b></li>
+                            
+                            
+                            </ol>
+                            <br> 
+                            This has created a voltage divider. Because the resistance of the photoresistor changes with light, it will change the voltage at A0.</li>
                         <img src="media/lab78/PhotoBreadboard.png" class="rounded mx-auto d-block img-fluid mt-3">
                         <li>Now we can read the resistance value through the analog pin A0. It will be converted to an integer between 0-1023. Write the following code to your Arduino.</li>
                         <pre class = "language-javascript"><code>
