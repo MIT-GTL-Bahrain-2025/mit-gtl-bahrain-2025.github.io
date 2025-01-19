@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 8: Building a Mr. Roboto (Part-1): Motors!</title>
+    <title>Lab 8: Building a Mr. Roboto (Part-2): Sensors!</title>
     <!-- Bootswatch Litera CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
@@ -47,9 +47,16 @@
             <!-- Introduction Section -->
             <div class="col-md-8" style="padding-top:100px;">
                 <section class="mb-4">
-                    <h1 class="mb-5"><a id="introduction">Lab 8: Building a Mr. Roboto (Part-1): Motors!</a></h1>
-                    <img src="media/lab78/RobotAssem.jpg" class="rounded mx-auto d-block img-fluid">
-                    <p>This is the second in a series of two labs that will introduce you to building and programming your own robot. In this lab, we’ll extend the functionality of your robot by adding sensors, allowing it to interact with its environment. You’ll start by integrating photoresistors to guide your robot toward the brightest light. Then, you’ll choose another sensor to give your robot additional behaviors, such as obstacle avoidance or wall following. By the end of the lab, your robot will sense and adapt to its surroundings autonomously.</p>
+                    <h1 class="mb-5"><a id="introduction">Lab 8: Building a Mr. Roboto (Part-2): Sensors!</a></h1>
+                    <img src="media/lab78/motors-lab-gif-ezgif.com-video-to-gif-converter.gif" class="rounded mx-auto d-block img-fluid">
+                    
+                    <br> 
+                    
+                    <p>This is the second in a series of two labs that will introduce you to building and programming your own robot. In this lab, we’ll extend the functionality of your robot by adding sensors, allowing it to interact with its environment. 
+                        You’ll start by integrating photoresistors to guide your robot toward the brightest 🌟 light 🌟. 
+                        
+                        <br> <br> 
+                        Then, you’ll choose another sensor to give your robot additional behaviors, such as obstacle avoidance or wall following. By the end of the lab, your robot will sense and adapt to its surroundings autonomously.</p>
                     
                     <h2>🦺 Safety and Important Tips</h2>
                     <p>(1 minute read)</p>
@@ -86,11 +93,15 @@
                     <h5>Hardware/Electronics</h5>
                     <p>The following will be provided to you.</p>
                     <ul>
+                        <li>Assembled Mr. Roboto from <a href="https://mit-gtl-bahrain-2025.github.io/labs/beginner/lab7.html">previous lab</a></li>
                         <li>Ultrasonic Sensor</li>
                         <li>Ultrasonic Bracket</li>
                         <li>Jumper Wires</li>
                         <li>Photoresistors <strong>(3x)</strong></li>
                         <li>10kOhm Resistors <strong>(3x)</strong></li>
+                        <li>Flashlight (x1) </li>
+                        <li>Misc sensors for Remix (color, IMU, ultrasonic etc) </li>
+                    
                     </ul>
                     <h5>Machines:</h5>
                     <ul>
@@ -102,12 +113,23 @@
                 <!-- Procedure Section -->
                 <section class="mb-4">
                     <!-- Part 0: Reading Values from Photoresistors -->
-                    <h4 id="part1">Part (1): Reading Values from Photoresistors</h4>
-                    <p>It's time we used our Arduino to sense the outside world. There are hundreds of different types of sensors we could use, but we are going to start with the most simple. The principles we learn here will apply to implementing all sensors with Arduino.</p>
-                    <p>Our first sensor is a photoresistor. A photoresistor is a special type of resistor whose resistance depends on the amount of light that shines on it. Higher luminosity decreases the resistance. They are simple, inexpensive, and effective for detecting relative brightness, making them ideal for applications like guiding a robot toward a light source.</p>
-                    <strong>Always have your Arduino unpowered when breadboarding.</strong>
+                    <h4 id="part1">Part (1): Reading Values from Photoresistors (1 hour)</h4>
+                    <p>It's time we used our Arduino to sense the outside world!
+                        
+                        <br> 
+                        There are hundreds of different types of sensors we could use, but we are going to start with the most simple. The principles we learn here will apply to implementing all sensors with Arduino.</p>
+                    <p>Our first sensor is a photoresistor. A photoresistor is a special type of resistor whose resistance depends on the amount of light that shines on it. Its resistance decreases as light increases. It's simple, affordable, and perfect for detecting brightness, such as guiding a robot toward light..</p>
+                  
+                    <br> 
+                    
+                    
+                    <strong>⚠️Unplug your Arduino when breadboarding ⚠️</strong>
+                    
+                    <br> 
+                    <br> 
+                    
                     <ol>
-                        <li>Wire your photoresistor and <strong> 10kOhm resistor </strong> as shown below. The yellow wire is going to A0 (analog input). Red to 5V. Black to Gnd. This has created a voltage divider. Because the resistance of the photoresistor changes with light, it will change the voltage at A0.</li>
+                        <li>Wire your photoresistor and 10kOhm resistor as shown below. The yellow wire is going to A0 (analog input). Red to 5V. Black to Gnd. This has created a voltage divider. Because the resistance of the photoresistor changes with light, it will change the voltage at A0.</li>
                         <img src="media/lab78/PhotoBreadboard.png" class="rounded mx-auto d-block img-fluid mt-3">
                         <li>Now we can read the resistance value through the analog pin A0. It will be converted to an integer between 0-1023. Write the following code to your Arduino.</li>
                         <pre class = "language-javascript"><code>
@@ -130,7 +152,21 @@ void loop() {
 }
                         </code></pre>
                         <li>What is the ambient value in the room? Try shining your flashlight directly on it. What is the largest value you can achieve?</li>
-                        <li>Add 2 more resistors and photoresistor pairs, wiring to A1, and A2. Ensure you have spaced them out and angled them slightly forward. Refer to the images below</li>
+                       
+                        
+                        
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 1</h4>
+                        <a id="part1"></a>
+                        Ask your instructor for a check-off on adding and testing your photoresistor. Show the serial monitor with the values, and answer question on largest value for ambient room light!
+                    </div>    
+                        
+                       
+                        
+                        <br> 
+                        
+                        
+                        <li>Next, add 2 more resistors and photoresistor pairs, wiring to A1, and A2. Ensure you have spaced them out and angled them slightly forward. Refer to the images below</li>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <img src="media/lab78/PhotoBreadboard1.jpg" class="rounded mx-auto d-block img-fluid mt-3">
@@ -165,9 +201,9 @@ void loop() {
                     </ol>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 1</h4>
+                        <h4>Checkoff 2</h4>
                         <a id="part1"></a>
-                        Ask your instructor for a check-off on completing Part (1). Show the serial monitor with the values of the photoresistors.
+                         Show the serial monitor with the values of the photoresistors, and answer instructor question on why additional photoresistors were added.
                     </div>
                     <hr>
 
@@ -199,6 +235,7 @@ int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
                     </div>
                     <hr>
 
+                    <h4 id="part2">Part (3): Writing a Nicer Motor Function</h4>
                     <h4 id="part2">Part (3): Writing a Nicer Motor Function</h4>
 
                     <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255 instead of 0-255.
@@ -319,7 +356,7 @@ void loop() {
                         Ask your instructor for a check-off on completing Part (4). Show the robot following the light.
                     </div>
                     <hr>
-                    <h4 id="part4">Part (4): Light Following Proportional Controller</h4>
+                    <h4 id="part4">Part (5): Light Following Proportional Controller</h4>
                     <p>
                         Proportional control is the first step of a PID controller (a classic controller used all over robotics). This controller changes the size of 
                         the speed boost based off the amount of light intensity deviation between the middle and sides. The response is
@@ -404,7 +441,7 @@ void loop() {
                     </div>
                     <hr>
 
-                    <h4 id="part7">Part (6): Using the Ultrasound</h4>
+                    <h4 id="part7">Part (7): Using the Ultrasound</h4>
                     <img src="media/lab78/RobotUltraSoundPins.jpg" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
                     <p> This is a very common sensor and there are many tutorials of how to use it online. You will rarely
                         know exactly how to program a sensor from memory. Use the internet to make/find a function called measureDistance() that returns an integer of the distance from the 
