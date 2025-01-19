@@ -111,7 +111,7 @@
                 <!-- Procedure Section -->
                 <section class="mb-4">
                     <!-- Part 0: Reading Values from Photoresistors -->
-                    <h4 id="part1">Part (1): Reading Values from Photoresistors (1 hour)</h4>
+                    <h4 id="part1">Part (1): Reading Values from Photoresistors (45 minutes)</h4>
                     <p>It's time we used our Arduino to sense the outside world!
                         
                         <br> 
@@ -372,7 +372,7 @@ void loop() {
                         Ask your instructor for a check-off on completing Part (4). Show the robot following the light.
                     </div>
                     <hr>
-                    <h4 id="part4">Part (5): Light Following Proportional Controller</h4>
+                    <h4 id="part4">Part (5): Light Following Proportional Controller (10 minutes) </h4>
                     <p>
                         Proportional control is the first step of a PID controller (a classic controller used all over robotics). This controller changes the size of 
                         the speed boost based off the amount of light intensity deviation between the middle and sides. The response is
@@ -439,7 +439,7 @@ void loop() {
                     <hr>
 
                     <!-- Part 2: Driving the Robot -->
-                    <h4 id="part6">Part (6): Ultrasound Connection</h4>
+                    <h4 id="part6">Part (6): Ultrasound Connection (15 minutes) </h4>
                     <img src="media/lab78/HC-SR04.png" class="rounded mx-auto d-block img-fluid mb-2">
                     <p>While the photoresistors are a rather simple sensor, the framework we have made will allow us to slot in another more complex sensor. We will use a ultrasonic distance sensor to follow a wall.
                         The ultrasonic sensor we are using is the HC-SR04. It has a range of up to 400cm. Get it, its servo mount and 4 long M-F jumper wires. </p>
@@ -450,6 +450,13 @@ void loop() {
                         GND respectively. 
                     </p>
 
+
+<br> 
+
+
+                    <img src="media/lab78/RobotUltraSoundPins-edit.png" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
+
+<br> 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 7</h4>
                         <a id="part6"></a>
@@ -457,9 +464,8 @@ void loop() {
                     </div>
                     <hr>
 
-                    <h4 id="part7">Part (7): Using the Ultrasound</h4>
-                    <img src="media/lab78/RobotUltraSoundPins.jpg" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
-                    <p> This is a very common sensor and there are many tutorials of how to use it online. You will rarely
+                    <h4 id="part7">Part (7): Using the Ultrasound (15 minutes) </h4>
+                    <p> An Ultrasound is a very common sensor and there are many tutorials of how to use it online. You will rarely
                         know exactly how to program a sensor from memory. Use the internet to make/find a function called measureDistance() that returns an integer of the distance from the 
                         ultrasonic sensor. Then, upload the following code and move your hand in front of the ultrasonic sensor and make sure it responds as you expect.
                     </p>
@@ -497,8 +503,8 @@ void loop() {
                     </div>
                     <hr>
 
-                    <h4 id="part8">Part (8): Wall Following</h4>
-                    <p>Now we can use this function and our proportional controller to track a wall. Angle your ultrasonic sensor at about 80degrees
+                    <h4 id="part8">Part (8): Wall Following (20 minutes) </h4>
+                    <p>Now we can use this function and our proportional controller to track a wall. Angle your ultrasonic sensor at about <b>80 degrees</b>
                         from straight forward (pointing mostly left). It is important that it is not at 90 degrees. (Mirror of the image below).
                     </p>
                     <img src="media/lab78/UltraSoundOrientation.png" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
@@ -575,7 +581,7 @@ void loop() {
                     <hr>
 
                     <!-- Part 3: Remix Driving -->
-                    <h4 id="part9">Part (9): Remix Sensor</h4>
+                    <h4 id="part9">Part (9): 🚨 Remix Sensor🚨 (OPTIONAL) </h4>
                     <p>Now that know how to write code for a given sensor, pick a sensor/output that you think will be useful for your project and make it work. This could
                         be spinning a stepper motor, using a temperature or color sensor, or even the IMU. If you are unsure of a direction, ask your instructor for suggestions.
                         Below is a list of inputs and outputs you can use.
