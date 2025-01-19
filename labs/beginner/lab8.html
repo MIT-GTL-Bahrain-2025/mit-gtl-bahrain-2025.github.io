@@ -81,13 +81,16 @@
                     <h2>🏗️ Software & Hardware</h2>
                     <h5>Software:</h5>
                     <ul>
-                        <li><a href="https://www.autodesk.com/education/edu-software/fusion">Fusion360</a> Arduino IDE</li>
+                        <li>Arduino IDE</li>
                     </ul>
-                    <h5>Hardware:</h5>
+                    <h5>Hardware/Electronics</h5>
+                    <p>The following will be provided to you.</p>
                     <ul>
-                        <li>3mm x 15 (<strong>x20000002</strong>)</li>
-                        <li>2.5mm x 15 (<strong>x1231232</strong>)</li>
-                        <li>4mm x 15 (<strong>x22 million</strong>)</li>
+                        <li>Ultrasonic Sensor</li>
+                        <li>Ultrasonic Bracket</li>
+                        <li>Jumper Wires</li>
+                        <li>Photoresistors <strong>(3x)</strong></li>
+                        <li>10kOhm Resistors <strong>(3x)</strong></li>
                     </ul>
                     <h5>Machines:</h5>
                     <ul>
@@ -104,12 +107,12 @@
                     <p>Our first sensor is a photoresistor. A photoresistor is a special type of resistor whose resistance depends on the amount of light that shines on it. Higher luminosity decreases the resistance. They are simple, inexpensive, and effective for detecting relative brightness, making them ideal for applications like guiding a robot toward a light source.</p>
                     <strong>Always have your Arduino unpowered when breadboarding.</strong>
                     <ol>
-                        <li>Wire your photoresistor and 10kOhm resistor as shown below. The yellow wire is going to A0 (analog input). Red to 5V. Black to Gnd. This has created a voltage divider. Because the resistance of the photoresistor changes with light, it will change the voltage at A0.</li>
+                        <li>Wire your photoresistor and <strong> 10kOhm resistor </strong> as shown below. The yellow wire is going to A0 (analog input). Red to 5V. Black to Gnd. This has created a voltage divider. Because the resistance of the photoresistor changes with light, it will change the voltage at A0.</li>
                         <img src="media/lab78/PhotoBreadboard.png" class="rounded mx-auto d-block img-fluid mt-3">
                         <li>Now we can read the resistance value through the analog pin A0. It will be converted to an integer between 0-1023. Write the following code to your Arduino.</li>
                         <pre class = "language-javascript"><code>
 // Pin assignments for photoresistors
-const int Photoresistor = A1;
+const int Photoresistor = A0;
 
 void setup() {
     Serial.begin(9600); // Initialize Serial Monitor
@@ -139,9 +142,9 @@ void loop() {
                         <li>Adjust the following code to print the new values. How consistent are the values between each photoresistor?</li>
                         <pre><code class="language-javascript">
 // Pin assignments for photoresistors
-const int rightPhotoresistor = A3;
-const int middlePhotoresistor = A4;
-const int leftPhotoresistor = A5;
+const int rightPhotoresistor = A0;
+const int middlePhotoresistor = A1;
+const int leftPhotoresistor = A2;
 
 void setup() {
     Serial.begin(9600); // Initialize Serial Monitor
@@ -172,16 +175,16 @@ void loop() {
                     <p>
                         Now we can read the values from our photoresistor. Before we write an algorithm for our robot to follow a bright light, we should clean our sensor data. Our algorithm will decide
                         the driving direction based off differences between sensors, so we want to amplify the difference. A bright room will have high base values for all sensors and the change from a flashlight will be relatively small. 
-                        We will subtract the ambient value from the sensors. If your ambient value is significantly different (+/- 30) for each sensor, you should use a seperate ambient value for each sensor. 
-                        <strong>Write the values for the ambient values of each sensor.</strong>                   
+                        We will subtract the ambient value from the sensors. 
+                        <strong>Write the values for the ambient values of each sensor. Put above setup()</strong>                   
                      </p>   
                         <pre><code class="language-javascript">
-// Threshold for ambient light and minimum variation to move
-const int ambientThresholdR = 500;
-const int ambientThresholdM = 500; 
-const int ambientThresholdL = 500;
+// Threshold for ambient light at each sensor
+const int ambientThresholdR = ;
+const int ambientThresholdM = ; 
+const int ambientThresholdL = ;
                         </code></pre>
-                        <p>Subtract it from the analog reading.</p>
+                        <p>Subtract it from the analog reading in the loop().</p>
                         <pre><code class="language-javascript">
 // Read light intensity from photoresistors
 int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
@@ -196,7 +199,7 @@ int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
                     </div>
                     <hr>
 
-                    <h4 id="part2">Part (2): Writing a Nicer Motor Function</h4>
+                    <h4 id="part2">Part (3): Writing a Nicer Motor Function</h4>
 
                     <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255 instead of 0-255.
                     </p>
@@ -226,9 +229,10 @@ void setRightSpeed(int value) {
     }
 }
                     </code></pre>
-                    <p>We can call our function in the same way we call any other function. To test it, we will change the speed/direction of the left and right 
-                        motors depending on the values of the left and right photoresistors. Add the following lines to your script. When you shine your light on the left/right photoresistor,
-                        the left/right motor should speed up, and when you cover the left/right photoresistor, the left/right motor should slow down.
+                    <p>We can call our function in the same way we call any other function. Now, for the sake of testing, we will change the speed/direction of the left and right 
+                        motors depending on the values of the left and right photoresistors. This allows us to test
+                        our new function. Add the following lines to your script. When you shine your light on the left/right photoresistor,
+                        the left/right motor should spin forward, and when you cover the left/right photoresistor, the left/right motor spin backwards.
                     </p>
                     <pre>
                     <code class="language-javascript">
@@ -317,14 +321,14 @@ void loop() {
                     <hr>
                     <h4 id="part4">Part (4): Light Following Proportional Controller</h4>
                     <p>
-                        Proportional control is the first step of a PID controller (a classic controller used all over robotics). This controller now </italic>changes the size of 
+                        Proportional control is the first step of a PID controller (a classic controller used all over robotics). This controller changes the size of 
                         the speed boost based off the amount of light intensity deviation between the middle and sides. The response is
-                        <i>proportional</i> to the error. Here, the error is the amount by which one side is greater than the middle. The new constant to adjust is the
-                        proportional constant which multiplies this error to result in a motor command. We will change this value for a stronger/weaker response.
+                        <i>proportional</i> to the error instead of a constant value like in BANG-BANG. Here, the error is the amount by which one side is greater than the middle. The new constant to adjust is the
+                        proportional constant which multiplies this error to result in a motor command. We will change the proportional constant for a stronger/weaker response.
                     </p>
                     <pre>
                     <code class="language-javascript">
-const float Kp = 0.3; // Proportional gain for the controller
+const float Kp = 1; // Proportional gain for the controller VALUE TO CHANGE
 const int BASE_SPEED = 80;
 
 void setup() {
@@ -372,8 +376,7 @@ void loop() {
 
     delay(50); // Small delay for smoother control
 }
-                    </code>
-                    </pre>
+                    </code></pre>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 5</h4>
@@ -451,19 +454,19 @@ void loop() {
                     <pre>
                     <code class="language-javascript">
 // Pin assignments for HC-SR04
-const int trigPin = 5;  // Trigger pin connected to digital pin 9
-const int echoPin = 6; // Echo pin connected to digital pin 10
+const int trigPin = 5;  // Trigger pin connected 
+const int echoPin = 6; // Echo pin connected
 
 // Create motor objects for two motors
 AF_DCMotor rightMotor(1);  // Motor connected to M1
 AF_DCMotor leftMotor(2); // Motor connected to M2
 
 // Desired distance from the wall (in cm)
-const int targetDistance = 27; // Adjust as needed
+const int targetDistance = 25; // Adjust as needed
 
 // Proportional control gains
-const float KpLeft = 1.5;  // Proportional gain for the left motor
-const float KpRight = 3.0; // Proportional gain for the right motor
+const float KpLeft = 10.0;  // Proportional gain for the left motor
+const float KpRight = 10.0; // Proportional gain for the right motor
 
 // Base motor speed (0-255)
 const int baseSpeedLeft = 60;
