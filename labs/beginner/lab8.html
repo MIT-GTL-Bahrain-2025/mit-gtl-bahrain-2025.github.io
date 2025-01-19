@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 8: Building a Mr. Roboto (Part-1): Motors!</title>
+    <title>Lab 8: Building a Mr. Roboto (Part-2): Sensors!</title>
     <!-- Bootswatch Litera CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
@@ -47,7 +47,7 @@
             <!-- Introduction Section -->
             <div class="col-md-8" style="padding-top:100px;">
                 <section class="mb-4">
-                    <h1 class="mb-5"><a id="introduction">Lab 8: Building a Mr. Roboto (Part-1): Motors!</a></h1>
+                    <h1 class="mb-5"><a id="introduction">Lab 8: Building a Mr. Roboto (Part-2): Sensors!</a></h1>
                     <img src="media/lab78/motors-lab-gif-ezgif.com-video-to-gif-converter.gif" class="rounded mx-auto d-block img-fluid">
                     
                     <br> 
@@ -207,7 +207,7 @@ int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
                     </div>
                     <hr>
 
-                    <h4 id="part2">Part (2): Writing a Nicer Motor Function</h4>
+                    <h4 id="part2">Part (3): Writing a Nicer Motor Function</h4>
 
                     <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255 instead of 0-255.
                     </p>
@@ -326,7 +326,7 @@ void loop() {
                         Ask your instructor for a check-off on completing Part (4). Show the robot following the light.
                     </div>
                     <hr>
-                    <h4 id="part4">Part (4): Light Following Proportional Controller</h4>
+                    <h4 id="part4">Part (5): Light Following Proportional Controller</h4>
                     <p>
                         Proportional control is the first step of a PID controller (a classic controller used all over robotics). This controller now </italic>changes the size of 
                         the speed boost based off the amount of light intensity deviation between the middle and sides. The response is
@@ -412,7 +412,7 @@ void loop() {
                     </div>
                     <hr>
 
-                    <h4 id="part7">Part (6): Using the Ultrasound</h4>
+                    <h4 id="part7">Part (7): Using the Ultrasound</h4>
                     <img src="media/lab78/RobotUltraSoundPins.jpg" class="rounded mx-auto d-block img-fluid mt-3 mb-3">
                     <p> This is a very common sensor and there are many tutorials of how to use it online. You will rarely
                         know exactly how to program a sensor from memory. Use the internet to make/find a function called measureDistance() that returns an integer of the distance from the 
