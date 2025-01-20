@@ -16,28 +16,37 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Populate Labs
         const labsContainer = document.getElementById("labs-container");
         labsContainer.innerHTML = ""; // Clear any existing content
-        const labs = student.labs || []; // Assuming 'labs' is an array of lab details
+        const lab_names = ["lab1","lab2"]; // Assuming 'labs' is an array of lab details
 
-        labs.forEach((lab, index) => {
-            const labCard = `
-                <div class="col-12 col-md-4">
-                    <div class="lab-card">
-                        <img 
-                            src="${lab.image || "assets/student_images/placeholder.png"}" 
-                            alt="Lab ${index + 1}" 
-                            data-toggle="modal" 
-                            data-target="#imageModal" 
-                            data-image="${lab.image || "assets/student_images/placeholder.png"}"
-                        >
-                        <div class="lab-card-body">
-                            <h4>${lab.title || `Lab ${index + 1}`}</h4>
-                            <p>${lab.description || "No description available"}</p>
-                            <a href="${lab.link || "#"}" class="btn btn-primary" ${lab.link ? "" : "disabled"}>View File</a>
-                        </div>
-                    </div>
-                </div>
-            `;
-            labsContainer.innerHTML += labCard;
+        lab_names.forEach((lab_name, index) => {
+            const imageBasePath = `assets/lab_images/${lab_name}_${student.section}/${student.id}.png`;
+        
+            // Fetch the image to check if it exists
+            fetch(imageBasePath)
+                .then(response => {
+                    if (response.ok) {
+                        // Define the lab card template
+                        const labCard = `
+                            <div class="col-12 col-md-4">
+                                <div class="lab-card">
+                                    <img 
+                                        src="${imageBasePath}" 
+                                        alt="Lab ${index + 1}" 
+                                        data-toggle="modal" 
+                                        data-target="#imageModal" 
+                                        data-image="${imageBasePath}"
+                                    >
+                                </div>
+                            </div>
+                        `;
+        
+                        // Append the card to the container
+                        labsContainer.innerHTML += labCard;
+                    }
+                })
+                .catch(() => {
+                    // If there's an error (e.g., image doesn't exist), do nothing
+                });
         });
 
         // Set up modal for image preview

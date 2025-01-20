@@ -4,7 +4,7 @@
         "name": "Abdulaziz Alhamad",
         "bio": "",
         "lab1": "",
-        "lab2": "",
+        "lab2": "_keychain",
         "section": "advanced",
         "school": "AUBH",
         "field": "Engineering",
@@ -120,8 +120,8 @@
         "year": ""
     },
     {
-        "id": "Maryam_Albonni",
-        "name": "Maryam Albonni",
+        "id": "Maryam_AlBonni",
+        "name": "Maryam AlBonni",
         "bio": "",
         "lab1": "",
         "lab2": "",
@@ -303,14 +303,14 @@
         "id": "Ahmed_Almanea",
         "name": "Ahmed Almanea",
         "bio": "",
-        "lab1": "",
-        "lab2": "",
+        "lab1": "assets/lab_images/lab1_beginner",
+        "lab2": "assets/lab_images/lab2_beginner",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
-    },
+        "school": "Polytechnic",
+        "field": "Engineering ",
+        "major": "B. Engineering Technology (Electrical Engineering)",
+        "year": "2nd year"
+    },		
     {
         "id": "Mariam_AlAraab",
         "name": "Mariam AlAraab",
