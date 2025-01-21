@@ -205,7 +205,7 @@ void loop() {
     int middleValue = ;
     int leftValue = ;
 
-    // TODO: Print sensor values to Serial Monitor
+    // TODO: Print sensor values in format "Left: x  Middle: x  Right: x" on the same line
 
 
     delay(20);
@@ -237,7 +237,7 @@ const int ambientThresholdR = ;
 const int ambientThresholdM = ; 
 const int ambientThresholdL = ;
                         </code></pre>
-                        <p>Subtract it from the analog reading in the loop().</p>
+                        <p><strong>Subtract the thresholds from the analog reading in the loop(). When printed, all values should be within 0 +/- 20. </strong></p>
                         <pre><code class="language-javascript">
 // Read light intensity from photoresistors
 int rightValue = analogRead(rightPhotoresistor) - ambientThresholdR;
@@ -254,7 +254,10 @@ int leftValue = analogRead(leftPhotoresistor) - ambientThresholdL;
 
                     <h4 id="part2">Part (3): Writing a Nicer Motor Function (20 minutes) </h4>
 
-                    <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient. Let's make a more convenient function that can command our motors from a range of -255 to 255 instead of 0-255.
+                    <p>Now, explicitly having to set motor direction every time we want to reverse is inefficient.
+                        Let's make a more convenient function that can command our motors from a range of -255 to 255 instead of 0-255.
+                        This means that when setLeftSpeed(40) is called, the left motor spins forward at speed 40.
+                        When setLeftSpeed(-40) is called, the left motor spins backward at speed 40. Same for the right motor.
                     </p>
                     <p>Fill in the if/else conditions below and place these functions at the bottom of the script.</p>
                     <pre>
@@ -285,7 +288,8 @@ void setRightSpeed(int value) {
                     <p>We can call our function in the same way we call any other function. Now, for the sake of testing, we will change the speed/direction of the left and right 
                         motors depending on the values of the left and right photoresistors. This allows us to test
                         our new function. Add the following lines to your script. When you shine your light on the left/right photoresistor,
-                        the left/right motor should spin forward, and when you cover the left/right photoresistor, the left/right motor spin backwards.
+                        the left/right motor should spin forward, and when you cover the left/right photoresistor, the left/right motor spin backwards. 
+                        <strong> Place this code in your loop(). We are just checking that the setRightSpeed and setLeftSpeed properly control speed and direction</strong>
                     </p>
                     <pre>
                     <code class="language-javascript">
@@ -296,7 +300,7 @@ setRightSpeed(rightValue); // right photoresistor value
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 4</h4>
                         <a id="part3"></a>
-                        Ask your instructor for a check-off on completing Part (3). Show the motor speed changes in response to the photoresistor values.
+                        Ask your instructor for a check-off on completing Part (3). Show that motor speed changes in response to the photoresistor values.
                     </div>
                     <hr>
 
@@ -311,18 +315,20 @@ setRightSpeed(rightValue); // right photoresistor value
                     <strong>Bang-Bang Controller.</strong>
                     <p>This controller detects which directions has higher light intensity and applies a constant "speed-boost" to one of the motors to turn in the required direction.
                     When there is little variation between the photoresistors or the overall light level is too low, the motors are turned off. Adjust the variation threshold and bang constant.
+                    <strong>Add the following code and fill in the calcuation of averageLight and the ??. Change the value of bang to get proper driving.</strong>
                     </p>
                     <pre>
                     <code class="language-javascript">
-const int variationThreshold = 50; // Minimum difference between sensors to trigger movement
-const int bang = 50;
+#include <AFMotor.h>
+
+AF_DCMotor rightMotor(1);  // Motor connected to M1
+AF_DCMotor leftMotor(2);   // Motor connected to M2
+
+const int variationThreshold = 60; // Minimum difference between sensors to trigger movement
+const int bang = 10;
 
 void setup() {
     Serial.begin(9600); // Initialize Serial Monitor
-
-    // Set initial motor speed
-    setLeftSpeed();  // TODO: Copy speed from previous section
-    setRightSpeed();
 }
 
 void loop() {
@@ -346,21 +352,21 @@ void loop() {
     int maxDifference = max(abs(middleValue - leftValue), abs(middleValue - rightValue));
 
     // Light is ambient or too uniform; stop the robot (Hint: || is OR)
-    if () {
+    if (averageLight < ?? || maxDifference < ??) {
         setLeftSpeed(0);
         setRightSpeed(0);
-    } else if () {
+    } else if (middleValue > ?? && middleValue > ??) {
         // Middle light is greater than left AND right (Hint: && is AND)
         setLeftSpeed(100);
         setRightSpeed(100);
-    } else if () {
+    } else if (leftValue > ??) {
         // Brightest light is to the left; turn left
-        setLeftSpeed(100);
+        setLeftSpeed(50);
         setRightSpeed(100 + bang);
-    } else if () {
+    } else if (?? > ??) {
         // Brightest light is to the right; turn right
         setLeftSpeed(100 + bang);
-        setRightSpeed(100);
+        setRightSpeed(50);
     }
 
     delay(50); // Small delay for stability
@@ -378,11 +384,13 @@ void loop() {
                         the speed boost based off the amount of light intensity deviation between the middle and sides. The response is
                         <i>proportional</i> to the error instead of a constant value like in BANG-BANG. Here, the error is the amount by which one side is greater than the middle. The new constant to adjust is the
                         proportional constant which multiplies this error to result in a motor command. We will change the proportional constant for a stronger/weaker response.
+                        <strong>Fill in the if statement, the averageLight calcuation, and alter the KP constant for proper driving.</strong>
                     </p>
                     <pre>
                     <code class="language-javascript">
 const float Kp = 1.0; // Proportional gain for the controller VALUE TO CHANGE
 const int BASE_SPEED = 80;
+int error = 0;
 
 void setup() {
     Serial.begin(9600); // Initialize Serial Monitor
