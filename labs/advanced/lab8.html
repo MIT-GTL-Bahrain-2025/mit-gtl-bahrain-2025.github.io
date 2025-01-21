@@ -242,7 +242,7 @@
                     
                    
                     <p>
-                        Lets first make our capacitive touch pad. Take a roughly finger sized piece of copper tape. Poke a M-M jumper cable through about 1/2cm from one end 
+                        Lets first make our capacitive touch pad. Take a roughly finger sized piece of copper tape. Poke a M-M (Male to Male; ie pointy end) jumper cable through about 1/2cm from one end 
                         (careful not to poke yourself). Then solder the jumper down to the copper. You may also just attach a smallr piece 
                         of copper tape on top to be faster. It should look like this:
                     </p>
@@ -261,14 +261,22 @@
                     <img src=media/CapTouch/captouch-single-schematic.png class="mx-auto d-block img-fluid">
 
                     <p>Install the CapacitiveSensor library by Paul Badger. Then, upload the following code to your ardiuno:</p>
-                    <pre class="language-javascript">
-/*******************************************************************************
+                    
+                    
+                    <br> 
+                    <span style=color:red> ❗ You may need to close and reopen Arduino after installing the library ❗
+</span>     
+                    
+                    <br> 
+ <pre class = "language-javascript"><code>
+ 
+ /*******************************************************************************
 * Capacitive Sensing for Touch and Proximity
 *
 * Reads values from two capacitive sensors and displays results on the Serial Plotter.
 *******************************************************************************/
 
-#include <CapacitiveSensor.h>
+#include &lt;CapacitiveSensor.h&gt;
 
 // Define sender and receiver pins for the two touch pads
 int sender = 2; // Shared sender pin
@@ -296,9 +304,25 @@ void loop() {
     delay(10);
 }
 
-                    </pre>
+                        </code></pre>
 
-                    <p>Examine the output on the serial plotter (top right button) in the Ardiuno IDE. Now swap the 10k resistor for a 1M Ohm resistor. How does it change?</p>
+
+                    <p>Examine the output on the serial plotter (top right button) in the Ardiuno IDE.
+                        
+                        
+                        <br> 
+                        
+                        You will probably see something similiar to the graph below, where the values 
+                        "spike up" when you touch the pad.
+                        
+                                            <img src=media/CapTouch/captouch-graph.png class="mx-auto d-block img-fluid">
+
+
+                        
+                        <br> 
+                        
+                        
+                        💡 Now swap the 10k resistor for a 1M Ohm resistor. How does it change?</p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4> <a id="part2"> </a>
