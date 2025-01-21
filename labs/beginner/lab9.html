@@ -55,8 +55,9 @@
                     <p> In the game Guitar Hero, the user interacts with a screen with colored markers.
                         Whenever the colored markers reach the bottom line, the player must press the associated
                         buttons in time with the music. This screen that the user witnesses is known as a 
-                        GUI, graphical user interface. [CAN WE INSERT A GIF OF ME PLAYING]</p>
-                    
+                        GUI, graphical user interface.</p>
+                        <img src=media/lab9/playing.gif class="rounded mx-auto d-block img-fluid"> 
+                        <br>
                     
                     In this lab, you'll <b>create</b> a Guitar Hero game GUI and custom-built guitar
                         while learning how to:
@@ -242,17 +243,69 @@ void draw(){
                         <p>Rerun and you should see a button.</p>
                         <img src=media/lab9/btn-font.png class="rounded mx-auto d-block img-fluid"> 
                         <br>
+                        <p>Now since Processing runs the draw function 60 times per second, we can make animations! 
+                            We'll add some circle code that updates the position every time it runs. Copy paste this code and 
+                            your IDE should look something like this:
+                        </p>
+                        <pre>
+                            <code class="language-javascript">
+import controlP5.*; // import ControlP5 library
+PFont font; 
 
+ControlP5 cp5; // create ControlP5 object
+
+// state for circle
+float circleY = 0;
+
+void setup(){
+    size(300, 400); //window size, (width, height) in pixels
+    
+    font = createFont("ComicSansMS", 20); //select the font
+
+    cp5 = new ControlP5(this); // Initialize the ControlP5 object
+
+    cp5.addButton("START")  // START is button name
+        .setPosition(100, 50)  // x and y coords of upper left corner
+        .setSize(100, 80)     //(width, height) in pixels
+        .setFont(font)
+        ;
+}
+
+void draw(){
+    background(50, 70, 100); //background color of window (r, g, b) from 0-255
+    
+    //Circle code animation
+    // draw current frame based on state
+    ellipse(100, circleY, 50, 50);
+  
+    // modify state
+    circleY = circleY + 1;
+  
+    // reset state
+    if(circleY > height) {
+      circleY = 0;
+    }
+    
+    //let's give title to our window
+    fill(0, 0, 0); // text color (r, g, b)
+    text("GUITAR HERO", 100, 30); // ("text", x coord, y coord) in pixels
+}
+                            </code>
+                        </pre>
+                        <br>
+                        <p>You should get something like this:</p>
+                        <img src=media/lab9/final-p.gif class="rounded mx-auto d-block img-fluid"> 
+                        <br>
+                        <p>Awesome, now you know how to make a basic window, a button, and an animation!</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4> <a id="part2"> </a>
-                        Ask your instructor for a check-off on completing Part (1)
+                        Ask your instructor for a check-off on completing Part (1) and showing your animation.
                     </div>
-        <br> 
                     <hr> 
                     
                     <h4>Part (2): Adding Serial Communication (20 minutes)  <a id="part2"> </a></h4>
 
-        <p> Now, let’s try learning how to add Serial communication. Replace your program with this code. </p>
+        <p> Now, let’s try learning how to add Serial communication. Replace your program with this code in Processing. </p>
 
         <pre>
             <code class="language-javascript">
@@ -291,7 +344,9 @@ void draw(){
             <p>Now, open Arduino. Make a new program with the following in Arduino.</p>
             <pre>
                 <code class="language-javascript">
-/* DigitalReadSerial */
+/*
+DigitalReadSerial
+*/
 
 // digital pin 2 has a pushbutton attached to it. Give it a name:
 int pushButtonA = 2;
@@ -302,44 +357,43 @@ int pushButtonC = 4;
 
 // the setup routine runs once when you press reset:
 void setup() {
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
-  // make the pushbutton's pin an input:
-  pinMode(pushButtonA, INPUT);
-  // make the pushbutton's pin an input:
-  pinMode(pushButtonB, INPUT);
-  // make the pushbutton's pin an input:
-  pinMode(pushButtonC, INPUT);
+// initialize serial communication at 9600 bits per second:
+Serial.begin(9600);
+// make the pushbutton's pin an input:
+pinMode(pushButtonA, INPUT_PULLUP);
+// make the pushbutton's pin an input:
+pinMode(pushButtonB, INPUT_PULLUP);
+// make the pushbutton's pin an input:
+pinMode(pushButtonC, INPUT_PULLUP);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
-  // read the input pin:
-  int buttonStateA = digitalRead(pushButtonA);
-  // print out the state of the button:
-  if (buttonStateA) {
+// read the input pin:
+int buttonStateA = digitalRead(pushButtonA);
+// print out the state of the button:
+if (!buttonStateA) {
     Serial.println("A");
-  }
+}
 
-  // read the input pin:
-  int buttonStateB = digitalRead(pushButtonB);
-  // print out the state of the button:
-  if (buttonStateB) {
+// read the input pin:
+int buttonStateB = digitalRead(pushButtonB);
+// print out the state of the button:
+if (!buttonStateB) {
     Serial.println("B");
-  }
+}
 
-  // read the input pin:
-  int buttonStateC = digitalRead(pushButtonC);
-  // print out the state of the button:
-  if (buttonStateC) {
+// read the input pin:
+int buttonStateC = digitalRead(pushButtonC);
+// print out the state of the button:
+if (!buttonStateC) {
     Serial.println("C");
-  }
-
-  delay(1);  // delay in between reads for stability
+}
+delay(1);  // delay in between reads for stability
 }
                 </code>
                 </pre>
-                <p>Wire the breadboard with buttons and Arduino. You need to add resistors to not short 5v to 0.</p>
+                <p>Wire the breadboard with a button and Arduino.</p>
                 <img src=media/lab9/circuit-button.png class="rounded mx-auto d-block img-fluid"> 
                 <img src=media/lab9/schematic-button.png class="rounded mx-auto d-block img-fluid"> 
                 <p>Repeat the above image for three buttons with their corresponding pins on the Arduino Uno.</p>
@@ -350,7 +404,7 @@ void loop() {
                         <h4>Checkoff 2</h4>
                         Show your instructor that you have working Serial communication
                     </div>
-                    
+                    <hr> 
                     <!-- Part 3: Assembly of the Electronics on the Guitar -->
             <h4>Part (3): Learning Soldering (15 mins) <a id="part3"></a></h4>
                     <p>Soldering is a technique to connect two electrical components together. 
@@ -363,7 +417,7 @@ void loop() {
                     <iframe width="560" height="310" class="embed-responsive-item" src="https://www.youtube.com/embed/Qps9woUGkvI?si=WBCRzVkY6fdMaffp" title="YouTube video player"  allowfullscreen></iframe>
                     <br><br>
                     <h5>Below is also a quick tutorial as well if you are already familiar with soldering:</h5>
-                    <p>Cut a long piece of wire (about 25 cm). Strip the wire to expose some of the metal.</p>
+                    <p>Cut some wire. Strip the wire to expose some of the metal.</p>
                     <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
                     <p>Now, bring the solder, soldering iron, the wire, and the leg of the button together.
                         You will see the solder melt and become a glue. It only becomes a glue that keeps 
