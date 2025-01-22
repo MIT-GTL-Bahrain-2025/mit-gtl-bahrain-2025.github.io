@@ -30,16 +30,13 @@
                     <li><a href="#introduction">Introduction & Safety</a></li>
                     <li><a href="#fabq">Fabrication Quest</a></li>
                     <li><a href="#software">Software & Hardware for the Lab</a></li>
-                    <li><a href="#part0">Part (0): Fusion360 Workspace</a></li>
-                    <li><a href="#part1">Part (1): Sketching Objects and Dimensioning </a></li>
-                    <li><a href="#part2">  Part (2): Mirroring Sketch Geometries </a></li>
-                    <li><a href="#part3"> Part(3): Filletting</a></li>
-                    <li><a href="#part4"> Part(4): Linear Patterning</a></li>
-                      <li><a href="#part5">Part (5): Importing DXF files </a></li>
-                    <li><a href="#part6">  Part (6): Remixing </a></li>
-                    <li><a href="#part7"> Part(7): Exporting DXF files</a></li>
-                    <li><a href="#part8"> Part(8): Laser Cutting</a></li>
-                    <li><a href="#part9"> Part(9): Assembly and Post-Processing</a></li>
+                    <li><a href="#part0">Part (0):Principles of Capacitive Sensing </a></li>
+                    <li><a href="#part1">Part (1): Building a Single-input Cap-Sensor w/ Arduino Cap-Sense Pin </a></li>
+                    <li><a href="#part2">  Part (2): Wiring of multiple Inputs with a Multiplexer </a></li>
+                    <li><a href="#part3"> Part(3): Arduino Code for CapSense Multiplexer Combination </a></li>
+                    <li><a href="#part4"> Part(4): Exploring Materials 🚨(Remixing)🚨 </a></li>
+                      <li><a href="#part5">Part (5): Designing a Guitar </a></li>
+                
                      <li><a href="#discussion"> Discussion & Reflections</a></li>
                 </ul>
             </div>
@@ -50,7 +47,7 @@
                 <section class="mb-4">
                     <h1 class="mb-5"> <a id="introduction">Lab 8: Building Sensors from Scratch through Capacitive Sensing!</a></h1>
                    
-                    <img src=media/placeholder.png class="rounded mx-auto d-block img-fluid"> 
+                    <img src=media/CapTouch/captouch-starterimage.png class="rounded mx-auto d-block img-fluid"> 
                     <h2>🦺 Introduction & Safety</h2>(1 minute read)
                     <br> <br>
                     <p>In this lab, you will learn how to make a capacitive sensor from scratch!You will then use the capacitive sensors as input for your guitar hero lab. </p>
@@ -201,7 +198,7 @@
                     <hr>
                     
                     <!-- Part 1: Designing the Calendar -->
-                    <h4>Part (1): Building a Single-input Cap-Sensor w/ Arduino Cap-Sense Pin (10 mins)</h4>
+                    <h4>Part (1): Building a Single-input Cap-Sensor w/ Arduino Cap-Sense Pin (20 mins)</h4>
                    
                     
                      <div class="d-inline-flex row-cols-2">
@@ -242,7 +239,7 @@
                     
                    
                     <p>
-                        Lets first make our capacitive touch pad. Take a roughly finger sized piece of copper tape. Poke a M-M jumper cable through about 1/2cm from one end 
+                        Lets first make our capacitive touch pad. Take a roughly finger sized piece of copper tape. Poke a M-M (Male to Male; ie pointy end) jumper cable through about 1/2cm from one end 
                         (careful not to poke yourself). Then solder the jumper down to the copper. You may also just attach a smallr piece 
                         of copper tape on top to be faster. It should look like this:
                     </p>
@@ -261,14 +258,22 @@
                     <img src=media/CapTouch/captouch-single-schematic.png class="mx-auto d-block img-fluid">
 
                     <p>Install the CapacitiveSensor library by Paul Badger. Then, upload the following code to your ardiuno:</p>
-                    <pre class="language-javascript">
-/*******************************************************************************
+                    
+                    
+                    <br> 
+                    <span style=color:red> ❗ You may need to close and reopen Arduino after installing the library ❗
+</span>     
+                    
+                    <br> 
+ <pre class = "language-javascript"><code>
+ 
+ /*******************************************************************************
 * Capacitive Sensing for Touch and Proximity
 *
 * Reads values from two capacitive sensors and displays results on the Serial Plotter.
 *******************************************************************************/
 
-#include <CapacitiveSensor.h>
+#include &lt;CapacitiveSensor.h&gt;
 
 // Define sender and receiver pins for the two touch pads
 int sender = 2; // Shared sender pin
@@ -296,9 +301,25 @@ void loop() {
     delay(10);
 }
 
-                    </pre>
+                        </code></pre>
 
-                    <p>Examine the output on the serial plotter (top right button) in the Ardiuno IDE. Now swap the 10k resistor for a 1M Ohm resistor. How does it change?</p>
+
+                    <p>Examine the output on the serial plotter (top right button) in the Ardiuno IDE.
+                        
+                        
+                        <br> 
+                        
+                        You will probably see something similiar to the graph below, where the values 
+                        "spike up" when you touch the pad.
+                        
+                                            <img src=media/CapTouch/captouch-graph.png class="mx-auto d-block img-fluid">
+
+
+                        
+                        <br> 
+                        
+                        
+                        💡 Now swap the 10k resistor for a 1M Ohm resistor. How does it change?</p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
                         <h4>Checkoff 1</h4> <a id="part2"> </a>
@@ -307,7 +328,7 @@ void loop() {
         <br> 
                     <hr> 
                     
-                    <h4>Part (2): Wiring of multiple Inputs with a Multiplexer (20 minutes)</h4>
+                    <h4>Part (2): Wiring of multiple Inputs with a Multiplexer (30 minutes)</h4>
 
                     <p>The MPR121 Adafruit shield allows us to use 12 capacitive touch sensors. Often we only need to know if the sensor is "touched" or "not-touched." 
                         The shield and library can set an automatic threshold for any object. The shield is made for alligator clips, in which we can clip to just about anything.
@@ -351,8 +372,19 @@ void loop() {
                     <!-- Part 4: Assembly and Post-Processing -->
             <h4>Part (3): Arduino Code for CapSense Multiplexer Combination (10 minutes)</h4>
                     
-                      <p>Using the shield is easy. Install the Adafruit MPR121 library. Then go to File -> Examples -> Adafruit MPR121 -> MP121test. 
-                        It should work out of the box.</p>
+                    
+                    Next, connect the shield to the Arduino by placing it on top of the Arduino (similar to the picture below); 
+                    
+                    
+                     <img src=media/CapTouch/shield-arduino.png class="mx-auto d-block img-fluid">
+
+
+                    <br> 
+                    
+                      <p>Using the shield is easy. Install the Adafruit MPR121 library. Then go to <b> File -> Examples -> Adafruit MPR121 -> MP121test. </b> 
+                       <br> 
+                          
+                          It should work out of the box 📦 </p>
                     
         
         
@@ -444,15 +476,22 @@ void loop() {
 
         <h4>Part (5): Designing a Guitar 🚨(Remixing | Optional )🚨 (5 minutes)</h4>
 
-       Based on the material you chose, sketch your guitar and how you want to wire connections to the material of your choice 
-                    (ie plan this out). We have also provided a <a href="media/guitar-hero-5mm.dxf">DXF file</a> for a guitar here, but please feel free to alter as long as you do not go above the size limit of the guitar given to you and not 
-                    remove any holes for finger joints and buttons and what-not.   
+                                          <img src=media/CapTouch/guitar-remix.png class="rounded mx-auto d-block img-fluid"> 
+
+
+                    
+                    
+       Based on the material you chose, sketch your guitar and how you plan to wire connections to the material of your choice 
+                    (ie plan this out and discuss with your instructor). We have also provided a <a href="media/CapTouch/guitar-hero-5mm-dlab-advanced.dxf">DXF file</a> for a guitar here, which we will give you next lab! 
+                    
+                    
+                    <br> 
                     
                     <br> 
             
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-                        <h4>Checkoff 5</h4> <a id="part6"> </a>
+                        <h4>Checkoff 5</h4> <a id="part5"> </a>
         Show your guitar design to your instructor!           </div>
         <hr> 
                 
@@ -479,7 +518,7 @@ void loop() {
                 </ul>
             </li>
             
-            <li><strong>Further Readings</strong> 
+            <li><strong>Further Readings</strong> <a id="discussion"> </a>
                 <ul>
                     <li> <a href="https://dl.acm.org/doi/full/10.1145/3544548.3581361"> MechSense: A Design and Fabrication Pipeline for Integrating Rotary Encoders into 3D Printed Mechanisms
 
