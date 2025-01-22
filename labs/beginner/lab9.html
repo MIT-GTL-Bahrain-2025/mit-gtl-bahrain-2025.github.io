@@ -32,12 +32,11 @@
                     <li><a href="#software">Software & Hardware for the Lab</a></li>
                     <li><a href="#part0">Part (0): Download Processing</a></li>
                     <li><a href="#part1">Part (1): Getting a Preliminary GUI </a></li>
-                    <li><a href="#part2">  Part (2): Adding Serial Communication </a></li>
-                    <li><a href="#part3"> Part (3): Learning Soldering</a></li>
-                    <li><a href="#part4"> Part (4): Understanding with a Multimeter </a></li>
-                      <li><a href="#part5">Part (5): Wiring the GND, 3.3 V, and Input Pins </a></li>
-                    <li><a href="#part6">  Part (6): Guitar Hero</a></li>
-                    <li><a href="#part7">  Part (7): 🚨Remixing🚨 </a></li>
+                    <li><a href="#part2">  Part (2): Adding a Button </a></li>
+                    <li><a href="#part3"> Part (3): Adding Serial Communication in Processing </a></li>
+                    <li><a href="#part4"> Part (4): Testing the Game with Keyboard and Breadboard </a></li>
+                      <li><a href="#part5">Part (5): Learning Soldering </a></li>
+                    <li><a href="#part6">  Part (6): Test the Guitar Hero Game Finally</a></li>
                      <li><a href="#discussion"> Discussion & Reflections</a></li>
                 </ul>
             </div>
@@ -298,50 +297,24 @@ void draw(){
                         <br>
                         <p>Awesome, now you know how to make a basic window, a button, and an animation!</p>
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 1</h4> <a id="part2"> </a>
+                        <h4>Checkoff 1</h4>
                         Ask your instructor for a check-off on completing Part (1) and showing your animation.
                     </div>
                     <hr> 
                     
-                    <h4>Part (2): Adding Serial Communication (20 minutes)  <a id="part2"> </a></h4>
-
-        <p> Now, let’s try learning how to add Serial communication. Replace your program with this code in Processing. </p>
-
-        <pre>
-            <code class="language-javascript">
-import processing.serial.*;
-
-Serial myPort;  // Create object from Serial class
-String val;     // Data received from the serial port
-
-void setup(){
-    size(300, 400); //window size, (width, height)
-    String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
-    myPort = new Serial(this, portName, 9600);
-}
-
-void draw(){
-    background(50, 70, 100); //background color of window (r, g, b) from 0-255
-    //let's give title to our window
-    fill(0, 0, 0); // text color (r, g, b)
-    text("GUITAR HERO", 100, 30); // ("text", x coord, y coord)
-    if ( myPort.available() > 0) 
-    {  // If data is available,
-    val = myPort.readStringUntil('\n');         // read it and store it in val
-    } 
-    println(val); //print it out in the console
-    if (mousePressed == true) 
-    {                           //if we clicked in the window
-    myPort.write('1');         //send a 1
-    println("1");   
-    } else 
-    {                           //otherwise
-    myPort.write('0');          //send a 0
-    }
-}
-            </code>
-            </pre>
-            <p>Now, open Arduino. Make a new program with the following in Arduino.</p>
+        <h4>Part (2): Adding a Button (15 mins) </h4><a id="part2"> </a>
+        <p>We want our guitar to have buttons. Buttons can read as 3.3 V or 0 V.
+            To understand how the button is wired internally, we have to use multimeter, specifically its 
+            continuity mode that we learned about in a previous lab. When the multimeter beeps, you know the two legs 
+            of the button are connected. Traditionally, we think of a button with two legs: unconnected when unpressed and 
+            connected when pressed. However, the buttons we gave has four legs.
+        </p>
+        <img src=media/lab9/fourbutton.png class="rounded mx-auto d-block img-fluid"> 
+        <p>To understand the orientation you need to place the button in, please use a multimeter. Then, you can place a single 
+            button on a breadboard like this for example:
+        </p>
+        <img src=media/lab9/circuit-button.png class="rounded mx-auto d-block img-fluid"> 
+        <p>Now, open Arduino. Make a new program with the following in Arduino.</p>
             <pre>
                 <code class="language-javascript">
 /*
@@ -359,11 +332,11 @@ int pushButtonC = 4;
 void setup() {
 // initialize serial communication at 9600 bits per second:
 Serial.begin(9600);
-// make the pushbutton's pin an input:
+// make the pushbutton's pin an input and with a pullup resistor:
 pinMode(pushButtonA, INPUT_PULLUP);
-// make the pushbutton's pin an input:
+// make the pushbutton's pin an input and with a pullup resistor:
 pinMode(pushButtonB, INPUT_PULLUP);
-// make the pushbutton's pin an input:
+// make the pushbutton's pin an input and with a pullup resistor:
 pinMode(pushButtonC, INPUT_PULLUP);
 }
 
@@ -393,20 +366,122 @@ delay(1);  // delay in between reads for stability
 }
                 </code>
                 </pre>
-                <p>Wire the breadboard with a button and Arduino.</p>
-                <img src=media/lab9/circuit-button.png class="rounded mx-auto d-block img-fluid"> 
-                <img src=media/lab9/schematic-button.png class="rounded mx-auto d-block img-fluid"> 
-                <p>Repeat the above image for three buttons with their corresponding pins on the Arduino Uno.</p>
+        <p>If you connected the button to Pin 2, then when you press the button, you should see an "A" print in the Serial Monitor.
+            Now, connect <b>two more buttons to Pin 3 and Pin 4</b> to see a "B" and "C" print.
+        </p>
+        <img src=media/lab9/bread3.png class="rounded mx-auto d-block img-fluid"> 
+        <br>
 
-                <p>If you run both programs, then you can read and write.</p>
+        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+            <h4>Checkoff 2</h4>
+            Show that your Serial Monitor prints A, B, C when you press the buttons. Your instructor will also check you understand 
+            how to use a multimeter to check the internal wiring of the button.
+        </div>
+    </section>
+    <hr>
+
+                    <h4>Part (3): Adding Serial Communication in Processing (20 minutes)  <a id="part3"> </a></h4>
+        <p> Now, let’s try learning how to add Serial communication. Replace your program with this code in Processing in a new file. </p>
+
+        <pre>
+            <code class="language-javascript">
+import processing.serial.*;
+
+Serial myPort;  // Create object from Serial class
+String val;     // Data received from the serial port
+
+void setup(){
+    size(300, 400); //window size, (width, height)
+    println(Serial.list()); //print all the ports you have and choose the one that is the Arduino
+    String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
+    myPort = new Serial(this, portName, 9600);
+}
+
+void draw(){
+    background(50, 70, 100); //background color of window (r, g, b) from 0-255
+    //let's give title to our window
+    fill(0, 0, 0); // text color (r, g, b)
+    text("GUITAR HERO", 100, 30); // ("text", x coord, y coord)
+    if ( myPort.available() > 0) 
+    {  // If data is available,
+    val = myPort.readStringUntil('\n');         // read it and store it in val
+    } 
+    println(val); //print it out in the console
+}
+            </code>
+            </pre>
+            <br>
+            <p>This is communication from Arduino to computer. Look particularly and lines 8 and 9. If the buttons do not print to the Processing terminal, 
+                then we are likely using the wrong port. Change the port number to work with your computer. Feel free to ask for help if you have 
+                tried multiple port numbers and they have not worked.
+            </p>
+            <p>Now, let's add communication from computer to Arduino! Update your code to look like this:</p>
+
+            <pre>
+                <code class="language-javascript">
+    import processing.serial.*;
+    
+    Serial myPort;  // Create object from Serial class
+    String val;     // Data received from the serial port
+    
+    void setup(){
+        size(300, 400); //window size, (width, height)
+        String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
+        myPort = new Serial(this, portName, 9600);
+    }
+    
+    void draw(){
+        background(50, 70, 100); //background color of window (r, g, b) from 0-255
+        //let's give title to our window
+        fill(0, 0, 0); // text color (r, g, b)
+        text("GUITAR HERO", 100, 30); // ("text", x coord, y coord)
+        if ( myPort.available() > 0) 
+        {  // If data is available,
+        val = myPort.readStringUntil('\n');         // read it and store it in val
+        } 
+        println(val); //print it out in the console
+        if (mousePressed == true) 
+        {                           //if we clicked in the window
+        myPort.write('1');         //send a 1
+        println("1");   
+        } else 
+        {                           //otherwise
+        myPort.write('0');          //send a 0
+        }
+    }
+                </code>
+                </pre>
+                <p>Now, when you click your mouse on your Processing window, you should see a 1 show up in the Arduino Serial Monitor.</p>
 
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 2</h4>
-                        Show your instructor that you have working Serial communication
+                        <h4>Checkoff 3</h4>
+                        Show your instructor that you have working Serial communication both ways.
                     </div>
                     <hr> 
+            <h4>Part (4): Testing the Game with Keyboard and Breadboard (20 mins) <a id="part4"></a></h4>    
+            <p>Go to this url and download the folder. <a href="https://github.com/fzaman500/mit-gtl-bahrain-2025-guitar-hero">Guitar Hero Link.</a> 
+                To download the zip folder, click the green code button, and finally click download zip.
+                Open the Processing file named <i>rhythmgame.pde</i>. It is under <i>Processing/rhythmgame</i> folder.</p>
+                <p>Navigate to line 68 in the code. Change the location of the trackdata file with the location on your laptop.</p>
+                <pre>
+                <code class="language-javascript">
+// TODO: Load track metadata EDIT THIS LINE BELOW WITH YOUR PC LOCATION
+trackData = new TrackData("/Users/STEAM/mit-gtl-bahrain-2025-guitar-hero/Processing/rhythmgame/data/trackinfo.txt");
+                </code>
+            </pre>
+               <p> Now, try running the game with just the arrow keys (left, down, right). If that works, then we can test the Serial.
+             Open Arduino and run the Serial code we ran prior. This will ensure that information is being written into the port that we can grab from 
+            Processing. Now, run the Processing code once more. Your breadboard controller should work now! Don't hesitate to ask questions if you have any. 
+            Take a bit of time to understand the Processing code. You will be asked some questions during checkoff of the lab, particularly, 
+            about the Serial communication portion. The most notable lines are lines 50-54 and 276-284.</p>
+        
+            <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                <h4>Checkoff 4</h4>
+                Show your instructor that your breadboard controller works. Explain how the Serial code works.
+            </div>
+            <hr>
                     <!-- Part 3: Assembly of the Electronics on the Guitar -->
-            <h4>Part (3): Learning Soldering (15 mins) <a id="part3"></a></h4>
+            <h4>Part (5): Learning Soldering (15 mins) <a id="part5"></a></h4>
                     <p>Soldering is a technique to connect two electrical components together. 
                         Solder is usually a leaded metal that you melt down and acts as glue. The soldering
                         iron heats up the solder to turn it into a liquid that can flow. For our first step,
@@ -426,75 +501,30 @@ delay(1);  // delay in between reads for stability
                         helps with all of this. This is pictured below.
                     </p>
                     <img src=media/lab9/clips-solder.jpeg class="rounded mx-auto d-block img-fluid"> 
-                    <p>Repeat this with two more legss on the button to have three legs soldered for a single button.</p>
-                    
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
-                        <h4>Checkoff 3</h4> 
-                    Show a soldered button to your instructor
-                    
-                    </div>
-        <hr>
-            
-                    <h4>Part (4): Understanding with a Multimeter (15 mins) </h4><a id="part4"> </a>
-                    <p>To understand how the button is wired internally, we have to use multimeter, specifically its 
-                        continuity mode that we learned about in a previous lab. Draw a picture of what the internal 
-                        wiring of the button looks like. What legs are the button are connected? Which leg will you 
-                        connect to GND, 3.3 V, and the input pin?
-                    </p>
                     <br>
-                    <p>Solder wires to two other buttons like you did in Part (3). Your instructor will check your soldering.</p>
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 4</h4>
-                        Show your diagram and your soldering job for the other two buttons to the instructor!
-                    </div>
-                </section>
-
-                <hr>
-
-        <h4>Part (5): Wiring the GND, 3.3 V, and Input Pins (25 mins)</h4> <a id="part5"> </a>
-        <p>Now, solder all the GND wires together, the 3.3 V wires together, and input pins and plug them into the Arduino.
-        Zip tie all the wires together and electrical tape them to have clean design. The electrical tape should cover all 
-        the exposed metal. You should have something that looks like this: </p>
-        <img src=media/lab9/wiring-guitar.jpeg class="rounded mx-auto d-block img-fluid"> 
-        
+                    <p>There's also another technique for putting electrical components together cleanly. So, we used soldering to connect wires together. However, they're 
+                        just hanging out and can accidentally touch other exposed wires which would make connections that we don't want and, in the worst case, can cause a fire.
+                        So, we can insulate the wire by wrapping it in electrical tape or <i>heatshrink</i>. Heatshrink is a plastic tubing that shrinks when heat is applied. 
+                        We use a heatgun (which spews hot air) to wrap it around the exposed wire. In the gif below, I put the heatshrink over the exposed wire.
+                    </p>
+                    <img src=media/lab9/heatshrink.gif class="rounded mx-auto d-block img-fluid"> 
+                    <p>After looking at this quick tutorial, go to the solder station and have an instructor help you solder and heatshrink.</p>
+                    
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
                         <h4>Checkoff 5</h4> 
-        Finish wiring the rest of the buttons to have fully functioning electronics.            </div>
-        <hr> 
-                
-                
-                
-                <h4>Part (6): Guitar Hero and 🚨Remixing🚨 (10 minutes)</h4><a id="part6"> </a>
+                    Your guitar should be soldered and heatshrinked fully now!
+                    </div>
+        <hr>
 
-                <p>Go to this url and download the folder. <a href="https://github.com/fzaman500/mit-gtl-bahrain-2025-guitar-hero">Guitar Hero Link.</a> 
-                    Open Processing and try running the game with just the arrow keys (left, down, right). If that works, then we can test the Serial.
-                 Open Arduino and run the Serial code we ran prior. This will ensure that information is being written into the port that we can grab from 
-                Processing. Now, run the Processing code once more. Your controller should work now! Don't hesitate to ask questions if you have any. 
-                Take a bit of time to understand the Processing code. You will be asked some questions during the discussion portion of the lab, particularly, 
-                about the Serial communication portion. </p>
-
-                <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                    <h4>Checkoff 6</h4>
-                    Show your working game to your instructor.            </div>
-                
-                <hr> 
-                <br>
-                <h4>Part (7): 🚨Remixing🚨 (10 minutes)</h4><a id="part7"> </a>
-        <p> Now it's time to “remix” this assignment by adding your own flair! Be creative and 
-            think about how you can personalize your design.
-            If there's anything specific you want to create but aren't sure how, 
-            let us know so we can guide you! Some suggestions are chaning the button designs on the GUI, adding another button, 
-            changing scoring, etc.</p>      
-            
-            <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                <h4>Checkoff 7</h4>
-                Show your remix to your instructor.           
-            </div>
-                
-                        
+        <h4>Part (6): Test the Guitar Hero Game Finally (10 mins)</h4> <a id="part6"> </a>
+        <p>Now, test playing the game on your guitar! Hopefully, the buttons should work and you can see your score increase!</p>
         <p>Congratulations, your custom Guitar Hero game and controller are ready! 🎉</p>
+        
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+
+                        <h4>Checkoff 6</h4> 
+        Show that your guitar works with the Guitar Hero game!            </div>
         <hr> 
         <br>
             
@@ -505,23 +535,20 @@ delay(1);  // delay in between reads for stability
             <li><strong>Give a brief overview of how the code works.</strong>
                 <ul>
                     <li>How are the serial inputs being processed into game inputs?</li>
-                </ul>
-            </li>
-            <li><strong>Reflect on the design process</strong> 
-                <ul>
-                    <li>Consider any modifications that you would like to implement to improve/elevate your designed remix.</li>
+                    <li>How are buttons hits being scored?</li>
+                    <li>How is the trackdata file used?</li>
                 </ul>
             </li>
             
             <li><strong>Further Readings</strong> 
                 <ul>
-                    <li> <a href="https://dl.acm.org/doi/abs/10.1145/3290605.3300796"> Kyub: A 3D Editor for Modeling Sturdy Laser-Cut Objects
+                    <li> <a href="https://youtu.be/vmnc6Ujzp7w?si=Y6vID0JEgWomcFKz"> How to Make Rhythm Game in Processing
  </a></li>
                     
-          <li> <a href="https://dl.acm.org/doi/abs/10.1145/3639473.3665787">PopCore: Personal Fabrication of 3D Foamcore Models for Professional High-Quality Applications in Design and Architecture
+          <li> <a href="https://docs.arduino.cc/tutorials/generic/digital-input-pullup/">Arduino Internal Pullup
  </a></li>
            
-        <li> <a href="https://dl.acm.org/doi/10.1145/2470654.2481358"> LaserOrigami: laser-cutting 3D objects
+        <li> <a href="https://processing.org/reference/"> Processing Documentation
 
  </a></li>
                    
