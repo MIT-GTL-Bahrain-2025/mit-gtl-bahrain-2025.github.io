@@ -4,8 +4,8 @@
         "name": "PearlQuest",
         "image": "assets/rotoscopes/pearl-quest.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
-        "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
-        "members": ["Mohammed_Ali_Ahmed", "Ahmed_Bassam", "Ahmed_Hammad", "Ali_Abbas"],
+        "projectSketchDescription": "PearlQuest is an underwater drone for harvesting pearls.",
+        "members": ["Mohammed_Ali_Ahmed", "Fatima_AlZaki", "Ahmed_Almanea", "Mohammed_AlLaith", "Muneera_AlBinali"],
         "milestones": [
             "",
             "",
@@ -20,8 +20,8 @@
         "name": "Emotibear",
         "image": "assets/rotoscopes/emotibear.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
-        "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
-        "members": ["Mohammed_Ali_Ahmed", "Ahmed_Bassam", "Ahmed_Hammad", "Ali_Abbas"],
+        "projectSketchDescription": "Emotibear is an ",
+        "members": ["Mariam_AlAraab", "Zainab_Fardan", "Ali_Hussein", "Syed_Rayed", "Batool_Isa"],
         "milestones": [
             "",
             "",
@@ -39,7 +39,7 @@
         "image": "assets/rotoscopes/mirror-mirror.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
-        "members": ["Abdulaziz_Alhamad", "Ahmed_Bassam", "Ahmed_Hammad", "Ali_Abbas"],
+        "members": ["Moosa_Aljoami", "Maryam_Hasan", "Sara_Aljeeran"],
         "milestones": [
             "",
             "",
@@ -56,7 +56,7 @@
         "image": "assets/rotoscopes/book-buddy.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
-        "members": ["Abdulaziz_Alhamad", "Ahmed_Bassam", "Ahmed_Hammad", "Ali_Abbas"],
+        "members": ["Laurence_Mascarenas", "Ziyad_AlHajri", "Hana_Wahban", "Duha_AlAbbasi"],
         "milestones": [
             "",
             "",
@@ -73,7 +73,7 @@
         "image": "assets/rotoscopes/posturepack.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
-        "members": ["Abdulaziz_Alhamad", "Ahmed_Bassam", "Ahmed_Hammad", "Ali_Abbas"],
+        "members": ["Malak_AlSalam", "Yusuf_Seroor", "Eman_Mohammed", "Afham_Haleema", "Abdullah_AlSaif"],
         "milestones": [
             "",
             "",
