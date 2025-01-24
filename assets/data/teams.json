@@ -1,6 +1,6 @@
 [
         {
-        "id": "team1",
+        "id": "PearlQuest",
         "name": "PearlQuest",
         "image": "assets/rotoscopes/pearl-quest.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
@@ -18,7 +18,7 @@
     },
     
             {
-        "id": "team1",
+        "id": "Emotibear",
         "name": "Emotibear",
         "image": "assets/rotoscopes/emotibear.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
@@ -36,7 +36,7 @@
     
     
       {
-        "id": "team1",
+        "id": "Mirror-Mirror",
         "name": "Mirror-Mirror",
         "image": "assets/rotoscopes/mirror-mirror.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
@@ -55,7 +55,7 @@
     
     
       {
-        "id": "team1",
+        "id": "BookBuddy",
         "name": "BookBuddy",
         "image": "assets/rotoscopes/book-buddy.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
@@ -74,7 +74,7 @@
     
     
       {
-        "id": "team1",
+        "id": "PosturePack",
         "name": "PosturePack",
         "image": "assets/rotoscopes/posturepack.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
