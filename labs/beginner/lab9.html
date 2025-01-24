@@ -99,7 +99,7 @@
                 <b>Your instructors will provide you with the following:</b>
             <a id="software"> </a>
                 <ul>
-                <li>(B) The Guitar you designed before the workshop (<strong>x1</strong>)</li>
+                <li>(B) The Guitar base (<strong>x1</strong>)</li>
                 <li>(C) Electrical components (buttons, wire, etc.) (<strong>x1</strong>)</li>
                 </ul>
 
@@ -338,7 +338,7 @@ Serial.begin(9600);
 pinMode(pushButtonA, INPUT_PULLUP);
 
 // TODO: make the pushbutton's pin an input and with a pullup resistor for pushButtonB and pushButtonC
-// HINT: you can basically copy paste the code above
+// HINT: you can basically copy paste the code above for each button
 }
 
 // the loop routine runs over and over again forever:
@@ -351,6 +351,7 @@ if (!buttonStateA) {
 }
 
 //TODO: Please do the same thing we did with buttonStateA and Pin 2 for Pin 3 and Pin 4 to print B and C respectively.
+//HINT: To make "B" and "C" print, it is mostly copy paste and changing the name
 
 delay(1);  // delay in between reads for stability
 }
@@ -450,7 +451,7 @@ trackData = new TrackData("/Users/STEAM/mit-gtl-bahrain-2025-guitar-hero/Process
                         let's turn on the iron to 450 degrees Celsius. For this whole process, don't be afraid 
                         to ask for help from one of your instructors. Soldering can be daunting at first.
                     </p>
-                    <p>This YouTube video shows how to solder on a cicruit board and how to solder on wires. The wires part is most relevant to this lab.</p>
+                    <p>This YouTube video shows how to solder on a circuit board and how to solder on wires. The wires part is most relevant to this lab.</p>
                     <iframe width="560" height="310" class="embed-responsive-item" src="https://www.youtube.com/embed/Qps9woUGkvI?si=WBCRzVkY6fdMaffp" title="YouTube video player"  allowfullscreen></iframe>
                     <br><br>
                     <h5>Below is also a quick tutorial as well if you are already familiar with soldering:</h5>
@@ -470,7 +471,8 @@ trackData = new TrackData("/Users/STEAM/mit-gtl-bahrain-2025-guitar-hero/Process
                         We use a heatgun (which spews hot air) to wrap it around the exposed wire. In the gif below, I put the heatshrink over the exposed wire.
                     </p>
                     <img src=media/lab9/heatshrink.gif class="rounded mx-auto d-block img-fluid"> 
-                    <p>After looking at this quick tutorial, go to the solder station and have an instructor help you solder and heatshrink.</p>
+                    <br>
+                    <p><b>After looking at this quick tutorial, go to the solder station and have an instructor help you solder and heatshrink.</b></p>
                     
                     <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 

@@ -30,7 +30,7 @@
                     <li><a href="#introduction">Introduction & Safety</a></li>
                     <li><a href="#fabq">Fabrication Quest</a></li>
                     <li><a href="#software">Software & Hardware for the Lab</a></li>
-                    <li><a href="#part0">Part (0): Download Processing</a></li>
+                    <li><a href="#part0">Part (0): Download Processing And Design Guitar</a></li>
                     <li><a href="#part1">Part (1): Getting a Preliminary GUI </a></li>
                     <li><a href="#part2">  Part (2): Adding a Button </a></li>
                     <li><a href="#part3"> Part (3): Adding Serial Communication in Processing </a></li>
@@ -99,8 +99,9 @@
                 <b>Your instructors will provide you with the following:</b>
             <a id="software"> </a>
                 <ul>
-                <li>(B) The Guitar you designed before the workshop (<strong>x1</strong>)</li>
+                <li>(B) The Guitar base (<strong>x1</strong>)</li>
                 <li>(C) Electrical components (buttons, wire, etc.) (<strong>x1</strong>)</li>
+                <li>(D) Some sort of CapSense (copper tape, string, etc) (<strong>x1</strong>)</li>
                 </ul>
 
  
@@ -136,6 +137,7 @@
                             <li>Electrical Tape</li>
                             <li>Arduino Uno</li>
                             <li>Multimeter</li>
+                            <li>CapSense (Copper Tape, String, etc.)</li> 
                             <li>Laptop</li>
                             </ul>
 
@@ -151,7 +153,7 @@
                 <!-- Procedure Section -->
                 <section class="mb-4">
                     <!-- Part 0: Understanding Fusion360 Workspace -->
-                    <h4>Part (0): Downloading Processing and its libraries <a id="part0"> </a></h4>
+                    <h4>Part (0): Downloading Processing and Designing Your Guitar<a id="part0"> </a></h4>
                     
                 <h5>Setup:</h5>
 
@@ -164,7 +166,26 @@
             <li>Click Sketch > Import Library… > Manage Libraries > Serial</li>
         </ul>
         </ul>
-        <img src=media/lab9/install-lib.gif class="rounded mx-auto d-block img-fluid"> 
+        <img src=media/lab9/install-lib.gif class="rounded mx-auto d-block img-fluid">
+        <br>
+        <h5>Designing Your CapSense Guitar (If you did not finish last lab):</h5>
+        <p>In the last lab, if you had some time, you already finished adding capacitive sensing on your guitar. If not, no worries!
+            You can finish this now.
+        </p>
+        <p>Here are some CapSense ideas:</p>
+        <img src=media/CapTouch/guitar-remix.png class="rounded mx-auto d-block img-fluid"> 
+        <br>
+        <p>All you need to do is add 3 "buttons". This could be adding 3 pieces of copper tape or something. And make sure you add 
+            wires coming out of the copper accessory you put on the guitar so that we can solder it later.  This is similar to how the 
+            copper module you built in the last lab had wires coming out. You do NOT need to solder it to the 
+            CapSense shield right now. Like see how the wires come out of the module here from the last lab:
+        </p>
+        <img src=media/CapTouch/shield-arduino.png class="mx-auto d-block img-fluid"> 
+        <br>
+        <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+            <h4>Checkoff 0</h4>
+            Show your instructor the CapSense Guitar you have made.
+        </div>
                     <hr>
                     
                     <!-- Part 1: Getting a Preliminary GUI -->
@@ -314,7 +335,9 @@ void draw(){
             button on a breadboard like this for example:
         </p>
         <img src=media/lab9/circuit-button.png class="rounded mx-auto d-block img-fluid"> 
-        <p>Now, open Arduino. Make a new program with the following in Arduino.</p>
+        <p>Now, open Arduino. Make a new program with the following code in Arduino. There are some lines in the code that 
+            are marked with <b>TODO</b>. Please go through these lines and finish those lines of code.
+        </p>
             <pre>
                 <code class="language-javascript">
 /*
@@ -323,10 +346,10 @@ DigitalReadSerial
 
 // digital pin 2 has a pushbutton attached to it. Give it a name:
 int pushButtonA = 2;
-// digital pin 2 has a pushbutton attached to it. Give it a name:
-int pushButtonB = 3;
-// digital pin 2 has a pushbutton attached to it. Give it a name:
-int pushButtonC = 4;
+// digital pin 3 has a pushbutton attached to it. Give it a name:
+int pushButtonB = ; //TODO: Put the correct pin number (3)
+// digital pin 4 has a pushbutton attached to it. Give it a name:
+int pushButtonC = ; //TODO: Put the correct pin number (4)
 
 // the setup routine runs once when you press reset:
 void setup() {
@@ -334,10 +357,9 @@ void setup() {
 Serial.begin(9600);
 // make the pushbutton's pin an input and with a pullup resistor:
 pinMode(pushButtonA, INPUT_PULLUP);
-// make the pushbutton's pin an input and with a pullup resistor:
-pinMode(pushButtonB, INPUT_PULLUP);
-// make the pushbutton's pin an input and with a pullup resistor:
-pinMode(pushButtonC, INPUT_PULLUP);
+
+// TODO: make the pushbutton's pin an input and with a pullup resistor for pushButtonB and pushButtonC
+// HINT: you can basically copy paste the code above
 }
 
 // the loop routine runs over and over again forever:
@@ -349,19 +371,9 @@ if (!buttonStateA) {
     Serial.println("A");
 }
 
-// read the input pin:
-int buttonStateB = digitalRead(pushButtonB);
-// print out the state of the button:
-if (!buttonStateB) {
-    Serial.println("B");
-}
+//TODO: Please do the same thing we did with buttonStateA and Pin 2 for Pin 3 and Pin 4 to print B and C respectively.
+//HINT: To make "B" and "C" print, it is mostly copy paste and changing the name
 
-// read the input pin:
-int buttonStateC = digitalRead(pushButtonC);
-// print out the state of the button:
-if (!buttonStateC) {
-    Serial.println("C");
-}
 delay(1);  // delay in between reads for stability
 }
                 </code>
@@ -377,27 +389,120 @@ delay(1);  // delay in between reads for stability
             Show that your Serial Monitor prints A, B, C when you press the buttons. Your instructor will also check you understand 
             how to use a multimeter to check the internal wiring of the button.
         </div>
+    </section>
+    <hr>
 
-        <p>CODE FOR CAPSESNE</p>
+                    <h4>Part (3): Adding Serial Communication in Processing (20 minutes)  <a id="part3"> </a></h4>
+        <p> Now, let’s try learning how to add Serial communication.  
+        </p>
+        <p><b>Note: You must close your Serial Monitor in Arduino before running the Processing file, or else you will get the error that the 
+            port is busy.
+        </b></p>
+        <p>Here is how the Serial works basically:</p>
+        <img src=media/lab9/arduino-serial.png class="rounded mx-auto d-block img-fluid"> 
+        <br>
+        <p>Replace your program with this code below in Processing in a new file. Look particularly and lines 8 and 9. If the buttons do not print to the Processing terminal, 
+            then we are likely using the wrong port. Change the port number to work with your computer. Feel free to ask for help if you have 
+            tried multiple port numbers and they have not worked.</p>
         <pre>
             <code class="language-javascript">
-/*********************************************************
-This is a library for the MPR121 12-channel Capacitive touch sensor
+import processing.serial.*;
 
-Designed specifically to work with the MPR121 Breakout in the Adafruit shop 
-     https://www.adafruit.com/products/
+Serial myPort;  // Create object from Serial class
+String val;     // Data received from the serial port
 
-These sensors use I2C communicate, at least 2 pins are required 
-to interface
+void setup(){
+    size(300, 400); //window size, (width, height)
+    println(Serial.list()); //print all the ports you have and choose the one that is the Arduino
+    String portName = Serial.list()[2]; //change the 2 to a 0 or 1 or 3 etc. to match your port
+    myPort = new Serial(this, portName, 9600);
+}
 
-Adafruit invests time and resources providing this open source code, 
-please support Adafruit and open-source hardware by purchasing 
-products from Adafruit!
+void draw(){
+    background(50, 70, 100); //background color of window (r, g, b) from 0-255
+    //let's give title to our window
+    fill(0, 0, 0); // text color (r, g, b)
+    text("GUITAR HERO", 100, 30); // ("text", x coord, y coord)
+    if ( myPort.available() > 0) 
+    {  // If data is available,
+    val = myPort.readStringUntil('\n');         // read it and store it in val
+    } 
+    println(val); //print it out in the console
+}
+            </code>
+            </pre>
+            <p>This is communication from Arduino to computer. You can also do communication from Processing to Arduino! 
+                It would be the same process of opening the port and doing <code>myPort.write("something")</code>.
+            </p>
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                        <h4>Checkoff 3</h4>
+                        Show your instructor that you have working Serial communication both ways.
+                    </div>
+                    <hr> 
+            <h4>Part (4): Testing the Game with Keyboard and Breadboard (20 mins) <a id="part4"></a></h4>    
+            <p>Go to this url and download the folder. <a href="https://github.com/fzaman500/mit-gtl-bahrain-2025-guitar-hero">Guitar Hero Link.</a> 
+                To download the zip folder, click the green code button, and finally click download zip.
+                Open the Processing file named <i>rhythmgame.pde</i>. It is under <i>Processing/rhythmgame</i> folder.</p>
+                <p>Since our game has sound, we need to install the Sound library. Download the <i>Sound</i> library with The Processing Foundation as the author. You do this 
+                the same way we did for the Serial and ControlP5 library.</p>
+                <p><b>Reminder: You must make sure the Arduino Serial Monitor is closed before running the Processing file.</b></p>
+                <p>Navigate to line 68 in the code. Change the location of the trackdata file with the location on your laptop.</p>
+                <pre>
+                <code class="language-javascript">
+// TODO: Load track metadata EDIT THIS LINE BELOW WITH YOUR PC LOCATION
+trackData = new TrackData("/Users/STEAM/mit-gtl-bahrain-2025-guitar-hero/Processing/rhythmgame/data/trackinfo.txt");
+                </code>
+            </pre>
+               <p> Now, try running the game with just the arrow keys (left, down, right). If that works, then we can test the Serial.
+             Make sure your Arduino is plugged in and make sure your Serial monitor is closed. This will ensure that information is being written into the port that we can grab from 
+            Processing. Now, run the Processing code once more. Your breadboard controller should work now! Don't hesitate to ask questions if you have any. 
+            Take a bit of time to understand the Processing code. You will be asked some questions during checkoff of the lab, particularly, 
+            about the Serial communication portion. The most notable lines are lines 50-54 and 276-284.</p>
+        
+            <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
+                <h4>Checkoff 4</h4>
+                Show your instructor that your breadboard controller works. Explain how the Serial code works.
+            </div>
+            <hr>
+                    <!-- Part 3: Assembly of the Electronics on the Guitar -->
+            <h4>Part (5): Learning Heatshrinking and Soldering Onto Guitar and Shield (15 mins) <a id="part5"></a></h4>
+                    <p>Soldering is a technique to connect two electrical components together. 
+                        Solder is usually a leaded metal that you melt down and acts as glue. The soldering
+                        iron heats up the solder to turn it into a liquid that can flow. For our first step,
+                        let's turn on the iron to 450 degrees Celsius. For this whole process, don't be afraid 
+                        to ask for help from one of your instructors. Soldering can be daunting at first.
+                    </p>
+                    <p>This YouTube video shows how to solder on a circuit board and how to solder on wires. This is optional to watch if you already familiar.</p>
+                    <iframe width="560" height="310" class="embed-responsive-item" src="https://www.youtube.com/embed/Qps9woUGkvI?si=WBCRzVkY6fdMaffp" title="YouTube video player"  allowfullscreen></iframe>
+                    <br><br>
+                    <p>At the solder station, you will solder the wires to a capsense module such that it is long enough to reach the Arduino location on the guitar.
+                        The button closest to the Arduino should be soldered onto <b>0</b> on the CapSense shield, the middle one should 
+                        be soldered onto <b>1</b> on the CapSense shield, and the farthest button should be soldered onto <b>2</b> on the CapSense shield.
+                    </p>
+                    <p>There's also another technique for putting electrical components together cleanly. So, we used soldering to connect wires together. However, they're 
+                        just hanging out and can accidentally touch other exposed wires which would make connections that we don't want and, in the worst case, can cause a fire.
+                        So, we can insulate the wire by wrapping it in electrical tape or <i>heatshrink</i>. Heatshrink is a plastic tubing that shrinks when heat is applied. 
+                        We use a heatgun (which spews hot air) to wrap it around the exposed wire. In the gif below, I put the heatshrink over the exposed wire.
+                    </p>
+                    <img src=media/lab9/heatshrink.gif class="rounded mx-auto d-block img-fluid"> 
+                    <br>
+                    <p><b>After looking at this quick tutorial, go to the solder station and have an instructor help you solder and heatshrink.</b></p>
+                    
+                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
 
-Written by Limor Fried/Ladyada for Adafruit Industries.  
-BSD license, all text above must be included in any redistribution
-**********************************************************/
+                        <h4>Checkoff 5</h4> 
+                    Your guitar should be soldered and heatshrinked fully now!
+                    </div>
+        <hr>
 
+        <h4>Part (6): Test the Guitar Hero Game Finally (10 mins)</h4> <a id="part6"> </a>
+        <p>So, your guitar is now fully soldered. However since we are not using buttons, we want to adjust the Arduino code 
+            to use CapSense. So, we want it to print "A", "B", and "C" whenever we press the appropriate places. We can just make some 
+            edits to the CapSense code from last time. I have already made all the edits for you, so it should just work! Try uploading 
+            the following Arduino code. Remember to close the Arduino Serial Monitor before running the Processing file.
+        </p>
+        <pre>
+            <code class="language-javascript">
 #include &lt;Wire.h&gt;
 #include "Adafruit_MPR121.h"
 
@@ -464,147 +569,6 @@ void loop() {
 }
             </code>
         </pre>
-    </section>
-    <hr>
-
-                    <h4>Part (3): Adding Serial Communication in Processing (20 minutes)  <a id="part3"> </a></h4>
-        <p> Now, let’s try learning how to add Serial communication. Replace your program with this code in Processing in a new file. </p>
-        <img src=media/lab9/arduino-serial.png class="rounded mx-auto d-block img-fluid"> 
-        <p><b>Please Note: This is communication from Arduino to computer. Look particularly and lines 8 and 9. If the buttons do not print to the Processing terminal, 
-            then we are likely using the wrong port. Change the port number to work with your computer. Feel free to ask for help if you have 
-            tried multiple port numbers and they have not worked.</b></p>
-
-        <pre>
-            <code class="language-javascript">
-import processing.serial.*;
-
-Serial myPort;  // Create object from Serial class
-String val;     // Data received from the serial port
-
-void setup(){
-    size(300, 400); //window size, (width, height)
-    println(Serial.list()); //print all the ports you have and choose the one that is the Arduino
-    String portName = Serial.list()[2]; //change the 2 to a 1 or 0 etc. to match your port
-    myPort = new Serial(this, portName, 9600);
-}
-
-void draw(){
-    background(50, 70, 100); //background color of window (r, g, b) from 0-255
-    //let's give title to our window
-    fill(0, 0, 0); // text color (r, g, b)
-    text("GUITAR HERO", 100, 30); // ("text", x coord, y coord)
-    if ( myPort.available() > 0) 
-    {  // If data is available,
-    val = myPort.readStringUntil('\n');         // read it and store it in val
-    } 
-    println(val); //print it out in the console
-}
-            </code>
-            </pre>
-            <br>
-            <p>Now, let's add communication from computer to Arduino! Update your code to look like this:</p>
-
-            <pre>
-                <code class="language-javascript">
-import processing.serial.*;
-
-Serial myPort;  // Create object from Serial class
-String val;     // Data received from the serial port
-
-void setup(){
-    size(300, 400); //window size, (width, height)
-    String portName = Serial.list()[2]; //change the 0 to a 1 or 2 etc. to match your port
-    myPort = new Serial(this, portName, 9600);
-}
-
-void draw(){
-    background(50, 70, 100); //background color of window (r, g, b) from 0-255
-    //let's give title to our window
-    fill(0, 0, 0); // text color (r, g, b)
-    text("GUITAR HERO", 100, 30); // ("text", x coord, y coord)
-    if ( myPort.available() > 0) 
-    {  // If data is available,
-    val = myPort.readStringUntil('\n');         // read it and store it in val
-    } 
-    println(val); //print it out in the console
-    if (mousePressed == true) 
-    {                           //if we clicked in the window
-    myPort.write('1');         //send a 1
-    println("1");   
-    } else 
-    {                           //otherwise
-    myPort.write('0');          //send a 0
-    }
-}
-                </code>
-                </pre>
-                <p>Now, when you click your mouse on your Processing window, you should see a 1 show up in the Arduino Serial Monitor.</p>
-
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                        <h4>Checkoff 3</h4>
-                        Show your instructor that you have working Serial communication both ways.
-                    </div>
-                    <hr> 
-            <h4>Part (4): Testing the Game with Keyboard and Breadboard (20 mins) <a id="part4"></a></h4>    
-            <p>Go to this url and download the folder. <a href="https://github.com/fzaman500/mit-gtl-bahrain-2025-guitar-hero">Guitar Hero Link.</a> 
-                To download the zip folder, click the green code button, and finally click download zip.
-                Open the Processing file named <i>rhythmgame.pde</i>. It is under <i>Processing/rhythmgame</i> folder.</p>
-                <p>Navigate to line 68 in the code. Change the location of the trackdata file with the location on your laptop.</p>
-                <pre>
-                <code class="language-javascript">
-// TODO: Load track metadata EDIT THIS LINE BELOW WITH YOUR PC LOCATION
-trackData = new TrackData("/Users/STEAM/mit-gtl-bahrain-2025-guitar-hero/Processing/rhythmgame/data/trackinfo.txt");
-                </code>
-            </pre>
-               <p> Now, try running the game with just the arrow keys (left, down, right). If that works, then we can test the Serial.
-             Open Arduino and run the Serial code we ran prior. This will ensure that information is being written into the port that we can grab from 
-            Processing. Now, run the Processing code once more. Your breadboard controller should work now! Don't hesitate to ask questions if you have any. 
-            Take a bit of time to understand the Processing code. You will be asked some questions during checkoff of the lab, particularly, 
-            about the Serial communication portion. The most notable lines are lines 50-54 and 276-284.</p>
-        
-            <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-                <h4>Checkoff 4</h4>
-                Show your instructor that your breadboard controller works. Explain how the Serial code works.
-            </div>
-            <hr>
-                    <!-- Part 3: Assembly of the Electronics on the Guitar -->
-            <h4>Part (5): Learning Soldering (15 mins) <a id="part5"></a></h4>
-                    <p>Soldering is a technique to connect two electrical components together. 
-                        Solder is usually a leaded metal that you melt down and acts as glue. The soldering
-                        iron heats up the solder to turn it into a liquid that can flow. For our first step,
-                        let's turn on the iron to 450 degrees Celsius. For this whole process, don't be afraid 
-                        to ask for help from one of your instructors. Soldering can be daunting at first.
-                    </p>
-                    <p>This YouTube video shows how to solder on a cicruit board and how to solder on wires. The wires part is most relevant to this lab.</p>
-                    <iframe width="560" height="310" class="embed-responsive-item" src="https://www.youtube.com/embed/Qps9woUGkvI?si=WBCRzVkY6fdMaffp" title="YouTube video player"  allowfullscreen></iframe>
-                    <br><br>
-                    <h5>Below is also a quick tutorial as well if you are already familiar with soldering:</h5>
-                    <p>Cut some wire. Strip the wire to expose some of the metal.</p>
-                    <img src=media/lab9/wire-strip.jpeg class="rounded mx-auto d-block img-fluid"> 
-                    <p>Now, bring the solder, soldering iron, the wire, and the leg of the button together.
-                        You will see the solder melt and become a glue. It only becomes a glue that keeps 
-                        components together when it cools and becomes solid. So when it is cooling, make 
-                        sure that everything is stable and holds together. Using clips to hold things together 
-                        helps with all of this. This is pictured below.
-                    </p>
-                    <img src=media/lab9/clips-solder.jpeg class="rounded mx-auto d-block img-fluid"> 
-                    <br>
-                    <p>There's also another technique for putting electrical components together cleanly. So, we used soldering to connect wires together. However, they're 
-                        just hanging out and can accidentally touch other exposed wires which would make connections that we don't want and, in the worst case, can cause a fire.
-                        So, we can insulate the wire by wrapping it in electrical tape or <i>heatshrink</i>. Heatshrink is a plastic tubing that shrinks when heat is applied. 
-                        We use a heatgun (which spews hot air) to wrap it around the exposed wire. In the gif below, I put the heatshrink over the exposed wire.
-                    </p>
-                    <img src=media/lab9/heatshrink.gif class="rounded mx-auto d-block img-fluid"> 
-                    <p>After looking at this quick tutorial, go to the solder station and have an instructor help you solder and heatshrink.</p>
-                    
-                    <div class="alert alert-info" role="alert" style="background-color: #C94747; color: white;">
-
-                        <h4>Checkoff 5</h4> 
-                    Your guitar should be soldered and heatshrinked fully now!
-                    </div>
-        <hr>
-
-        <h4>Part (6): Test the Guitar Hero Game Finally (10 mins)</h4> <a id="part6"> </a>
         <p>Now, test playing the game on your guitar! Hopefully, the buttons should work and you can see your score increase!</p>
         <p>Congratulations, your custom Guitar Hero game and controller are ready! 🎉</p>
         
