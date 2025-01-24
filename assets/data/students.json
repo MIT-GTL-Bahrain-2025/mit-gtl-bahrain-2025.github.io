@@ -31,10 +31,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Polytechnic",
+        "field": "Engineering",
+        "major": "BSc in Electromechanical ",
+        "year": "4th year"
     },
     {
         "id": "Ali_Althawadi",
@@ -55,10 +55,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Polytechnic",
+        "field": "IT/ Computing ",
+        "major": "Information and Communications Technology Programming",
+        "year": "2nd year"
     },
     {
         "id": "Fariha_Akbar",
@@ -67,10 +67,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "UTB",
+        "field": "Engineering",
+        "major": "Mechatronics Engineering",
+        "year": "2nd year"
     },
     {
         "id": "Fatima_Ali",
@@ -79,10 +79,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Polytechnic",
+        "field": "IT/ Computing ",
+        "major": "BSc in ICT programming ",
+        "year": "2nd year"
     },
     {
         "id": "Ibrahim_Aawan",
@@ -103,10 +103,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "BSc in Mechanical Engineering",
+        "year": "2nd year"
     },
     {
         "id": "Maryam_AlBonni",
@@ -115,10 +115,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "BSc in Mechanical Engineering",
+        "year": "3rd year"
     },
     {
         "id": "Mohammed_AlJalahma",
@@ -127,10 +127,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "BSc in Mechanical Engineering ",
+        "year": "2nd year"
     },
     {
         "id": "Nathalie_Ahmed",
@@ -139,10 +139,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "UTB",
+        "field": "Engineering",
+        "major": "BS in Mechatronics Engineering ",
+        "year": "3rd year"
     },
     {
         "id": "Noor_Hasan",
@@ -151,10 +151,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "IT/ Computing ",
+        "major": "BSc in Computer Science",
+        "year": "3rd year"
     },
     {
         "id": "Raneem_Sabri",
@@ -163,7 +163,7 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "UoB",
+        "school": "UOB",
         "field": "Engineering",
         "major": "BSc in Architecture",
         "year": "4th year"
@@ -175,10 +175,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "Industrial Engineering",
+        "year": "2nd year"
     },
     {
         "id": "Sumayya_Nazeer",
@@ -187,10 +187,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "UOB",
+        "field": "Engineering",
+        "major": "B. Architecture",
+        "year": "4th year"
     },
     {
         "id": "Yousif_Abuzuhaira",
@@ -199,10 +199,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "IT/ Computing ",
+        "major": " BSc in Computer Science",
+        "year": "3rd year"
     },
     {
         "id": "Zain_Mayoof",
@@ -211,10 +211,10 @@
         "lab1": "",
         "lab2": "",
         "section": "advanced",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "IT/Computing",
+        "major": "Bsc in Computer Science",
+        "year": "3rd year"
     },
     {
         "id": "Abdullah_AlSaif",
@@ -223,10 +223,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "BSc in Mechanical Engineering",
+        "year": "2nd year"
     },
     {
         "id": "Laurence_Mascarenas",
@@ -235,10 +235,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "BSc in Mechanical Engineering",
+        "year": "2nd year"
     },
     {
         "id": "Sara_Aljeeran",
@@ -247,7 +247,7 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "UoB",
+        "school": "UOB",
         "field": "IT/ Computing",
         "major": "BSc in Computer Science",
         "year": "1st year"
@@ -271,10 +271,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "Engineering",
+        "major": "BSc. in Mechanical Engineering",
+        "year": "1st year"
     },
 
     {
@@ -296,10 +296,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Polytechnic",
+        "field": "IT/Computing",
+        "major": "BSc in Information and Communications Technology (Information Systems)",
+        "year": "2nd year"
     },
     {
         "id": "Syed_Rayed",
@@ -308,10 +308,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "UTB",
+        "field": "IT/Computing",
+        "major": "Bsc Computer Science ",
+        "year": "2nd years"
     },
     {
         "id": "Ali_Hussein",
@@ -320,10 +320,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Polytechnic",
+        "field": "Engineering",
+        "major": "BSc in Electronics Engineering",
+        "year": "3rd year"
     },
     {
         "id": "Maryam_Hasan",
@@ -332,10 +332,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Polytechnic",
+        "field": "Engineering",
+        "major": "Bachelor in Mechanical Engineering ",
+        "year": "2nd year"
     },
     
     {
@@ -357,10 +357,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Strathclyde ",
+        "field": "Engineering",
+        "major": "Mechanical Engineering",
+        "year": "1st year"
     },
     {
         "id": "Zainab_Fardan",
@@ -381,10 +381,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "IT/Computing",
+        "major": "Bsc in Computer Science ",
+        "year": "3rd year"
     },
     {
         "id": "Mohammed_Ali_Ahmed",
@@ -405,10 +405,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "AUBH",
+        "field": "IT/Computing",
+        "major": "BSc in Computer Science",
+        "year": "2nd year"
     },
     {
         "id": "Eman_Mohammed",
@@ -417,10 +417,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "UTB",
+        "field": "IT/Computing",
+        "major": "BSc in IT (Networking and Cybersecurity)",
+        "year": "2nd year"
     },
     {
         "id": "Moosa_Aljoami",
@@ -429,10 +429,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Strathclyde ",
+        "field": "Engineeing",
+        "major": "BEng in Mechanical Engineering",
+        "year": "1st year"
     },
     {
         "id": "Hana_Wahban",
@@ -466,10 +466,10 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Strathclyde ",
+        "field": "IT/ Computing ",
+        "major": "BSc in Software Engineering",
+        "year": "1st year"
     }, 
     
     
@@ -480,9 +480,9 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Polytechnic",
+        "field": "IT/Computing",
+        "major": "BSc InfoCommunicationsTechnology and Cybersecurity ",
+        "year": "3rd"
     }
 ]
