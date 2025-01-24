@@ -112,7 +112,7 @@
     {
         "id": "AgriBot",
         "name": "AgriBot",
-        "image": "assets/rotoscopes/agribot.png",
+        "image": "assets/rotoscopes/Agribot.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
         "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
         "members": ["Nathalie_Ahmed","Fariha_Akbar","Fatima_Ali","Fiza_Rana"],
