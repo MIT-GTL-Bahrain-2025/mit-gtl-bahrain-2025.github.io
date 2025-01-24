@@ -1,16 +1,5 @@
 [
-    {
-        "id": "Abdulaziz_Alhamad",
-        "name": "Abdulaziz Alhamad",
-        "bio": "",
-        "lab1": "",
-        "lab2": "_keychain",
-        "section": "advanced",
-        "school": "AUBH",
-        "field": "Engineering",
-        "major": "Mechanical Engineering",
-        "year": "2nd year"
-    },
+   
     {
         "id": "Ahmed_Bassam",
         "name": "Ahmed Bassam",
@@ -287,18 +276,7 @@
         "major": "",
         "year": ""
     },
-    {
-        "id": "Sara_Alshamari",
-        "name": "Sara Alshamari",
-        "bio": "",
-        "lab1": "",
-        "lab2": "",
-        "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
-    },
+
     {
         "id": "Ahmed_Almanea",
         "name": "Ahmed Almanea",
@@ -359,18 +337,7 @@
         "major": "",
         "year": ""
     },
-    {
-        "id": "Zahraa_Busuheil",
-        "name": "Zahraa Busuheil",
-        "bio": "",
-        "lab1": "",
-        "lab2": "",
-        "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
-    },
+    
     {
         "id": "Batool_Isa",
         "name": "Batool Isa",
@@ -482,6 +449,19 @@
     {
         "id": "Muneera_AlBinali",
         "name": "Muneera AlBinali",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "beginner",
+        "school": "",
+        "field": "",
+        "major": "",
+        "year": ""
+    }, 
+    
+     {
+        "id": "Fatima_AlZaki",
+        "name": "Fatima AlZaki",
         "bio": "",
         "lab1": "",
         "lab2": "",
