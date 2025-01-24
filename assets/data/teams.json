@@ -112,13 +112,13 @@
     {
         "id": "AgriBot",
         "name": "AgriBot",
-        "image": "assets/rotoscopes/Agribot.png",
+        "image": "assets/rotoscopes/agribot.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
         "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
         "members": ["Nathalie_Ahmed","Fariha_Akbar","Fatima_Ali","Fiza_Rana"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/AgriBot_milestone-1.png",
-            "assets/team_images/milestones/milestone-2/AgriBot_milestone-2.png",
+            "assets/team_images/milestones/milestone-2/agribot_milestone-2.png",
             "",
             ""
         ],
@@ -144,15 +144,13 @@
     {
         "id": "Navcket",
         "name": "Navcket",
-        "image": "assets/rotoscopes/Navcket.png",
+        "image": "assets/rotoscopes/navcket.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
         "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
         "members": [ "Ali_Althawadi","Yousif_Abuzuhaira","Mohammed_AlJalahma","Ahmed_Bassam","Ahmed_Hammad"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/Navcket_milestone-1.png",
-            "assets/team_images/milestones/milestone-2/Navcket_milestone-2.png",
-
-
+            "assets/team_images/milestones/milestone-2/navcket_milestone-2.png",
             "",
             ""
         ],
