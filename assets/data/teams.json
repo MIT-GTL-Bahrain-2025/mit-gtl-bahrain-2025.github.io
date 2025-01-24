@@ -9,10 +9,8 @@
         "milestones": [
          "assets/team_images/milestones/milestone-1/pearlquest_milestone-1.png",
          "assets/team_images/milestones/milestone-2/pearlquest_milestone-2.png",
-        "assets/team_images/milestones/milestone-3/pearlquest_milestone-3.png",
-
-
-            ""
+         "assets/team_images/milestones/milestone-3/pearlquest_milestone-3.png",
+         ""
         ],
         "category": "beginner"
     },
@@ -44,8 +42,6 @@
         "members": ["Moosa_Aljoami", "Maryam_Hasan", "Sara_Aljeeran"],
         "milestones": [
          "assets/team_images/milestones/milestone-1/mirror-mirror_milestone-1.png",
-
-
             "",
             "",
             ""
