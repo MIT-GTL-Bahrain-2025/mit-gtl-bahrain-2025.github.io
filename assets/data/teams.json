@@ -7,9 +7,11 @@
         "projectSketchDescription": "PearlQuest is an underwater drone for harvesting pearls.",
         "members": ["Mohammed_Ali_Ahmed", "Fatima_AlZaki", "Ahmed_Almanea", "Mohammed_AlLaith", "Muneera_AlBinali"],
         "milestones": [
-            "",
-            "",
-            "",
+         "assets/team_images/milestones/milestone-1/pearlquest_milestone-1.png",
+         "assets/team_images/milestones/milestone-2/pearlquest_milestone-2.png",
+        "assets/team_images/milestones/milestone-3/pearlquest_milestone-3.png",
+
+
             ""
         ],
         "category": "beginner"
@@ -23,7 +25,7 @@
         "projectSketchDescription": "Emotibear is an ",
         "members": ["Mariam_AlAraab", "Zainab_Fardan", "Ali_Hussein", "Syed_Rayed", "Batool_Isa"],
         "milestones": [
-            "",
+            "assets/team_images/milestones/milestone-1/Emotibear_milestone-1.png",
             "",
             "",
             ""
@@ -41,7 +43,9 @@
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
         "members": ["Moosa_Aljoami", "Maryam_Hasan", "Sara_Aljeeran"],
         "milestones": [
-            "",
+         "assets/team_images/milestones/milestone-1/mirror-mirror_milestone-1.png",
+
+
             "",
             "",
             ""
@@ -58,8 +62,10 @@
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
         "members": ["Laurence_Mascarenas", "Ziyad_AlHajri", "Hana_Wahban", "Duha_AlAbbasi"],
         "milestones": [
-            "",
-            "",
+           "assets/team_images/milestones/milestone-1/bookbuddy_milestone-1.png",
+            "assets/team_images/milestones/milestone-2/bookbuddy_milestone-2.png",
+
+
             "",
             ""
         ],
@@ -75,8 +81,10 @@
         "projectSketchDescription": "Team Cat's Project explores innovative ways to design interactive systems.",
         "members": ["Malak_AlSalam", "Yusuf_Seroor", "Eman_Mohammed", "Afham_Haleema", "Abdullah_AlSaif"],
         "milestones": [
-            "",
-            "",
+          "assets/team_images/milestones/milestone-1/posturepack_milestone-1.png",
+         "assets/team_images/milestones/milestone-2/posturepack_milestone-2.png",
+
+
             "",
             ""
         ],
@@ -93,7 +101,9 @@
         "members": ["Ali_Abbas", "Batool_Albonni","Maryam_AlBonni", "Jawad_Tawfeeq", "Yousif_Aamir","Sana_Zainaba"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/WeBowling_milestone-1.png",
-            "",
+                        "assets/team_images/milestones/milestone-2/webowling_milestone-2.png",
+
+
             "",
             ""
         ],
@@ -108,7 +118,7 @@
         "members": ["Nathalie_Ahmed","Fariha_Akbar","Fatima_Ali","Fiza_Rana"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/AgriBot_milestone-1.png",
-            "",
+            "assets/team_images/milestones/milestone-2/agriBot_milestone-2.png",
             "",
             ""
         ],
@@ -120,10 +130,12 @@
         "image": "assets/rotoscopes/ICE-WALL.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
         "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
-        "members": ["Noor_Hasan", "Meshael_Ajaj","Ibrahim_Aawan","Zain_Mayoof","Sumayya_Nazeer", "Raneem_Sabri", "Sabah_Hassan"],
+        "members": ["Ibrahim_Aawan","Zain_Mayoof","Sumayya_Nazeer", "Raneem_Sabri", "Meshael_Ajaj", "Sabah_Hassan", "Noor_Hasan"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/ICE_Wall_Art_milestone-1.png",
-            "",
+            "assets/team_images/milestones/milestone-2/ICE_Wall_Art_milestone-2.png",
+
+
             "",
             ""
         ],
@@ -135,10 +147,12 @@
         "image": "assets/rotoscopes/Navcket.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
         "projectSketchDescription": "Team Dog's Project focuses on creating efficient systems for real-world problems.",
-        "members": ["Ahmed_Bassam", "Ali_Althawadi","Yousif_Abuzuhaira","Ahmed_Hammad", "Mohammed_AlJalahma"],
+        "members": [ "Ali_Althawadi","Yousif_Abuzuhaira","Mohammed_AlJalahma","Ahmed_Bassam","Ahmed_Hammad"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/Navcket_milestone-1.png",
-            "",
+            "assets/team_images/milestones/milestone-2/Navcket_milestone-2.png",
+
+
             "",
             ""
         ],
