@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 9: Let's Make a Guitar Hero Game w/ Capacitive Touch!</title>
+    <title>Lab 9: Let's Make a Guitar Hero Game with Capacitive Touch!</title>
     <!-- Bootswatch Litera CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" rel="stylesheet">
        <link rel="icon" type="image/x-icon" href="Media/Photos/Logo.svg">
@@ -45,9 +45,9 @@
         <!-- Introduction Section -->
         <div class="col-md-8" style="padding-top:100px;">
                 <section class="mb-4">
-<h1 class="mb-5"> <a id="introduction">Lab 9: Let's Make a Guitar Hero Game!</a></h1>
+<h1 class="mb-5"> <a id="introduction">Lab 9: Let's Make a Guitar Hero Game with Capacitive Touch!</a></h1>
                    
-<img src=media/guitar-hero-main-pic.png class="rounded mx-auto d-block img-fluid"> 
+<img src=media/CapTouch/captouch-starterimage.png class="rounded mx-auto d-block img-fluid"> 
 
                     <h2>🦺 Introduction & Safety</h2>(1 minute read)
                     <br> <br>
@@ -398,11 +398,11 @@ Written by Limor Fried/Ladyada for Adafruit Industries.
 BSD license, all text above must be included in any redistribution
 **********************************************************/
 
-#include <Wire.h>
+#include &lt;Wire.h&gt;
 #include "Adafruit_MPR121.h"
 
 #ifndef _BV
-#define _BV(bit) (1 << (bit)) 
+#define _BV(bit) (1 &lt;&lt; (bit)) 
 #endif
 
 // You can have up to 4 on one i2c bus but one is enough for testing!
@@ -469,6 +469,7 @@ void loop() {
 
                     <h4>Part (3): Adding Serial Communication in Processing (20 minutes)  <a id="part3"> </a></h4>
         <p> Now, let’s try learning how to add Serial communication. Replace your program with this code in Processing in a new file. </p>
+        <img src=media/lab9/arduino-serial.png class="rounded mx-auto d-block img-fluid"> 
         <p><b>Please Note: This is communication from Arduino to computer. Look particularly and lines 8 and 9. If the buttons do not print to the Processing terminal, 
             then we are likely using the wrong port. Change the port number to work with your computer. Feel free to ask for help if you have 
             tried multiple port numbers and they have not worked.</b></p>

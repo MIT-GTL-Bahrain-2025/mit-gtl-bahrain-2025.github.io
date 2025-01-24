@@ -453,23 +453,23 @@
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "",
-        "field": "",
-        "major": "",
-        "year": ""
+        "school": "Strathclyde",
+        "field": "IT/ Computing",
+        "major": "BSc in Software Engineering",
+        "year": "1st year"
     }, 
     
      {
-        "id": "Fatima_AlZaki",
-        "name": "Fatima AlZaki",
+        "id": "Fatema_AlZaki",
+        "name": "Fatema AlZaki",
         "bio": "",
         "lab1": "",
         "lab2": "",
         "section": "beginner",
-        "school": "Strathclyde ",
-        "field": "IT/ Computing ",
-        "major": "BSc in Software Engineering",
-        "year": "1st year"
+        "school": "Polytechnic ",
+        "field": "Engineering ",
+        "major": "BTech in Electronics Engineering ",
+        "year": "3rd year"
     }, 
     
     
