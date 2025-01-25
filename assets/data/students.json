@@ -109,7 +109,7 @@
         "year": "2nd year"
     },
     {
-        "id": "Maryam_AlBonni",
+        "id": "Maryam_albonni",
         "name": "Maryam AlBonni",
         "bio": "",
         "lab1": "",
@@ -484,5 +484,44 @@
         "field": "IT/Computing",
         "major": "BSc InfoCommunicationsTechnology and Cybersecurity ",
         "year": "3rd"
+    }
+    
+    
+             {
+        "id": "yousif_aamir",
+        "name": "Yousif Aamir",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": " ",
+        "year": ""
+    },
+             {
+        "id": "sana_zainaba",
+        "name": "Sana Zainaba",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": " ",
+        "year": ""
+    },
+
+             {
+        "id": "fiza",
+        "name": "Fiza Rana",
+        "bio": "",
+        "lab1": "",
+        "lab2": "",
+        "section": "advanced",
+        "school": "",
+        "field": "",
+        "major": " ",
+        "year": ""
     }
 ]
