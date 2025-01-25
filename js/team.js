@@ -29,14 +29,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Update team name and logo
         document.getElementById("team-title").innerText = team.name;
+
         const teamLogo = document.createElement("img");
         teamLogo.src = team.image;
         teamLogo.alt = `${team.name} Logo`;
         teamLogo.classList.add("img-fluid", "my-3");
         document.getElementById("team-logo").appendChild(teamLogo);
 
-        // Populate the list of members
+        // Add team description below the name
+        const teamDescription = document.createElement("p");
+        teamDescription.innerText = team.description || "No description available.";
+        teamDescription.classList.add("text-muted", "mt-2", "text-center"); // Styled with Bootstrap
+        document.getElementById("team-logo").appendChild(teamDescription);
+
+        // Populate the list of members (using Bootstrap for styling)
         const membersList = document.getElementById("team-members");
+        membersList.classList.add("d-flex", "flex-wrap", "gap-2"); // Flex container with gaps
+
         team.members.forEach(memberId => {
             const student = students.find(s => s.id === memberId) || {
                 id: memberId,
@@ -45,13 +54,48 @@ document.addEventListener("DOMContentLoaded", async () => {
             const memberLink = document.createElement("a");
             memberLink.href = `student.html?student=${student.id}`;
             memberLink.innerText = student.name;
-            memberLink.classList.add("d-block", "text-decoration-none", "mb-2");
+            memberLink.classList.add("btn", "btn-danger", "m-1"); // Bootstrap button classes for red background and spacing
             membersList.appendChild(memberLink);
         });
 
-        // Add project details
-        document.getElementById("project-sketch").src = team.projectSketch || "assets/project_images/placeholder.png";
-        document.getElementById("project-sketch-description").innerText = team.projectSketchDescription || "No description available.";
+        // Add milestones dynamically, displayed as an article-like list
+const milestonesContainer = document.createElement("div");
+milestonesContainer.classList.add("mx-auto", "mt-4", "col-12", "col-md-8"); // Center and limit the width
+
+team.milestones.forEach((milestone, index) => {
+    if (milestone) {
+        // Wrapper for each milestone
+        const milestoneWrapper = document.createElement("div");
+        milestoneWrapper.classList.add("mb-4", "p-3", "border", "rounded", "shadow-sm"); // Spacing and styling for the wrapper
+
+        // Milestone heading
+        const milestoneHeading = document.createElement("h5");
+        milestoneHeading.innerText = `Milestone ${index + 1}`;
+        milestoneHeading.classList.add("font-weight-bold", "mb-3");
+
+        // Milestone image
+        const milestoneImg = document.createElement("img");
+        milestoneImg.src = milestone;
+        milestoneImg.alt = `Milestone ${index + 1}`;
+        milestoneImg.classList.add("img-fluid", "rounded", "shadow-sm", "mb-2"); // Responsive and styled
+
+        // Milestone description
+        const milestoneDescription = document.createElement("p");
+        milestoneDescription.innerText = `Description for Milestone ${index + 1}`; // Placeholder description
+        milestoneDescription.classList.add("text-muted");
+
+        // Append content to the wrapper
+        milestoneWrapper.appendChild(milestoneHeading);
+        milestoneWrapper.appendChild(milestoneImg);
+        milestoneWrapper.appendChild(milestoneDescription);
+
+        // Append the wrapper to the milestones container
+        milestonesContainer.appendChild(milestoneWrapper);
+    }
+});
+
+// Add the milestones container to the main page
+document.querySelector(".container").appendChild(milestonesContainer);
     } catch (error) {
         console.error("Error loading team data:", error);
 
