@@ -523,7 +523,8 @@
         "year": ""
     }, 
     
-        "id": "Abdulaziz_Alhamad",
+      {  "id": "Abdulaziz_Alhamad",
+        "name": "Abdulaziz Alhamad",
         "name": "Abdulaziz Alhamad",
         "bio": "",
         "lab1": "",
