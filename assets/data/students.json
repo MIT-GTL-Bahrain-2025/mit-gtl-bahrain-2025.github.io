@@ -17,7 +17,7 @@
         "name": "Ahmed Hammad",
         "bio": "",
         "lab1": "assets/lab_images/lab1_advanced",
-        "lab2": "",
+        "lab2": "assets/lab_images/lab2_advanced",
         "section": "advanced",
         "school": "Polytechnic",
         "field": "Engineering",
@@ -41,7 +41,7 @@
         "name": "Ali Althawadi",
         "bio": "",
         "lab1": "assets/lab_images/lab1_advanced",
-        "lab2": "",
+        "lab2": "assets/lab_images/lab2_advanced",
         "section": "advanced",
         "school": "AUBH",
         "field": "Engineering",
@@ -210,7 +210,7 @@
         "name": "Abdullah AlSaif",
         "bio": "",
         "lab1": "",
-        "lab2": "",
+        "lab2": "assets/lab_images/lab2_beginner",
         "section": "beginner",
         "school": "AUBH",
         "field": "Engineering",
@@ -234,7 +234,7 @@
         "name": "Sara Aljeeran",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+        "lab2": "assets/lab_images/lab2_beginner",
         "section": "beginner",
         "school": "UOB",
         "field": "IT/ Computing",
@@ -246,7 +246,7 @@
         "name": "Afham Haleema",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+        "lab2": "assets/lab_images/lab2_beginner",
         "section": "beginner",
         "school": "UTB",
         "field": "IT/ Computing",
@@ -258,7 +258,7 @@
         "name": "Malak AlSalam",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+        "lab2": "assets/lab_images/lab2_beginner",
         "section": "beginner",
         "school": "AUBH",
         "field": "Engineering",
@@ -283,7 +283,9 @@
         "name": "Mariam AlArab",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+         "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "Polytechnic",
         "field": "IT/Computing",
@@ -295,7 +297,7 @@
         "name": "Syed Rayed",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+         "lab2": "assets/lab_images/lab2_beginner",
         "section": "beginner",
         "school": "UTB",
         "field": "IT/Computing",
@@ -307,7 +309,7 @@
         "name": "Ali Hussein",
         "bio": "",
         "lab1": "",
-        "lab2": "",
+         "lab2": "assets/lab_images/lab2_beginner",
         "section": "beginner",
         "school": "Polytechnic",
         "field": "Engineering",
@@ -319,7 +321,7 @@
         "name": "Maryam Hasan",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+         "lab2": "assets/lab_images/lab2_beginner",
         "section": "beginner",
         "school": "Polytechnic",
         "field": "Engineering",
@@ -332,7 +334,9 @@
         "name": "Batool Isa",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+                "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "Polytechnic",
         "field": "IT/ Computing",
@@ -344,7 +348,9 @@
         "name": "Mohammed AlLaith",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "Strathclyde ",
         "field": "Engineering",
@@ -356,7 +362,9 @@
         "name": "Zainab Fardan",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "UoB",
         "field": "Engineering",
@@ -368,7 +376,9 @@
         "name": "Duha AlAbbasi",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "AUBH",
         "field": "IT/Computing",
@@ -380,7 +390,9 @@
         "name": "Mohammed Ali Ahmed",
         "bio": "",
         "lab1": "",
-        "lab2": "",
+              "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "Polytechnic",
         "field": "Engineering",
@@ -392,7 +404,9 @@
         "name": "Ziyad AlHajri",
         "bio": "",
         "lab1": "",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "AUBH",
         "field": "IT/Computing",
@@ -404,7 +418,9 @@
         "name": "Eman Mohammed",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "UTB",
         "field": "IT/Computing",
@@ -416,7 +432,9 @@
         "name": "Moosa Aljoami",
         "bio": "",
         "lab1": "",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "Strathclyde ",
         "field": "Engineeing",
@@ -428,7 +446,9 @@
         "name": "Hana Wahban",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "AUBH",
         "field": "IT/ Computing",
@@ -440,7 +460,9 @@
         "name": "Muneera AlBinali",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "Strathclyde",
         "field": "IT/ Computing",
@@ -453,7 +475,9 @@
         "name": "Fatema AlZaki",
         "bio": "",
         "lab1": "",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "Polytechnic ",
         "field": "Engineering ",
@@ -467,7 +491,9 @@
         "name": "Yusuf Seroor",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-        "lab2": "",
+               "lab2": "assets/lab_images/lab2_beginner",
+
+
         "section": "beginner",
         "school": "Polytechnic",
         "field": "IT/Computing",
