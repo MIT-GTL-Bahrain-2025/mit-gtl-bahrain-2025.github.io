@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const labsContainer = document.getElementById("labs-container");
         labsContainer.innerHTML = ""; // Clear any existing content
         const lab_names = ["lab1","lab2"]; // Assuming 'labs' is an array of lab details
-
+        const extensions = ['png', 'jpg'];
+        
         lab_names.forEach((lab_name, index) => {
             const imageBasePath = `assets/lab_images/${lab_name}_${student.section}/${student.id}.png`;
         
