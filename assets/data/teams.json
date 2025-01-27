@@ -4,8 +4,8 @@
         "name": "PearlQuest",
         "image": "assets/rotoscopes/pearl-quest.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
-        "description": "Description placeholder.",
-        "members": ["Mohammed_Ali_Ahmed", "Fatima_AlZaki", "Ahmed_Almanea", "Mohammed_AlLaith", "Muneera_AlBinali"],
+        "description": "PearlQuest is an underwater drone for pearl harvesting.",
+        "members": ["Mohammed_Ali_Ahmed", "Fatema_AlZaki", "Ahmed_Almanea", "Mohammed_AlLaith", "Muneera_AlBinali"],
         "milestones": [
          "assets/team_images/milestones/milestone-1/pearlquest_milestone-1.png",
          "assets/team_images/milestones/milestone-2/pearlquest_milestone-2.png",
