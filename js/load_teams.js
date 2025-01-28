@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <!-- Team Name and Members -->
                         <div class="flex-grow-1">
                             <h5 class="card-title mb-2" style="line-height: 1;">
-                                <a href="team.html?id=${team.id}" class="text-decoration-none" style="color: black;">${team.name}</a>
+                                <a href="team.html?team=${team.id}" class="text-decoration-none" style="color: black;">${team.name}</a>
                             </h5>
                             <ul class="list-unstyled mb-0" style="padding-left: 0; line-height: 1.5;">
                                 ${team.members
