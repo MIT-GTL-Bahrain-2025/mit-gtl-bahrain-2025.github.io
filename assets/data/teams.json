@@ -3,7 +3,8 @@
         "id": "PearlQuest",
         "name": "PearlQuest",
         "image": "assets/rotoscopes/pearl-quest.png",
-        "projectSketch": "assets/team_images/team_cat_project_sketch.png",
+        "milestone1pdflink":"",
+        "milestone1pdfimages":"",
         "description": "PearlQuest is an underwater drone for pearl harvesting.",
         "members": ["Mohammed_Ali_Ahmed", "Fatema_AlZaki", "Ahmed_Almanea", "Mohammed_AlLaith", "Muneera_AlBinali"],
         "milestones": [
@@ -15,12 +16,12 @@
         "category": "beginner"
     },
     
-            {
+        {
         "id": "Emotibear",
         "name": "Emotibear",
         "image": "assets/rotoscopes/emotibear.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
-       "description": "Description placeholder.",
+        "description": "Description placeholder.",
         "members": ["Mariam_AlAraab", "Zainab_Fardan", "Ali_Hussein", "Syed_Rayed", "Batool_Isa"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/Emotibear_milestone-1.png",
@@ -38,7 +39,7 @@
         "name": "Mirror-Mirror",
         "image": "assets/rotoscopes/mirror-mirror.png",
         "projectSketch": "assets/team_images/team_cat_project_sketch.png",
-       "description": "Description placeholder.",
+        "description": "Description placeholder.",
         "members": ["Moosa_Aljoami", "Maryam_Hasan", "Sara_Aljeeran", "Jood_Mohammed"],
         "milestones": [
          "assets/team_images/milestones/milestone-1/mirror-mirror_milestone-1.png",
@@ -109,7 +110,13 @@
         "id": "AgriBot",
         "name": "AgriBot",
         "image": "assets/rotoscopes/Agribot.png",
-        "projectSketch": "assets/team_images/team_dog_project_sketch.png",
+        "milestone1pdflink":"https://drive.google.com/file/d/1Tj3UMVn2_FxeIO7JK36o3eAJBgVQnuJ-/preview",
+        "milestone2images":
+            ["assets/team_images/milestones/milestone-2/agribot_milestone-2.png",
+             "assets/team_images/milestones/milestone-2/agribot_milestone-2.png",
+            "assets/team_images/milestones/milestone-2/agribot_milestone-2.png"], 
+        "milestone3videolink":"https://www.youtube.com/embed/jjxOnX3LFSA?si=2VPvXK3bP4xNloS5",
+        "milestone4pdflink":"https://drive.google.com/file/d/1Tj3UMVn2_FxeIO7JK36o3eAJBgVQnuJ-/preview",
         "description": "Description placeholder.",
         "members": ["Nathalie_Ahmed","Fariha_Akbar","Fatima_Ali","Fiza_Rana"],
         "milestones": [
