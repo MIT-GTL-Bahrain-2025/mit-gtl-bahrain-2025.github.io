@@ -216,19 +216,23 @@
         "name": "Navcket",
         "image": "assets/rotoscopes/navcket.png",
 
-          "milestone1pdflink":"https://drive.google.com/file/d/1Tj3UMVn2_FxeIO7JK36o3eAJBgVQnuJ-/preview",
+          "milestone1pdflink":"https://drive.google.com/file/d/1QtY1918BZ0GF90w_2k1VE7-npQRq6W9A/preview",
         "milestone2images":
-            ["assets/team_images/milestones/milestone-2/agribot_milestone-2.png"], 
-        "milestone3videolink":"https://www.youtube.com/embed/UYcBY7pnVco?si=ABZxWOuktTDGpdSH",
-        "milestone4pdflink":"https://drive.google.com/file/d/1ZmNseyDy5bdeC9mmzh01CvG2Bk_9t9gT/preview",        
+            ["assets/team_images/milestones/milestone-2/navcket_milestone-2.png", 
+            "assets/team_images/milestones/milestone-2/navcket_milestone-2-2.png"], 
+        "milestone3videolink":"https://www.youtube.com/embed/mGmoA84SRas?si=R1oroNl2y1LDqqK4",
+        "milestone4pdflink":"https://drive.google.com/file/d/1hhIu2q9UThs6UeHjyPG0GM7VhGyRfEng/preview",        
         
         "description": "Navcket is an obstacle navigation jacker designed to aid the visually impaired.",
         "members": [ "Ali_Althawadi","Yousif_Abuzuhaira","Mohammed_AlJalahma","Ahmed_Bassam","Ahmed_Hammad"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/Navcket_milestone-1.png",
             "assets/team_images/milestones/milestone-2/navcket_milestone-2.png",
-            "",
-            ""
+            "assets/team_images/milestones/milestone-3/navcket.png",
+
+                        "assets/team_images/milestones/milestone-4/navcket.png"
+
+
         ],
         "category": "advanced"
     }
