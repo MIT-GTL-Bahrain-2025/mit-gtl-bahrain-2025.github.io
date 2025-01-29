@@ -173,18 +173,20 @@
         "image": "assets/rotoscopes/Agribot.png",
         "milestone1pdflink":"https://drive.google.com/file/d/1Tj3UMVn2_FxeIO7JK36o3eAJBgVQnuJ-/preview",
         "milestone2images":
-            ["assets/team_images/milestones/milestone-2/agribot_milestone-2.png",
-             "assets/team_images/milestones/milestone-2/agribot_milestone-2.png",
-            "assets/team_images/milestones/milestone-2/agribot_milestone-2.png"], 
-        "milestone3videolink":"https://www.youtube.com/embed/jjxOnX3LFSA?si=2VPvXK3bP4xNloS5",
-        "milestone4pdflink":"https://drive.google.com/file/d/1Tj3UMVn2_FxeIO7JK36o3eAJBgVQnuJ-/preview",
-        "description": "Description placeholder.",
-        "members": ["Nathalie_Ahmed","Fariha_Akbar","Fatima_Ali","Fiza_Rana"],
+            ["assets/team_images/milestones/milestone-2/agribot_milestone-2.png"], 
+        "milestone3videolink":"https://www.youtube.com/embed/UYcBY7pnVco?si=ABZxWOuktTDGpdSH",
+        "milestone4pdflink":"https://drive.google.com/file/d/1ZmNseyDy5bdeC9mmzh01CvG2Bk_9t9gT/preview",
+        "description": "Agribot is a 2-axis CNC robot designed to aid farmers with irrigation tasks.",
+        "members": ["Nathalie_Ahmed","Fariha_Akbar","Fatima_Ali","fiza"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/AgriBot_milestone-1.png",
             "assets/team_images/milestones/milestone-2/agribot_milestone-2.png",
-            "",
-            ""
+         "assets/team_images/milestones/milestone-3/agribot.png",
+
+
+           "assets/team_images/milestones/milestone-4/agribot-poster.png"
+
+
         ],
         "category": "advanced"
     },
@@ -193,7 +195,7 @@
         "name": "ICE Wall",
         "image": "assets/rotoscopes/ICE-WALL.png",
         "projectSketch": "assets/team_images/team_dog_project_sketch.png",
-        "description": "Description placeholder.",
+        "description": "ICE WALL is an interactive experession art wall designed for the AUBH ICE LAB",
         "members": ["Ibrahim_Aawan","Zain_Mayoof","Sumayya_Nazeer", "Raneem_Sabri", "Meshael_Ajaj", "Sabah_Hassan", "Noor_Hasan"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/ICE_Wall_Art_milestone-1.png",
