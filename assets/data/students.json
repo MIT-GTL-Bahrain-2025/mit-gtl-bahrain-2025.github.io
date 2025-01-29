@@ -7,6 +7,9 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
 
 
         "section": "advanced",
@@ -22,6 +25,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "advanced",
@@ -51,6 +56,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "advanced",
@@ -67,6 +74,8 @@
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
 
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
         "section": "advanced",
         "school": "Polytechnic",
@@ -81,6 +90,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
          "lab5": "assets/lab_images/lab5_advanced",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "advanced",
@@ -97,6 +108,8 @@
         "lab2": "assets/lab_images/lab2_advanced",
          "lab5": "assets/lab_images/lab5_advanced",
 
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
         "section": "advanced",
         "school": "Polytechnic",
@@ -111,6 +124,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "advanced",
@@ -126,6 +141,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "advanced",
@@ -142,6 +159,8 @@
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
 
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
         "section": "advanced",
         "school": "AUBH",
@@ -156,6 +175,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "advanced",
@@ -171,6 +192,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "advanced",
@@ -188,6 +211,8 @@
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
 
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
         "section": "advanced",
         "school": "UOB",
@@ -202,6 +227,8 @@
         "lab1": "",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+
+        "lab7": "assets/lab_images/lab7_advanced",
 
 
         "section": "advanced",
@@ -231,7 +258,11 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
-                 "lab5": "assets/lab_images/lab5_advanced",
+        "lab5": "assets/lab_images/lab5_advanced",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
+        "lab9": "assets/lab_images/lab9_advanced",
 
 
         "section": "advanced",
@@ -247,6 +278,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
         "lab2": "assets/lab_images/lab2_advanced",
                  "lab5": "assets/lab_images/lab5_advanced",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "advanced",
@@ -261,7 +294,9 @@
         "bio": "",
         "lab1": "",
         "lab2": "assets/lab_images/lab2_beginner",
-        
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "AUBH",
         "field": "Engineering",
@@ -274,6 +309,9 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "AUBH",
         "field": "Engineering",
@@ -286,6 +324,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "UOB",
         "field": "IT/ Computing",
@@ -298,6 +339,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "UTB",
         "field": "IT/ Computing",
@@ -310,6 +354,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "AUBH",
         "field": "Engineering",
@@ -323,6 +370,9 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "Polytechnic",
         "field": "Engineering ",
@@ -335,6 +385,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
          "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "Polytechnic",
         "field": "IT/Computing",
@@ -347,6 +400,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
          "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "UTB",
         "field": "IT/Computing",
@@ -359,6 +415,10 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_beginner",
          "lab2": "assets/lab_images/lab2_beginner",
+        
+            "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "Polytechnic",
         "field": "Engineering",
@@ -371,6 +431,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
          "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "beginner",
         "school": "Polytechnic",
         "field": "Engineering",
@@ -384,6 +447,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                 "lab2": "assets/lab_images/lab2_beginner",
+                "lab7": "assets/lab_images/lab7_advanced",
+
+
 
 
         "section": "beginner",
@@ -398,6 +464,8 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "beginner",
@@ -412,6 +480,8 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "beginner",
@@ -427,6 +497,8 @@
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
 
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
         "section": "beginner",
         "school": "AUBH",
@@ -440,6 +512,8 @@
         "bio": "",
         "lab1": "",
               "lab2": "assets/lab_images/lab2_beginner",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "beginner",
@@ -455,6 +529,8 @@
         "lab1": "",
                "lab2": "assets/lab_images/lab2_beginner",
 
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
         "section": "beginner",
         "school": "AUBH",
@@ -468,6 +544,8 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+
+        "lab7": "assets/lab_images/lab7_advanced",
 
 
         "section": "beginner",
@@ -483,6 +561,8 @@
         "lab1": "",
                "lab2": "assets/lab_images/lab2_beginner",
 
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
         "section": "beginner",
         "school": "Strathclyde ",
@@ -496,6 +576,8 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "beginner",
@@ -510,6 +592,8 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "beginner",
@@ -525,6 +609,8 @@
         "bio": "",
         "lab1": "",
                "lab2": "assets/lab_images/lab2_beginner",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "beginner",
@@ -541,6 +627,8 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
 
         "section": "beginner",
@@ -556,6 +644,8 @@
         "lab1": "assets/lab_images/lab1_advanced",
       "lab2": "assets/lab_images/lab2_advanced",
 
+        "lab7": "assets/lab_images/lab7_advanced",
+
 
         "section": "advanced",
         "school": "",
@@ -569,7 +659,9 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_advanced",
       "lab2": "assets/lab_images/lab2_advanced",
-                
+                        "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "advanced",
         "school": "",
         "field": "",
@@ -584,6 +676,9 @@
         "lab1": "assets/lab_images/lab1_advanced",
       "lab2": "assets/lab_images/lab2_advanced",
 
+                         "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "advanced",
         "school": "",
         "field": "",
@@ -597,6 +692,9 @@
         "bio": "",
         "lab1": "",
       "lab2": "assets/lab_images/lab2_advanced",
+               "lab7": "assets/lab_images/lab7_advanced",
+
+
         "section": "advanced",
         "school": "",
         "field": "",

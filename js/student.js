@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Populate Labs
         const labsContainer = document.getElementById("labs-container");
         labsContainer.innerHTML = ""; // Clear any existing content
-        const lab_names = ["lab1","lab2", "lab5", "lab7"]; // Assuming 'labs' is an array of lab details
+        const lab_names = ["lab1","lab2", "lab5", "lab7", "lab9"]; // Assuming 'labs' is an array of lab details
         const extensions = ['png', 'jpg'];
         
         lab_names.forEach((lab_name, index) => {
