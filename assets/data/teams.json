@@ -74,16 +74,31 @@
         "id": "BookBuddy",
         "name": "BookBuddy",
         "image": "assets/rotoscopes/book-buddy.png",
-        "projectSketch": "assets/team_images/team_cat_project_sketch.png",
-        "description": "Description placeholder.",
-        "members": ["Laurence_Mascarenas", "Ziyad_AlHajri", "Hana_Wahban", "Duha_AlAbbasi", "Isa_Althawadi"],
+
+            "milestone1pdflink":"https://drive.google.com/file/d/1Su7x57hl3E4ovZICzKlZTpLMP9KhD2cs/preview",
+        "milestone2images": [
+                         "assets/team_images/milestones/milestone-2/bookbuddy_milestone-2.png",
+            "assets/team_images/milestones/milestone-2/bookbuddy_milestone-2-2.png",
+                        "assets/team_images/milestones/milestone-2/bookbuddy_milestone-2-3.png"
+
+],
+                "milestone3videolink":"https://www.youtube.com/embed/-azlqOVZxEs?si=sM_XSR_9XcKhV2og",
+        "milestone4pdflink":"https://drive.google.com/file/d/1vLw1f1cTjewQ8od3x3fi-Vdq89JpMRgi/preview",
+          
+        "description": "Bookbuddy is an interactive book that showcases reading progress for multiple books at a time.",
+          
+        "members": ["Laurence_Mascarenas", "Ziyad_AlHajri", "Hana_Wahban", "Duha_AlAbbasi"],
         "milestones": [
            "assets/team_images/milestones/milestone-1/bookbuddy_milestone-1.png",
             "assets/team_images/milestones/milestone-2/bookbuddy_milestone-2.png",
 
 
-            "",
-            ""
+                        "assets/team_images/milestones/milestone-3/book-buddy.png",
+
+
+                 "assets/team_images/milestones/milestone-4/bookbuddy-poster.png"
+
+
         ],
         "category": "beginner"
     },
@@ -93,16 +108,32 @@
         "id": "PosturePack",
         "name": "PosturePack",
         "image": "assets/rotoscopes/posturepack.png",
-        "projectSketch": "assets/team_images/team_cat_project_sketch.png",
-        "description": "Description placeholder.",
+
+        "milestone1pdflink":"https://drive.google.com/file/d/1Su7x57hl3E4ovZICzKlZTpLMP9KhD2cs/preview",
+        "milestone2images": [
+         "assets/team_images/milestones/milestone-2/posturepack_milestone-2.png"
+
+
+
+],
+                "milestone3videolink":"https://www.youtube.com/embed/pz7niZ3defM?si=raVKmoWoVr2GSRvq",
+        "milestone4pdflink":"https://drive.google.com/file/d/1pbO-bXqiM6oHKQf1MdUzT90RiGtZOktB/preview",
+          
+        "description": "Posturepack is a posture-correcting smart backpack that tensions the straps of a backpack to produce good posture.",
+          
+          
+          
+          "description": "Description placeholder.",
         "members": ["Malak_AlSalam", "Yusuf_Seroor", "Eman_Mohammed", "Afham_Haleema", "Abdullah_AlSaif"],
         "milestones": [
           "assets/team_images/milestones/milestone-1/posturepack_milestone-1.png",
          "assets/team_images/milestones/milestone-2/posturepack_milestone-2.png",
 
 
-            "",
-            ""
+            "assets/team_images/milestones/milestone-3/posturepack.png",
+                        "assets/team_images/milestones/milestone-4/posturepack-poster.png"
+
+
         ],
         "category": "beginner"
     },
