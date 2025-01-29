@@ -293,7 +293,11 @@
         "name": "Abdullah AlSaif",
         "bio": "",
         "lab1": "",
+        
         "lab2": "assets/lab_images/lab2_beginner",
+                         "lab5": "assets/lab_images/lab5_beginner",
+
+
                 "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -309,6 +313,9 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
                 "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -324,6 +331,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
                 "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -339,6 +349,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
                 "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -354,6 +367,10 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
+        
                 "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -370,6 +387,9 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_beginner",
         "lab2": "assets/lab_images/lab2_beginner",
+                             "lab5": "assets/lab_images/lab5_beginner",
+
+
                 "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -385,6 +405,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
          "lab2": "assets/lab_images/lab2_beginner",
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
                 "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -400,6 +423,9 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
          "lab2": "assets/lab_images/lab2_beginner",
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
                 "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -415,7 +441,9 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_beginner",
          "lab2": "assets/lab_images/lab2_beginner",
-        
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
             "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -431,7 +459,11 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
          "lab2": "assets/lab_images/lab2_beginner",
-                "lab7": "assets/lab_images/lab7_advanced",
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+       
+        
+        "lab7": "assets/lab_images/lab7_advanced",
 
 
         "section": "beginner",
@@ -447,7 +479,11 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                 "lab2": "assets/lab_images/lab2_beginner",
-                "lab7": "assets/lab_images/lab7_advanced",
+                             "lab5": "assets/lab_images/lab5_beginner",
+
+        
+        
+        "lab7": "assets/lab_images/lab7_advanced",
 
 
 
@@ -463,7 +499,12 @@
         "name": "Mohammed AlLaith",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-               "lab2": "assets/lab_images/lab2_beginner",
+        
+        "lab2": "assets/lab_images/lab2_beginner",
+        
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
         "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -479,7 +520,11 @@
         "name": "Zainab Fardan",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-               "lab2": "assets/lab_images/lab2_beginner",
+        "lab2": "assets/lab_images/lab2_beginner",
+        
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
         "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -496,6 +541,8 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+                         "lab5": "assets/lab_images/lab5_beginner",
+
 
         "lab7": "assets/lab_images/lab7_advanced",
 
@@ -511,7 +558,12 @@
         "name": "Mohammed Ali Ahmed",
         "bio": "",
         "lab1": "",
-              "lab2": "assets/lab_images/lab2_beginner",
+       
+        "lab2": "assets/lab_images/lab2_beginner",
+       
+                           "lab5": "assets/lab_images/lab5_beginner",
+
+      
         "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -528,6 +580,8 @@
         "bio": "",
         "lab1": "",
                "lab2": "assets/lab_images/lab2_beginner",
+                         "lab5": "assets/lab_images/lab5_beginner",
+
 
         "lab7": "assets/lab_images/lab7_advanced",
 
@@ -544,6 +598,8 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+                         "lab5": "assets/lab_images/lab5_beginner",
+
 
         "lab7": "assets/lab_images/lab7_advanced",
 
@@ -560,6 +616,8 @@
         "bio": "",
         "lab1": "",
                "lab2": "assets/lab_images/lab2_beginner",
+                         "lab5": "assets/lab_images/lab5_beginner",
+
 
         "lab7": "assets/lab_images/lab7_advanced",
 
@@ -576,6 +634,10 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+                           "lab5": "assets/lab_images/lab5_beginner",
+
+   
+        
         "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -591,7 +653,14 @@
         "name": "Muneera AlBinali",
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
-               "lab2": "assets/lab_images/lab2_beginner",
+   
+        
+        
+        "lab2": "assets/lab_images/lab2_beginner",
+        
+                                 "lab5": "assets/lab_images/lab5_beginner",
+
+
         "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -609,6 +678,9 @@
         "bio": "",
         "lab1": "",
                "lab2": "assets/lab_images/lab2_beginner",
+                                  "lab5": "assets/lab_images/lab5_beginner",
+
+
         "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -627,6 +699,10 @@
         "bio": "",
          "lab1": "assets/lab_images/lab1_beginner",
                "lab2": "assets/lab_images/lab2_beginner",
+             
+                                      "lab5": "assets/lab_images/lab5_beginner",
+
+
         "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -643,6 +719,8 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_advanced",
       "lab2": "assets/lab_images/lab2_advanced",
+                         "lab5": "assets/lab_images/lab5_advanced",
+
 
         "lab7": "assets/lab_images/lab7_advanced",
 
@@ -659,6 +737,9 @@
         "bio": "",
         "lab1": "assets/lab_images/lab1_advanced",
       "lab2": "assets/lab_images/lab2_advanced",
+        "lab5": "assets/lab_images/lab5_advanced",
+
+
                         "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -676,6 +757,9 @@
         "lab1": "assets/lab_images/lab1_advanced",
       "lab2": "assets/lab_images/lab2_advanced",
 
+                         "lab5": "assets/lab_images/lab5_advanced",
+
+
                          "lab7": "assets/lab_images/lab7_advanced",
 
 
@@ -692,6 +776,10 @@
         "bio": "",
         "lab1": "",
       "lab2": "assets/lab_images/lab2_advanced",
+       
+               "lab5": "assets/lab_images/lab5_advanced",
+
+
                "lab7": "assets/lab_images/lab7_advanced",
 
 
