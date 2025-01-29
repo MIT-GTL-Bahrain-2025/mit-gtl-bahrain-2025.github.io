@@ -194,16 +194,20 @@
         "id": "ICE_Wall_Art",
         "name": "ICE Wall",
         "image": "assets/rotoscopes/ICE-WALL.png",
-        "projectSketch": "assets/team_images/team_dog_project_sketch.png",
+  "milestone1pdflink":"https://drive.google.com/file/d/1vTkRkv27Zl0ldXynE7Vut-bWxZRxRBQL/preview",
+        "milestone2images":
+            ["assets/team_images/milestones/milestone-2/ICE_Wall_Art_milestone-2.png"], 
+        "milestone3videolink":"https://www.youtube.com/embed/9RVtwCovgzs?si=7W5-HLx-1oNyXInf",
+        "milestone4pdflink":"https://drive.google.com/file/d/1k0SfQLuRwIzj9ZSmk5FvKZ2_2ggJIoIQ/preview",
+        
+        
         "description": "ICE WALL is an interactive experession art wall designed for the AUBH ICE LAB",
-        "members": ["Ibrahim_Aawan","Zain_Mayoof","Sumayya_Nazeer", "Raneem_Sabri", "Meshael_Ajaj", "Sabah_Hassan", "Noor_Hasan"],
+        "members": ["Ibrahim_Aawan","Zain_Mayoof","Sumayya_Nazeer", "Raneem_Sabri", "Sabah_Hassan"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/ICE_Wall_Art_milestone-1.png",
             "assets/team_images/milestones/milestone-2/ICE_Wall_Art_milestone-2.png",
-
-
-            "",
-            ""
+                        "assets/team_images/milestones/milestone-3/icewall.png",
+                               "assets/team_images/milestones/milestone-4/icewall.png"
         ],
         "category": "advanced"
     },
@@ -211,8 +215,14 @@
         "id": "Navcket",
         "name": "Navcket",
         "image": "assets/rotoscopes/navcket.png",
-        "projectSketch": "assets/team_images/team_dog_project_sketch.png",
-       "description": "Description placeholder.",
+
+          "milestone1pdflink":"https://drive.google.com/file/d/1Tj3UMVn2_FxeIO7JK36o3eAJBgVQnuJ-/preview",
+        "milestone2images":
+            ["assets/team_images/milestones/milestone-2/agribot_milestone-2.png"], 
+        "milestone3videolink":"https://www.youtube.com/embed/UYcBY7pnVco?si=ABZxWOuktTDGpdSH",
+        "milestone4pdflink":"https://drive.google.com/file/d/1ZmNseyDy5bdeC9mmzh01CvG2Bk_9t9gT/preview",        
+        
+        "description": "Navcket is an obstacle navigation jacker designed to aid the visually impaired.",
         "members": [ "Ali_Althawadi","Yousif_Abuzuhaira","Mohammed_AlJalahma","Ahmed_Bassam","Ahmed_Hammad"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/Navcket_milestone-1.png",
