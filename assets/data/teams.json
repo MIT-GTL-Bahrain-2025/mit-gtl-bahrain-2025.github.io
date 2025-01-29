@@ -15,7 +15,7 @@
          "assets/team_images/milestones/milestone-1/pearlquest_milestone-1.png",
          "assets/team_images/milestones/milestone-2/pearlquest_milestone-2.png",
          "assets/team_images/milestones/milestone-3/pearlquest_milestone-3.png",
-         ""
+         "assets/team_images/milestones/milestone-4/pearlquest-poster.png"
         ],
         "category": "beginner"
     },
@@ -24,13 +24,17 @@
         "id": "Emotibear",
         "name": "Emotibear",
         "image": "assets/rotoscopes/emotibear.png",
-        "projectSketch": "assets/team_images/team_cat_project_sketch.png",
-        "description": "Description placeholder.",
-        "members": ["Mariam_AlAraab", "Zainab_Fardan", "Ali_Hussein", "Syed_Rayed", "Batool_Isa"],
+"milestone1pdflink":"https://drive.google.com/file/d/1MrBgenFcjuhHJM6CuHNacymg9-Ug_jVV/preview",
+        "milestone2images": [
+             "assets/team_images/milestones/milestone-2/emotibear-1.png",
+            "assets/team_images/milestones/milestone-2/emotibear-2.png"],
+                "milestone3videolink":"https://www.youtube.com/embed/WQ-6Xc7nI20?si=5Sykk7H04_H2FMWS",
+        "milestone4pdflink":"https://drive.google.com/file/d/1OSwLb0_ixEKZtI_9bm0fT7AqsoLUjYNz/preview",
+        "description": "PearlQuest is an underwater drone for pearl harvesting.",        "members": ["Mariam_AlArab", "Zainab_Fardan", "Ali_Hussein", "Syed_Rayed", "Batool_Isa"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/Emotibear_milestone-1.png",
-            "",
-            "",
+            "assets/team_images/milestones/milestone-2/emotibear-1.png",
+            "assets/team_images/milestones/milestone-3/emotibear_milestone-3.png",
             ""
         ],
         "category": "beginner"
