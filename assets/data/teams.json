@@ -121,10 +121,7 @@
           
         "description": "Posturepack is a posture-correcting smart backpack that tensions the straps of a backpack to produce good posture.",
           
-          
-          
-          "description": "Description placeholder.",
-        "members": ["Malak_AlSalam", "Yusuf_Seroor", "Eman_Mohammed", "Afham_Haleema", "Abdullah_AlSaif"],
+                  "members": ["Malak_AlSalam", "Yusuf_Seroor", "Eman_Mohammed", "Afham_Haleema", "Abdullah_AlSaif"],
         "milestones": [
           "assets/team_images/milestones/milestone-1/posturepack_milestone-1.png",
          "assets/team_images/milestones/milestone-2/posturepack_milestone-2.png",
@@ -143,16 +140,30 @@
         "id": "WeBowling",
         "name": "WeBowling",
         "image": "assets/rotoscopes/webowling.png",
-        "projectSketch": "assets/team_images/team_dog_project_sketch.png",
+
+            "milestone1pdflink":"https://drive.google.com/file/d/1bkgc4-xjHiWCbjW3_Y-uHogwTyQXSjQv/preview",
+        "milestone2images": [
+         "assets/team_images/milestones/milestone-2/webowling_milestone-2.png", 
+        "assets/team_images/milestones/milestone-2/webowling_milestone-2-2.png",
+            "assets/team_images/milestones/milestone-2/webowling_milestone-2-3.png"
+
+
+],
+                "milestone3videolink":"https://www.youtube.com/embed/Vr4Wt9ikj3Q?si=xdii1EYryqSvUGTw",
+        "milestone4pdflink":"https://drive.google.com/file/d/1C4EFBHOJc59wE2vHdcsn8a5yzDhu6JsJ/preview",
+          
+        
         "description": "Description placeholder.",
-        "members": ["Ali_Abbas", "Batool_Albonni","Maryam_AlBonni", "Jawad_Tawfeeq", "Yousif_Aamir","Sana_Zainaba"],
+        "members": ["Ali_Abbas", "Batool_Albonni","Maryami_albonni", "Jawad_Tawfeeq", "yosif_aamir","sana_zainaba"],
         "milestones": [
             "assets/team_images/milestones/milestone-1/WeBowling_milestone-1.png",
                         "assets/team_images/milestones/milestone-2/webowling_milestone-2.png",
 
 
-            "",
-            ""
+            "assets/team_images/milestones/milestone-3/webowling.png",
+
+
+           "assets/team_images/milestones/milestone-4/webowling.png"
         ],
         "category": "advanced"
     },
